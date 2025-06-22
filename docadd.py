@@ -1,6 +1,6 @@
 import os
 from langchain_community.document_loaders import PyPDFLoader
-from langchain.text_splitter import CharacterTextSplitter
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 
@@ -16,10 +16,10 @@ documents = loader.load()
 
 # Split into chunks
 print("[INFO] Splitting into chunks...")
-text_splitter = CharacterTextSplitter(
-    chunk_size=3500,         # Roughly 500 words
-    chunk_overlap=200,       # Helps maintain continuity between chunks
-    separator="\n"
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=3500,           # Roughly 500 words
+    chunk_overlap=200,         # Helps maintain continuity between chunks
+    separators=["\n\n", "\n", ".", " ", ""]
 )
 docs = text_splitter.split_documents(documents)
 
