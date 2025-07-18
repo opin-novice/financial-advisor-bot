@@ -18,3 +18,11 @@ pip install faiss-cpu
 pip install python-telegram-bot --upgrade
 pip install pypdf
 pip install pymupdf
+
+quantization8bit
+pip install torch transformers accelerate bitsandbytes
+pip install safetensors
+
+evaluation
+pip install datasets
+pip install --upgrade --force-reinstall ragas

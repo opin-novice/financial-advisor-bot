@@ -13,7 +13,7 @@ from ragas.metrics import (
     context_recall,
     context_precision,
 )
-from ragas.llms import LangchainLLM  # ✅ Added for custom RAGAS LLM
+from ragas.llms import LangchainLLMWrapper  # ✅ FIXED: correct wrapper
 
 # --- Configuration ---
 INDEX_DIR = "faiss_index"
@@ -71,7 +71,7 @@ if not examples:
 dataset = Dataset.from_list(examples)
 
 # --- Setup RAG pipeline ---
-llm = OllamaLLM(model="llama3:8b")  # You can also switch to "mistral" here
+llm = OllamaLLM(model="llama3.2:3b")  # ✅ UPDATED to use llama3.2:3b
 qa_chain = RetrievalQA.from_chain_type(
     llm=llm,
     retriever=retriever,
@@ -90,7 +90,7 @@ dataset = dataset.add_column("answer", answers)
 dataset = dataset.add_column("contexts", contexts)
 
 # --- Setup custom RAGAS LLM evaluator (no OpenAI needed) ---
-ragas_llm = LangchainLLM(OllamaLLM(model="llama3:8b"))  # Or mistral for speed
+ragas_llm = LangchainLLMWrapper(llm)  # ✅ Use the same llama3.2:3b model for eval
 
 # --- Evaluate using RAGAS ---
 print("[INFO] Evaluating with RAGAS...")
@@ -102,7 +102,7 @@ results = evaluate(
         context_recall,
         context_precision
     ],
-    llm=ragas_llm  # ✅ Fix: avoid OpenAI
+    llm=ragas_llm
 )
 
 print("\n📊 RAGAS Evaluation Results:")
