@@ -1,0 +1,306 @@
+AOF Archival Ref: SL No:
+
+Account Opening Form
+
+Non-Individual Account
+
+হিসাব খোলার ফরম
+
+অ-ব্যক্তিক হিসাব
+Account Title : ]
+
+হিসাবের নাম
+
+AccountNumber :| | | | | | | | | iii
+
+Unique Customer ID: ] ] ] ] ] | |
+ইউনিক গ্রাহক আইডি
+
+Guidance to fill up the AOF
+
+O Please fill up the form in CAPITAL letter in English.
+
+O Please fill up all fields carefully & strike-out the ones which are not applicable. Please confirm any overwriting by full signature
+O For verification please present the original documents for each photocopy submitted.
+
+O Please use separate Individual Information Form (CIF) for Signatories/Mandatee/Beneficial Owner(s).
+
+O For foreign citizen(s), collecting photocopy of Passport with valid VISA, Work permit, BIDA Permission, QA 22, etc. (if applicable)
+O Please use separate Nominee Information Form for Sole Proprietorship account.
+
+Required Documentation to Open Account
+
+A. General documents for ALL types of Accounts:
+
+O Account Opening Form duly filled up. O List of the Directors with addresses.
+
+O Duly attested NID/Passport/Birth Registration Certificate (along Beneficial owner's NID copy, Photographs and Other Documents
+with Photo ID), Photograph, utility bill of the Proprietor/ Cif applicable).
+Partner(s)/ Signatories/ Office Bearer(s) as applicable.
+
+O Copy of Valid Trade License (for Business account only). C. Additional documents for Association/Club/Charity/
+
+O Proof of Submission of Income Tax Return (If not submitted, Trust (provident fund/gratuity fund)/Society Account
+additional source tax will be applied. However Proof of Submission
+
+of Income Tax Return is mandatory for opening and continuing O Certified true copy of the constitution/By-Laws/Trust
+
+bank accounts of any sort with credit balance exceeding BDT Ten Deed/Memorandum and Articles of Association(where
+Lakhs). applicable).
+O Copy of Certificate of Registration of the Association/-
+B. Additional documents for Business Accounts: Club/Charity/Trust/Society(if applicable).
+
+[0] Resolution/ Extract of Resolution of the Association/-
+Club/Charity/Trust/Society for opening the account and
+authorization for its operation duly certified by the Chair-
+man/Secretary.
+
+O List of members of the Governing Body/Executive Committee
+of the Association/Club/Charity/Trust/Society with their
+addresses.
+
+B.1 Partnership Account
+
+Copy of Partnership Deed of the Firm.
+
+List of Partners with their addresses.
+
+Resolution for opening the account and authorization for its opera-
+tion duly certified by the Managing Partners of the Firm.
+
+O Copy of Certificate of Registration of the Firm for Registered
+Partnership.
+
+[01701
+
+8.2 Limited Company (Public/Private) Account
+
+O Certified true copy of the Memorandum & Articles of Association
+and Certificate of Incorporation of the Company.
+
+O Certified copy of the Letter of Commencement of Business (in
+case of Public Limited Company).
+
+O Certified true copy of Form- ১1|.
+
+O Resolution / Extract of the resolution of the Board/General Meet-
+ing of the Company for opening the account and authorization for
+its operation duly certified by the Chairman/Managing Director/
+Company Secretary.
+
+D. Additional documents for Government Entity
+
+O Government Order/ Official letter from the competent authori-
+ty to open the account stating the authorized signatories.
+
+O Copy of relevant Government Order/ Gazette notification/
+Provision of Law/ Constitution / By-laws / Trust Deed / Memo-
+randum & Articles of Association(where applicable).
+
+
+O Duly Signed General Account's Rules and Terms & Conditions
+O Customer Information Form(s) (In case of more than one Signatory)
+
+O Others: (please specify)
+
+O Others: (please specify)
+
+Number of | Maximum Size | Total Amount Number of | Maximum Size | Total Amount
+. Transaction | (per transaction) | (monthly) ।, Transaction 10281 transaction) | (monthly)
+Particulars বিষয় (Monthly) সর্বোচ্চ পরিমাণ মোট পরিমাণ Particulars বিষয় (Monthly) সর্বোচ্চ পরিমাণ মোট পরিমাণ
+মাসিক লেনদেনের সংখ্যা] (প্রতি লেনদেন) (মাসিক) মাসিক লেনদেনের সংখ্যা] (প্রতি লেনদেন) (মাসিক)
+Deposits / জমা Withdrawals / উত্তোলন
+Cash- Deposits (Including Online) Cash- Withdrawals (including online/ATM)
+নগদ নগদ উত্তোলন (অনলাইন/এটিএম সহ)
+Deposit Through Transfer/Instruments. Withdrawals Through Transfer/Instruments.
+ট্রান্সফার বা মাধ্যমে জমা ট্রা্ফার/ইন্ুমেন্টের মাধ্যমে উত্তোলন
+foreign Remittance Deposit inward) Withdrawals of Foreign Currency/Remittance
+Export Proceeds Import Payments
+From BO or Stock Market Transfer to BO Accounts or Stock Market
+পুঁজি বাজার হিসাব হতে জমা পুঁজি বাজার হিসাবে জমা] স্থানান্তর
+Others (Specify) i
+‘SEI (HE করুন) 221
+Total Deposits Total Withdrawals
+মোট জমা [মোট উত্তোলন
+SBS Code RM Code
+Risk Grade Deposit Code
+Cheque Book Requisition given in CBPS? 0 Yes 71০
+Entity 1st Applicant 2nd Applicant | 3rd Applicant | 4th Applicant
+Duplicate Customer ID in UBS (De-dup) checked? OYes ONo|O Yes CINo/[) Yes 1113০ | Yes ONo|L Yes [71০
+Customers’ Cell phone number - Call back confirmed?} 1 Yes [CINo|OYes ONo|O Yes ONo/O Yes ONo|D Yes ONo
+Customers’ NID verified with EC database? N/A OYes ONo/OYes ONo|/OYes ONo/O Yes ONo
+AML Screening? OYes ONo|OYes ONo/OYes ONo/O Yes ONo|/O Yes ONo
+Comments:
+A/C Opening Officer: Checked & Authorized by:
+(Seal with Name, Signature & Date) Br. Manager/ Br. Ops. Manager/ Br. Sales & Service
+
+Manager/ BDM (Seal with Name, Signature & Date)
+
+Particulars | Account Document Account Output Control Scan for DMS Others
+Maintenance
+Maker/
+Checker
+
+
+Date (তোরিখ) Account Number
+(হিসাব নম্বর)
+
+Branch Manager (শাখা ব্যবস্থাপক) Unique Customer ID
+Eastern Bank PLC. (ইস্টার্ন ব্যাংক পিএলসি.) (ইউনিক গ্রাহক আইডি)
+Branch (শাখা)
+
+Dear Sir, |/We hereby apply to open a/an account with your branch.
+(প্রিয় মহোদয়), আমি/ আমরা আপনার শাখায় একটি (নিল Name ies হিসাব খোলার জন্য আবেদন করছি।
+My/our account related & detailed personal information are given below.
+
+আমার/ আমাদের হিসাব সংক্রান্ত ও ব্যক্তিগত বিস্তারিত তথ্য নিশ্নে প্রদান করছি।
+
+1. Account Title (In English)
+
+হিসাবের শিরোনাম (বাংলায়)
+
+2. Type of Account (Please tick) Savings সঞ্চয়ী [_] Current চলতি []SND এসএনডি [1170০ এফসি [11700 আরএফসিডি [1 ERQ ইআরকিউ [_] Others অন্যান্য:
+হিসাবের প্রকৃতি (টিক দিন)
+3. Currency (Please tick) Taka টাকা [_] USD ডলার [_] Euro ইউরো |_| Pound পাউন্ড [_] Others অন্যান্য:
+ুগ্রা টিক দিন)
+4. Operating Instruction (Please tick) [| Singly এককভাবে [] Jointly যৌথভাবে [_] Any one যে কোন একজন [_] Others অন্যান্য:
+পরিচালনা পদ্ধতি (টিক দিন)
+5. Initial Deposit Amount (অংকে) : In words (কথায়) :
+প্রাথমিক জমা
+6. Nature ধেরণ) 0891 নগদ [|Cheque/P.0, চেক/পে অর্ডার [| BEFTN বিইএফটিএন L]RTGS আরটিজিএস [10915 অন্যান্য:
+
+1. ১0750060115 Name (In English) | | |
+
+প্রেতিষ্ঠানের নাম) (বাংলায়)
+
+2. Trade Licence Number Date (তারিখ)
+
+(ট্রেড লাইসেন্স নম্বর)
+Issuing Authority (ইস্যুকারী কর্তৃপক্ষ)
+
+3. Registration Number (নিবন্ধন নম্বর) Date (তারিখ)
+
+Issuing Authority @perst yr) Issuing 95
+
+4. VAT Registration Number BIN (বিআইএন)
+ভ্যাট রেজিষ্ট্রেশন নম্বর
+
+5. E TIN No. ট্যাক্স আইডি নম্বর) PSR (রিটার্ন জমা রসিদ) Yes (1)
+
+6. Address: (Please tick any of the below address as mailing/ correspondence address) ভালা রত
+
+*Business Premises/Office Address
+
+ব্যবসার স্থল/অফিসের ঠিকানা
+
+Phone (ফোন) :
+
+*Registered Address
+
+নিবদ্ধনকৃত ঠিকানা
+
+*Factory/Industry Address
+কারখানা/ইভাস্তরির ঠিকানা
+
+Phone (ফোন) :
+
+7. *Type of Institution Sole Proprietorship (একক afar) [_]Partnership (Sema) [_ Joint Venture (যৌথ উদ্যোগ) [_] Pvt. Limited (প্রাইভেট লিঃ) [_] Public Limited (পাবলিক লিঃ)
+প্রতিষ্ঠানের ধরণ
+
+Trust ট্রাস্ট) _] NGO/NPO (এনজিও/এনপিও)[_10118/5001 (কলাব/সোসাইটি)[_1608080012111511085 (শিক্ষা প্রতিষ্ঠান) [_136118101515011110 («iit afar)
+
+Govt./Semi Govt./Autonomous (সরকারি/আধা সরকারি/্বায়তুশাসিত) L_|Others (অন্যান্য) 8
+
+8. Type of Business Trading (Gféx) [_] Service (সেবা) Manufacturing (উৎপাদন) Others (অন্যান্য) 8
+9. Type of Product/Services
+পণ্য বা সেবার ধরণ
+10. Nature of Business (In details)
+11. Annual Turnover
+টার্নওভার
+
+Debit Card (ডেবিট কার্ড বই) Yes (হ্যা) 1৩০ নো) Debit Card Type (ডেবিট কার্ডের ধরন) ——______________ Card RM Code (কার্ড আরএম কোড)
+
+Cheque Book (চেক বই) Yes (হ্যা) No (না) Delivery Branch (ডেলিভারী শাখা)
+Mobile No. (চেক বই) E-mail in Block Letter. (ই-মেইল বড় হাতের অক্ষর)
+
+সরকারি/আধা সরকারি/ স্বায়ত্তশাসিত তিষ্ঠানের হিসাবের জন্য শুধুমাত্র * (স্টার) চিহ্নিত ঘরগুলো পূরণ করুন
+
+Note : Debit Card is applicale for Sole Proprietorship account only.
+
+
+1. *Account Operator's Name English
+(ইংরেজী)
+(হিসাব পরিচালনাকারীর নাম) Bangla
+(বাংলা)
+2. *Date of Birth (জন তারিখ) 3. Unique CIF
+এ. Father's Name (পিতার নাম)
+5 Mother's Name (মাতার নাম)
+6. Spouse Name (স্বামীয/ন্ত্রীর নাম)
+*Nati i 8. Gender L] Male [1 Female L] Third Gender
+7. *Nat Lit
+(ade (fm) (পুরুষ) (মহিলা) (তৃতীয় লিঙ্গ)
+9. *Resident Status : Resident (রেসিডেন্ট) Non-Resident (নন-রেসিডেন্ট)
+(রেসিডেস্ট স্ট্যাটাস)
+10. Marital Status: (J Married single Others *Please attach
+(বৈবাহিক অবস্থা) (বিবাহিত) ( তি) (অন্যান্য) photograph
+11. *Profession Details: [] Service Business Others (Please Specify) here
+(পেশার বিস্তারিত) (চাকুরী) ব্যবসা) (অন্যান্য) (নির্দিষ্ট করে বলুন) খানে ছবি
+12. Name of the Organization: 3 এখানে ছ
+(প্রতিষ্ঠানের নাম) যুক্ত করুন
+13. *Relationship with Organization/Designation
+(প্রতি। সম্পর্ক/পদের নাম)
+14. E TIN No. ০
+(টা আইডি মর) PSR (রিটার্ন জমা রসিদ) [] Yes (হ্যা) [1] No নো)
+15. *E-mail ই-মেইল) Assessment Year (কর বর্ষ)
+
+16. *Address:
+
+16.1 Present Address
+(বর্তমান ঠিকানা) .
+Road/Vill (সড়ক/থাম) : P.O (পোঃ) : PS (থানা) :
+District (জেলা) : Mobile (মোবাইল):
+16.2 Permanent Address
+Cu ) Road/Vill (সড়ক/থাম) : P.O (পোঃ) : P.S (থানা) :
+District (জেলা) : Mobile (মোবাইল):
+17. *Identification Document National ID/Passport/Birth Certificate/Others :
+(পরিচিতি পত্র) (জাতীয় পরিচয় পত্র/পাসপোর্ট নম্বর/জন্ম সনদ/অন্যান্য)
+
+Please tick (টিক চিহ্ন দিন)
+
+1. Are you a US Resident? Yes |_| No 2. Are you US Citizen? Yes |_| No 3. Do You hold US Green Card? Yes |_| No
+US Tax Identification Number/Social Security No. (SSN)
+| hereby consent for Eastern Bank PLC to share my information with domestic or overseas regulators or Tax Authorities where necessary to establish
+
+my tax liability in any jurisdiction. Where required by domestic or overseas regulators or tax authorities, | consent and agree that the Bank my
+withhold from my account(s) such amounts as may be required according to applicable laws, regulations and directives.
+
+|/We undersigned declare that the information provided in the application is true, complete and accurate. |/We am/are fully aware of the prevail-
+ing Money Laundering Prevention Rules and Anti-Terrorism Rules and |/We shall not do any act/ transaction in contravention of the provisions of
+the mentioned rules. |/We will provide updated information/ necessary documents required by the Bank from time to time and to abide by the
+rules and policies of the Bank for the conduct of such account. আমি /আমরা স্বজ্ঞানে ঘোষণা করছি যে, উল্লেখিত তথ্যাদি সত্য | আমি /আমরা মানি লন্ডারিং প্রতিরোধ আইন এবং সন্ত্রাস
+বিরোধী আইন সম্পর্কে সম্পূর্ণ অবহিত আছি এবং দেশে বিদ্যমান মানি লন্ডারিং প্রতিরোধ আইন এবং সন্ত্রাস বিরোধী আইনের বিরোধী কোন কাজ/লেনদেন আমি /আমরা করব না। আমি /আমরা এটাও অঙ্গীকার করছি
+যে সময়ে সময়ে ব্যাংকের প্রয়োজন মোতাবেক এবং উক্ত হিসাব পরিচালনার জন্য প্রয়োজনীয় তথ্য/নথি প্রদান করব।
+
+চি Ist Signatory (১ম স্বাক্ষরকারী) 2nd Signatory (২ স্থাক্ষরকারী) 3rd Signatory (ওয় স্বাক্ষরকারী)
+৪
+&
+”
+E
+2
+5
+5 Name 0) (2) (3)
+নম 3. +
+5 Designation
+: Date
+i Signature Verified by: Approved by:
+= Account Opening Officer: (Seal with Name, Signature & Date) Br. Manager/ Br. Ops. Manager/ Br. Sales & Service
+হু Manager/ BDM (Seal with Name, Signature & Date)
+টু Disclaimer : If any confusion arises between Bangla & English version of the text mentioned above, the Bangla version shall be deemed as correct.
+
+দ্রষ্টব্য : উপরে উল্লেখিত বাংলা এবং ইংরেজি সংস্করণের (টেক্স এর) মধ্যে কোন ধরণের বিভ্রান্তির Ges হলে বাংলা সংস্করণের (টেক্সট) গুলো সঠিক হিসাবে গণ্য হবে |
+
+Eastern Bank PLC., 100 Gulshan Avenue, Dhaka-1212, Bangladesh
+Tel : (PABX) + 88-02-55069018, IP : +88-09666777325, E-mail : info@ebl-bd.com, Web : www.ebl.com.bd
+
+FPP, Dec.- 2024
+

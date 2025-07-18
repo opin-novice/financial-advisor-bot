@@ -1,0 +1,1093 @@
+Bank Alfalah
+
+FAQs — Internet Banking
+
+Frequently Asked Questions — Internet Banking
+1. What is Bank Alfalah Internet Banking?
+
+Bank Alfalah Internet Banking is a real-time online banking service offering a simple,
+convenient and secure method of accessing your Bank Alfalah accounts via the Internet.
+Through this banking facility you can conduct your financial transactions at your own time,
+location and convenience, 24 hours a day, 7 days a week.
+
+2. What can I do with Bank Alfalah Internet banking?
+
+Bank Alfalah Internet Banking is a real-time online banking service, offering a simple,
+convenient and secure method of accessing your Bank Alfalah accounts via the Internet.
+Through this banking facility you can conduct your financial transactions at your own time,
+location and convenience, 24 hours a day, 7 days a week.
+
+= Account balance inquiry
+
+= Mini-statements
+
+= Account statement for one year
+
+= Transferring funds between your Bank Alfalah accounts
+
+= Transferring funds from your Bank Alfalah account to other Bank Alfalah account
+holders
+
+= Transferring funds to selected 1-LINK & MNET member banks
+
+= Utility bill payments
+
+"Credit card bill payments
+
+= Purchasing mobile phone airtime
+
+= Internet Service Provider Bill Payments
+
+= Donations to selected charitable organizations
+
+= Payments for online shopping and much more
+
+3. Who is eligible to use Bank Alfalah Internet Banking
+Any Bank Alfalah account holder, activated debit card or Bank Alfalah credit card holders is
+eligible to use Bank Alfalah Internet Banking.
+
+4. What are the prerequisites for Bank Alfalah Internet Banking?
+Bank Alfalah Internet Banking has the following prerequisites:
+
+= You should be a Bank Alfalah account holder
+= Your local cell number must be registered with Bank Alfalah
+= Your email address must be updated at Bank Alfalah
+
+5. How dol register for Bank Alfalah Internet Banking?
+
+i. Visit bankalfalah.com
+
+ii. | Goto Internet Banking section and click on the registration button
+iii. Read the terms and conditions and check the box if you agree to the terms
+iv. 51800 from the following options below:
+
+1
+
+Bank Alfalah
+
+FAQs — Internet Banking
+
+=" Credit Card Customers
+
+= Debit Card Customers
+
+= Account Holders
+
+= Fill in the following Information:
+o CNIC
+
+0. Credit/Debit/Account Card number
+
+o. Date of birth
+
+o Registered mobile number
+
+o MNP (select from the drop-down menu)
+
+o Username
+
+o Enter ‘Captcha’
+
+o Select a security question and enter its answer
+
+o Click on the ‘Submit’ button
+
+o Onthe next screen, customer’s registered email ID will appear
+
+o Clicking on the ‘Confirm’ button and a prompt will appear disclaiming to
+visit nearest branch to perform Biometric Verification
+
+o After successful biometric verification from branch
+
+o An OTAC — One time activation code will be generated. The first 5
+digits/characters will be sent on your registered email and the last 5
+digits/characters will be sent via SMS on your registered cell number.
+
+o You can log in by combining the OTAC sent to your email and cell number
+
+6. How dol register for Alfalah Internet Banking if my email ID is not updated/change my email
+ID?
+
+After filling the above information listed in question number 4, complete the following steps:
+
+"Click on change button and then enter your email ID
+
+= Click the ‘Proceed’ button
+
+= Amessage will appear to call the contact center at 111 225 111
+
+= Please call the contact center from your registered mobile number
+
+= The Contact Centre will ask you verification questions
+
+= 00001 verification an OTAC — One Time Activation Code will be generated. The first 5
+digits/characters will be sent on your registered email and the last 5 digits/characters
+will be sent on via SMS to your registered cell number.
+
+হ You can log in by combining the OTAC sent to your email and cell number
+
+7. How 001 update my email address and cell number?
+Visit your Bank Alfalah branch and submit a request in writing to add your email address and
+cell number in our 'Registration Database’. Your email address and cell number will be added
+
+within 3 business days.
+
+8. What is OTAC?
+
+Bank Alfalah
+
+FAQs — Internet Banking
+
+OTAC is “One Time Authorization Code”. OTAC is generated at the time of registration,
+change/forget password and create beneficiary(s). OTAC is received on customer’s registered
+cell number and email address.
+
+9. | 5698 an unclear CAPTCHA, what should 1 do with it?
+
+This CAPTCHA is purposely scrambled / twisted; just type the code written on it in the
+“CAPTCHA” field given below. You can always refresh the CAPTCHA in-case you are unable to
+read it.
+
+10. How can | view transactions performed through Bank Alfalah Internet Banking?
+
+All transactions performed are available under User Management menu. Click on User Activity
+and enter dates to see your transactions. Alternatively, you can also check your Mini
+Statement and Account Statement for the same.
+
+11. What is the maximum time range, | can view my account statement?
+You can view your account statement for one year through Bank Alfalah’s Internet Banking.
+12. Can | view my transactions through a mini statement?
+Your mini statement will show the last 8 transactions performed on your account.
+13. How can | un-subscribe/block my Internet Banking account?
+You can block your Internet Banking account by calling our Call Center at 111-225-111 (UAN)
+from your registered number. After verifying the customer, Call Center agent will un-
+
+subscribe/block the Internet Banking account.
+
+14. How can | unblock my account?
+
+You can unblock your account by calling our Call Center at 111-225-111 (UAN) from your
+registered number. After verifying the customer, Call Center agent will un-block the Internet
+Banking account.
+
+15. | suspect someone has access to my email account. What should | do?
+
+Immediately call our Call Center at 111-225-111 to temporary block your Internet Banking
+account.
+
+16. | have forgotten my User ID, what should I do?
+
+Your User ID is confidential and should never be shared with anyone. In case you forget your
+User ID, please call our Call Centre at 111-225-111 for assistance.
+
+17. | have forgotten my password, what should | do?
+
+Bank Alfalah
+
+FAQs — Internet Banking
+
+Your password is confidential and should never be shared with anyone. In case you have
+forgotten your password, please click the “Forgot password” link available on the login page.
+You will be asked to provide the answer to the security question set at the time of your
+Internet Banking registration. If you answer the question correctly, you will receive a new,
+one-time authorization code on your registered email address and mobile number.
+Alternatively, you can also call our Call Center on 111-225-111 to re-generate a new password.
+
+18. Can | change my User ID / Password?
+
+You cannot change your User ID; however you may change your password through the
+‘Change Password’ option available, below your User ID on the Internet Banking page. If you
+opted to un-subscribe from Internet Banking, only then you set a new User ID.
+
+19. What should | do if | suspect that my password has been exposed to others?
+
+Immediately change your password using the 'Change Password' option from the Internet
+Banking website.
+
+20. Why do we need to create a beneficiary?
+
+In order to perform different financial transactions, beneficiary creation is required. This is
+done to better safe guard your Internet Banking account from misuse. For every beneficiary
+created, an OTAC will be generated and delivered to your registered email address and cell
+number. Until the OTAC is not entered in the password box, the beneficiary will not be
+created.
+
+21. How do | delete a beneficiary?
+To delete a beneficiary, go to the Beneficiary Management link/ tab and click ‘delete
+beneficiary’. All your added beneficiaries will be available in this menu. Click on the delete
+button available in front of the added beneficiary.
+22. Can | register with any of my accounts?
+You can only register with below accounts:
+= Current or Saving Account
+Joint Either or survivor
+
+= Sole proprietor
+Loan/Corporate/FCY/Jointly operated accounts are not allowed for registration.
+
+23. If | have registered as a debit card holder and later | block my Debit Card will my Internet
+Banking get blocked too?
+
+No! Your Internet will be active regardless your debit card status.
+
+24. Can I have Multiple Internet Banking IDs?
+
+4
+
+Bank Alfalah
+
+FAQs — Internet Banking
+
+25.
+
+26.
+
+27.
+
+28.
+
+29.
+
+30.
+
+You cannot have multiple Internet Banking IDs.
+How should | change my transaction limit?
+You can change your package by following below Steps:
+"Click on change package
+= Select the option as per your need
+= Select fee account and submit
+= Enter OTAC received via email and SME will be generated
+
+If | change my daily transaction limit, will | be charged?
+
+Yes! On changing your daily transaction limit the mentioned fee amount will be deducted.
+
+How can | link my other accounts with Alfalah Internet Banking?
+You can link your other accounts by following below Steps:
+
+= 50 on Manage Accounts
+
+= Click on Add Account
+
+= Fetch Account title and click on link
+
+= Confirm account and account will be linked successfully
+
+Can | remove my accounts from my ID?
+Yes! You can change/remove your accounts except from your default account by following
+these steps:
+
+= 90 on Manage Accounts
+
+= Click on Remove Account
+
+= Fetch account title and click on remove
+= Account Removed successfully
+
+Are there any service charges applicable on Internet Banking?
+
+No, there are no charges!
+
+| cannot perform any transaction on Alfa/IB, what is the problem?
+
+Dear Customer, please note that if you have registered on Alfa or Bank Alfalah Internet
+Banking during the time period of March-October 2020 then you will have to get your
+
+Biometric verification done from the nearest Bank Alfalah branch to transact as per your opted
+package limit.
+
+Bank Alfalah
+
+FAQs — Internet Banking
+
+31. Can | transfer funds between my own accounts?
+
+Yes, you can transfer funds between all your accounts linked to your Bank Alfalah Internet
+Banking, using the ‘My Account’ facility.
+
+32. Can I transfer funds to other Bank Alfalah accounts from my Internet Banking Account?
+
+Yes, you need to create a beneficiary in order to transfer funds from your account to any other
+Bank Alfalah account through the following procedure:
+
+= Go to the Beneficiary Management menu
+
+=" Click Create Beneficiary
+
+= Select Other Bank Alfalah Account
+
+= Enter complete account number with branch code
+"Click the GET Button
+
+=" Account Title will be auto populated
+
+= Provide the Alias/Nick
+
+"Click Submit button
+
+=" A Confirm Beneficiary screen will appear
+
+= Click YES to proceed
+
+=" OTAC generated to be delivered at your registered email address and cell number
+= Enter OTAC in the password box
+
+"Click YES button
+
+=" Transaction completed
+
+The added beneficiary will appear under the Other BAFL Accounts facility with internet
+Banking.
+
+33. How can | perform Inter Bank Fund Transfer transactions?
+
+You need to create a beneficiary to perform Inter Bank Fund Transfer transactions through
+the following procedure:
+
+= Go to the Beneficiary Management menu
+
+=" Click Create Beneficiary
+
+= Select Inter Bank Fund Transfer
+
+= Select Beneficiary Bank from drop down
+
+= Enter complete account number with branch code
+= Click GET Button
+
+=" Account Title will be auto populated
+
+= Provide the Alias/Nick
+
+"Click Submit button
+
+=" A Confirm Beneficiary screen will appear
+
+= Click YES to proceed
+
+=" OTAC generated to be delivered at your registered email address and cell number
+
+6
+
+Bank Alfalah
+
+FAQs — Internet Banking
+
+= Enter OTAC in the password box
+
+"Click YES button
+
+=" Transaction completed
+The added beneficiary will appear under in the Inter Bank Fund Transfer facility with Internet
+Banking.
+
+34. How long does it take for funds to get credited into the beneficiary's account?
+Normally, funds are transferred instantly. In case the credit is delayed by more than a day,
+please call our Call Center at 111-225-111 or write to 95 at
+customercomplaint@bankalfalah.com for assistance.
+
+35. Which banks can | transfer funds to via Alfalah Internet Banking?
+
+You can transfer funds to any Bank Alfalah account as well as 1-Link member banks and MNET.
+Following is the list of banks:
+
+= Allied Bank
+= Meezan Bank
+= Askari Bank
+
+= JS Bank
+= Sindh Bank
+= KASB Bank
+
+= Al Baraka Bank
+
+= Bank Al Habib
+
+= NIB Bank
+
+= Samba Bank Limited
+
+= Bank Islami Pakistan
+
+= Standard Chartered Bank
+=" HabibMetro
+
+= Bank of Punjab
+
+= Silk Bank
+
+=" Apna Microfinance Bank
+=" Meezan Bank Limited
+
+= Citi N.A.
+= Soneri Bank
+= MCB
+
+= Summit Bank
+
+=U Microfinance Bank
+
+= Faysal Bank
+
+= Tameer Bank
+
+= Finca Micro Finance Bank
+
+= Burj Bank Limited
+
+= United Bank Limited
+
+= Waseela Micro Finance Bank LT
+
+36. What is bill payment?
+
+FAQs — Internet Banking
+
+Bank Alfalah
+
+Bill payment is our online bill payment service, which allows you to pay bills to any of our listed
+
+billing companies, mobile companies, internet service providers.
+
+37. Which bills can | pay using Bank Alfalah Internet Banking?
+
+You can pay bills for the following utilities:
+
+38. How can | pay my electric, gas or internet service provider bill?
+
+Electricity
+
+= K-Electric
+= LESCO
+
+=" GEPCO
+
+=" HESCO
+
+= MEPCO
+
+= PESCO
+
+= FESCO
+
+= IESCO
+
+= GB-BARKIYAT
+= AJK-BARKIYAT
+
+Telecom
+
+= Telenor
+
+= Ufone
+
+=" Mobilink
+
+= Warid
+
+= Zong
+
+Internet Service Provider
+= Qubee
+
+= Witribe
+
+= PTCL EVO Prepaid
+= PTCL EVO Postpaid
+
+= Wateen
+Gas
+
+= SNGPL
+= SSGC
+Water
+
+=  KWSB
+
+= FWASA
+
+In order to pay your electricity bills, you need to enter the account number printed on the
+physical bill. Once you have entered the account number, press the GET button. Your bill
+details will be auto populated.
+
+For gas bills, you need to enter the consumer number printed on the physical bill. Once you
+have entered the consumer number on the internet banking portal, press the GET button.
+Your bill details will be populated.
+
+Bank Alfalah
+
+FAQs — Internet Banking
+
+In order to pay your Internet Service Providers Bill, please enter the Customer ID provided by
+the Internet Service Provider for Wateen and Witribe. Please enter Customer Number for
+Qubee. For PTCL EVO Post and Prepaid, please enter MDN number.
+
+39. How can | buy or pay for mobile top ups?
+
+You need to create a beneficiary for Mobile Top up transactions through the following
+procedure:
+
+Go to the Beneficiary Management menu
+
+Click Create Beneficiary
+
+Select Telco Payment
+
+Select Telco Company from the drop down menu
+Select Prepaid/Postpaid from the drop down menu
+Enter Mobile Number
+
+Provide Alias/Nick
+
+Click Submit button
+
+A Confirm Beneficiary screen will appear
+
+Click YES to proceed
+
+OTAC generated to be delivered at your registered email address and cell number
+Enter OTAC in the password box
+
+Click YES button
+
+Transaction completed
+
+The added beneficiary will become available for payment in Bill Payment under the Mobile
+Top Up menu.
+
+40. What are the limits for Mobile top-ups?
+
+Following are the per transaction limits for Mobile Top Ups Postpaid:
+
+Postpaid
+
+Telecom Company | Amount Limit Multiples
+Telenor PKR 60 to PKR 5,000 -
+
+Warid PKR 500 to PKR 20,000 Multiple of 50
+Ufone PKR 500 to PKR 5,000 -
+
+Zong PKR 60 to PKR 20,000 -
+
+Mobilink PKR 500 to PKR 100,000 -
+
+Following are the per transaction limits for Mobile Top Ups Prepaid:
+
+FAQs — Internet Banking
+
+41.
+
+42.
+
+43.
+
+44,
+
+Bank Alfalah
+
+Prepaid
+
+Telecom Company | Minimum Amount | Maximum Amount
+Telenor PKR 60 PKR 5,000
+
+Warid PKR 100 PKR 2,000
+
+Ufone PKR 50 PKR 10,000
+
+Zong PKR 60 PKR 2,0000
+Mobilink PKR 100 PKR 10,000
+
+How can | pay for PTCL Products?
+
+You can now pay PTCL Landline/PTCL PSTN and Vfone bills. All you need to do is enter the
+Account ID printed on the physical bill for PTCL Landline/PTCL PSTN and MDN number for
+Vfone; enter the same on Alfalah Internet Banking. You bill details will appear, simply press
+the pay button and pay your bill.
+
+Do I need to be an account holder to register for Alfalah Internet Banking if | have an Alfalah
+Credit Card?
+
+No, you do not need to be an account holder to register for Alfalah Internet Banking if you are
+an Alfalah Credit Card holder.
+
+What are the prerequisites for registering?
+The prerequisites are as follows:
+
+= You need to have an active Alfalah Credit Card
+= Your local mobile number must be registered with Bank Alfalah
+= Your email address must be updated with the Bank
+
+As an Alfalah Credit Card holder how do | register for Alfalah Internet Banking?
+Follow these steps in order to register for Alfalah Internet Banking:
+
+= Visit bankalfalah.com
+
+"Go to Internet Banking section and click on registration button
+= Read and agree to the terms and conditions by checking the box
+= Select the option by clicking ‘credit card customers’
+
+= Fill in the following Information:
+
+=» CNIC
+
+= Credit Card number
+
+= Date of birth
+
+= Registered mobile number
+
+= MNP (select from the drop-down menu)
+
+= Username
+
+= Enter ‘Captcha’
+
+= Select a security question and enter its answer
+
+"Click on the ‘Submit’ button
+
+=" On the next screen customer’s registered email ID will appear
+"Clicking on the ‘Confirm’ button
+
+10
+
+Bank Alfalah
+
+FAQs — Internet Banking
+
+An OTAC - One time activation code will be generated. The first 5 digits/characters
+will be sent on your registered email and the last 5 digits/characters will be sent via
+SMS on your registered cell number.
+
+You can log in by combining the OTAC sent to your email and cell number/li>
+
+45. How do | register for Alfalah Internet Banking if my email ID is not updated/ change my
+email ID?
+
+46.
+
+47.
+
+48.
+
+49.
+
+50.
+
+After filling the above information listed in question number 3, complete the following steps:
+
+Click on change button and then enter your email ID
+
+Click the ‘Proceed’ button
+
+A message will appear to call the contact center at 111 225 111
+
+Please call the contact center from your registered mobile number
+
+The Contact Centre will ask you verification questions
+
+Upon verification an OTAC — One Time Activation Code will be generated. The first 5
+digits/characters will be sent on your registered email and the last 5 digits/characters
+will be sent on via SMS to your registered cell number.
+
+You can log in by combining the OTAC sent to your email and cell number
+
+Can | perform financial activities through registering from my Alfalah Credit Card?
+
+Yes, you can perform financial activities through registering your Alfalah Credit Card.
+
+Can | subscribe for Alfalah Internet Banking through my supplementary credit card?
+
+Yes, you can subscribe through your supplementary credit card.
+
+lam residing abroad and using Bank Alfalah Credit Card. Can | subscribe to Internet Banking?
+
+If your mobile number is on international roaming and is registered with the Bank, your OTAC
+will be sent to you for first login.
+
+If | have subscribed for Alfalah Internet Banking with my Debit Card, can | also subscribe
+with my Alfalah Credit Card?
+
+You can subscribe with either one of them. But you can view your credit card details if you are
+registered with debit card.
+
+What is the processing time for the following Credit Card requests?
+
+Request to change contact details
+
+Credit Card Renewal
+
+Replacement of Credit Card
+
+Reversal of charges
+
+SMS subscription for credit card transaction
+
+Processing time for the above mentioned Credit Card requests is 3 working days
+
+11
+
+Bank Alfalah
+
+FAQs — Internet Banking
+
+51. Which Credit Card bills | can pay from Bank Alfalah Internet Banking If | am subscribed with
+Alfalah Debit Card?
+
+You can pay your own credit card bills as well as other Bank Alfalah Credit Card bills via Bank
+Alfalah Internet Banking. Additionally P&G Corporate Customers can also pay their Citibank
+Credit Card Bill through Bank Alfalah Internet Banking.
+
+52. How do | pay my Bank Alfalah Credit Card bill if | am subscribed to Alfalah Debit Card?
+
+You need to create a beneficiary to pay your Bank Alfalah Credit Card bill through the following
+below procedure:
+
+= Go to the Beneficiary Management menu
+
+=" Click Create Beneficiary
+
+= Select Credit Card
+
+= Select Bank Alfalah Card from the drop down menu
+"Click the Next button
+
+= Enter
+
+= CNIC
+
+= Credit Card number
+
+= Press Get button (Account title will be populated)
+
+= Provide Alias/Nick
+
+"Click Submit button
+
+= AConfirm Beneficiary screen will appear
+
+= Click YES to proceed
+
+=" OTAC generated to be delivered at your registered email address and cell number
+= Enter OTAC in the password box
+
+"Click YES button
+
+=" Transaction completed
+
+The added Bank Alfalah Credit Card beneficiary will become available in the Credit Card menu
+for payment.
+
+53. Which charity organizations | can donate using Bank Alfalah Internet Banking?
+You can make donations to the following charity organizations:
+
+= Edhi Foundation
+
+= Saylani Welfare Trust
+
+হ Shaukat Khanum Memorial Hospital
+
+= 510] Sind Institute of Urology and Technology
+
+=" More charitable organizations will be added soon.
+
+54. Which online merchants | can make payments to?
+
+Bank Alfalah offers a secure method of payment to an increasing list of merchants. Customers
+can make their payments for purchases from the below listed merchants:
+
+12
+
+Bank Alfalah
+
+FAQs — Internet Banking
+
+= Shophive
+
+= Sehat
+
+=" Deals Daily
+= Shop Daily
+=" Tohfay
+
+= Daraz
+
+More Merchants will be added soon.
+
+55. How do! pay for Online Shopping Merchants?
+Please follow the procedure below to make payment to Online Merchants:
+
+= Login to Bank Alfalah Internet Banking
+
+= Click on Online Shopping Menu
+
+= Select Merchant
+
+= Select From Account (If the user has more than one account linked)
+
+= Enter amount to be paid
+
+= Enter order number provided by Merchant in the Merchant Order ID field
+"Click Proceed button
+
+"Confirm Transaction by clicking Yes button
+
+=" Transaction completed
+
+56. Security Tips
+
+The following are simple precautions that customers must take to safeguard security when
+using Bank Alfalah Internet Banking:
+
+Do not disclose your "Login Information" to anyone.
+= Never reveal your Login Name/ Password to anyone.
+= If you think someone has discovered your password, call us immediately on 111-225-
+111.
+"Bank Alfalah will in no case ask you to send your login / password through an email.
+
+Do not share your email account with anyone. Your email shall be used to send you a
+temporary password. Therefore, make sure that you do not share your email account with
+anyone.
+
+Beware of Phishing Scams & Identity thieves
+
+Phishing is an attempt to criminally and fraudulently acquire sensitive information, such as
+usernames, passwords and credit card details, by masquerading as a trustworthy entity in an
+electronic communication. It is a serious offence and is also known as identity theft. Phishing
+refers to creating an imitation of an existing legitimate web page or the use of email to trick
+users into providing sensitive personal information.
+
+Control access to your PC & do not use publicly-shared PCs for Internet Banking
+
+13
+
+Bank Alfalah
+
+FAQs — Internet Banking
+
+* Do not allow anyone to install programs on your computer without checking that it is
+safe to do so.
+= Do not use publicly-shared PCs for Internet Banking.
+
+Ensure that you are at the Bank Alfalah Internet Banking website. Look for the SSL secure
+connection symbol:
+
+= Check the website address before signing in.
+
+= Bank Alfalah uses the latest and strongest cryptographic standards such as SSL (Secure
+Socket Layer), to protect the information being transferred over the Internet. This
+symbol will be shown every time you connect with the bank at 128-bit SSL Encryption.
+No symbol would be displayed if your data is not properly encrypted.
+
+Never store your “Login Name/Password” on your browser.
+
+Most browsers offer a facility to store your “Login Name/Password” for your convenience, but
+it is highly recommended that you should not use this. If you are using Internet Explorer you
+can avoid this feature by simply going to:
+
+=" “Tools” >> “Internet Options” >> “Content”
+=" Uncheck "User names and passwords on forms" and click on "Clear Passwords"
+"Click on "OK" to save your settings
+
+Change your password on regular basis
+= Remember to change your password on a regular basis.
+= Select a password that cannot be easily guessed or associated with anything personal
+(for example: names and birth dates). Mix numbers and letters (uppercase &
+lowercase) to provide additional security.
+
+Keep your computer updated with latest antivirus and firewall updates
+= In order to protect your computer from virus attacks, you should keep the computer
+updated with the latest versions of antivirus and firewall updates.
+=" Consider buying personal firewall and anti-virus software to provide another level of
+security between the internet and your computer.
+
+When viewing your personal information, be aware of the environment
+
+= While viewing your personal information or performing transactions online, beware
+of your surroundings. Make sure that no one can see your information while logging
+in or performing transactions.
+
+= Though we have programmed the system to log-out automatically after 12 minutes
+of inactivity, you should never leave your computer unattended while logged in.
+
+= Ensure you have log-out properly by selecting the ‘log-out' button at the completion
+of your Internet Banking Session. Also close your browser after logging out.
+
+Check your account statements on a regular basis
+
+= Look out for transactions you don't remember making - or cash that has been
+transferred unexpectedly from your bank accounts.
+
+14
+
+Bank Alfalah
+
+FAQs — Internet Banking
+
+= Always check your transaction history details and statements regularly to make sure
+that all details are updated and there are no unauthorized transactions on your
+accounts.
+
+=" Take note of your ‘last login date and time’ whenever you login to Bank Alfalah
+Internet Banking to make sure that there has not been any unauthorized access.
+
+= If you do find any suspicious transfers or have any doubts, you should immediately
+call our Contact Center on 111-225-111.
+
+57. As an Alfalah Corporate/SME customer how do | register for Alfalah Internet Banking?
+
+Follow these steps in order to register for Alfalah Internet Banking:
+
+Visit bankalfalah.com and download the form for corporate/SME Internet
+Banking.
+
+Fill in the required Information.
+
+After Company's Director(s) signature(s) and stamp. Courier/visit the branch to
+hand over the request to CIBG/SME Branch.
+
+A link will be sent to your designated employee’s email Id and cell number. If you
+are an employee, you can click on the link either from email or cell which will
+direct him to the registration page. You can:
+
+i. Accept Terms and Conditions
+ii. Enter details required
+
+An OTAC — One Time Activation Code will be generated. The first 5
+digits/characters will be sent on your registered email and the last 5
+digits/characters will be sent via SMS on your registered cell number.
+
+You can log in by combining the OTAC sent to your email and cell number.
+
+58. How do | update/delete my Alfalah Internet Banking?
+
+Follow these steps in order to update/delete Alfalah Internet Banking:
+
+= Visit bankalfalah.com and download the form for corporate/SME Internet Banking.
+
+= Fill in the required Information.
+
+= After Company's Director(s) signature(s) and stamp. Courier/visit the branch to hand
+over the request to CIBG/SME Branch.
+
+59. Which activities can | perform using Bank Alfalah corporate Internet Banking?
+
+You can view your corporate account details.
+
+= Balance inquiry
+= Account Statement
+
+60. Can | download my account statement?
+
+Yes, you can download your account statement in:
+
+15
+
+Bank Alfalah
+
+FAQs — Internet Banking
+
+61.
+
+62.
+
+63.
+
+64.
+
+65.
+
+66.
+
+67.
+
+68.
+
+69.
+
+70.
+
+71.
+
+= PDF
+= Excel
+
+What is the maximum time range, | can view my account statement?
+
+You can view your account statement for one year through Bank Alfalah Internet Banking.
+How much time will it take to subscribe for Alfalah Internet Banking?
+
+It takes 3 working days for your subscription to get processed on Alfalah Internet Banking.
+How can | contact Bookme.pk for any ticket related queries?
+
+Customer Service support regarding ticket queries is available through Bookme.pk helpline
+0313-7786888 & email at contact@bookme.pk between the hours 06:00 AM to 12:00 AM.
+
+How do customers know if their purchase was successful?
+
+Upon completion of ticket purchase, customers will be shown a confirmation message on
+Internet Banking. After the transaction is successful, customers will receive a confirmation via
+SMS & Email from Bookme that will contain the summary of their orders.
+
+What is the cancellation & refund policy?
+
+There is a ‘No return, No refund’ policy for confirmed Cinema Tickets
+
+What if a customer does not receive a booking code via SMS against Cinema booking?
+
+In that case the customer can call on the Bookme helpline number (03137786888) or can email
+Bookme on contact@bookme.pk. After verifying the customer, Bookme will resend ticket
+
+codes to the customer so they can get their tickets printed over the counter.
+
+What is the resolution time of customer queries?
+Bookme usually takes 24 hours to resolve all kind of queries.
+
+Can customers collect Banker’s Cheque from branches other than their parent branches?
+Yes, customers can collect Banker’s Cheque from branches other than their parent branch.
+
+Who can collect Banker’s Cheque from the branch?
+Account Holder or authorized representative nominated by the Account Holder can collect
+
+the cheque from the branch.
+
+Can a customer request Banker’s Cheque 24/7?
+Yes, but requests after 4pm will be processed on the next business day.
+
+In how much time will an uncollected Banker’s Cheque be cancelled?
+
+After 48 working hours of request submission.
+
+16
+
+Bank Alfalah
+
+FAQs — Internet Banking
+
+72.
+
+73.
+
+74.
+
+75.
+
+76.
+
+Is a copy of 0110 mandatory for Banker’s Cheque collection?
+Yes.
+
+Is CNIC sufficient for Corporate Entities?
+
+No, an NTN is mandatory for corporate entities.
+
+Can first cheque book be requested from Alfa App & Web?
+No.
+
+Can customer request multiple cheque books from Alfa App & Web?
+Yes, but after complete processing of current requested cheque book.
+
+Can cheque book be collected from branches other than the parent branches?
+No.
+
+17
+

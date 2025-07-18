@@ -1,0 +1,330 @@
+National Board of Revenue
+
+www.nbr.gov.bd
+
+IT-11GHA2016
+
+RETURN OF INCOME
+
+For a company as defined under clause (20) of section 2
+
+PART I
+Basic Information
+
+01 Assessment Year 02 Return under section (tick one)
+2 0 82BB 82 (proviso) Other
+03 | Name of the Assessee
+04 | Address 05 | Phone(s)
+06 | E-mail
+07 | Type (tick one)
+07A | Public Limited [| 078 | Private Limited
+070 | Local Authority 07D | Other
+If other, mention the type
+98 =| TIN 09 | Old TIN
+10 | Circle 11 | Zone
+12 | Incorporation Number 13 | Incorporation Date
+14 1 Income Year |
+15 | Resident Status (tick one) Resident | | Non-resident
+16 1 Main business 17 | Business Identification Number(s)
+18 (tick the boxes if YES) 19 | Main export item (if applicable)
+18A | Any export in the income
+year? |
+18B | Liable to furnish statement of 20 | Name of auditor(s)
+international transaction under
+section 10717?
+18C | Has the Statement under 21 | Audit report date
+section 107EE been attached?
+
+
+PART II
+Particulars of Income and Tax
+
+TIN
+
+A. Particulars of Total Income Amount »
+22 | Interest on securities 8.22
+
+23 | Income from house property (annex Schedule 24B) 8.24
+
+24 | Agricultural income S.26
+
+25 | Income from business or profession ১.28
+
+26 | Capital gains 5.3]
+
+27 | Income from other sources 8.33
+
+28 | Total income (22+23+24+25+26+27)
+
+B. Tax Computation and Payment Amount +
+
+29 | Tax computed on total income
+
+30 | Net tax after tax rebate (if any)
+
+31 | Minimum tax
+
+32 | Interest or any other amount under the Ordinance (if any)
+33 | Total amount payable
+
+34 | Tax deducted or collected at source (attach proof
+
+35 | Advance tax paid (attach proof
+
+36 | Adjustment of tax refund [mention assessment year(s) of refund]
+37 | Amount paid with return (attach proof
+
+38 | Total amount paid and adjusted (34+35+36+37)
+
+39 | Deficit or excess (refundable) (33-38)
+
+
+PART III
+Particulars of Tax Benefits
+
+A. Income enjoying tax exemption (provide additional paper if necessary)
+
+TIN | |
+
+40 | Income exempted from tax
+
+Source Section SRO Amount »
+
+B. Income enjoying reduced tax rate (s) (provide additional paper if necessary)
+
+41 | Income subject to reduced rate of tax
+
+Source Section SRO Amount »
+1
+2
+3
+C. Amount of tax benefits enjoyed Amount »
+
+42 | Tax payable if there were no exemption or reduced rate
+
+43 | Tax payable with exemption or reduced rate
+
+44 | Amount of tax benefits (42- 43)
+
+45 | Tax rebate
+
+46 | Tax benefits and rebate (44 + 45)
+
+
+PART IV
+Financial Statements
+
+TIN
+
+A.Income Statement
+
+Current
+Income Year »
+
+Previous
+Income Year »
+
+47 | Sales/ Turnover/ Receipts
+48 | VAT (if any)
+49 | Net Sales/ Turnover/ Receipts (47-48)
+50 | Cost of Sales
+51 | Gross Profit (49-50)
+52 | Other operating income
+General & Administrative expenses
+53
+53A_ | Expenses paid in cash
+Selling & Marketing expenses
+54
+54A | Expenses paid in cash
+Other operating expenses
+55
+55A_| Expenses paid in cash
+56 | Profit from operation {(51+52)-(53+54+55) }
+Financial expenses
+57
+57A__| Expenses paid to non-resident
+58 | Income from associates/subsidiaries
+59 | Any other business income
+60 | Profit before tax
+
+
+1
+
+B. Balance Sheet
+
+Current
+Income Year »
+
+Previous
+Income Year »
+
+61 | Non-current assets (614+61B+61C+61D+61E)
+61A | Property, plant and equipment, software, etc.
+61B | Intangible assets
+61C | Financial assets (other than 61D)
+61D _ | Investments and loans to affiliated entities
+61E | Other non-current assets
+
+62 | Current assets (62A+62B+62C+62D+62E)
+624১ Inventories
+6213 | Trade and other receivables
+620 | Advance, deposits and prepayments
+62D | Cash, bank and cash equivalents
+62E | Other current assets
+
+63 | Total Assets (91+62)
+
+64 | Equity (64A+64B+64C)
+64A_ | Paid-up capital
+64B | Reserves & Surplus
+640 | Retained earnings
+
+65 | Non-current liabilities (65A+65B+65C+65D)
+654১ | Bonds / Debentures
+6513 | Long term borrowings
+650 | Loans from affiliated entities
+65D_| Other non-current liabilities
+
+66 | Current liabilities (66A+66B+66C+66D)
+
+664১ | Short term borrowings
+6613 | Creditors/ Payables
+660 | Provisions
+66D | Others
+67 | Total Equity and Liabilities (64+65+66)
+
+
+PART ৬
+Other Particulars
+
+TIN
+
+A. Particulars of bank accounts (provide additional paper if more names)
+
+68
+
+Name of bank(s)
+
+Account number(s)
+
+Branch name
+(if applicable)
+
+1
+
+B.
+
+Particulars of directors (provide additional paper if
+
+more names)
+
+69
+
+Name of director(s)
+
+TIN
+
+% of share in paid-up
+capital
+
+1
+
+C.
+
+Particulars of affiliated entities (provide additional
+
+paper if more names)
+
+70
+
+Name (s) of affiliated entity
+
+TIN
+
+Type (company, firm
+etc.)
+
+1
+
+
+PART VI
+Instruction, Enclosures and Verification
+
+TIN:
+
+71
+
+Instructions
+(1) The Return shall be:
+(a) signed and verified by the person as specified in section 75, and
+(b) accompanied by-
+(i) statements of accounts audited by a Chartered Accountant;
+(ii) depreciation chart as per THIRD SCHEDULE of the Ordinance;
+(iii) computation of income in accordance with the provisions of the Ordinance;
+(iv)Schedule 24B if the assessee has income from house property;
+
+(2) In this return two entities shall be affiliated entities if they belong to a common group of
+companies or have more than twenty five percent common shareholders or directors or run by a
+common management;
+
+(3) All amounts shall be in rounded up taka (+).
+
+72
+
+Schedules, statements, documents, etc. attached (list)
+
+73
+
+Verification
+
+I solemnly declare that-
+(a) to the best of my knowledge and belief the information given in this return and statements
+and documents annexed or attached herewith are correct and complete;
+(b) I am signing this return in My Capacity AS .....১.০০০০০০০০০০০০০০০০০০০০৮০০০০০০৮০০০০০০০০০০০০০০০০০০০০০০০০০০০০০০০০০০০০০০০
+and I am competent to sign this return and verify it.
+
+Name Signature
+
+Designation
+
+Date of Signature (DD-MM-YYYY) Place of Signature
+21011
+
+For official use only
+Return Submission Information
+
+Date of Submission (DD-MM-YYYY) Tax Office Entry Number
+
+2 fol |
+
+
+National Board of Revenue
+www.nbr.gov.bd Company
+
+ACKNOWLEDGEMENT RECEIPT OF
+
+RETURN OF INCOME
+Assessment Year Return submitted under section (tick one)
+2 (0 - 82BB 82 (proviso) Other
+
+|_| |
+
+Name of the Assessee
+
+Twelve-digit TIN Old TIN
+
+Circle Taxes Zone
+
+Total income shown (serial 28)
+
+৮
+Amount payable (serial 33) Amount paid and adjusted (serial 38)
+৮ ৮
+Date of Submission (DD-MM-YYYY) Tax Office Entry Number
+| Je [o |
+
+Signature and seal of the official receiving the return
+
+Date of Signature Contact Number of Tax Office
+
+

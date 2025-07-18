@@ -1,0 +1,258 @@
+2025-07-18 01:12:34,417 - __main__ - INFO - Initializing RAG system...
+2025-07-18 01:12:45,508 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-18 01:12:50,758 - faiss.loader - INFO - Loading faiss.
+2025-07-18 01:12:50,978 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-18 01:12:50,984 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-18 01:12:51,055 - __main__ - INFO - ✅ RAG system initialized successfully
+2025-07-18 01:12:51,055 - __main__ - INFO - Starting Telegram bot...
+2025-07-18 01:12:51,074 - __main__ - INFO - Bot is running. Press Ctrl+C to stop.
+2025-07-18 01:12:51,688 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getMe "HTTP/1.1 200 OK"
+2025-07-18 01:12:51,884 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-18 01:12:51,885 - telegram.ext.Application - INFO - Application started
+2025-07-18 01:13:02,457 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 01:13:12,714 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 01:13:22,905 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 01:13:33,117 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 01:13:50,059 - __main__ - INFO - Initializing RAG system...
+2025-07-18 01:13:55,121 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-18 01:13:59,688 - faiss.loader - INFO - Loading faiss.
+2025-07-18 01:13:59,733 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-18 01:13:59,738 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-18 01:13:59,810 - __main__ - INFO - ✅ RAG system initialized successfully
+2025-07-18 01:13:59,810 - __main__ - INFO - Starting Telegram bot...
+2025-07-18 01:13:59,829 - __main__ - INFO - Bot is running. Press Ctrl+C to stop.
+2025-07-18 01:14:00,413 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getMe "HTTP/1.1 200 OK"
+2025-07-18 01:14:00,609 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-18 01:14:00,613 - telegram.ext.Application - INFO - Application started
+2025-07-18 01:14:06,199 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 01:14:07,071 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 01:14:14,341 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 01:14:15,207 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendChatAction "HTTP/1.1 200 OK"
+2025-07-18 01:14:16,349 - src.rag.chain - INFO - Retrieved 10 documents for query: hello how are you?...
+2025-07-18 01:14:16,349 - src.rag.chain - INFO - Context length: 4941 characters
+2025-07-18 01:14:16,349 - src.rag.chain - INFO - Full prompt length: 5675 characters
+2025-07-18 01:14:24,283 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-18 01:14:29,560 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 01:14:30,426 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 01:14:30,891 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 01:14:31,352 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 01:14:39,767 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 01:14:45,917 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 01:14:45,918 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-07-18 01:14:45,918 - telegram.ext.Application - INFO - Application.stop() complete
+2025-07-18 02:19:02,288 - __main__ - INFO - Initializing RAG system...
+2025-07-18 02:19:07,129 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-18 02:19:13,015 - faiss.loader - INFO - Loading faiss.
+2025-07-18 02:19:13,057 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-18 02:19:13,062 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-18 02:19:13,142 - __main__ - INFO - ✅ RAG system initialized successfully
+2025-07-18 02:19:13,142 - __main__ - INFO - Starting Telegram bot...
+2025-07-18 02:19:13,162 - __main__ - INFO - Bot is running. Press Ctrl+C to stop.
+2025-07-18 02:19:13,773 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getMe "HTTP/1.1 200 OK"
+2025-07-18 02:19:13,967 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-18 02:19:13,970 - telegram.ext.Application - INFO - Application started
+2025-07-18 02:19:24,590 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:19:25,269 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:19:26,324 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 02:19:35,544 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:19:41,993 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:19:42,863 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendChatAction "HTTP/1.1 200 OK"
+2025-07-18 02:19:43,960 - src.rag.chain - INFO - Retrieved 10 documents for query: What are the income tax calculation tables in Bang...
+2025-07-18 02:19:43,961 - src.rag.chain - INFO - Context length: 5095 characters
+2025-07-18 02:19:43,962 - src.rag.chain - INFO - Full prompt length: 6046 characters
+2025-07-18 02:19:53,168 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-18 02:20:14,765 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:20:15,608 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 02:20:16,069 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 02:20:16,511 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 02:20:25,001 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:20:35,243 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:20:45,482 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:20:55,724 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:21:05,962 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:21:11,572 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:21:11,574 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-07-18 02:21:11,575 - telegram.ext.Application - INFO - Application.stop() complete
+2025-07-18 02:24:20,941 - __main__ - INFO - Initializing RAG system...
+2025-07-18 02:24:25,589 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-18 02:24:31,459 - faiss.loader - INFO - Loading faiss.
+2025-07-18 02:24:31,504 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-18 02:24:31,509 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-18 02:24:31,587 - __main__ - INFO - ✅ RAG system initialized successfully
+2025-07-18 02:24:31,587 - __main__ - INFO - Starting Telegram bot...
+2025-07-18 02:24:31,607 - __main__ - INFO - Bot is running. Press Ctrl+C to stop.
+2025-07-18 02:24:32,393 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getMe "HTTP/1.1 200 OK"
+2025-07-18 02:24:32,607 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-18 02:24:32,611 - telegram.ext.Application - INFO - Application started
+2025-07-18 02:24:39,340 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:24:40,107 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 02:24:42,899 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:24:43,264 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendChatAction "HTTP/1.1 200 OK"
+2025-07-18 02:24:44,366 - src.rag.chain - INFO - Retrieved 10 documents for query: What are the features of the 5-Year Bangladesh Sav...
+2025-07-18 02:24:44,367 - src.rag.chain - INFO - Context length: 4877 characters
+2025-07-18 02:24:44,367 - src.rag.chain - INFO - Full prompt length: 5838 characters
+2025-07-18 02:24:51,427 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-18 02:25:09,779 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:25:10,566 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 02:25:11,014 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 02:25:11,448 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 02:25:20,017 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:25:30,258 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:25:40,499 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:25:50,696 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:26:00,980 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:26:09,330 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:26:10,100 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendChatAction "HTTP/1.1 200 OK"
+2025-07-18 02:26:11,100 - src.rag.chain - INFO - Retrieved 10 documents for query: What documents do I need for a car loan applicatio...
+2025-07-18 02:26:11,100 - src.rag.chain - INFO - Context length: 3960 characters
+2025-07-18 02:26:11,101 - src.rag.chain - INFO - Full prompt length: 4906 characters
+2025-07-18 02:26:15,974 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-18 02:26:39,036 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:26:40,294 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 02:26:40,951 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 02:26:41,372 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 02:26:49,267 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:26:59,463 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:27:09,698 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:27:19,387 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 02:27:19,391 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-07-18 02:27:19,391 - telegram.ext.Application - INFO - Application.stop() complete
+2025-07-18 03:06:43,675 - __main__ - INFO - Initializing RAG system...
+2025-07-18 03:06:48,566 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-18 03:06:54,795 - faiss.loader - INFO - Loading faiss.
+2025-07-18 03:06:54,835 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-18 03:06:54,840 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-18 03:06:54,905 - __main__ - INFO - ✅ RAG system initialized successfully
+2025-07-18 03:06:54,906 - __main__ - INFO - Starting Telegram bot...
+2025-07-18 03:06:54,926 - __main__ - INFO - Bot is running. Press Ctrl+C to stop.
+2025-07-18 03:06:55,510 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getMe "HTTP/1.1 200 OK"
+2025-07-18 03:06:55,704 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-18 03:06:55,709 - telegram.ext.Application - INFO - Application started
+2025-07-18 03:06:56,286 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 03:06:56,674 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 03:07:05,423 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 03:07:06,178 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendChatAction "HTTP/1.1 200 OK"
+2025-07-18 03:07:07,261 - src.rag.chain - INFO - Retrieved 10 documents for query: What are the requirements for a 5-year savings cer...
+2025-07-18 03:07:07,262 - src.rag.chain - INFO - Context length: 4216 characters
+2025-07-18 03:07:07,262 - src.rag.chain - INFO - Full prompt length: 5169 characters
+2025-07-18 03:07:12,962 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-18 03:07:33,084 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 03:07:33,878 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 03:07:34,279 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 03:07:34,681 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 03:07:43,284 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 03:07:53,502 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 03:08:03,705 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 03:08:13,900 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 03:08:24,099 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 03:08:34,295 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 03:08:44,509 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 03:08:50,413 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 03:08:51,246 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendChatAction "HTTP/1.1 200 OK"
+2025-07-18 03:08:52,338 - src.rag.chain - INFO - Retrieved 10 documents for query: What documents are needed for a car loan?...
+2025-07-18 03:08:52,338 - src.rag.chain - INFO - Context length: 4257 characters
+2025-07-18 03:08:52,338 - src.rag.chain - INFO - Full prompt length: 5192 characters
+2025-07-18 03:08:57,734 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-18 03:09:25,145 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 03:09:26,045 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 03:09:26,456 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 03:09:26,849 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-18 03:09:35,405 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 03:09:45,745 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 03:09:55,984 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 03:10:06,179 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 03:10:10,421 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-18 03:10:10,424 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-07-18 03:10:10,425 - telegram.ext.Application - INFO - Application.stop() complete
+2025-07-19 02:28:26,319 - __main__ - INFO - Initializing RAG system...
+2025-07-19 02:28:34,869 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-19 02:28:39,322 - faiss.loader - INFO - Loading faiss.
+2025-07-19 02:28:39,864 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-19 02:28:39,867 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-19 02:28:39,889 - __main__ - INFO - ✅ RAG system initialized successfully
+2025-07-19 02:28:39,889 - __main__ - INFO - Starting Telegram bot...
+2025-07-19 02:28:39,909 - __main__ - INFO - Bot is running. Press Ctrl+C to stop.
+2025-07-19 02:28:40,498 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getMe "HTTP/1.1 200 OK"
+2025-07-19 02:28:40,695 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-19 02:28:40,699 - telegram.ext.Application - INFO - Application started
+2025-07-19 02:28:46,544 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:28:47,353 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-19 02:28:56,746 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:29:06,941 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:29:10,238 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:29:10,987 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendChatAction "HTTP/1.1 200 OK"
+2025-07-19 02:29:11,988 - src.rag.chain - INFO - Retrieved 10 documents for query: What are the requirements for opening a personal s...
+2025-07-19 02:29:11,989 - src.rag.chain - INFO - Context length: 4372 characters
+2025-07-19 02:29:11,989 - src.rag.chain - INFO - Full prompt length: 5331 characters
+2025-07-19 02:29:11,992 - src.rag.chain - ERROR - Error in RAG chain: [Errno 61] Connection refused
+2025-07-19 02:29:12,375 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-19 02:29:12,752 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-19 02:29:20,528 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:29:30,768 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:29:40,966 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:29:51,002 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:29:51,752 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendChatAction "HTTP/1.1 200 OK"
+2025-07-19 02:29:51,844 - src.rag.chain - INFO - Retrieved 10 documents for query: What documents are needed for a car loan applicati...
+2025-07-19 02:29:51,844 - src.rag.chain - INFO - Context length: 4056 characters
+2025-07-19 02:29:51,844 - src.rag.chain - INFO - Full prompt length: 5003 characters
+2025-07-19 02:29:51,845 - src.rag.chain - ERROR - Error in RAG chain: [Errno 61] Connection refused
+2025-07-19 02:29:52,218 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-19 02:29:52,593 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-19 02:30:01,210 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:30:06,357 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:30:06,359 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-07-19 02:30:06,360 - telegram.ext.Application - INFO - Application.stop() complete
+2025-07-19 02:32:35,392 - __main__ - INFO - Initializing RAG system...
+2025-07-19 02:32:39,123 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-19 02:32:44,699 - faiss.loader - INFO - Loading faiss.
+2025-07-19 02:32:44,742 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-19 02:32:44,747 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-19 02:32:44,765 - __main__ - INFO - ✅ RAG system initialized successfully
+2025-07-19 02:32:44,766 - __main__ - INFO - Starting Telegram bot...
+2025-07-19 02:32:44,779 - __main__ - INFO - Bot is running. Press Ctrl+C to stop.
+2025-07-19 02:32:45,358 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getMe "HTTP/1.1 200 OK"
+2025-07-19 02:32:45,549 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-19 02:32:45,553 - telegram.ext.Application - INFO - Application started
+2025-07-19 02:32:46,137 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:32:46,500 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendChatAction "HTTP/1.1 200 OK"
+2025-07-19 02:32:47,505 - src.rag.chain - INFO - Retrieved 10 documents for query: What documents are needed for a car loan applicati...
+2025-07-19 02:32:47,506 - src.rag.chain - INFO - Context length: 4056 characters
+2025-07-19 02:32:47,506 - src.rag.chain - INFO - Full prompt length: 5003 characters
+2025-07-19 02:32:57,375 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-19 02:33:36,751 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:33:37,348 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 400 Bad Request"
+2025-07-19 02:33:37,349 - src.bot.handlers - ERROR - Error handling message: Message is too long
+2025-07-19 02:33:37,719 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-19 02:33:46,982 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:33:53,920 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:33:53,923 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-07-19 02:33:53,923 - telegram.ext.Application - INFO - Application.stop() complete
+2025-07-19 02:37:17,361 - __main__ - INFO - Initializing RAG system...
+2025-07-19 02:37:21,247 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-19 02:37:25,337 - faiss.loader - INFO - Loading faiss.
+2025-07-19 02:37:25,383 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-19 02:37:25,388 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-19 02:37:25,406 - __main__ - INFO - ✅ RAG system initialized successfully
+2025-07-19 02:37:25,406 - __main__ - INFO - Starting Telegram bot...
+2025-07-19 02:37:25,419 - __main__ - INFO - Bot is running. Press Ctrl+C to stop.
+2025-07-19 02:37:25,993 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getMe "HTTP/1.1 200 OK"
+2025-07-19 02:37:26,195 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/deleteWebhook "HTTP/1.1 200 OK"
+2025-07-19 02:37:26,199 - telegram.ext.Application - INFO - Application started
+2025-07-19 02:37:32,091 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:37:32,856 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-19 02:37:38,961 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:37:39,718 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendChatAction "HTTP/1.1 200 OK"
+2025-07-19 02:37:40,717 - src.rag.chain - INFO - Retrieved 10 documents for query: What documents are needed for a car loan applicati...
+2025-07-19 02:37:40,717 - src.rag.chain - INFO - Context length: 4056 characters
+2025-07-19 02:37:40,717 - src.rag.chain - INFO - Full prompt length: 5003 characters
+2025-07-19 02:37:43,155 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-19 02:38:30,600 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:38:31,404 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-19 02:38:31,822 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-19 02:38:32,210 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-19 02:38:32,593 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/sendMessage "HTTP/1.1 200 OK"
+2025-07-19 02:38:40,798 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:38:51,019 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:38:58,310 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw/getUpdates "HTTP/1.1 200 OK"
+2025-07-19 02:38:58,311 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2025-07-19 02:38:58,311 - telegram.ext.Application - INFO - Application.stop() complete

@@ -1,0 +1,259 @@
+Frequently Asked Question (FA
+
+1. What is IFIC Aamar Bank?
+
+IFIC Aamar Bank is a Digital Banking platform and User-friendly internet banking service that enables you interact
+with your bank 24/7 using only your phone or computer. You can avail banking services through IFIC Aamar Bank
+without being physically present at the bank.
+
+2. Who can enroll in IFIC Aamar Bank?
+Any customer of IFIC Bank can enroll in IFIC Aamar Bank Service. Customer who has only a credit card but no
+account can also enroll in this service.
+
+3. Do I have to pay for using this service?
+No. IFIC Aamar Bank is a service provided to all IFIC customers for free.
+
+4. Where and how can I register for IFIC Aamar Bank?
+To register for IFIC Aamar Bank, you can follow the below 3 simple ways,
+
+vy Simply call 16255/+8809666716255 and request for IFIC Aamar Bank, or
+
+৮:59 to SMS option >> Type “IFIC AB” >> Send 26969 (SMS charge applicable), or
+
+v_ please visit your nearest IFIC Bank Branch and apply in the prescribed form. Your IFIC Aamar Bank
+service will be activated by the following working day. During activation, the bank will provide you the
+initial login ID and password through SMS.
+
+5. How can I download IFIC Aamar Bank App?
+IFIC Aamar bank app is available in Google Play store (for android devices) and Apple App Store (for iOS devices).
+
+6. I have multiple accounts and cards with IFIC Bank. Do I need to add those one by one?
+
+No. As soon as you register for the service, all accounts/term deposits/cards associated with your Customer ID
+will be accessible through IFIC Aamar Bank.
+
+7. I have multiple accounts and cards with IFIC Bank. Do I need to add those one by one?
+No. As soon as you register for the service, all accounts/term deposits/cards associated with your Customer ID
+will be accessible through IFIC Aamar Bank.
+
+8. I don’t have any smart device. Can I use IFIC Aamar Bank?
+Even if you don’t have any smart device, you can always use the IFIC Aamar Bank from any computer. But the
+bank strongly discourages to use any public computer to do your digital banking.
+
+9. I have multiple smartphones. Can I use my same IFIC Aamar Bank ID to my multiple smartphones?
+Yes, you can. But try not to use on another person’s smartphone and also avoid public Wi-Fi for security issues.
+
+10. How can I activate/login to the application?
+After installing the app, activate it by entering login ID, password and OTP. Then you'll have to choose a 6-digit
+PIN. This PIN will be required every time you try to use the app. You can change the PIN as and when you want.
+
+Instead of the PIN, you may also use pattern lock, fingerprint, face recognition etc. depending on what
+authentication method is supported by your phone.
+
+11. What are the system requirements?
+The application runs on any smart android/iOS devices e.g. phone, tablet, iPhone, iPad, MacBook etc. If you’re
+using a desktop or laptop, please using an updated browser. The bank discourages to use outdated browsers.
+
+12. How many mobile devices can I use with the app?
+
+You can use IFIC Aamar Bank in multiple devices with your credentials. The bank discourages to use multiple
+devices.
+
+IFIC BANK LIMITED
+
+
+13. I am getting Multiple credentials. What should I do?
+The chance of getting multiple credentials is highly unlikely. However, for this instance always use the latest
+credentials.
+
+14. What should I do if my mobile device gets lost/stolen?
+If you lose your mobile device, please log in to IFIC Aamar Bank from Desktop/laptop and unlink the lost device
+from settings. If you’re unable to do so, please call 16255 as soon as possible.
+
+15. Can I use the IFIC Aamar Bank Mobile app on Rooted Android or Jailbroken iPhone devices?
+Yes, you can. But you may be vulnerable to hacking or similar kind of security threats.
+
+16. Can I change my login ID and password?
+
+The Bank will provide a login ID and password initially. The initial login ID can always be used to log in. Besides
+this login ID, you can create an alias (alternate login ID) to log in. This alias can be changed at any time. If you
+forget your alias, you can always use your initial login ID to log in.
+
+You'll have to change the initially provided password during first login. You can also change your password later
+at any time.
+
+17. What if I forgot my password or login ID or alias (alternate login ID)?
+If you forget your alias, use your login ID. If you forget both login ID & alias, please call 16255.
+
+If you forget your password, click on the “Forgot Password” link from the login page. You can create a new
+password by providing the answers to your preset security questions. If you forget the answers to your security
+questions, please call 16255.
+
+Entering wrong password 5 times will lock your account. You’ll need to call 16255 to unlock your account.
+
+18. What will happen If I login from Mobile App first and try to login from Online later?
+
+If you log in from the Mobile App first then the authentication method will be automatically selected to “Mobile
+Token with OTP”. Later, login attempts from Online need Mobile Token instead of password. Mobile Token can be
+generated from the “Secured Code Generator” option in Mobile App. After logging in to the Online, the
+authentication method can be changed.
+
+19. During login IFIC Aamar Bank mobile app constantly shows,” Device time error”. Now what can I
+do?
+
+This problem can be observed when device's time and date is not up to date. Updating time & date might solve
+this issue.
+
+20. I am using IFIC Aamar Bank. But I can’t find all of my IFIC products here. What can I do?
+
+Probably you haven't checked to automatically add all of your IFIC products in IFIC Aamar Bank Service Request
+Form. Call 16255 for assistance.
+
+21. Can I send money to my family and friends using IFIC Aamar Bank?
+You can send money to your loved ones any time using IFIC Aamar Bank. Account to Account Fund Transfer,
+Electronic Fund Transfer (EFT), RTGS etc. payments are available in IFIC Aamar Bank.
+
+22. Can I create standing order to send money using IFIC Aamar Bank?
+
+Yes. You can create standing order (using recurring payment option) to transfer funds between your own accounts
+or to send money to other accounts with IFIC/any other bank. You can modify your standing orders whenever
+you want according to your needs.
+
+23. Is there a limit on the amount that I can transfer?
+Yes. You can check the limits from IFIC Bank website which can be changed from time to time depending on
+central bank’s directive or the bank’s own business strategy & policy.
+
+24. What is Partner and Templates?
+While sending money to someone when you write the name of the beneficiary, a partner is created automatically.
+You can select the same partner again if you want to send money to the same person in the future. Similarly, the
+
+IFIC BANK LIMITED
+
+
+template of the payment will be saved and may be used later. The template contains the source account,
+destination account, amount and reference. Partners & Templates are editable whenever you want.
+
+Please note that every time you select a partner to send money, the associated template will be loaded i.e. source
+account, destination account, amount and reference will be loaded automatically from your saved template. If
+you make any change (for example if you change the amount) and confirm the transaction, the template will be
+updated accordingly. The template always remembers what you did last time.
+
+25. If I made a transfer to the wrong account, how do I attempt to recover the funds?
+
+You will have to use Partner-Template for sending money. The templates store some preset information regarding
+your payment which includes the Beneficiary Account Number. It is highly unlikely to send money to a wrong
+account. However, if you send fund to wrong account, you are requested to inform the bank by calling 16255 but
+there is no assurance to get the fund back.
+
+26. How to make transactions with QR signing?
+
+QR signing option will be available only when authentication method is selected “Mobile Token with OTP”. During
+sending money from online, a QR code will be generated. Subsequent scanning of that QR code from Mobile App’s
+“Token” option, a secured Token will be generated. Customer can proceed with his transaction from Online by
+using that Token.
+
+27. Can I block/activate my card?
+You can block your card instantly from IFIC Aamar Bank in case of lost, stolen etc. But to activate the card, you
+need to call 16255.
+
+28. Can I pay my credit card bill using IFIC Aamar Bank?
+Yes. IFIC and other banks’ credit card bills can be paid using IFIC Aamar Bank.
+
+29. How long will it take for me to receive my chequebook after giving order?
+Typically, it takes 3-5 working days to print and deliver a new chequebook to a branch depending on the branch’s
+location. If you order chequebook to be delivered to your communication address, it may take 1-2 more days.
+
+30. Can I use IFIC Aamar Bank for Utility bill payment, merchant payment, Mobile recharging or
+crediting my mobile Wallet?
+
+Unfortunately, No. But these types of services will be added in future.
+
+31. What should I do if I did not receive the OTP?
+If you do not receive OTP to complete an action, you should try again. If you don’t receive any OTP at all, please
+call 16255.
+
+32. What happens if an OTP or Token is not entered immediately or wrongly entered?
+OTP expires in 5 minutes. If you enter expired or wrong OTP, the action will fail.
+
+33. What should I do if I change my Mobile Number/E-mail Address?
+
+You can update your mobile number and e-mail address during registration. If you need to change your mobile
+number or e-mail address later, please visit your nearest branch and submit a Customer Information Change
+Form.
+
+34. Can I use IFIC Aamar Bank from abroad?
+
+Yes, you can. If your IFIC Aamar Bank registered sim doesn’t support international roaming then the
+authentication method must be changed to “Mobile Token with OTP”. Authentication method can be changed from
+Online and it must be changed before going abroad.
+
+35. Can anybody else access my accounts online?
+It is not possible to access your IFIC Aamar Bank without your login ID and password. You can strengthen your
+login credential by selecting “Password and OTP” in Change Authentication Method from Settings. This way, you
+will need to enter OTP besides login ID and Password during login.
+
+IFIC BANK LIMITED
+
+
+36. Is there a session timeout?
+Inactive session times out after 5 minutes. You'll be automatically logged out.
+
+37. What should I do if I suspect there are unauthorized transactions on my account?
+If you suspect that any unauthorized transaction or action has occurred in your account, call 16255 immediately
+to inform the bank.
+
+38. What is anti-phishing image and how does it help me?
+
+Anti-phishing image is an image shown to you when you enter your login ID on IFIC Aamar Bank login page. The
+image is pre-selected by you and known only to you. Before typing your password, you must make sure that the
+image shown is the one selected by you.
+
+Phishing websites will not be able to show you your specific image (as they don’t know it). And this is how you
+can detect if you are routed to any phishing site.
+
+39. I have lost my IFIC Aamar Bank registered sim or I have lost my phone which is used for IFIC
+Digital Banking. What Can I do?
+
+For this situation, call 16255 immediately and describe the situation. Rest will be taken care of by our expert
+customer’s support team.
+
+40. How many authentication methods are available in IFIC Aamar Bank? Can I choose an
+authentication method according to my preference?
+There are three authentication methods available in IFIC Aamar Bank.
+
+e Login without OTP: Log in to your IFIC Aamar Bank using only your ID and password.
+
+e Login with OTP: Log in to your IFIC Aamar Bank using only your ID, password and OTP.
+Mobile Token: Log in to your IFIC Aamar Bank with a token generated in your mobile app. However, if
+you don’t use the app, this method will not be available to you.
+
+41. What precautions should I take for this IFIC Aamar Bank service?
+
+You can never be too careful protecting your hard-earned money from frauds and mischiefs. IFIC Bank is always
+there to keep you safe and aware of the risks that may be exposed to using IFIC Aamar Bank. We request you to
+comply with the following precautionary Do’s and Don’ts:
+
+DOs DONTs
+e Change and update your login password and e Don’t share your login ID, Password, PIN,
+PIN regularly. OTP, anti-phishing image, answers to your
+e Keep your registered mobile number, e-mail ID security question, card number.
+and communication address updated with the e Don’t open any — suspicious e-mail
+bank. attachments asking for your login
+e Always call 16255 to report any suspicious information.
+activity/transaction instantly. e Don’t enter your ID & Password to any
+e Keep up-to-date antivirus in your device to suspicious site, SMS links offering you any
+avoid malware attack. product/service.
+e Always keep your device's operating systems e Don’t provide any personal information to
+and applications updated. any unknown caller.
+e Always use your registered mobile number and e Don’t save your login information in any
+e-mail address to communicate with the bank. public device (e.g. café, university etc.). It’s
+better to avoid using public device to access
+IFIC Aamar Bank.
+
+Please note that IFIC Bank will never request for your personal information and/or account information, PIN
+number, password etc. by phone or e-mail or by visiting you in person. Our awareness initiative is intended to
+provide you with the necessary information on fraudulent activities.
+
+IFIC BANK LIMITED
+
+
