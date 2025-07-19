@@ -3,13 +3,15 @@ from langchain.chains import RetrievalQA
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from fuzzywuzzy import fuzz
+import fitz  # PyMuPDF
 
-# Configuration
+# --- Configuration ---
+PDF_PATH = "eval_questions.pdf"
 FAISS_INDEX_PATH = "faiss_index"
 EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
-OLLAMA_MODEL = "llama3.2:3b"  # Change if needed
+OLLAMA_MODEL = "llama3.2:3b"
 
-# Load embeddings and vector store
+# --- Load Embeddings & Vector Store ---
 embeddings = HuggingFaceEmbeddings(
     model_name=EMBEDDING_MODEL,
     model_kwargs={"device": "cpu"}
@@ -23,14 +25,14 @@ vectorstore = FAISS.load_local(
 
 retriever = vectorstore.as_retriever(search_kwargs={"k": 10})
 
-# Setup Ollama LLM
+# --- Setup Ollama LLM ---
 llm = OllamaLLM(
     model=OLLAMA_MODEL,
     temperature=0,
     max_tokens=512
 )
 
-# Setup QA chain
+# --- QA Chain ---
 qa_chain = RetrievalQA.from_chain_type(
     llm=llm,
     chain_type="stuff",
@@ -38,19 +40,29 @@ qa_chain = RetrievalQA.from_chain_type(
     return_source_documents=True
 )
 
-# Evaluation samples: list of dicts with question & expected answer
-eval_samples = [
-    {
-        "query": "What is the VAT rate in Bangladesh?",
-        "expected_answer": "The VAT rate in Bangladesh is 15%."
-    },
-    {
-        "query": "How much penalty is there for late tax submission?",
-        "expected_answer": "The penalty is a fine or interest charged on late submissions."
-    }
-    # Add more test samples here...
-]
+# --- Extract Q&A pairs from PDF ---
+def extract_eval_samples_from_pdf(pdf_path):
+    doc = fitz.open(pdf_path)
+    text = ""
+    for page in doc:
+        text += page.get_text()
+    
+    lines = text.strip().split("\n")
+    samples = []
+    question, answer = "", ""
 
+    for line in lines:
+        line = line.strip()
+        if line.startswith("Q:"):
+            question = line[2:].strip()
+        elif line.startswith("A:"):
+            answer = line[2:].strip()
+            if question and answer:
+                samples.append({"query": question, "expected_answer": answer})
+                question, answer = "", ""
+    return samples
+
+# --- Evaluation Logic ---
 def evaluate_rag(samples):
     correct = 0
     total = len(samples)
@@ -67,7 +79,6 @@ def evaluate_rag(samples):
         )
         print(f"Similarity Score: {score}")
         
-        # Threshold can be adjusted (e.g., 70)
         if score >= 70:
             correct += 1
             print("Result: ✅ Correct\n")
@@ -75,7 +86,9 @@ def evaluate_rag(samples):
             print("Result: ❌ Incorrect\n")
     
     accuracy = (correct / total) * 100
-    print(f"Final Accuracy: {accuracy:.2f}% ({correct}/{total} correct)")
+    print(f"\nFinal Accuracy: {accuracy:.2f}% ({correct}/{total} correct)")
 
+# --- Run ---
 if __name__ == "__main__":
+    eval_samples = extract_eval_samples_from_pdf(PDF_PATH)
     evaluate_rag(eval_samples)
