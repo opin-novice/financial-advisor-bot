@@ -1,52 +1,120 @@
 import os
+import logging
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_ollama import OllamaLLM
 from langchain.chains import RetrievalQA
+from src.utils.query_processor import QueryProcessor
+from src.utils.pdf_processor import PDFProcessor
+
+# Setup logging
+logging.basicConfig(
+    filename='logs/financial_advisor_bot.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 # Configuration
-FAISS_INDEX_PATH = "faiss_index_"
+FAISS_INDEX_PATH = "faiss_index"
 EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
 
-# Load FAISS index
-print("[INFO] Loading FAISS index...")
-embeddings = HuggingFaceEmbeddings(
-    model_name=EMBEDDING_MODEL,
-    model_kwargs={"device": "cuda"}  # use "cpu" if needed
-)
-vectorstore = FAISS.load_local(FAISS_INDEX_PATH, embeddings, allow_dangerous_deserialization=True)
+class FinancialAdvisorBot:
+    def __init__(self):
+        self.query_processor = QueryProcessor()
+        self.pdf_processor = PDFProcessor()
+        self.setup_qa_system()
 
-# Set up LLM and retriever
-retriever = vectorstore.as_retriever()
-llm = OllamaLLM(model="llama3")  # or any other model available
+    def setup_qa_system(self):
+        logger.info("Initializing QA system...")
+        try:
+            # Load FAISS index
+            embeddings = HuggingFaceEmbeddings(
+                model_name=EMBEDDING_MODEL,
+                model_kwargs={"device": "cuda"}  # use "cpu" if needed
+            )
+            self.vectorstore = FAISS.load_local(FAISS_INDEX_PATH, embeddings, allow_dangerous_deserialization=True)
 
-qa = RetrievalQA.from_chain_type(
-    llm=llm,
-    chain_type="stuff",
-    retriever=retriever,
-    return_source_documents=True
-)
+            # Set up LLM and retriever
+            self.retriever = self.vectorstore.as_retriever()
+            self.llm = OllamaLLM(model="llama3")  # or any other model available
 
-# Query loop
-while True:
-    query = input("Ask me anything (type 'exit' to quit):\n> ")
-    if query.lower() == "exit":
-        break
-    try:
-        response = qa.invoke(query)
+            self.qa = RetrievalQA.from_chain_type(
+                llm=self.llm,
+                chain_type="stuff",
+                retriever=self.retriever,
+                return_source_documents=True
+            )
+            logger.info("QA system initialized successfully")
+        except Exception as e:
+            logger.error(f"Error initializing QA system: {str(e)}")
+            raise
 
-        # Print the answer
-        print("\n🔍 Answer:\n")
-        print(response['result'])
+    def process_query(self, query: str) -> Dict:
+        try:
+            # Process and enhance query
+            query_info = self.query_processor.process_query(query)
+            logger.info(f"Query category detected: {query_info['category']}")
 
-        # Print the source documents
-        print("\n📚 Sources:")
-        for i, doc in enumerate(response['source_documents'], 1):
-            print(f"\n--- Source {i} ---")
-            print(doc.page_content[:500])  # show the first 500 characters of the chunk
-            if 'metadata' in doc and 'page' in doc.metadata:
-                print(f"[Page: {doc.metadata['page']}]")
-            print("-" * 40)
+            # Get response from QA system
+            response = self.qa.invoke(query)
 
-    except Exception as e:
-        print(f"[ERROR] {e}")
+            # Enhance response with metadata
+            enhanced_response = {
+                'result': response['result'],
+                'category': query_info['category'],
+                'is_followup': query_info['is_followup'],
+                'source_documents': [
+                    {
+                        'content': doc.page_content[:500],
+                        'metadata': doc.metadata
+                    } for doc in response['source_documents']
+                ]
+            }
+
+            logger.info(f"Successfully processed query in category: {query_info['category']}")
+            return enhanced_response
+
+        except Exception as e:
+            logger.error(f"Error processing query: {str(e)}")
+            return {'error': str(e)}
+
+def main():
+    bot = FinancialAdvisorBot()
+    print("Financial Advisor Bot initialized. Ask your questions!")
+
+    while True:
+        query = input("\nAsk me anything (type 'exit' to quit):\n> ")
+        if query.lower() == "exit":
+            break
+
+        try:
+            response = bot.process_query(query)
+
+            if 'error' in response:
+                print(f"\n❌ Error: {response['error']}")
+                continue
+
+            # Print the answer
+            print("\n🔍 Answer:\n")
+            print(response['result'])
+
+            # Print category and followup status
+            print(f"\n📊 Category: {response['category']}")
+            if response['is_followup']:
+                print("ℹ️ This was detected as a follow-up question")
+
+            # Print the source documents
+            print("\n📚 Sources:")
+            for i, doc in enumerate(response['source_documents'], 1):
+                print(f"\n--- Source {i} ---")
+                print(doc['content'])
+                if 'page' in doc['metadata']:
+                    print(f"[Page: {doc['metadata']['page']}]")
+                print("-" * 40)
+
+        except Exception as e:
+            print(f"\n❌ Error: {str(e)}")
+
+if __name__ == "__main__":
+    main()
