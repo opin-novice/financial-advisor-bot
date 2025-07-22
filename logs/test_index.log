@@ -1,0 +1,10 @@
+2025-07-23 04:30:25,146 - __main__ - ERROR - Error loading FAISS index: Could not import sentence_transformers python package. Please install it with `pip install sentence-transformers`.
+2025-07-23 04:31:14,310 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2025-07-23 04:31:27,660 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-23 04:31:31,596 - __main__ - ERROR - Error loading FAISS index: Could not import faiss python package. Please install it with `pip install faiss-gpu` (for CUDA supported GPU) or `pip install faiss-cpu` (depending on Python version).
+2025-07-23 04:31:47,266 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2025-07-23 04:31:49,756 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-23 04:31:54,161 - faiss.loader - INFO - Loading faiss.
+2025-07-23 04:31:54,978 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 04:31:54,984 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-23 04:32:03,477 - __main__ - INFO - Successfully loaded FAISS index from faiss_index

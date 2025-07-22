@@ -1,11 +1,13 @@
 import os
 import logging
+from typing import Dict
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_ollama import OllamaLLM
 from langchain.chains import RetrievalQA
 from src.utils.query_processor import QueryProcessor
 from src.utils.pdf_processor import PDFProcessor
+from src.utils.response_cache import ResponseCache
 
 # Setup logging
 logging.basicConfig(
@@ -18,20 +20,23 @@ logger = logging.getLogger(__name__)
 # Configuration
 FAISS_INDEX_PATH = "faiss_index"
 EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
+CACHE_TTL = 86400  # 24 hours in seconds
 
 class FinancialAdvisorBot:
     def __init__(self):
         self.query_processor = QueryProcessor()
         self.pdf_processor = PDFProcessor()
+        self.response_cache = ResponseCache(cache_dir="cache", ttl=CACHE_TTL)
         self.setup_qa_system()
 
     def setup_qa_system(self):
         logger.info("Initializing QA system...")
         try:
             # Load FAISS index
+            # Change this line in setup_qa_system method
             embeddings = HuggingFaceEmbeddings(
                 model_name=EMBEDDING_MODEL,
-                model_kwargs={"device": "cuda"}  # use "cpu" if needed
+                model_kwargs={"device": "cpu"}  # Changed from "cuda" to "cpu" for M1
             )
             self.vectorstore = FAISS.load_local(FAISS_INDEX_PATH, embeddings, allow_dangerous_deserialization=True)
 
@@ -55,6 +60,13 @@ class FinancialAdvisorBot:
             # Process and enhance query
             query_info = self.query_processor.process_query(query)
             logger.info(f"Query category detected: {query_info['category']}")
+            
+            # Check cache for non-followup queries
+            if not query_info['is_followup']:
+                cached_response = self.response_cache.get(query)
+                if cached_response:
+                    logger.info(f"Returning cached response for query: {query[:50]}...")
+                    return cached_response
 
             # Get response from QA system
             response = self.qa.invoke(query)
@@ -71,6 +83,10 @@ class FinancialAdvisorBot:
                     } for doc in response['source_documents']
                 ]
             }
+
+            # Cache the response for non-followup queries
+            if not query_info['is_followup']:
+                self.response_cache.set(query, enhanced_response)
 
             logger.info(f"Successfully processed query in category: {query_info['category']}")
             return enhanced_response

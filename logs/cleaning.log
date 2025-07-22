@@ -1,0 +1,777 @@
+2025-07-23 03:49:21,578 - clean_processed_folder - INFO - Starting cleanup of processed folder
+2025-07-23 03:49:21,597 - clean_processed_folder - INFO - Cleaned and recreated banking directory
+2025-07-23 03:49:21,600 - clean_processed_folder - INFO - Cleaned and recreated investment directory
+2025-07-23 03:49:21,602 - clean_processed_folder - INFO - Cleaned and recreated loans directory
+2025-07-23 03:49:21,604 - clean_processed_folder - INFO - Cleaned and recreated regulations directory
+2025-07-23 03:49:21,608 - clean_processed_folder - INFO - Cleaned and recreated sme directory
+2025-07-23 03:49:21,611 - clean_processed_folder - INFO - Cleaned and recreated taxation directory
+2025-07-23 03:49:21,931 - process_english_pdfs - ERROR - Error processing data/raw/banking/personal_ac_opening_form.pdf: name 'fitz' is not defined
+2025-07-23 03:49:22,065 - process_english_pdfs - WARNING - File data/raw/banking/FAQ e-Banking.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 2207.5, 'text_density': 2.4369609555434937, 'image_ratio': 2.0, 'avg_font_size': 10.970459331472012}
+2025-07-23 03:49:22,910 - process_english_pdfs - ERROR - Error processing data/raw/banking/e-KYC Guidelines.pdf: name 'fitz' is not defined
+2025-07-23 03:49:23,021 - process_english_pdfs - WARNING - File data/raw/banking/FAQs on Banking Services SEB.pdf failed quality checks: {'total_pages': 3, 'avg_text_per_page': 2261.3333333333335, 'text_density': 8.181743679216375, 'image_ratio': 1.0, 'avg_font_size': 10.802608683489371}
+2025-07-23 03:49:23,223 - process_english_pdfs - WARNING - File data/raw/banking/RETURN OF INCOME for company.pdf failed quality checks: {'total_pages': 8, 'avg_text_per_page': 962.375, 'text_density': 15.087593076211501, 'image_ratio': 5.0, 'avg_font_size': 11.65250268684166}
+2025-07-23 03:49:25,563 - process_english_pdfs - ERROR - Error processing data/raw/banking/krishibank_Scheme.pdf: name 'fitz' is not defined
+2025-07-23 03:49:26,691 - src.utils.pdf_processor - INFO - OCR needed for data/raw/banking/account-opening-form-term-deposit-savings-scheme-special-scheme.pdf
+2025-07-23 03:49:26,691 - process_english_pdfs - WARNING - File data/raw/banking/account-opening-form-term-deposit-savings-scheme-special-scheme.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 0.0, 'text_density': 7.1973191964377286, 'image_ratio': 15.25, 'avg_font_size': 0}
+2025-07-23 03:49:26,869 - process_english_pdfs - WARNING - File data/raw/banking/FAQ-OBU-IB-AccountOpening - primeBank.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 2526.75, 'text_density': 9.016240660322788, 'image_ratio': 1.0, 'avg_font_size': 9.928928533568978}
+2025-07-23 03:49:26,903 - process_english_pdfs - ERROR - Error processing data/raw/banking/Tax calculation table.pdf: name 'fitz' is not defined
+2025-07-23 03:49:30,160 - process_english_pdfs - ERROR - Error processing data/raw/banking/Core Banking Solution BB.pdf: name 'fitz' is not defined
+2025-07-23 03:49:30,238 - process_english_pdfs - ERROR - Error processing data/raw/banking/Student Loans in Bangladesh.pdf: name 'fitz' is not defined
+2025-07-23 03:49:30,756 - process_english_pdfs - ERROR - Error processing data/raw/banking/Personal_Account_Opening_Form.pdf: name 'fitz' is not defined
+2025-07-23 03:49:33,437 - process_english_pdfs - ERROR - Error processing data/raw/banking/Guidelines on ICT Security for Banks and Non-Bank Financial Institutions, 2023.pdf: name 'fitz' is not defined
+2025-07-23 03:49:35,902 - process_english_pdfs - ERROR - Error processing data/raw/banking/2024-08-04-09-27-3196d924fdcc0bb5fbd7e81e78194897.pdf: name 'fitz' is not defined
+2025-07-23 03:49:39,355 - process_english_pdfs - ERROR - Error processing data/raw/banking/আয়কর_নির্দেশিকা_২০২৪-২০২৫.pdf: name 'fitz' is not defined
+2025-07-23 03:49:39,754 - process_english_pdfs - ERROR - Error processing data/raw/banking/FORM OF RETURN OF INCOME TAX.pdf: name 'fitz' is not defined
+2025-07-23 03:49:40,304 - process_english_pdfs - ERROR - Error processing data/raw/banking/dttl-tax-bangladeshhighlights-2023.pdf: name 'fitz' is not defined
+2025-07-23 03:49:40,334 - process_english_pdfs - WARNING - File data/raw/banking/banking_regulations.pdf failed quality checks: {'total_pages': 1, 'avg_text_per_page': 1318.0, 'text_density': 6.909344967437288, 'image_ratio': 1.0, 'avg_font_size': 11.768333340684572}
+2025-07-23 03:49:40,434 - src.utils.pdf_processor - INFO - OCR needed for data/raw/banking/User_Manual_for_bKash.pdf
+2025-07-23 03:49:40,435 - process_english_pdfs - WARNING - File data/raw/banking/User_Manual_for_bKash.pdf failed quality checks: {'total_pages': 9, 'avg_text_per_page': 33.22222222222222, 'text_density': 1.888136859659445, 'image_ratio': 1.7777777777777777, 'avg_font_size': 11.039999961853027}
+2025-07-23 03:49:40,513 - process_english_pdfs - ERROR - Error processing data/raw/banking/Interest Rates Report 2024-2025.pdf: name 'fitz' is not defined
+2025-07-23 03:49:40,951 - process_english_pdfs - WARNING - File data/raw/banking/FAQs-Bank Al Arafah.pdf failed quality checks: {'total_pages': 17, 'avg_text_per_page': 1822.5294117647059, 'text_density': 4.1214090470934295, 'image_ratio': 1.0, 'avg_font_size': 11.015250451702846}
+2025-07-23 03:49:43,752 - process_english_pdfs - WARNING - File data/raw/banking/Aykor_Nirdeshika_2024-2025.pdf failed quality checks: {'total_pages': 119, 'avg_text_per_page': 1650.9915966386554, 'text_density': 11.248154309080022, 'image_ratio': 1.0, 'avg_font_size': 8.094534925052098}
+2025-07-23 03:49:44,365 - process_english_pdfs - ERROR - Error processing data/raw/banking/GUIDELINES FOR CONDUCTING ISLAMIC BANKING.pdf: name 'fitz' is not defined
+2025-07-23 03:49:44,431 - process_english_pdfs - ERROR - Error processing data/raw/banking/Complaints BB.pdf: name 'fitz' is not defined
+2025-07-23 03:49:44,477 - process_english_pdfs - ERROR - Error processing data/raw/banking/Online_Banking_FAQ.pdf: name 'fitz' is not defined
+2025-07-23 03:49:44,540 - process_english_pdfs - ERROR - Error processing data/raw/banking/Deposit insurance and customer protection measures.pdf: name 'fitz' is not defined
+2025-07-23 03:49:44,743 - process_english_pdfs - ERROR - Error processing data/raw/banking/FAQ_MDBDigitalProbashiSavingsAccount_2024.pdf: name 'fitz' is not defined
+2025-07-23 03:49:44,861 - process_english_pdfs - ERROR - Error processing data/raw/banking/Term_Deposit_Account_Opening_Application_Form_June_20.pdf: name 'fitz' is not defined
+2025-07-23 03:49:45,130 - process_english_pdfs - ERROR - Error processing data/raw/banking/FDR-and-Deposit-Scheme-Form-English-Version.pdf: name 'fitz' is not defined
+2025-07-23 03:49:46,036 - process_english_pdfs - WARNING - File data/raw/banking/Interest rates and lending policies.pdf failed quality checks: {'total_pages': 19, 'avg_text_per_page': 1392.9473684210527, 'text_density': 66.43288956709222, 'image_ratio': 54.1578947368421, 'avg_font_size': 10.583165747678875}
+2025-07-23 03:49:47,052 - process_english_pdfs - ERROR - Error processing data/raw/banking/NBR_cleanedTAX.pdf: name 'fitz' is not defined
+2025-07-23 03:49:47,265 - process_english_pdfs - ERROR - Error processing data/raw/banking/BASIC BANK Form.pdf: name 'fitz' is not defined
+2025-07-23 03:49:50,505 - process_english_pdfs - ERROR - Error processing data/raw/banking/Insurance Act 2010 english version.pdf: name 'fitz' is not defined
+2025-07-23 03:49:50,538 - process_english_pdfs - ERROR - Error processing data/raw/banking/startup_fund.pdf: name 'fitz' is not defined
+2025-07-23 03:49:53,450 - process_english_pdfs - ERROR - Error processing data/raw/banking/Bangladesh Electronic Funds Transfer Network.pdf: name 'fitz' is not defined
+2025-07-23 03:49:53,703 - process_english_pdfs - ERROR - Error processing data/raw/banking/Credit policies and loan eligibility criteria.pdf: name 'fitz' is not defined
+2025-07-23 03:49:55,074 - process_english_pdfs - ERROR - Error processing data/raw/banking/1688964931_2. Account Opening form (Individual)-Editable.pdf: name 'fitz' is not defined
+2025-07-23 03:49:56,338 - process_english_pdfs - WARNING - File data/raw/banking/docs procedures of loan and advances.pdf failed quality checks: {'total_pages': 40, 'avg_text_per_page': 406.1, 'text_density': 2.834137957575999, 'image_ratio': 1.8, 'avg_font_size': 20.70038809062478}
+2025-07-23 03:49:56,547 - process_english_pdfs - WARNING - File data/raw/banking/EBL_ACCESS_Frequesntly_Asked_Questions.pdf failed quality checks: {'total_pages': 5, 'avg_text_per_page': 2898.0, 'text_density': 3.0976495613601402, 'image_ratio': 1.2, 'avg_font_size': 9.867794147309136}
+2025-07-23 03:49:56,768 - process_english_pdfs - WARNING - File data/raw/banking/Guidelines on Agent Banking for the Banks.pdf failed quality checks: {'total_pages': 7, 'avg_text_per_page': 2571.714285714286, 'text_density': 1.9817425166787674, 'image_ratio': 1.0, 'avg_font_size': 11.505027745435507}
+2025-07-23 03:50:00,085 - process_english_pdfs - ERROR - Error processing data/raw/banking/Foreign exchange transactions and regulations.pdf: name 'fitz' is not defined
+2025-07-23 03:50:00,288 - process_english_pdfs - ERROR - Error processing data/raw/banking/Mobile Financial Services Guidelines.pdf: name 'fitz' is not defined
+2025-07-23 03:50:00,679 - process_english_pdfs - WARNING - File data/raw/banking/FAQs on Banking Services IFIC.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 3463.25, 'text_density': 284.1639210328024, 'image_ratio': 7.5, 'avg_font_size': 9.166539921053461}
+2025-07-23 03:50:01,012 - process_english_pdfs - WARNING - File data/raw/banking/FAQ_e-Return.pdf failed quality checks: {'total_pages': 11, 'avg_text_per_page': 1876.6363636363637, 'text_density': 5.451287314268446, 'image_ratio': 1.0909090909090908, 'avg_font_size': 13.36107880266623}
+2025-07-23 03:50:01,141 - process_english_pdfs - WARNING - File data/raw/banking/FAQ e-Banking NRB.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 2207.5, 'text_density': 2.4369609555434937, 'image_ratio': 2.0, 'avg_font_size': 10.970459331472012}
+2025-07-23 03:50:01,908 - process_english_pdfs - ERROR - Error processing data/raw/banking/Guidelines on Consumer Rights.pdf: name 'fitz' is not defined
+2025-07-23 03:50:05,810 - process_english_pdfs - WARNING - File data/raw/banking/Account-Opening-Form-Folder-Individual.pdf failed quality checks: {'total_pages': 8, 'avg_text_per_page': 0.0, 'text_density': 7.347343762607924, 'image_ratio': 0.0, 'avg_font_size': 0}
+2025-07-23 03:50:06,838 - process_english_pdfs - ERROR - Error processing data/raw/banking/bd-personal-account-opening-form.pdf: name 'fitz' is not defined
+2025-07-23 03:50:07,040 - process_english_pdfs - ERROR - Error processing data/raw/investment/Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf: name 'fitz' is not defined
+2025-07-23 03:50:07,168 - process_english_pdfs - ERROR - Error processing data/raw/investment/form_5year.pdf: name 'fitz' is not defined
+2025-07-23 03:50:07,469 - process_english_pdfs - WARNING - File data/raw/investment/One-Stop Service (OSS) Rules, 2020.pdf failed quality checks: {'total_pages': 9, 'avg_text_per_page': 1866.6666666666667, 'text_density': 11.604291703853612, 'image_ratio': 1.2222222222222223, 'avg_font_size': 11.082654185769682}
+2025-07-23 03:50:13,943 - process_english_pdfs - WARNING - File data/raw/investment/Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf failed quality checks: {'total_pages': 113, 'avg_text_per_page': 2046.3008849557523, 'text_density': 3.7358184201909057, 'image_ratio': 2.2389380530973453, 'avg_font_size': 10.87085494254617}
+2025-07-23 03:50:19,634 - process_english_pdfs - ERROR - Error processing data/raw/investment/Financial-Literacy-Curriculum.pdf: name 'fitz' is not defined
+2025-07-23 03:50:19,875 - process_english_pdfs - ERROR - Error processing data/raw/investment/financial_literacy_guidelines_draft.pdf: name 'fitz' is not defined
+2025-07-23 03:50:20,160 - process_english_pdfs - ERROR - Error processing data/raw/investment/03 OP_ZF_1.pdf: name 'fitz' is not defined
+2025-07-23 03:50:20,216 - process_english_pdfs - ERROR - Error processing data/raw/investment/5-Year Bangladesh Savings Certificate.pdf: name 'fitz' is not defined
+2025-07-23 03:50:20,319 - src.utils.pdf_processor - INFO - OCR needed for data/raw/investment/Industrial Policy of Bangladesh (2022).pdf
+2025-07-23 03:50:20,322 - process_english_pdfs - WARNING - File data/raw/investment/Industrial Policy of Bangladesh (2022).pdf failed quality checks: {'total_pages': 41, 'avg_text_per_page': 0.0, 'text_density': 0.9989477763694117, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 03:50:29,988 - process_english_pdfs - ERROR - Error processing data/raw/investment/Guidelines for Non-Resident Bangladeshis (NRBs).pdf: name 'fitz' is not defined
+2025-07-23 03:50:30,640 - process_english_pdfs - ERROR - Error processing data/raw/investment/Bilateral Investment Treaties (BITs).pdf: name 'fitz' is not defined
+2025-07-23 03:50:35,055 - process_english_pdfs - WARNING - File data/raw/investment/Foreign-Investment-in-Bangladesh-Booklet .pdf failed quality checks: {'total_pages': 66, 'avg_text_per_page': 1312.409090909091, 'text_density': 3.2250034528045894, 'image_ratio': 1.2727272727272727, 'avg_font_size': 9.171417911955354}
+2025-07-23 03:50:35,131 - src.utils.pdf_processor - INFO - OCR needed for data/raw/loans/Car-Loan-One Bank.pdf
+2025-07-23 03:50:35,131 - process_english_pdfs - WARNING - File data/raw/loans/Car-Loan-One Bank.pdf failed quality checks: {'total_pages': 28, 'avg_text_per_page': 0.0, 'text_density': 0.9285714069648874, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 03:50:36,136 - process_english_pdfs - ERROR - Error processing data/raw/loans/Car Loan Application Form.pdf: name 'fitz' is not defined
+2025-07-23 03:50:36,155 - process_english_pdfs - WARNING - File data/raw/loans/CarLoan.pdf failed quality checks: {'total_pages': 1, 'avg_text_per_page': 1438.0, 'text_density': 4.079264581445242, 'image_ratio': 1.0, 'avg_font_size': 11.491475410148746}
+2025-07-23 03:50:36,322 - process_english_pdfs - ERROR - Error processing data/raw/loans/Comprehensive Loan Documentation Guide for Bangladesh.pdf: name 'fitz' is not defined
+2025-07-23 03:50:36,361 - process_english_pdfs - WARNING - File data/raw/loans/bb_auto_loan_circular.pdf failed quality checks: {'total_pages': 1, 'avg_text_per_page': 2090.0, 'text_density': 8.854395968470595, 'image_ratio': 2.0, 'avg_font_size': 12.164117644814883}
+2025-07-23 03:50:38,963 - process_english_pdfs - ERROR - Error processing data/raw/loans/home_loan_application.pdf: name 'fitz' is not defined
+2025-07-23 03:50:39,632 - process_english_pdfs - WARNING - File data/raw/regulations/Foreign Exchange Regulation Act, 1947.pdf failed quality checks: {'total_pages': 23, 'avg_text_per_page': 2342.6521739130435, 'text_density': 4.2934572734815495, 'image_ratio': 2.0, 'avg_font_size': 8.835845684085472}
+2025-07-23 03:50:41,171 - process_english_pdfs - ERROR - Error processing data/raw/regulations/Negotiable Instruments Act, 1881.pdf: name 'fitz' is not defined
+2025-07-23 03:50:42,070 - process_english_pdfs - ERROR - Error processing data/raw/regulations/Bangladesh Bank Order, 1972.pdf: name 'fitz' is not defined
+2025-07-23 03:50:42,248 - process_english_pdfs - ERROR - Error processing data/raw/regulations/Banking Regulations and Customer Rights in Bangladesh_ A Comprehensive Guide.pdf: name 'fitz' is not defined
+2025-07-23 03:50:44,254 - process_english_pdfs - ERROR - Error processing data/raw/regulations/mfg-en-paper-the-bank-company-act-bangladesh-1991-1991.pdf: name 'fitz' is not defined
+2025-07-23 03:50:44,494 - process_english_pdfs - ERROR - Error processing data/raw/regulations/financial_literacy_guidelines_draft.pdf: name 'fitz' is not defined
+2025-07-23 03:50:56,868 - process_english_pdfs - ERROR - Error processing data/raw/regulations/1384Corporate Laws & Practices.pdf: name 'fitz' is not defined
+2025-07-23 03:50:57,509 - process_english_pdfs - ERROR - Error processing data/raw/regulations/Finance Institutions Act, 1993.pdf: name 'fitz' is not defined
+2025-07-23 03:50:58,413 - process_english_pdfs - ERROR - Error processing data/raw/regulations/Binimoy Operating Rules.pdf: name 'fitz' is not defined
+2025-07-23 03:50:58,447 - src.utils.pdf_processor - INFO - OCR needed for data/raw/regulations/Money Laundering Act 2012.pdf
+2025-07-23 03:50:58,447 - process_english_pdfs - WARNING - File data/raw/regulations/Money Laundering Act 2012.pdf failed quality checks: {'total_pages': 23, 'avg_text_per_page': 0.0, 'text_density': 0.7916530839678582, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 03:50:59,845 - process_english_pdfs - ERROR - Error processing data/raw/sme/smepolicye.pdf: name 'fitz' is not defined
+2025-07-23 03:50:59,938 - process_english_pdfs - WARNING - File data/raw/sme/Requried-documents-for-non-individuals.pdf failed quality checks: {'total_pages': 1, 'avg_text_per_page': 6322.0, 'text_density': 29.97891162691141, 'image_ratio': 1.0, 'avg_font_size': 6.297128967022828}
+2025-07-23 03:51:00,649 - process_english_pdfs - WARNING - File data/raw/sme/Business Startup Process in Bangladesh_SC v3.pdf failed quality checks: {'total_pages': 12, 'avg_text_per_page': 1526.25, 'text_density': 4.344851422761363, 'image_ratio': 1.5, 'avg_font_size': 11.521309975295038}
+2025-07-23 03:51:01,493 - process_english_pdfs - ERROR - Error processing data/raw/sme/mfg-en-case-study-the-grameen-bank-micro-credit-model-lessons-for-australian-indigenous-economic-policy-1999.pdf: name 'fitz' is not defined
+2025-07-23 03:51:01,964 - process_english_pdfs - ERROR - Error processing data/raw/sme/require-document-list-for-account-opening.pdf: name 'fitz' is not defined
+2025-07-23 03:51:02,010 - process_english_pdfs - ERROR - Error processing data/raw/sme/Business Startup FORM- I (1).pdf: name 'fitz' is not defined
+2025-07-23 03:51:02,315 - src.utils.pdf_processor - INFO - OCR needed for data/raw/sme/Business StartUP Guide.pdf
+2025-07-23 03:51:02,318 - process_english_pdfs - WARNING - File data/raw/sme/Business StartUP Guide.pdf failed quality checks: {'total_pages': 161, 'avg_text_per_page': 0.0, 'text_density': 0.9996390285056748, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 03:51:02,684 - process_english_pdfs - ERROR - Error processing data/raw/sme/Institutional-Account-Opening-Form-English-Version-Non-PersonalCorporateSME-Accoun.pdf: name 'fitz' is not defined
+2025-07-23 03:51:03,274 - process_english_pdfs - ERROR - Error processing data/raw/sme/ucb-taqwa-organizational-account-opening-form.pdf: name 'fitz' is not defined
+2025-07-23 03:51:03,404 - process_english_pdfs - WARNING - File data/raw/sme/2022-02-12-07-16-c1f322db1f774143fb098c220c11a802.pdf failed quality checks: {'total_pages': 10, 'avg_text_per_page': 932.6, 'text_density': 7.217750560276798, 'image_ratio': 1.0, 'avg_font_size': 12.451008058196802}
+2025-07-23 03:51:05,396 - process_english_pdfs - ERROR - Error processing data/raw/sme/Financing-Solutions-for-Micro-Small-and-Medium-Enterprises-in-Bangladesh.pdf: name 'fitz' is not defined
+2025-07-23 03:51:07,221 - process_english_pdfs - WARNING - File data/raw/sme/Basic Bank SME.pdf failed quality checks: {'total_pages': 48, 'avg_text_per_page': 1421.4375, 'text_density': 7.44955746395602, 'image_ratio': 1.2083333333333333, 'avg_font_size': 12.692186781377076}
+2025-07-23 03:51:07,283 - process_english_pdfs - ERROR - Error processing data/raw/sme/bpid_opening_Form.pdf: name 'fitz' is not defined
+2025-07-23 03:51:07,732 - process_english_pdfs - WARNING - File data/raw/sme/Microfinance-Programme-Brief-Nov-2020.pdf failed quality checks: {'total_pages': 28, 'avg_text_per_page': 726.0714285714286, 'text_density': 2.384725973718187, 'image_ratio': 0.9642857142857143, 'avg_font_size': 10.742637214619801}
+2025-07-23 03:51:07,944 - process_english_pdfs - ERROR - Error processing data/raw/sme/Account-Opening-Non-Ind-Dec-2024.pdf: name 'fitz' is not defined
+2025-07-23 03:51:09,184 - process_english_pdfs - ERROR - Error processing data/raw/sme/sme_guidelines.pdf: name 'fitz' is not defined
+2025-07-23 03:51:09,198 - src.utils.pdf_processor - INFO - OCR needed for data/raw/sme/Non-Individual_Account_Opening_Form_Conventional.pdf
+2025-07-23 03:51:09,198 - process_english_pdfs - WARNING - File data/raw/sme/Non-Individual_Account_Opening_Form_Conventional.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 0.0, 'text_density': 0.0, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 03:51:09,327 - process_english_pdfs - ERROR - Error processing data/raw/taxation/5 year sanchoypotro form.pdf: name 'fitz' is not defined
+2025-07-23 03:51:09,356 - process_english_pdfs - ERROR - Error processing data/raw/taxation/ডাকঘর সঞ্চয় ব্যাংক- মেয়াদী হিসাব.pdf: name 'fitz' is not defined
+2025-07-23 03:51:09,402 - process_english_pdfs - ERROR - Error processing data/raw/taxation/WAGE-EARNERS DEVELOPMENT BOND APPLICATION FORM.pdf: name 'fitz' is not defined
+2025-07-23 03:51:09,451 - process_english_pdfs - ERROR - Error processing data/raw/taxation/US DOLLAR PREMIUM BOND APPLICATION FORM.pdf: name 'fitz' is not defined
+2025-07-23 03:51:09,469 - process_english_pdfs - ERROR - Error processing data/raw/taxation/ডাক জীবন বীমা এবং অ্যানুইটি.pdf: name 'fitz' is not defined
+2025-07-23 03:51:09,503 - process_english_pdfs - ERROR - Error processing data/raw/taxation/Tax calculation table.pdf: name 'fitz' is not defined
+2025-07-23 03:51:09,526 - process_english_pdfs - ERROR - Error processing data/raw/taxation/ডাকঘর সঞ্চয় ব্যাংকের-সাধারণ হিসাব.pdf: name 'fitz' is not defined
+2025-07-23 03:51:09,573 - process_english_pdfs - ERROR - Error processing data/raw/taxation/US DOLLAR INVESTMENT BOND APPLICATION FORM.pdf: name 'fitz' is not defined
+2025-07-23 03:51:09,702 - process_english_pdfs - ERROR - Error processing data/raw/taxation/Personal Taxation in Bangladesh - Comprehensive Guide.pdf: name 'fitz' is not defined
+2025-07-23 03:51:22,672 - process_english_pdfs - ERROR - Error processing data/raw/taxation/income_tax_ordinance.pdf: name 'fitz' is not defined
+2025-07-23 03:51:22,770 - process_english_pdfs - ERROR - Error processing data/raw/taxation/2021-03-18-14-08-f2aebfe7b6b00610a3081237e0a989e4.pdf: name 'fitz' is not defined
+2025-07-23 03:51:22,868 - process_english_pdfs - ERROR - Error processing data/raw/taxation/2021-03-18-14-07-18991ad56d00da578460250da78664ed.pdf: name 'fitz' is not defined
+2025-07-23 03:51:22,869 - build_faiss_index - INFO - Starting document processing and indexing
+2025-07-23 03:51:22,870 - __main__ - ERROR - Error in workflow: Expecting value: line 1341 column 21 (char 49904)
+2025-07-23 04:00:41,952 - clean_processed_folder - INFO - Starting cleanup of processed folder
+2025-07-23 04:00:41,952 - clean_processed_folder - INFO - Cleaned and recreated banking directory
+2025-07-23 04:00:41,953 - clean_processed_folder - INFO - Cleaned and recreated investment directory
+2025-07-23 04:00:41,953 - clean_processed_folder - INFO - Cleaned and recreated loans directory
+2025-07-23 04:00:41,953 - clean_processed_folder - INFO - Cleaned and recreated regulations directory
+2025-07-23 04:00:41,953 - clean_processed_folder - INFO - Cleaned and recreated sme directory
+2025-07-23 04:00:41,954 - clean_processed_folder - INFO - Cleaned and recreated taxation directory
+2025-07-23 04:00:42,259 - process_english_pdfs - ERROR - Error processing data/raw/banking/personal_ac_opening_form.pdf: name 'fitz' is not defined
+2025-07-23 04:00:42,393 - process_english_pdfs - WARNING - File data/raw/banking/FAQ e-Banking.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 2207.5, 'text_density': 2.4369609555434937, 'image_ratio': 2.0, 'avg_font_size': 10.970459331472012}
+2025-07-23 04:00:43,243 - process_english_pdfs - ERROR - Error processing data/raw/banking/e-KYC Guidelines.pdf: name 'fitz' is not defined
+2025-07-23 04:00:43,406 - process_english_pdfs - WARNING - File data/raw/banking/FAQs on Banking Services SEB.pdf failed quality checks: {'total_pages': 3, 'avg_text_per_page': 2261.3333333333335, 'text_density': 8.181743679216375, 'image_ratio': 1.0, 'avg_font_size': 10.802608683489371}
+2025-07-23 04:00:43,669 - process_english_pdfs - WARNING - File data/raw/banking/RETURN OF INCOME for company.pdf failed quality checks: {'total_pages': 8, 'avg_text_per_page': 962.375, 'text_density': 15.087593076211501, 'image_ratio': 5.0, 'avg_font_size': 11.65250268684166}
+2025-07-23 04:00:46,419 - process_english_pdfs - ERROR - Error processing data/raw/banking/krishibank_Scheme.pdf: name 'fitz' is not defined
+2025-07-23 04:00:47,548 - src.utils.pdf_processor - INFO - OCR needed for data/raw/banking/account-opening-form-term-deposit-savings-scheme-special-scheme.pdf
+2025-07-23 04:00:47,549 - process_english_pdfs - WARNING - File data/raw/banking/account-opening-form-term-deposit-savings-scheme-special-scheme.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 0.0, 'text_density': 7.1973191964377286, 'image_ratio': 15.25, 'avg_font_size': 0}
+2025-07-23 04:00:47,735 - process_english_pdfs - WARNING - File data/raw/banking/FAQ-OBU-IB-AccountOpening - primeBank.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 2526.75, 'text_density': 9.016240660322788, 'image_ratio': 1.0, 'avg_font_size': 9.928928533568978}
+2025-07-23 04:00:47,769 - process_english_pdfs - ERROR - Error processing data/raw/banking/Tax calculation table.pdf: name 'fitz' is not defined
+2025-07-23 04:00:50,739 - process_english_pdfs - ERROR - Error processing data/raw/banking/Core Banking Solution BB.pdf: name 'fitz' is not defined
+2025-07-23 04:00:50,801 - process_english_pdfs - ERROR - Error processing data/raw/banking/Student Loans in Bangladesh.pdf: name 'fitz' is not defined
+2025-07-23 04:00:51,190 - process_english_pdfs - ERROR - Error processing data/raw/banking/Personal_Account_Opening_Form.pdf: name 'fitz' is not defined
+2025-07-23 04:00:53,756 - process_english_pdfs - ERROR - Error processing data/raw/banking/Guidelines on ICT Security for Banks and Non-Bank Financial Institutions, 2023.pdf: name 'fitz' is not defined
+2025-07-23 04:00:55,455 - process_english_pdfs - ERROR - Error processing data/raw/banking/2024-08-04-09-27-3196d924fdcc0bb5fbd7e81e78194897.pdf: name 'fitz' is not defined
+2025-07-23 04:00:58,696 - process_english_pdfs - ERROR - Error processing data/raw/banking/আয়কর_নির্দেশিকা_২০২৪-২০২৫.pdf: name 'fitz' is not defined
+2025-07-23 04:00:58,977 - process_english_pdfs - ERROR - Error processing data/raw/banking/FORM OF RETURN OF INCOME TAX.pdf: name 'fitz' is not defined
+2025-07-23 04:00:59,383 - process_english_pdfs - ERROR - Error processing data/raw/banking/dttl-tax-bangladeshhighlights-2023.pdf: name 'fitz' is not defined
+2025-07-23 04:00:59,409 - process_english_pdfs - WARNING - File data/raw/banking/banking_regulations.pdf failed quality checks: {'total_pages': 1, 'avg_text_per_page': 1318.0, 'text_density': 6.909344967437288, 'image_ratio': 1.0, 'avg_font_size': 11.768333340684572}
+2025-07-23 04:00:59,504 - src.utils.pdf_processor - INFO - OCR needed for data/raw/banking/User_Manual_for_bKash.pdf
+2025-07-23 04:00:59,504 - process_english_pdfs - WARNING - File data/raw/banking/User_Manual_for_bKash.pdf failed quality checks: {'total_pages': 9, 'avg_text_per_page': 33.22222222222222, 'text_density': 1.888136859659445, 'image_ratio': 1.7777777777777777, 'avg_font_size': 11.039999961853027}
+2025-07-23 04:00:59,580 - process_english_pdfs - ERROR - Error processing data/raw/banking/Interest Rates Report 2024-2025.pdf: name 'fitz' is not defined
+2025-07-23 04:01:00,007 - process_english_pdfs - WARNING - File data/raw/banking/FAQs-Bank Al Arafah.pdf failed quality checks: {'total_pages': 17, 'avg_text_per_page': 1822.5294117647059, 'text_density': 4.1214090470934295, 'image_ratio': 1.0, 'avg_font_size': 11.015250451702846}
+2025-07-23 04:01:02,502 - process_english_pdfs - WARNING - File data/raw/banking/Aykor_Nirdeshika_2024-2025.pdf failed quality checks: {'total_pages': 119, 'avg_text_per_page': 1650.9915966386554, 'text_density': 11.248154309080022, 'image_ratio': 1.0, 'avg_font_size': 8.094534925052098}
+2025-07-23 04:01:03,108 - process_english_pdfs - ERROR - Error processing data/raw/banking/GUIDELINES FOR CONDUCTING ISLAMIC BANKING.pdf: name 'fitz' is not defined
+2025-07-23 04:01:03,173 - process_english_pdfs - ERROR - Error processing data/raw/banking/Complaints BB.pdf: name 'fitz' is not defined
+2025-07-23 04:01:03,219 - process_english_pdfs - ERROR - Error processing data/raw/banking/Online_Banking_FAQ.pdf: name 'fitz' is not defined
+2025-07-23 04:01:03,283 - process_english_pdfs - ERROR - Error processing data/raw/banking/Deposit insurance and customer protection measures.pdf: name 'fitz' is not defined
+2025-07-23 04:01:03,486 - process_english_pdfs - ERROR - Error processing data/raw/banking/FAQ_MDBDigitalProbashiSavingsAccount_2024.pdf: name 'fitz' is not defined
+2025-07-23 04:01:03,604 - process_english_pdfs - ERROR - Error processing data/raw/banking/Term_Deposit_Account_Opening_Application_Form_June_20.pdf: name 'fitz' is not defined
+2025-07-23 04:01:03,842 - process_english_pdfs - ERROR - Error processing data/raw/banking/FDR-and-Deposit-Scheme-Form-English-Version.pdf: name 'fitz' is not defined
+2025-07-23 04:01:04,698 - process_english_pdfs - WARNING - File data/raw/banking/Interest rates and lending policies.pdf failed quality checks: {'total_pages': 19, 'avg_text_per_page': 1392.9473684210527, 'text_density': 66.43288956709222, 'image_ratio': 54.1578947368421, 'avg_font_size': 10.583165747678875}
+2025-07-23 04:01:05,674 - process_english_pdfs - ERROR - Error processing data/raw/banking/NBR_cleanedTAX.pdf: name 'fitz' is not defined
+2025-07-23 04:01:05,878 - process_english_pdfs - ERROR - Error processing data/raw/banking/BASIC BANK Form.pdf: name 'fitz' is not defined
+2025-07-23 04:01:08,980 - process_english_pdfs - ERROR - Error processing data/raw/banking/Insurance Act 2010 english version.pdf: name 'fitz' is not defined
+2025-07-23 04:01:09,014 - process_english_pdfs - ERROR - Error processing data/raw/banking/startup_fund.pdf: name 'fitz' is not defined
+2025-07-23 04:01:11,783 - process_english_pdfs - ERROR - Error processing data/raw/banking/Bangladesh Electronic Funds Transfer Network.pdf: name 'fitz' is not defined
+2025-07-23 04:01:12,035 - process_english_pdfs - ERROR - Error processing data/raw/banking/Credit policies and loan eligibility criteria.pdf: name 'fitz' is not defined
+2025-07-23 04:01:13,288 - process_english_pdfs - ERROR - Error processing data/raw/banking/1688964931_2. Account Opening form (Individual)-Editable.pdf: name 'fitz' is not defined
+2025-07-23 04:01:14,554 - process_english_pdfs - WARNING - File data/raw/banking/docs procedures of loan and advances.pdf failed quality checks: {'total_pages': 40, 'avg_text_per_page': 406.1, 'text_density': 2.834137957575999, 'image_ratio': 1.8, 'avg_font_size': 20.70038809062478}
+2025-07-23 04:01:14,762 - process_english_pdfs - WARNING - File data/raw/banking/EBL_ACCESS_Frequesntly_Asked_Questions.pdf failed quality checks: {'total_pages': 5, 'avg_text_per_page': 2898.0, 'text_density': 3.0976495613601402, 'image_ratio': 1.2, 'avg_font_size': 9.867794147309136}
+2025-07-23 04:01:14,984 - process_english_pdfs - WARNING - File data/raw/banking/Guidelines on Agent Banking for the Banks.pdf failed quality checks: {'total_pages': 7, 'avg_text_per_page': 2571.714285714286, 'text_density': 1.9817425166787674, 'image_ratio': 1.0, 'avg_font_size': 11.505027745435507}
+2025-07-23 04:01:18,383 - process_english_pdfs - ERROR - Error processing data/raw/banking/Foreign exchange transactions and regulations.pdf: name 'fitz' is not defined
+2025-07-23 04:01:18,587 - process_english_pdfs - ERROR - Error processing data/raw/banking/Mobile Financial Services Guidelines.pdf: name 'fitz' is not defined
+2025-07-23 04:01:18,911 - process_english_pdfs - WARNING - File data/raw/banking/FAQs on Banking Services IFIC.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 3463.25, 'text_density': 284.1639210328024, 'image_ratio': 7.5, 'avg_font_size': 9.166539921053461}
+2025-07-23 04:01:19,244 - process_english_pdfs - WARNING - File data/raw/banking/FAQ_e-Return.pdf failed quality checks: {'total_pages': 11, 'avg_text_per_page': 1876.6363636363637, 'text_density': 5.451287314268446, 'image_ratio': 1.0909090909090908, 'avg_font_size': 13.36107880266623}
+2025-07-23 04:01:19,376 - process_english_pdfs - WARNING - File data/raw/banking/FAQ e-Banking NRB.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 2207.5, 'text_density': 2.4369609555434937, 'image_ratio': 2.0, 'avg_font_size': 10.970459331472012}
+2025-07-23 04:01:20,145 - process_english_pdfs - ERROR - Error processing data/raw/banking/Guidelines on Consumer Rights.pdf: name 'fitz' is not defined
+2025-07-23 04:01:23,961 - process_english_pdfs - WARNING - File data/raw/banking/Account-Opening-Form-Folder-Individual.pdf failed quality checks: {'total_pages': 8, 'avg_text_per_page': 0.0, 'text_density': 7.347343762607924, 'image_ratio': 0.0, 'avg_font_size': 0}
+2025-07-23 04:01:25,076 - process_english_pdfs - ERROR - Error processing data/raw/banking/bd-personal-account-opening-form.pdf: name 'fitz' is not defined
+2025-07-23 04:01:25,283 - process_english_pdfs - ERROR - Error processing data/raw/investment/Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf: name 'fitz' is not defined
+2025-07-23 04:01:25,412 - process_english_pdfs - ERROR - Error processing data/raw/investment/form_5year.pdf: name 'fitz' is not defined
+2025-07-23 04:01:25,713 - process_english_pdfs - WARNING - File data/raw/investment/One-Stop Service (OSS) Rules, 2020.pdf failed quality checks: {'total_pages': 9, 'avg_text_per_page': 1866.6666666666667, 'text_density': 11.604291703853612, 'image_ratio': 1.2222222222222223, 'avg_font_size': 11.082654185769682}
+2025-07-23 04:01:32,382 - process_english_pdfs - WARNING - File data/raw/investment/Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf failed quality checks: {'total_pages': 113, 'avg_text_per_page': 2046.3008849557523, 'text_density': 3.7358184201909057, 'image_ratio': 2.2389380530973453, 'avg_font_size': 10.87085494254617}
+2025-07-23 04:01:38,063 - process_english_pdfs - ERROR - Error processing data/raw/investment/Financial-Literacy-Curriculum.pdf: name 'fitz' is not defined
+2025-07-23 04:01:38,301 - process_english_pdfs - ERROR - Error processing data/raw/investment/financial_literacy_guidelines_draft.pdf: name 'fitz' is not defined
+2025-07-23 04:01:38,580 - process_english_pdfs - ERROR - Error processing data/raw/investment/03 OP_ZF_1.pdf: name 'fitz' is not defined
+2025-07-23 04:01:38,634 - process_english_pdfs - ERROR - Error processing data/raw/investment/5-Year Bangladesh Savings Certificate.pdf: name 'fitz' is not defined
+2025-07-23 04:01:38,738 - src.utils.pdf_processor - INFO - OCR needed for data/raw/investment/Industrial Policy of Bangladesh (2022).pdf
+2025-07-23 04:01:38,741 - process_english_pdfs - WARNING - File data/raw/investment/Industrial Policy of Bangladesh (2022).pdf failed quality checks: {'total_pages': 41, 'avg_text_per_page': 0.0, 'text_density': 0.9989477763694117, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:01:48,705 - process_english_pdfs - ERROR - Error processing data/raw/investment/Guidelines for Non-Resident Bangladeshis (NRBs).pdf: name 'fitz' is not defined
+2025-07-23 04:01:49,379 - process_english_pdfs - ERROR - Error processing data/raw/investment/Bilateral Investment Treaties (BITs).pdf: name 'fitz' is not defined
+2025-07-23 04:01:53,972 - process_english_pdfs - WARNING - File data/raw/investment/Foreign-Investment-in-Bangladesh-Booklet .pdf failed quality checks: {'total_pages': 66, 'avg_text_per_page': 1312.409090909091, 'text_density': 3.2250034528045894, 'image_ratio': 1.2727272727272727, 'avg_font_size': 9.171417911955354}
+2025-07-23 04:01:54,049 - src.utils.pdf_processor - INFO - OCR needed for data/raw/loans/Car-Loan-One Bank.pdf
+2025-07-23 04:01:54,050 - process_english_pdfs - WARNING - File data/raw/loans/Car-Loan-One Bank.pdf failed quality checks: {'total_pages': 28, 'avg_text_per_page': 0.0, 'text_density': 0.9285714069648874, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:01:55,056 - process_english_pdfs - ERROR - Error processing data/raw/loans/Car Loan Application Form.pdf: name 'fitz' is not defined
+2025-07-23 04:01:55,076 - process_english_pdfs - WARNING - File data/raw/loans/CarLoan.pdf failed quality checks: {'total_pages': 1, 'avg_text_per_page': 1438.0, 'text_density': 4.079264581445242, 'image_ratio': 1.0, 'avg_font_size': 11.491475410148746}
+2025-07-23 04:01:55,244 - process_english_pdfs - ERROR - Error processing data/raw/loans/Comprehensive Loan Documentation Guide for Bangladesh.pdf: name 'fitz' is not defined
+2025-07-23 04:01:55,283 - process_english_pdfs - WARNING - File data/raw/loans/bb_auto_loan_circular.pdf failed quality checks: {'total_pages': 1, 'avg_text_per_page': 2090.0, 'text_density': 8.854395968470595, 'image_ratio': 2.0, 'avg_font_size': 12.164117644814883}
+2025-07-23 04:01:57,973 - process_english_pdfs - ERROR - Error processing data/raw/loans/home_loan_application.pdf: name 'fitz' is not defined
+2025-07-23 04:01:58,658 - process_english_pdfs - WARNING - File data/raw/regulations/Foreign Exchange Regulation Act, 1947.pdf failed quality checks: {'total_pages': 23, 'avg_text_per_page': 2342.6521739130435, 'text_density': 4.2934572734815495, 'image_ratio': 2.0, 'avg_font_size': 8.835845684085472}
+2025-07-23 04:02:00,329 - process_english_pdfs - ERROR - Error processing data/raw/regulations/Negotiable Instruments Act, 1881.pdf: name 'fitz' is not defined
+2025-07-23 04:02:01,250 - process_english_pdfs - ERROR - Error processing data/raw/regulations/Bangladesh Bank Order, 1972.pdf: name 'fitz' is not defined
+2025-07-23 04:02:01,434 - process_english_pdfs - ERROR - Error processing data/raw/regulations/Banking Regulations and Customer Rights in Bangladesh_ A Comprehensive Guide.pdf: name 'fitz' is not defined
+2025-07-23 04:02:03,532 - process_english_pdfs - ERROR - Error processing data/raw/regulations/mfg-en-paper-the-bank-company-act-bangladesh-1991-1991.pdf: name 'fitz' is not defined
+2025-07-23 04:02:03,774 - process_english_pdfs - ERROR - Error processing data/raw/regulations/financial_literacy_guidelines_draft.pdf: name 'fitz' is not defined
+2025-07-23 04:02:16,310 - process_english_pdfs - ERROR - Error processing data/raw/regulations/1384Corporate Laws & Practices.pdf: name 'fitz' is not defined
+2025-07-23 04:02:16,950 - process_english_pdfs - ERROR - Error processing data/raw/regulations/Finance Institutions Act, 1993.pdf: name 'fitz' is not defined
+2025-07-23 04:02:17,848 - process_english_pdfs - ERROR - Error processing data/raw/regulations/Binimoy Operating Rules.pdf: name 'fitz' is not defined
+2025-07-23 04:02:17,882 - src.utils.pdf_processor - INFO - OCR needed for data/raw/regulations/Money Laundering Act 2012.pdf
+2025-07-23 04:02:17,882 - process_english_pdfs - WARNING - File data/raw/regulations/Money Laundering Act 2012.pdf failed quality checks: {'total_pages': 23, 'avg_text_per_page': 0.0, 'text_density': 0.7916530839678582, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:02:19,278 - process_english_pdfs - ERROR - Error processing data/raw/sme/smepolicye.pdf: name 'fitz' is not defined
+2025-07-23 04:02:19,371 - process_english_pdfs - WARNING - File data/raw/sme/Requried-documents-for-non-individuals.pdf failed quality checks: {'total_pages': 1, 'avg_text_per_page': 6322.0, 'text_density': 29.97891162691141, 'image_ratio': 1.0, 'avg_font_size': 6.297128967022828}
+2025-07-23 04:02:20,079 - process_english_pdfs - WARNING - File data/raw/sme/Business Startup Process in Bangladesh_SC v3.pdf failed quality checks: {'total_pages': 12, 'avg_text_per_page': 1526.25, 'text_density': 4.344851422761363, 'image_ratio': 1.5, 'avg_font_size': 11.521309975295038}
+2025-07-23 04:02:20,917 - process_english_pdfs - ERROR - Error processing data/raw/sme/mfg-en-case-study-the-grameen-bank-micro-credit-model-lessons-for-australian-indigenous-economic-policy-1999.pdf: name 'fitz' is not defined
+2025-07-23 04:02:21,384 - process_english_pdfs - ERROR - Error processing data/raw/sme/require-document-list-for-account-opening.pdf: name 'fitz' is not defined
+2025-07-23 04:02:21,430 - process_english_pdfs - ERROR - Error processing data/raw/sme/Business Startup FORM- I (1).pdf: name 'fitz' is not defined
+2025-07-23 04:02:21,728 - src.utils.pdf_processor - INFO - OCR needed for data/raw/sme/Business StartUP Guide.pdf
+2025-07-23 04:02:21,731 - process_english_pdfs - WARNING - File data/raw/sme/Business StartUP Guide.pdf failed quality checks: {'total_pages': 161, 'avg_text_per_page': 0.0, 'text_density': 0.9996390285056748, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:02:22,100 - process_english_pdfs - ERROR - Error processing data/raw/sme/Institutional-Account-Opening-Form-English-Version-Non-PersonalCorporateSME-Accoun.pdf: name 'fitz' is not defined
+2025-07-23 04:02:22,684 - process_english_pdfs - ERROR - Error processing data/raw/sme/ucb-taqwa-organizational-account-opening-form.pdf: name 'fitz' is not defined
+2025-07-23 04:02:22,814 - process_english_pdfs - WARNING - File data/raw/sme/2022-02-12-07-16-c1f322db1f774143fb098c220c11a802.pdf failed quality checks: {'total_pages': 10, 'avg_text_per_page': 932.6, 'text_density': 7.217750560276798, 'image_ratio': 1.0, 'avg_font_size': 12.451008058196802}
+2025-07-23 04:02:24,797 - process_english_pdfs - ERROR - Error processing data/raw/sme/Financing-Solutions-for-Micro-Small-and-Medium-Enterprises-in-Bangladesh.pdf: name 'fitz' is not defined
+2025-07-23 04:02:26,602 - process_english_pdfs - WARNING - File data/raw/sme/Basic Bank SME.pdf failed quality checks: {'total_pages': 48, 'avg_text_per_page': 1421.4375, 'text_density': 7.44955746395602, 'image_ratio': 1.2083333333333333, 'avg_font_size': 12.692186781377076}
+2025-07-23 04:02:26,664 - process_english_pdfs - ERROR - Error processing data/raw/sme/bpid_opening_Form.pdf: name 'fitz' is not defined
+2025-07-23 04:02:27,110 - process_english_pdfs - WARNING - File data/raw/sme/Microfinance-Programme-Brief-Nov-2020.pdf failed quality checks: {'total_pages': 28, 'avg_text_per_page': 726.0714285714286, 'text_density': 2.384725973718187, 'image_ratio': 0.9642857142857143, 'avg_font_size': 10.742637214619801}
+2025-07-23 04:02:27,320 - process_english_pdfs - ERROR - Error processing data/raw/sme/Account-Opening-Non-Ind-Dec-2024.pdf: name 'fitz' is not defined
+2025-07-23 04:02:28,552 - process_english_pdfs - ERROR - Error processing data/raw/sme/sme_guidelines.pdf: name 'fitz' is not defined
+2025-07-23 04:02:28,567 - src.utils.pdf_processor - INFO - OCR needed for data/raw/sme/Non-Individual_Account_Opening_Form_Conventional.pdf
+2025-07-23 04:02:28,567 - process_english_pdfs - WARNING - File data/raw/sme/Non-Individual_Account_Opening_Form_Conventional.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 0.0, 'text_density': 0.0, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:02:28,694 - process_english_pdfs - ERROR - Error processing data/raw/taxation/5 year sanchoypotro form.pdf: name 'fitz' is not defined
+2025-07-23 04:02:28,724 - process_english_pdfs - ERROR - Error processing data/raw/taxation/ডাকঘর সঞ্চয় ব্যাংক- মেয়াদী হিসাব.pdf: name 'fitz' is not defined
+2025-07-23 04:02:28,769 - process_english_pdfs - ERROR - Error processing data/raw/taxation/WAGE-EARNERS DEVELOPMENT BOND APPLICATION FORM.pdf: name 'fitz' is not defined
+2025-07-23 04:02:28,816 - process_english_pdfs - ERROR - Error processing data/raw/taxation/US DOLLAR PREMIUM BOND APPLICATION FORM.pdf: name 'fitz' is not defined
+2025-07-23 04:02:28,834 - process_english_pdfs - ERROR - Error processing data/raw/taxation/ডাক জীবন বীমা এবং অ্যানুইটি.pdf: name 'fitz' is not defined
+2025-07-23 04:02:28,867 - process_english_pdfs - ERROR - Error processing data/raw/taxation/Tax calculation table.pdf: name 'fitz' is not defined
+2025-07-23 04:02:28,889 - process_english_pdfs - ERROR - Error processing data/raw/taxation/ডাকঘর সঞ্চয় ব্যাংকের-সাধারণ হিসাব.pdf: name 'fitz' is not defined
+2025-07-23 04:02:28,935 - process_english_pdfs - ERROR - Error processing data/raw/taxation/US DOLLAR INVESTMENT BOND APPLICATION FORM.pdf: name 'fitz' is not defined
+2025-07-23 04:02:29,061 - process_english_pdfs - ERROR - Error processing data/raw/taxation/Personal Taxation in Bangladesh - Comprehensive Guide.pdf: name 'fitz' is not defined
+2025-07-23 04:02:41,847 - process_english_pdfs - ERROR - Error processing data/raw/taxation/income_tax_ordinance.pdf: name 'fitz' is not defined
+2025-07-23 04:02:41,945 - process_english_pdfs - ERROR - Error processing data/raw/taxation/2021-03-18-14-08-f2aebfe7b6b00610a3081237e0a989e4.pdf: name 'fitz' is not defined
+2025-07-23 04:02:42,043 - process_english_pdfs - ERROR - Error processing data/raw/taxation/2021-03-18-14-07-18991ad56d00da578460250da78664ed.pdf: name 'fitz' is not defined
+2025-07-23 04:02:42,043 - build_faiss_index - INFO - Starting document processing and indexing
+2025-07-23 04:02:42,045 - build_faiss_index - INFO - Processing category: loans
+2025-07-23 04:02:42,045 - build_faiss_index - INFO - Processing file: data/raw/loans/Car-Loan-One Bank.pdf
+2025-07-23 04:02:42,122 - src.utils.pdf_processor - INFO - OCR needed for data/raw/loans/Car-Loan-One Bank.pdf
+2025-07-23 04:02:42,123 - build_faiss_index - WARNING - File data/raw/loans/Car-Loan-One Bank.pdf did not pass quality thresholds: {'total_pages': 28, 'avg_text_per_page': 0.0, 'text_density': 0.9285714069648874, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:02:42,123 - build_faiss_index - INFO - Processing file: data/raw/loans/Car Loan Application Form.pdf
+2025-07-23 04:02:44,886 - build_faiss_index - INFO - Successfully processed data/raw/loans/Car Loan Application Form.pdf with 56 pages
+2025-07-23 04:02:44,886 - build_faiss_index - INFO - Processing file: data/raw/loans/CarLoan.pdf
+2025-07-23 04:02:44,906 - build_faiss_index - WARNING - File data/raw/loans/CarLoan.pdf did not pass quality thresholds: {'total_pages': 1, 'avg_text_per_page': 1438.0, 'text_density': 4.079264581445242, 'image_ratio': 1.0, 'avg_font_size': 11.491475410148746}
+2025-07-23 04:02:44,906 - build_faiss_index - INFO - Processing file: data/raw/loans/Comprehensive Loan Documentation Guide for Bangladesh.pdf
+2025-07-23 04:02:45,296 - build_faiss_index - INFO - Successfully processed data/raw/loans/Comprehensive Loan Documentation Guide for Bangladesh.pdf with 12 pages
+2025-07-23 04:02:45,297 - build_faiss_index - INFO - Processing file: data/raw/loans/bb_auto_loan_circular.pdf
+2025-07-23 04:02:45,336 - build_faiss_index - WARNING - File data/raw/loans/bb_auto_loan_circular.pdf did not pass quality thresholds: {'total_pages': 1, 'avg_text_per_page': 2090.0, 'text_density': 8.854395968470595, 'image_ratio': 2.0, 'avg_font_size': 12.164117644814883}
+2025-07-23 04:02:45,336 - build_faiss_index - INFO - Processing file: data/raw/loans/home_loan_application.pdf
+2025-07-23 04:02:54,863 - build_faiss_index - INFO - Successfully processed data/raw/loans/home_loan_application.pdf with 56 pages
+2025-07-23 04:02:54,864 - build_faiss_index - INFO - Processing category: investment
+2025-07-23 04:02:54,864 - build_faiss_index - INFO - Processing file: data/raw/investment/Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf
+2025-07-23 04:02:55,343 - build_faiss_index - INFO - Successfully processed data/raw/investment/Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf with 14 pages
+2025-07-23 04:02:55,343 - build_faiss_index - INFO - Processing file: data/raw/investment/form_5year.pdf
+2025-07-23 04:02:55,713 - build_faiss_index - INFO - Successfully processed data/raw/investment/form_5year.pdf with 2 pages
+2025-07-23 04:02:55,713 - build_faiss_index - INFO - Processing file: data/raw/investment/One-Stop Service (OSS) Rules, 2020.pdf
+2025-07-23 04:02:56,014 - build_faiss_index - WARNING - File data/raw/investment/One-Stop Service (OSS) Rules, 2020.pdf did not pass quality thresholds: {'total_pages': 9, 'avg_text_per_page': 1866.6666666666667, 'text_density': 11.604291703853612, 'image_ratio': 1.2222222222222223, 'avg_font_size': 11.082654185769682}
+2025-07-23 04:02:56,014 - build_faiss_index - INFO - Processing file: data/raw/investment/Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf
+2025-07-23 04:03:02,452 - build_faiss_index - WARNING - File data/raw/investment/Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf did not pass quality thresholds: {'total_pages': 113, 'avg_text_per_page': 2046.3008849557523, 'text_density': 3.7358184201909057, 'image_ratio': 2.2389380530973453, 'avg_font_size': 10.87085494254617}
+2025-07-23 04:03:02,452 - build_faiss_index - INFO - Processing file: data/raw/investment/Financial-Literacy-Curriculum.pdf
+2025-07-23 04:03:13,657 - build_faiss_index - INFO - Successfully processed data/raw/investment/Financial-Literacy-Curriculum.pdf with 72 pages
+2025-07-23 04:03:13,657 - build_faiss_index - INFO - Processing file: data/raw/investment/financial_literacy_guidelines_draft.pdf
+2025-07-23 04:03:14,097 - build_faiss_index - INFO - Successfully processed data/raw/investment/financial_literacy_guidelines_draft.pdf with 10 pages
+2025-07-23 04:03:14,097 - build_faiss_index - INFO - Processing file: data/raw/investment/03 OP_ZF_1.pdf
+2025-07-23 04:03:15,315 - build_faiss_index - INFO - Successfully processed data/raw/investment/03 OP_ZF_1.pdf with 6 pages
+2025-07-23 04:03:15,318 - build_faiss_index - INFO - Processing file: data/raw/investment/5-Year Bangladesh Savings Certificate.pdf
+2025-07-23 04:03:15,513 - build_faiss_index - INFO - Successfully processed data/raw/investment/5-Year Bangladesh Savings Certificate.pdf with 5 pages
+2025-07-23 04:03:15,513 - build_faiss_index - INFO - Processing file: data/raw/investment/Industrial Policy of Bangladesh (2022).pdf
+2025-07-23 04:03:15,616 - src.utils.pdf_processor - INFO - OCR needed for data/raw/investment/Industrial Policy of Bangladesh (2022).pdf
+2025-07-23 04:03:15,618 - build_faiss_index - WARNING - File data/raw/investment/Industrial Policy of Bangladesh (2022).pdf did not pass quality thresholds: {'total_pages': 41, 'avg_text_per_page': 0.0, 'text_density': 0.9989477763694117, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:03:15,618 - build_faiss_index - INFO - Processing file: data/raw/investment/Guidelines for Non-Resident Bangladeshis (NRBs).pdf
+2025-07-23 04:08:07,667 - clean_processed_folder - INFO - Starting cleanup of processed folder
+2025-07-23 04:08:07,667 - clean_processed_folder - INFO - Cleaned and recreated banking directory
+2025-07-23 04:08:07,668 - clean_processed_folder - INFO - Cleaned and recreated investment directory
+2025-07-23 04:08:07,668 - clean_processed_folder - INFO - Cleaned and recreated loans directory
+2025-07-23 04:08:07,668 - clean_processed_folder - INFO - Cleaned and recreated regulations directory
+2025-07-23 04:08:07,668 - clean_processed_folder - INFO - Cleaned and recreated sme directory
+2025-07-23 04:08:07,668 - clean_processed_folder - INFO - Cleaned and recreated taxation directory
+2025-07-23 04:08:07,976 - process_english_pdfs - ERROR - Error processing data/raw/banking/personal_ac_opening_form.pdf: name 'fitz' is not defined
+2025-07-23 04:08:08,110 - process_english_pdfs - WARNING - File data/raw/banking/FAQ e-Banking.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 2207.5, 'text_density': 0.5942093026363189, 'image_ratio': 2.0, 'avg_font_size': 10.970459331472012}
+2025-07-23 04:08:08,952 - process_english_pdfs - ERROR - Error processing data/raw/banking/e-KYC Guidelines.pdf: name 'fitz' is not defined
+2025-07-23 04:08:09,065 - process_english_pdfs - WARNING - File data/raw/banking/FAQs on Banking Services SEB.pdf failed quality checks: {'total_pages': 3, 'avg_text_per_page': 2261.3333333333335, 'text_density': 0.40936458037047224, 'image_ratio': 1.0, 'avg_font_size': 10.802608683489371}
+2025-07-23 04:08:09,270 - process_english_pdfs - WARNING - File data/raw/banking/RETURN OF INCOME for company.pdf failed quality checks: {'total_pages': 8, 'avg_text_per_page': 962.375, 'text_density': 0.37384655231951025, 'image_ratio': 5.0, 'avg_font_size': 11.65250268684166}
+2025-07-23 04:08:11,602 - process_english_pdfs - ERROR - Error processing data/raw/banking/krishibank_Scheme.pdf: name 'fitz' is not defined
+2025-07-23 04:08:12,719 - src.utils.pdf_processor - INFO - OCR needed for data/raw/banking/account-opening-form-term-deposit-savings-scheme-special-scheme.pdf
+2025-07-23 04:08:12,719 - process_english_pdfs - WARNING - File data/raw/banking/account-opening-form-term-deposit-savings-scheme-special-scheme.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 0.0, 'text_density': 0.01187386759935374, 'image_ratio': 15.25, 'avg_font_size': 0}
+2025-07-23 04:08:12,896 - process_english_pdfs - WARNING - File data/raw/banking/FAQ-OBU-IB-AccountOpening - primeBank.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 2526.75, 'text_density': 0.5028037408535041, 'image_ratio': 1.0, 'avg_font_size': 9.928928533568978}
+2025-07-23 04:08:12,931 - process_english_pdfs - ERROR - Error processing data/raw/banking/Tax calculation table.pdf: name 'fitz' is not defined
+2025-07-23 04:08:16,396 - process_english_pdfs - ERROR - Error processing data/raw/banking/Core Banking Solution BB.pdf: name 'fitz' is not defined
+2025-07-23 04:08:16,488 - process_english_pdfs - ERROR - Error processing data/raw/banking/Student Loans in Bangladesh.pdf: name 'fitz' is not defined
+2025-07-23 04:08:16,902 - process_english_pdfs - ERROR - Error processing data/raw/banking/Personal_Account_Opening_Form.pdf: name 'fitz' is not defined
+2025-07-23 04:08:19,518 - process_english_pdfs - ERROR - Error processing data/raw/banking/Guidelines on ICT Security for Banks and Non-Bank Financial Institutions, 2023.pdf: name 'fitz' is not defined
+2025-07-23 04:08:21,213 - process_english_pdfs - ERROR - Error processing data/raw/banking/2024-08-04-09-27-3196d924fdcc0bb5fbd7e81e78194897.pdf: name 'fitz' is not defined
+2025-07-23 04:08:24,461 - process_english_pdfs - ERROR - Error processing data/raw/banking/আয়কর_নির্দেশিকা_২০২৪-২০২৫.pdf: name 'fitz' is not defined
+2025-07-23 04:08:24,741 - process_english_pdfs - ERROR - Error processing data/raw/banking/FORM OF RETURN OF INCOME TAX.pdf: name 'fitz' is not defined
+2025-07-23 04:08:25,147 - process_english_pdfs - ERROR - Error processing data/raw/banking/dttl-tax-bangladeshhighlights-2023.pdf: name 'fitz' is not defined
+2025-07-23 04:08:25,173 - process_english_pdfs - WARNING - File data/raw/banking/banking_regulations.pdf failed quality checks: {'total_pages': 1, 'avg_text_per_page': 1318.0, 'text_density': 0.4321457594000526, 'image_ratio': 1.0, 'avg_font_size': 11.768333340684572}
+2025-07-23 04:08:25,268 - src.utils.pdf_processor - INFO - OCR needed for data/raw/banking/User_Manual_for_bKash.pdf
+2025-07-23 04:08:25,268 - process_english_pdfs - WARNING - File data/raw/banking/User_Manual_for_bKash.pdf failed quality checks: {'total_pages': 9, 'avg_text_per_page': 33.22222222222222, 'text_density': 0.42738692238660997, 'image_ratio': 1.7777777777777777, 'avg_font_size': 11.039999961853027}
+2025-07-23 04:08:25,344 - process_english_pdfs - ERROR - Error processing data/raw/banking/Interest Rates Report 2024-2025.pdf: name 'fitz' is not defined
+2025-07-23 04:08:25,771 - process_english_pdfs - WARNING - File data/raw/banking/FAQs-Bank Al Arafah.pdf failed quality checks: {'total_pages': 17, 'avg_text_per_page': 1822.5294117647059, 'text_density': 0.4633634509552743, 'image_ratio': 1.0, 'avg_font_size': 11.015250451702846}
+2025-07-23 04:08:28,202 - process_english_pdfs - WARNING - File data/raw/banking/Aykor_Nirdeshika_2024-2025.pdf failed quality checks: {'total_pages': 119, 'avg_text_per_page': 1650.9915966386554, 'text_density': 1.1139250397643792, 'image_ratio': 1.0, 'avg_font_size': 8.094534925052098}
+2025-07-23 04:08:28,807 - process_english_pdfs - ERROR - Error processing data/raw/banking/GUIDELINES FOR CONDUCTING ISLAMIC BANKING.pdf: name 'fitz' is not defined
+2025-07-23 04:08:28,872 - process_english_pdfs - ERROR - Error processing data/raw/banking/Complaints BB.pdf: name 'fitz' is not defined
+2025-07-23 04:08:28,917 - process_english_pdfs - ERROR - Error processing data/raw/banking/Online_Banking_FAQ.pdf: name 'fitz' is not defined
+2025-07-23 04:08:28,980 - process_english_pdfs - ERROR - Error processing data/raw/banking/Deposit insurance and customer protection measures.pdf: name 'fitz' is not defined
+2025-07-23 04:08:29,185 - process_english_pdfs - ERROR - Error processing data/raw/banking/FAQ_MDBDigitalProbashiSavingsAccount_2024.pdf: name 'fitz' is not defined
+2025-07-23 04:08:29,301 - process_english_pdfs - WARNING - File data/raw/banking/Term_Deposit_Account_Opening_Application_Form_June_20.pdf failed quality checks: {'total_pages': 6, 'avg_text_per_page': 1587.6666666666667, 'text_density': 0.19439433777187834, 'image_ratio': 0.0, 'avg_font_size': 8.865894692615399}
+2025-07-23 04:08:29,538 - process_english_pdfs - ERROR - Error processing data/raw/banking/FDR-and-Deposit-Scheme-Form-English-Version.pdf: name 'fitz' is not defined
+2025-07-23 04:08:30,404 - process_english_pdfs - WARNING - File data/raw/banking/Interest rates and lending policies.pdf failed quality checks: {'total_pages': 19, 'avg_text_per_page': 1392.9473684210527, 'text_density': 0.28762530417189536, 'image_ratio': 54.1578947368421, 'avg_font_size': 10.583165747678875}
+2025-07-23 04:08:31,371 - process_english_pdfs - ERROR - Error processing data/raw/banking/NBR_cleanedTAX.pdf: name 'fitz' is not defined
+2025-07-23 04:08:31,568 - process_english_pdfs - WARNING - File data/raw/banking/BASIC BANK Form.pdf failed quality checks: {'total_pages': 20, 'avg_text_per_page': 624.15, 'text_density': 0.09173845168628103, 'image_ratio': 0.0, 'avg_font_size': 11.0}
+2025-07-23 04:08:34,519 - process_english_pdfs - ERROR - Error processing data/raw/banking/Insurance Act 2010 english version.pdf: name 'fitz' is not defined
+2025-07-23 04:08:34,551 - process_english_pdfs - ERROR - Error processing data/raw/banking/startup_fund.pdf: name 'fitz' is not defined
+2025-07-23 04:08:37,306 - process_english_pdfs - ERROR - Error processing data/raw/banking/Bangladesh Electronic Funds Transfer Network.pdf: name 'fitz' is not defined
+2025-07-23 04:08:37,556 - process_english_pdfs - ERROR - Error processing data/raw/banking/Credit policies and loan eligibility criteria.pdf: name 'fitz' is not defined
+2025-07-23 04:08:38,806 - process_english_pdfs - ERROR - Error processing data/raw/banking/1688964931_2. Account Opening form (Individual)-Editable.pdf: name 'fitz' is not defined
+2025-07-23 04:08:39,989 - process_english_pdfs - WARNING - File data/raw/banking/docs procedures of loan and advances.pdf failed quality checks: {'total_pages': 40, 'avg_text_per_page': 406.1, 'text_density': 0.43460943432670296, 'image_ratio': 1.8, 'avg_font_size': 20.70038809062478}
+2025-07-23 04:08:40,194 - process_english_pdfs - WARNING - File data/raw/banking/EBL_ACCESS_Frequesntly_Asked_Questions.pdf failed quality checks: {'total_pages': 5, 'avg_text_per_page': 2898.0, 'text_density': 0.6330156338036245, 'image_ratio': 1.2, 'avg_font_size': 9.867794147309136}
+2025-07-23 04:08:40,412 - process_english_pdfs - WARNING - File data/raw/banking/Guidelines on Agent Banking for the Banks.pdf failed quality checks: {'total_pages': 7, 'avg_text_per_page': 2571.714285714286, 'text_density': 0.6068502940934695, 'image_ratio': 1.0, 'avg_font_size': 11.505027745435507}
+2025-07-23 04:08:43,985 - process_english_pdfs - ERROR - Error processing data/raw/banking/Foreign exchange transactions and regulations.pdf: name 'fitz' is not defined
+2025-07-23 04:08:44,198 - process_english_pdfs - ERROR - Error processing data/raw/banking/Mobile Financial Services Guidelines.pdf: name 'fitz' is not defined
+2025-07-23 04:08:44,581 - process_english_pdfs - WARNING - File data/raw/banking/FAQs on Banking Services IFIC.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 3463.25, 'text_density': 0.5121872768401827, 'image_ratio': 7.5, 'avg_font_size': 9.166539921053461}
+2025-07-23 04:08:44,926 - process_english_pdfs - WARNING - File data/raw/banking/FAQ_e-Return.pdf failed quality checks: {'total_pages': 11, 'avg_text_per_page': 1876.6363636363637, 'text_density': 0.42713657213449346, 'image_ratio': 1.0909090909090908, 'avg_font_size': 13.36107880266623}
+2025-07-23 04:08:45,062 - process_english_pdfs - WARNING - File data/raw/banking/FAQ e-Banking NRB.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 2207.5, 'text_density': 0.5942093026363189, 'image_ratio': 2.0, 'avg_font_size': 10.970459331472012}
+2025-07-23 04:08:45,844 - process_english_pdfs - ERROR - Error processing data/raw/banking/Guidelines on Consumer Rights.pdf: name 'fitz' is not defined
+2025-07-23 04:08:49,744 - process_english_pdfs - WARNING - File data/raw/banking/Account-Opening-Form-Folder-Individual.pdf failed quality checks: {'total_pages': 8, 'avg_text_per_page': 0.0, 'text_density': 1.5737674493665779, 'image_ratio': 0.0, 'avg_font_size': 0}
+2025-07-23 04:08:50,778 - process_english_pdfs - ERROR - Error processing data/raw/banking/bd-personal-account-opening-form.pdf: name 'fitz' is not defined
+2025-07-23 04:08:50,981 - process_english_pdfs - WARNING - File data/raw/investment/Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf failed quality checks: {'total_pages': 14, 'avg_text_per_page': 1092.5, 'text_density': 0.1795940049048635, 'image_ratio': 0.0, 'avg_font_size': 12.147299509001636}
+2025-07-23 04:08:51,109 - process_english_pdfs - ERROR - Error processing data/raw/investment/form_5year.pdf: name 'fitz' is not defined
+2025-07-23 04:08:51,410 - process_english_pdfs - WARNING - File data/raw/investment/One-Stop Service (OSS) Rules, 2020.pdf failed quality checks: {'total_pages': 9, 'avg_text_per_page': 1866.6666666666667, 'text_density': 0.5574237918558773, 'image_ratio': 1.2222222222222223, 'avg_font_size': 11.082654185769682}
+2025-07-23 04:08:57,985 - process_english_pdfs - WARNING - File data/raw/investment/Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf failed quality checks: {'total_pages': 113, 'avg_text_per_page': 2046.3008849557523, 'text_density': 0.44823248949014904, 'image_ratio': 2.2389380530973453, 'avg_font_size': 10.87085494254617}
+2025-07-23 04:09:03,786 - process_english_pdfs - ERROR - Error processing data/raw/investment/Financial-Literacy-Curriculum.pdf: name 'fitz' is not defined
+2025-07-23 04:09:04,026 - process_english_pdfs - ERROR - Error processing data/raw/investment/financial_literacy_guidelines_draft.pdf: name 'fitz' is not defined
+2025-07-23 04:09:04,304 - process_english_pdfs - ERROR - Error processing data/raw/investment/03 OP_ZF_1.pdf: name 'fitz' is not defined
+2025-07-23 04:09:04,358 - process_english_pdfs - WARNING - File data/raw/investment/5-Year Bangladesh Savings Certificate.pdf failed quality checks: {'total_pages': 5, 'avg_text_per_page': 688.2, 'text_density': 0.1025781011352922, 'image_ratio': 0.0, 'avg_font_size': 11.0}
+2025-07-23 04:09:04,462 - src.utils.pdf_processor - INFO - OCR needed for data/raw/investment/Industrial Policy of Bangladesh (2022).pdf
+2025-07-23 04:09:04,465 - process_english_pdfs - WARNING - File data/raw/investment/Industrial Policy of Bangladesh (2022).pdf failed quality checks: {'total_pages': 41, 'avg_text_per_page': 0.0, 'text_density': 0.9984985969920201, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:09:14,148 - process_english_pdfs - ERROR - Error processing data/raw/investment/Guidelines for Non-Resident Bangladeshis (NRBs).pdf: name 'fitz' is not defined
+2025-07-23 04:09:14,799 - process_english_pdfs - ERROR - Error processing data/raw/investment/Bilateral Investment Treaties (BITs).pdf: name 'fitz' is not defined
+2025-07-23 04:09:19,211 - process_english_pdfs - WARNING - File data/raw/investment/Foreign-Investment-in-Bangladesh-Booklet .pdf failed quality checks: {'total_pages': 66, 'avg_text_per_page': 1312.409090909091, 'text_density': 0.32881124892160213, 'image_ratio': 1.2727272727272727, 'avg_font_size': 9.171417911955354}
+2025-07-23 04:09:19,287 - src.utils.pdf_processor - INFO - OCR needed for data/raw/loans/Car-Loan-One Bank.pdf
+2025-07-23 04:09:19,288 - process_english_pdfs - WARNING - File data/raw/loans/Car-Loan-One Bank.pdf failed quality checks: {'total_pages': 28, 'avg_text_per_page': 0.0, 'text_density': 0.9285714069648874, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:09:20,292 - process_english_pdfs - WARNING - File data/raw/loans/Car Loan Application Form.pdf failed quality checks: {'total_pages': 56, 'avg_text_per_page': 1262.375, 'text_density': 0.18065728747958462, 'image_ratio': 0.14285714285714285, 'avg_font_size': 10.036566205372084}
+2025-07-23 04:09:20,312 - process_english_pdfs - WARNING - File data/raw/loans/CarLoan.pdf failed quality checks: {'total_pages': 1, 'avg_text_per_page': 1438.0, 'text_density': 0.4505481080735623, 'image_ratio': 1.0, 'avg_font_size': 11.491475410148746}
+2025-07-23 04:09:20,479 - process_english_pdfs - WARNING - File data/raw/loans/Comprehensive Loan Documentation Guide for Bangladesh.pdf failed quality checks: {'total_pages': 12, 'avg_text_per_page': 1026.6666666666667, 'text_density': 0.17118892258833707, 'image_ratio': 0.0, 'avg_font_size': 12.147347740667977}
+2025-07-23 04:09:20,518 - process_english_pdfs - WARNING - File data/raw/loans/bb_auto_loan_circular.pdf failed quality checks: {'total_pages': 1, 'avg_text_per_page': 2090.0, 'text_density': 0.44413717764251937, 'image_ratio': 2.0, 'avg_font_size': 12.164117644814883}
+2025-07-23 04:09:23,124 - process_english_pdfs - ERROR - Error processing data/raw/loans/home_loan_application.pdf: name 'fitz' is not defined
+2025-07-23 04:09:23,789 - process_english_pdfs - WARNING - File data/raw/regulations/Foreign Exchange Regulation Act, 1947.pdf failed quality checks: {'total_pages': 23, 'avg_text_per_page': 2342.6521739130435, 'text_density': 0.2955672374276883, 'image_ratio': 2.0, 'avg_font_size': 8.835845684085472}
+2025-07-23 04:09:25,312 - process_english_pdfs - ERROR - Error processing data/raw/regulations/Negotiable Instruments Act, 1881.pdf: name 'fitz' is not defined
+2025-07-23 04:09:26,213 - process_english_pdfs - ERROR - Error processing data/raw/regulations/Bangladesh Bank Order, 1972.pdf: name 'fitz' is not defined
+2025-07-23 04:09:26,389 - process_english_pdfs - WARNING - File data/raw/regulations/Banking Regulations and Customer Rights in Bangladesh_ A Comprehensive Guide.pdf failed quality checks: {'total_pages': 13, 'avg_text_per_page': 1043.3846153846155, 'text_density': 0.1719332510399913, 'image_ratio': 0.0, 'avg_font_size': 12.157425742574258}
+2025-07-23 04:09:28,398 - process_english_pdfs - ERROR - Error processing data/raw/regulations/mfg-en-paper-the-bank-company-act-bangladesh-1991-1991.pdf: name 'fitz' is not defined
+2025-07-23 04:09:28,637 - process_english_pdfs - ERROR - Error processing data/raw/regulations/financial_literacy_guidelines_draft.pdf: name 'fitz' is not defined
+2025-07-23 04:09:40,920 - process_english_pdfs - ERROR - Error processing data/raw/regulations/1384Corporate Laws & Practices.pdf: name 'fitz' is not defined
+2025-07-23 04:09:41,562 - process_english_pdfs - ERROR - Error processing data/raw/regulations/Finance Institutions Act, 1993.pdf: name 'fitz' is not defined
+2025-07-23 04:09:42,460 - process_english_pdfs - ERROR - Error processing data/raw/regulations/Binimoy Operating Rules.pdf: name 'fitz' is not defined
+2025-07-23 04:09:42,494 - src.utils.pdf_processor - INFO - OCR needed for data/raw/regulations/Money Laundering Act 2012.pdf
+2025-07-23 04:09:42,494 - process_english_pdfs - WARNING - File data/raw/regulations/Money Laundering Act 2012.pdf failed quality checks: {'total_pages': 23, 'avg_text_per_page': 0.0, 'text_density': 0.6037613125895415, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:09:43,893 - process_english_pdfs - ERROR - Error processing data/raw/sme/smepolicye.pdf: name 'fitz' is not defined
+2025-07-23 04:09:43,987 - process_english_pdfs - WARNING - File data/raw/sme/Requried-documents-for-non-individuals.pdf failed quality checks: {'total_pages': 1, 'avg_text_per_page': 6322.0, 'text_density': 0.41903099519984766, 'image_ratio': 1.0, 'avg_font_size': 6.297128967022828}
+2025-07-23 04:09:44,697 - process_english_pdfs - WARNING - File data/raw/sme/Business Startup Process in Bangladesh_SC v3.pdf failed quality checks: {'total_pages': 12, 'avg_text_per_page': 1526.25, 'text_density': 0.5737609320637842, 'image_ratio': 1.5, 'avg_font_size': 11.521309975295038}
+2025-07-23 04:09:45,537 - process_english_pdfs - ERROR - Error processing data/raw/sme/mfg-en-case-study-the-grameen-bank-micro-credit-model-lessons-for-australian-indigenous-economic-policy-1999.pdf: name 'fitz' is not defined
+2025-07-23 04:09:46,008 - process_english_pdfs - ERROR - Error processing data/raw/sme/require-document-list-for-account-opening.pdf: name 'fitz' is not defined
+2025-07-23 04:09:46,053 - process_english_pdfs - ERROR - Error processing data/raw/sme/Business Startup FORM- I (1).pdf: name 'fitz' is not defined
+2025-07-23 04:09:46,357 - src.utils.pdf_processor - INFO - OCR needed for data/raw/sme/Business StartUP Guide.pdf
+2025-07-23 04:09:46,360 - process_english_pdfs - WARNING - File data/raw/sme/Business StartUP Guide.pdf failed quality checks: {'total_pages': 161, 'avg_text_per_page': 0.0, 'text_density': 0.9993715783817715, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:09:46,727 - process_english_pdfs - ERROR - Error processing data/raw/sme/Institutional-Account-Opening-Form-English-Version-Non-PersonalCorporateSME-Accoun.pdf: name 'fitz' is not defined
+2025-07-23 04:09:47,316 - process_english_pdfs - ERROR - Error processing data/raw/sme/ucb-taqwa-organizational-account-opening-form.pdf: name 'fitz' is not defined
+2025-07-23 04:09:47,448 - process_english_pdfs - WARNING - File data/raw/sme/2022-02-12-07-16-c1f322db1f774143fb098c220c11a802.pdf failed quality checks: {'total_pages': 10, 'avg_text_per_page': 932.6, 'text_density': 1.2031605950692663, 'image_ratio': 1.0, 'avg_font_size': 12.451008058196802}
+2025-07-23 04:09:49,441 - process_english_pdfs - ERROR - Error processing data/raw/sme/Financing-Solutions-for-Micro-Small-and-Medium-Enterprises-in-Bangladesh.pdf: name 'fitz' is not defined
+2025-07-23 04:09:51,263 - process_english_pdfs - WARNING - File data/raw/sme/Basic Bank SME.pdf failed quality checks: {'total_pages': 48, 'avg_text_per_page': 1421.4375, 'text_density': 0.2979596240280042, 'image_ratio': 1.2083333333333333, 'avg_font_size': 12.692186781377076}
+2025-07-23 04:09:51,323 - process_english_pdfs - WARNING - File data/raw/sme/bpid_opening_Form.pdf failed quality checks: {'total_pages': 2, 'avg_text_per_page': 1571.0, 'text_density': 0.16503620441854078, 'image_ratio': 0.0, 'avg_font_size': 10.027261181242148}
+2025-07-23 04:09:51,772 - process_english_pdfs - WARNING - File data/raw/sme/Microfinance-Programme-Brief-Nov-2020.pdf failed quality checks: {'total_pages': 28, 'avg_text_per_page': 726.0714285714286, 'text_density': 0.22761331549209007, 'image_ratio': 0.9642857142857143, 'avg_font_size': 10.742637214619801}
+2025-07-23 04:09:51,985 - process_english_pdfs - ERROR - Error processing data/raw/sme/Account-Opening-Non-Ind-Dec-2024.pdf: name 'fitz' is not defined
+2025-07-23 04:09:53,222 - process_english_pdfs - ERROR - Error processing data/raw/sme/sme_guidelines.pdf: name 'fitz' is not defined
+2025-07-23 04:09:53,235 - src.utils.pdf_processor - INFO - OCR needed for data/raw/sme/Non-Individual_Account_Opening_Form_Conventional.pdf
+2025-07-23 04:09:53,236 - process_english_pdfs - WARNING - File data/raw/sme/Non-Individual_Account_Opening_Form_Conventional.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 0.0, 'text_density': 0.0, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:09:53,363 - process_english_pdfs - ERROR - Error processing data/raw/taxation/5 year sanchoypotro form.pdf: name 'fitz' is not defined
+2025-07-23 04:09:53,393 - process_english_pdfs - WARNING - File data/raw/taxation/ডাকঘর সঞ্চয় ব্যাংক- মেয়াদী হিসাব.pdf failed quality checks: {'total_pages': 2, 'avg_text_per_page': 619.5, 'text_density': 0.13237450224087835, 'image_ratio': 0.0, 'avg_font_size': 11.024416135881104}
+2025-07-23 04:09:53,440 - process_english_pdfs - ERROR - Error processing data/raw/taxation/WAGE-EARNERS DEVELOPMENT BOND APPLICATION FORM.pdf: name 'fitz' is not defined
+2025-07-23 04:09:53,489 - process_english_pdfs - ERROR - Error processing data/raw/taxation/US DOLLAR PREMIUM BOND APPLICATION FORM.pdf: name 'fitz' is not defined
+2025-07-23 04:09:53,507 - process_english_pdfs - WARNING - File data/raw/taxation/ডাক জীবন বীমা এবং অ্যানুইটি.pdf failed quality checks: {'total_pages': 1, 'avg_text_per_page': 762.0, 'text_density': 0.14771008677692604, 'image_ratio': 0.0, 'avg_font_size': 10.52265625340598}
+2025-07-23 04:09:53,540 - process_english_pdfs - ERROR - Error processing data/raw/taxation/Tax calculation table.pdf: name 'fitz' is not defined
+2025-07-23 04:09:53,563 - process_english_pdfs - ERROR - Error processing data/raw/taxation/ডাকঘর সঞ্চয় ব্যাংকের-সাধারণ হিসাব.pdf: name 'fitz' is not defined
+2025-07-23 04:09:53,609 - process_english_pdfs - ERROR - Error processing data/raw/taxation/US DOLLAR INVESTMENT BOND APPLICATION FORM.pdf: name 'fitz' is not defined
+2025-07-23 04:09:53,736 - process_english_pdfs - WARNING - File data/raw/taxation/Personal Taxation in Bangladesh - Comprehensive Guide.pdf failed quality checks: {'total_pages': 9, 'avg_text_per_page': 1076.888888888889, 'text_density': 0.17446143520702093, 'image_ratio': 0.0, 'avg_font_size': 12.124352331606218}
+2025-07-23 04:10:06,668 - process_english_pdfs - ERROR - Error processing data/raw/taxation/income_tax_ordinance.pdf: name 'fitz' is not defined
+2025-07-23 04:10:06,765 - process_english_pdfs - ERROR - Error processing data/raw/taxation/2021-03-18-14-08-f2aebfe7b6b00610a3081237e0a989e4.pdf: name 'fitz' is not defined
+2025-07-23 04:10:06,864 - process_english_pdfs - ERROR - Error processing data/raw/taxation/2021-03-18-14-07-18991ad56d00da578460250da78664ed.pdf: name 'fitz' is not defined
+2025-07-23 04:10:06,864 - build_faiss_index - INFO - Starting document processing and indexing
+2025-07-23 04:10:06,865 - build_faiss_index - INFO - Processing category: loans
+2025-07-23 04:10:06,866 - build_faiss_index - INFO - Processing file: data/raw/loans/Car-Loan-One Bank.pdf
+2025-07-23 04:10:06,923 - src.utils.pdf_processor - INFO - OCR needed for data/raw/loans/Car-Loan-One Bank.pdf
+2025-07-23 04:10:06,923 - build_faiss_index - WARNING - File data/raw/loans/Car-Loan-One Bank.pdf did not pass quality thresholds: {'total_pages': 28, 'avg_text_per_page': 0.0, 'text_density': 0.9285714069648874, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:10:06,923 - build_faiss_index - INFO - Processing file: data/raw/loans/Car Loan Application Form.pdf
+2025-07-23 04:10:07,930 - build_faiss_index - WARNING - File data/raw/loans/Car Loan Application Form.pdf did not pass quality thresholds: {'total_pages': 56, 'avg_text_per_page': 1262.375, 'text_density': 0.18065728747958462, 'image_ratio': 0.14285714285714285, 'avg_font_size': 10.036566205372084}
+2025-07-23 04:10:07,930 - build_faiss_index - INFO - Processing file: data/raw/loans/CarLoan.pdf
+2025-07-23 04:10:07,949 - build_faiss_index - WARNING - File data/raw/loans/CarLoan.pdf did not pass quality thresholds: {'total_pages': 1, 'avg_text_per_page': 1438.0, 'text_density': 0.4505481080735623, 'image_ratio': 1.0, 'avg_font_size': 11.491475410148746}
+2025-07-23 04:10:07,949 - build_faiss_index - INFO - Processing file: data/raw/loans/Comprehensive Loan Documentation Guide for Bangladesh.pdf
+2025-07-23 04:10:08,118 - build_faiss_index - WARNING - File data/raw/loans/Comprehensive Loan Documentation Guide for Bangladesh.pdf did not pass quality thresholds: {'total_pages': 12, 'avg_text_per_page': 1026.6666666666667, 'text_density': 0.17118892258833707, 'image_ratio': 0.0, 'avg_font_size': 12.147347740667977}
+2025-07-23 04:10:08,118 - build_faiss_index - INFO - Processing file: data/raw/loans/bb_auto_loan_circular.pdf
+2025-07-23 04:10:08,156 - build_faiss_index - WARNING - File data/raw/loans/bb_auto_loan_circular.pdf did not pass quality thresholds: {'total_pages': 1, 'avg_text_per_page': 2090.0, 'text_density': 0.44413717764251937, 'image_ratio': 2.0, 'avg_font_size': 12.164117644814883}
+2025-07-23 04:10:08,156 - build_faiss_index - INFO - Processing file: data/raw/loans/home_loan_application.pdf
+2025-07-23 04:10:17,791 - build_faiss_index - INFO - Successfully processed data/raw/loans/home_loan_application.pdf with 56 pages
+2025-07-23 04:10:17,792 - build_faiss_index - INFO - Processing category: investment
+2025-07-23 04:10:17,792 - build_faiss_index - INFO - Processing file: data/raw/investment/Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf
+2025-07-23 04:10:17,992 - build_faiss_index - WARNING - File data/raw/investment/Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf did not pass quality thresholds: {'total_pages': 14, 'avg_text_per_page': 1092.5, 'text_density': 0.1795940049048635, 'image_ratio': 0.0, 'avg_font_size': 12.147299509001636}
+2025-07-23 04:10:17,992 - build_faiss_index - INFO - Processing file: data/raw/investment/form_5year.pdf
+2025-07-23 04:10:18,368 - build_faiss_index - INFO - Successfully processed data/raw/investment/form_5year.pdf with 2 pages
+2025-07-23 04:10:18,368 - build_faiss_index - INFO - Processing file: data/raw/investment/One-Stop Service (OSS) Rules, 2020.pdf
+2025-07-23 04:10:18,665 - build_faiss_index - WARNING - File data/raw/investment/One-Stop Service (OSS) Rules, 2020.pdf did not pass quality thresholds: {'total_pages': 9, 'avg_text_per_page': 1866.6666666666667, 'text_density': 0.5574237918558773, 'image_ratio': 1.2222222222222223, 'avg_font_size': 11.082654185769682}
+2025-07-23 04:10:18,665 - build_faiss_index - INFO - Processing file: data/raw/investment/Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf
+2025-07-23 04:10:25,095 - build_faiss_index - WARNING - File data/raw/investment/Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf did not pass quality thresholds: {'total_pages': 113, 'avg_text_per_page': 2046.3008849557523, 'text_density': 0.44823248949014904, 'image_ratio': 2.2389380530973453, 'avg_font_size': 10.87085494254617}
+2025-07-23 04:10:25,095 - build_faiss_index - INFO - Processing file: data/raw/investment/Financial-Literacy-Curriculum.pdf
+2025-07-23 04:10:36,356 - build_faiss_index - INFO - Successfully processed data/raw/investment/Financial-Literacy-Curriculum.pdf with 72 pages
+2025-07-23 04:10:36,356 - build_faiss_index - INFO - Processing file: data/raw/investment/financial_literacy_guidelines_draft.pdf
+2025-07-23 04:10:36,789 - build_faiss_index - INFO - Successfully processed data/raw/investment/financial_literacy_guidelines_draft.pdf with 10 pages
+2025-07-23 04:10:36,789 - build_faiss_index - INFO - Processing file: data/raw/investment/03 OP_ZF_1.pdf
+2025-07-23 04:10:38,003 - build_faiss_index - INFO - Successfully processed data/raw/investment/03 OP_ZF_1.pdf with 6 pages
+2025-07-23 04:10:38,004 - build_faiss_index - INFO - Processing file: data/raw/investment/5-Year Bangladesh Savings Certificate.pdf
+2025-07-23 04:10:38,060 - build_faiss_index - WARNING - File data/raw/investment/5-Year Bangladesh Savings Certificate.pdf did not pass quality thresholds: {'total_pages': 5, 'avg_text_per_page': 688.2, 'text_density': 0.1025781011352922, 'image_ratio': 0.0, 'avg_font_size': 11.0}
+2025-07-23 04:10:38,060 - build_faiss_index - INFO - Processing file: data/raw/investment/Industrial Policy of Bangladesh (2022).pdf
+2025-07-23 04:10:38,164 - src.utils.pdf_processor - INFO - OCR needed for data/raw/investment/Industrial Policy of Bangladesh (2022).pdf
+2025-07-23 04:10:38,167 - build_faiss_index - WARNING - File data/raw/investment/Industrial Policy of Bangladesh (2022).pdf did not pass quality thresholds: {'total_pages': 41, 'avg_text_per_page': 0.0, 'text_density': 0.9984985969920201, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:10:38,167 - build_faiss_index - INFO - Processing file: data/raw/investment/Guidelines for Non-Resident Bangladeshis (NRBs).pdf
+2025-07-23 04:22:22,998 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2025-07-23 04:22:55,113 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2025-07-23 04:22:56,774 - clean_processed_folder - INFO - Starting cleanup of processed folder
+2025-07-23 04:22:56,775 - clean_processed_folder - INFO - Cleaned and recreated banking directory
+2025-07-23 04:22:56,775 - clean_processed_folder - INFO - Cleaned and recreated investment directory
+2025-07-23 04:22:56,775 - clean_processed_folder - INFO - Cleaned and recreated loans directory
+2025-07-23 04:22:56,775 - clean_processed_folder - INFO - Cleaned and recreated regulations directory
+2025-07-23 04:22:56,776 - clean_processed_folder - INFO - Cleaned and recreated sme directory
+2025-07-23 04:22:56,776 - clean_processed_folder - INFO - Cleaned and recreated taxation directory
+2025-07-23 04:22:57,348 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/personal_ac_opening_form.pdf to data/processed/banking/personal_ac_opening_form.pdf
+2025-07-23 04:22:57,518 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/FAQ e-Banking.pdf to data/processed/banking/FAQ e-Banking.pdf
+2025-07-23 04:22:58,454 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/e-KYC Guidelines.pdf to data/processed/banking/e-KYC Guidelines.pdf
+2025-07-23 04:22:58,592 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/FAQs on Banking Services SEB.pdf to data/processed/banking/FAQs on Banking Services SEB.pdf
+2025-07-23 04:22:58,823 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/RETURN OF INCOME for company.pdf to data/processed/banking/RETURN OF INCOME for company.pdf
+2025-07-23 04:23:01,346 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/krishibank_Scheme.pdf to data/processed/banking/krishibank_Scheme.pdf
+2025-07-23 04:23:02,474 - src.utils.pdf_processor - INFO - OCR needed for data/raw/banking/account-opening-form-term-deposit-savings-scheme-special-scheme.pdf
+2025-07-23 04:23:02,475 - process_english_pdfs - WARNING - File data/raw/banking/account-opening-form-term-deposit-savings-scheme-special-scheme.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 0.0, 'text_density': 0.01187386759935374, 'image_ratio': 15.25, 'avg_font_size': 0}
+2025-07-23 04:23:02,689 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/FAQ-OBU-IB-AccountOpening - primeBank.pdf to data/processed/banking/FAQ-OBU-IB-AccountOpening - primeBank.pdf
+2025-07-23 04:23:02,733 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Tax calculation table.pdf to data/processed/banking/Tax calculation table.pdf
+2025-07-23 04:23:05,903 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Core Banking Solution BB.pdf to data/processed/banking/Core Banking Solution BB.pdf
+2025-07-23 04:23:05,984 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Student Loans in Bangladesh.pdf to data/processed/banking/Student Loans in Bangladesh.pdf
+2025-07-23 04:23:06,575 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Personal_Account_Opening_Form.pdf to data/processed/banking/Personal_Account_Opening_Form.pdf
+2025-07-23 04:23:09,898 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Guidelines on ICT Security for Banks and Non-Bank Financial Institutions, 2023.pdf to data/processed/banking/Guidelines on ICT Security for Banks and Non-Bank Financial Institutions, 2023.pdf
+2025-07-23 04:23:11,850 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/2024-08-04-09-27-3196d924fdcc0bb5fbd7e81e78194897.pdf to data/processed/banking/2024-08-04-09-27-3196d924fdcc0bb5fbd7e81e78194897.pdf
+2025-07-23 04:23:15,551 - process_english_pdfs - WARNING - File data/raw/banking/আয়কর_নির্দেশিকা_২০২৪-২০২৫.pdf is not in English
+2025-07-23 04:23:15,880 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/FORM OF RETURN OF INCOME TAX.pdf to data/processed/banking/FORM OF RETURN OF INCOME TAX.pdf
+2025-07-23 04:23:16,348 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/dttl-tax-bangladeshhighlights-2023.pdf to data/processed/banking/dttl-tax-bangladeshhighlights-2023.pdf
+2025-07-23 04:23:16,381 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/banking_regulations.pdf to data/processed/banking/banking_regulations.pdf
+2025-07-23 04:23:16,477 - src.utils.pdf_processor - INFO - OCR needed for data/raw/banking/User_Manual_for_bKash.pdf
+2025-07-23 04:23:16,477 - process_english_pdfs - WARNING - File data/raw/banking/User_Manual_for_bKash.pdf failed quality checks: {'total_pages': 9, 'avg_text_per_page': 33.22222222222222, 'text_density': 0.42738692238660997, 'image_ratio': 1.7777777777777777, 'avg_font_size': 11.039999961853027}
+2025-07-23 04:23:16,571 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Interest Rates Report 2024-2025.pdf to data/processed/banking/Interest Rates Report 2024-2025.pdf
+2025-07-23 04:23:17,057 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/FAQs-Bank Al Arafah.pdf to data/processed/banking/FAQs-Bank Al Arafah.pdf
+2025-07-23 04:23:20,317 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Aykor_Nirdeshika_2024-2025.pdf to data/processed/banking/Aykor_Nirdeshika_2024-2025.pdf
+2025-07-23 04:23:21,015 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/GUIDELINES FOR CONDUCTING ISLAMIC BANKING.pdf to data/processed/banking/GUIDELINES FOR CONDUCTING ISLAMIC BANKING.pdf
+2025-07-23 04:23:21,098 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Complaints BB.pdf to data/processed/banking/Complaints BB.pdf
+2025-07-23 04:23:21,157 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Online_Banking_FAQ.pdf to data/processed/banking/Online_Banking_FAQ.pdf
+2025-07-23 04:23:21,240 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Deposit insurance and customer protection measures.pdf to data/processed/banking/Deposit insurance and customer protection measures.pdf
+2025-07-23 04:23:21,505 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/FAQ_MDBDigitalProbashiSavingsAccount_2024.pdf to data/processed/banking/FAQ_MDBDigitalProbashiSavingsAccount_2024.pdf
+2025-07-23 04:23:21,660 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Term_Deposit_Account_Opening_Application_Form_June_20.pdf to data/processed/banking/Term_Deposit_Account_Opening_Application_Form_June_20.pdf
+2025-07-23 04:23:21,944 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/FDR-and-Deposit-Scheme-Form-English-Version.pdf to data/processed/banking/FDR-and-Deposit-Scheme-Form-English-Version.pdf
+2025-07-23 04:23:22,787 - process_english_pdfs - WARNING - File data/raw/banking/Interest rates and lending policies.pdf failed quality checks: {'total_pages': 19, 'avg_text_per_page': 1392.9473684210527, 'text_density': 0.28762530417189536, 'image_ratio': 54.1578947368421, 'avg_font_size': 10.583165747678875}
+2025-07-23 04:23:23,878 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/NBR_cleanedTAX.pdf to data/processed/banking/NBR_cleanedTAX.pdf
+2025-07-23 04:23:24,077 - process_english_pdfs - WARNING - File data/raw/banking/BASIC BANK Form.pdf failed quality checks: {'total_pages': 20, 'avg_text_per_page': 624.15, 'text_density': 0.09173845168628103, 'image_ratio': 0.0, 'avg_font_size': 11.0}
+2025-07-23 04:23:27,289 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Insurance Act 2010 english version.pdf to data/processed/banking/Insurance Act 2010 english version.pdf
+2025-07-23 04:23:27,342 - process_english_pdfs - WARNING - File data/raw/banking/startup_fund.pdf is not in English
+2025-07-23 04:23:30,579 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Bangladesh Electronic Funds Transfer Network.pdf to data/processed/banking/Bangladesh Electronic Funds Transfer Network.pdf
+2025-07-23 04:23:30,900 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Credit policies and loan eligibility criteria.pdf to data/processed/banking/Credit policies and loan eligibility criteria.pdf
+2025-07-23 04:23:32,538 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/1688964931_2. Account Opening form (Individual)-Editable.pdf to data/processed/banking/1688964931_2. Account Opening form (Individual)-Editable.pdf
+2025-07-23 04:23:34,036 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/docs procedures of loan and advances.pdf to data/processed/banking/docs procedures of loan and advances.pdf
+2025-07-23 04:23:34,282 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/EBL_ACCESS_Frequesntly_Asked_Questions.pdf to data/processed/banking/EBL_ACCESS_Frequesntly_Asked_Questions.pdf
+2025-07-23 04:23:34,551 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Guidelines on Agent Banking for the Banks.pdf to data/processed/banking/Guidelines on Agent Banking for the Banks.pdf
+2025-07-23 04:23:38,802 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Foreign exchange transactions and regulations.pdf to data/processed/banking/Foreign exchange transactions and regulations.pdf
+2025-07-23 04:23:39,054 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Mobile Financial Services Guidelines.pdf to data/processed/banking/Mobile Financial Services Guidelines.pdf
+2025-07-23 04:23:39,538 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/FAQs on Banking Services IFIC.pdf to data/processed/banking/FAQs on Banking Services IFIC.pdf
+2025-07-23 04:23:39,962 - process_english_pdfs - WARNING - File data/raw/banking/FAQ_e-Return.pdf is not in English
+2025-07-23 04:23:40,143 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/FAQ e-Banking NRB.pdf to data/processed/banking/FAQ e-Banking NRB.pdf
+2025-07-23 04:23:41,186 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Guidelines on Consumer Rights.pdf to data/processed/banking/Guidelines on Consumer Rights.pdf
+2025-07-23 04:23:45,009 - process_english_pdfs - WARNING - File data/raw/banking/Account-Opening-Form-Folder-Individual.pdf failed quality checks: {'total_pages': 8, 'avg_text_per_page': 0.0, 'text_density': 1.5737674493665779, 'image_ratio': 0.0, 'avg_font_size': 0}
+2025-07-23 04:23:46,219 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/bd-personal-account-opening-form.pdf to data/processed/banking/bd-personal-account-opening-form.pdf
+2025-07-23 04:23:46,489 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf to data/processed/investment/Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf
+2025-07-23 04:23:46,671 - process_english_pdfs - WARNING - File data/raw/investment/form_5year.pdf is not in English
+2025-07-23 04:23:47,011 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/One-Stop Service (OSS) Rules, 2020.pdf to data/processed/investment/One-Stop Service (OSS) Rules, 2020.pdf
+2025-07-23 04:23:54,108 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf to data/processed/investment/Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf
+2025-07-23 04:24:00,562 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/Financial-Literacy-Curriculum.pdf to data/processed/investment/Financial-Literacy-Curriculum.pdf
+2025-07-23 04:24:00,858 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/financial_literacy_guidelines_draft.pdf to data/processed/investment/financial_literacy_guidelines_draft.pdf
+2025-07-23 04:24:01,199 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/03 OP_ZF_1.pdf to data/processed/investment/03 OP_ZF_1.pdf
+2025-07-23 04:24:01,268 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/5-Year Bangladesh Savings Certificate.pdf to data/processed/investment/5-Year Bangladesh Savings Certificate.pdf
+2025-07-23 04:24:01,366 - src.utils.pdf_processor - INFO - OCR needed for data/raw/investment/Industrial Policy of Bangladesh (2022).pdf
+2025-07-23 04:24:01,368 - process_english_pdfs - WARNING - File data/raw/investment/Industrial Policy of Bangladesh (2022).pdf failed quality checks: {'total_pages': 41, 'avg_text_per_page': 0.0, 'text_density': 0.9984985969920201, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:24:12,578 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/Guidelines for Non-Resident Bangladeshis (NRBs).pdf to data/processed/investment/Guidelines for Non-Resident Bangladeshis (NRBs).pdf
+2025-07-23 04:24:13,316 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/Bilateral Investment Treaties (BITs).pdf to data/processed/investment/Bilateral Investment Treaties (BITs).pdf
+2025-07-23 04:24:18,050 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/Foreign-Investment-in-Bangladesh-Booklet .pdf to data/processed/investment/Foreign-Investment-in-Bangladesh-Booklet .pdf
+2025-07-23 04:24:18,122 - src.utils.pdf_processor - INFO - OCR needed for data/raw/loans/Car-Loan-One Bank.pdf
+2025-07-23 04:24:18,122 - process_english_pdfs - WARNING - File data/raw/loans/Car-Loan-One Bank.pdf failed quality checks: {'total_pages': 28, 'avg_text_per_page': 0.0, 'text_density': 0.9285714069648874, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:24:19,561 - process_english_pdfs - INFO - Successfully processed and moved data/raw/loans/Car Loan Application Form.pdf to data/processed/loans/Car Loan Application Form.pdf
+2025-07-23 04:24:19,590 - process_english_pdfs - INFO - Successfully processed and moved data/raw/loans/CarLoan.pdf to data/processed/loans/CarLoan.pdf
+2025-07-23 04:24:19,798 - process_english_pdfs - INFO - Successfully processed and moved data/raw/loans/Comprehensive Loan Documentation Guide for Bangladesh.pdf to data/processed/loans/Comprehensive Loan Documentation Guide for Bangladesh.pdf
+2025-07-23 04:24:19,862 - process_english_pdfs - INFO - Successfully processed and moved data/raw/loans/bb_auto_loan_circular.pdf to data/processed/loans/bb_auto_loan_circular.pdf
+2025-07-23 04:24:23,273 - process_english_pdfs - INFO - Successfully processed and moved data/raw/loans/home_loan_application.pdf to data/processed/loans/home_loan_application.pdf
+2025-07-23 04:24:24,066 - process_english_pdfs - INFO - Successfully processed and moved data/raw/regulations/Foreign Exchange Regulation Act, 1947.pdf to data/processed/regulations/Foreign Exchange Regulation Act, 1947.pdf
+2025-07-23 04:24:25,760 - process_english_pdfs - INFO - Successfully processed and moved data/raw/regulations/Negotiable Instruments Act, 1881.pdf to data/processed/regulations/Negotiable Instruments Act, 1881.pdf
+2025-07-23 04:24:26,800 - process_english_pdfs - INFO - Successfully processed and moved data/raw/regulations/Bangladesh Bank Order, 1972.pdf to data/processed/regulations/Bangladesh Bank Order, 1972.pdf
+2025-07-23 04:24:27,011 - process_english_pdfs - INFO - Successfully processed and moved data/raw/regulations/Banking Regulations and Customer Rights in Bangladesh_ A Comprehensive Guide.pdf to data/processed/regulations/Banking Regulations and Customer Rights in Bangladesh_ A Comprehensive Guide.pdf
+2025-07-23 04:24:29,400 - process_english_pdfs - INFO - Successfully processed and moved data/raw/regulations/mfg-en-paper-the-bank-company-act-bangladesh-1991-1991.pdf to data/processed/regulations/mfg-en-paper-the-bank-company-act-bangladesh-1991-1991.pdf
+2025-07-23 04:24:29,689 - process_english_pdfs - INFO - Successfully processed and moved data/raw/regulations/financial_literacy_guidelines_draft.pdf to data/processed/regulations/financial_literacy_guidelines_draft.pdf
+2025-07-23 04:24:43,370 - process_english_pdfs - INFO - Successfully processed and moved data/raw/regulations/1384Corporate Laws & Practices.pdf to data/processed/regulations/1384Corporate Laws & Practices.pdf
+2025-07-23 04:24:44,110 - process_english_pdfs - INFO - Successfully processed and moved data/raw/regulations/Finance Institutions Act, 1993.pdf to data/processed/regulations/Finance Institutions Act, 1993.pdf
+2025-07-23 04:24:45,116 - process_english_pdfs - INFO - Successfully processed and moved data/raw/regulations/Binimoy Operating Rules.pdf to data/processed/regulations/Binimoy Operating Rules.pdf
+2025-07-23 04:24:45,144 - src.utils.pdf_processor - INFO - OCR needed for data/raw/regulations/Money Laundering Act 2012.pdf
+2025-07-23 04:24:45,144 - process_english_pdfs - WARNING - File data/raw/regulations/Money Laundering Act 2012.pdf failed quality checks: {'total_pages': 23, 'avg_text_per_page': 0.0, 'text_density': 0.6037613125895415, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:24:46,700 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/smepolicye.pdf to data/processed/sme/smepolicye.pdf
+2025-07-23 04:24:46,810 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/Requried-documents-for-non-individuals.pdf to data/processed/sme/Requried-documents-for-non-individuals.pdf
+2025-07-23 04:24:47,553 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/Business Startup Process in Bangladesh_SC v3.pdf to data/processed/sme/Business Startup Process in Bangladesh_SC v3.pdf
+2025-07-23 04:24:48,710 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/mfg-en-case-study-the-grameen-bank-micro-credit-model-lessons-for-australian-indigenous-economic-policy-1999.pdf to data/processed/sme/mfg-en-case-study-the-grameen-bank-micro-credit-model-lessons-for-australian-indigenous-economic-policy-1999.pdf
+2025-07-23 04:24:49,287 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/require-document-list-for-account-opening.pdf to data/processed/sme/require-document-list-for-account-opening.pdf
+2025-07-23 04:24:49,367 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/Business Startup FORM- I (1).pdf to data/processed/sme/Business Startup FORM- I (1).pdf
+2025-07-23 04:24:49,708 - src.utils.pdf_processor - INFO - OCR needed for data/raw/sme/Business StartUP Guide.pdf
+2025-07-23 04:24:49,710 - process_english_pdfs - WARNING - File data/raw/sme/Business StartUP Guide.pdf failed quality checks: {'total_pages': 161, 'avg_text_per_page': 0.0, 'text_density': 0.9993715783817715, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:24:50,257 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/Institutional-Account-Opening-Form-English-Version-Non-PersonalCorporateSME-Accoun.pdf to data/processed/sme/Institutional-Account-Opening-Form-English-Version-Non-PersonalCorporateSME-Accoun.pdf
+2025-07-23 04:24:50,967 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/ucb-taqwa-organizational-account-opening-form.pdf to data/processed/sme/ucb-taqwa-organizational-account-opening-form.pdf
+2025-07-23 04:24:51,141 - process_english_pdfs - WARNING - File data/raw/sme/2022-02-12-07-16-c1f322db1f774143fb098c220c11a802.pdf is not in English
+2025-07-23 04:24:53,785 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/Financing-Solutions-for-Micro-Small-and-Medium-Enterprises-in-Bangladesh.pdf to data/processed/sme/Financing-Solutions-for-Micro-Small-and-Medium-Enterprises-in-Bangladesh.pdf
+2025-07-23 04:24:55,834 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/Basic Bank SME.pdf to data/processed/sme/Basic Bank SME.pdf
+2025-07-23 04:24:55,921 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/bpid_opening_Form.pdf to data/processed/sme/bpid_opening_Form.pdf
+2025-07-23 04:24:56,458 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/Microfinance-Programme-Brief-Nov-2020.pdf to data/processed/sme/Microfinance-Programme-Brief-Nov-2020.pdf
+2025-07-23 04:24:56,755 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/Account-Opening-Non-Ind-Dec-2024.pdf to data/processed/sme/Account-Opening-Non-Ind-Dec-2024.pdf
+2025-07-23 04:24:58,370 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/sme_guidelines.pdf to data/processed/sme/sme_guidelines.pdf
+2025-07-23 04:25:05,226 - src.utils.pdf_processor - INFO - OCR needed for data/raw/sme/Non-Individual_Account_Opening_Form_Conventional.pdf
+2025-07-23 04:25:05,227 - process_english_pdfs - WARNING - File data/raw/sme/Non-Individual_Account_Opening_Form_Conventional.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 0.0, 'text_density': 0.0, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:25:06,480 - process_english_pdfs - WARNING - File data/raw/taxation/5 year sanchoypotro form.pdf is not in English
+2025-07-23 04:25:08,245 - process_english_pdfs - WARNING - File data/raw/taxation/ডাকঘর সঞ্চয় ব্যাংক- মেয়াদী হিসাব.pdf is not in English
+2025-07-23 04:25:09,680 - process_english_pdfs - INFO - Successfully processed and moved data/raw/taxation/WAGE-EARNERS DEVELOPMENT BOND APPLICATION FORM.pdf to data/processed/taxation/WAGE-EARNERS DEVELOPMENT BOND APPLICATION FORM.pdf
+2025-07-23 04:25:11,839 - process_english_pdfs - INFO - Successfully processed and moved data/raw/taxation/US DOLLAR PREMIUM BOND APPLICATION FORM.pdf to data/processed/taxation/US DOLLAR PREMIUM BOND APPLICATION FORM.pdf
+2025-07-23 04:25:13,566 - process_english_pdfs - WARNING - File data/raw/taxation/ডাক জীবন বীমা এবং অ্যানুইটি.pdf is not in English
+2025-07-23 04:25:15,472 - process_english_pdfs - INFO - Successfully processed and moved data/raw/taxation/Tax calculation table.pdf to data/processed/taxation/Tax calculation table.pdf
+2025-07-23 04:25:17,238 - process_english_pdfs - WARNING - File data/raw/taxation/ডাকঘর সঞ্চয় ব্যাংকের-সাধারণ হিসাব.pdf is not in English
+2025-07-23 04:25:19,093 - process_english_pdfs - INFO - Successfully processed and moved data/raw/taxation/US DOLLAR INVESTMENT BOND APPLICATION FORM.pdf to data/processed/taxation/US DOLLAR INVESTMENT BOND APPLICATION FORM.pdf
+2025-07-23 04:25:21,418 - process_english_pdfs - INFO - Successfully processed and moved data/raw/taxation/Personal Taxation in Bangladesh - Comprehensive Guide.pdf to data/processed/taxation/Personal Taxation in Bangladesh - Comprehensive Guide.pdf
+2025-07-23 04:25:38,158 - process_english_pdfs - INFO - Successfully processed and moved data/raw/taxation/income_tax_ordinance.pdf to data/processed/taxation/income_tax_ordinance.pdf
+2025-07-23 04:25:57,964 - process_english_pdfs - WARNING - File data/raw/taxation/2021-03-18-14-08-f2aebfe7b6b00610a3081237e0a989e4.pdf is not in English
+2025-07-23 04:26:00,673 - process_english_pdfs - WARNING - File data/raw/taxation/2021-03-18-14-07-18991ad56d00da578460250da78664ed.pdf is not in English
+2025-07-23 04:26:00,673 - build_faiss_index - INFO - Starting document processing and indexing
+2025-07-23 04:26:00,676 - build_faiss_index - INFO - Processing category: loans
+2025-07-23 04:26:00,676 - build_faiss_index - INFO - Processing file: data/raw/loans/Car-Loan-One Bank.pdf
+2025-07-23 04:26:03,241 - src.utils.pdf_processor - INFO - OCR needed for data/raw/loans/Car-Loan-One Bank.pdf
+2025-07-23 04:26:03,242 - build_faiss_index - WARNING - File data/raw/loans/Car-Loan-One Bank.pdf did not pass quality thresholds: {'total_pages': 28, 'avg_text_per_page': 0.0, 'text_density': 0.9285714069648874, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:26:03,242 - build_faiss_index - INFO - Processing file: data/raw/loans/Car Loan Application Form.pdf
+2025-07-23 04:26:07,833 - build_faiss_index - ERROR - Error loading data/raw/loans/Car Loan Application Form.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:26:07,834 - build_faiss_index - INFO - Processing file: data/raw/loans/CarLoan.pdf
+2025-07-23 04:26:08,849 - build_faiss_index - ERROR - Error loading data/raw/loans/CarLoan.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:26:08,849 - build_faiss_index - INFO - Processing file: data/raw/loans/Comprehensive Loan Documentation Guide for Bangladesh.pdf
+2025-07-23 04:26:10,228 - build_faiss_index - ERROR - Error loading data/raw/loans/Comprehensive Loan Documentation Guide for Bangladesh.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:26:10,228 - build_faiss_index - INFO - Processing file: data/raw/loans/bb_auto_loan_circular.pdf
+2025-07-23 04:26:11,521 - build_faiss_index - ERROR - Error loading data/raw/loans/bb_auto_loan_circular.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:26:11,521 - build_faiss_index - INFO - Processing file: data/raw/loans/home_loan_application.pdf
+2025-07-23 04:26:15,927 - build_faiss_index - ERROR - Error loading data/raw/loans/home_loan_application.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:26:15,927 - build_faiss_index - INFO - Processing category: investment
+2025-07-23 04:26:15,927 - build_faiss_index - INFO - Processing file: data/raw/investment/Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf
+2025-07-23 04:26:17,567 - build_faiss_index - ERROR - Error loading data/raw/investment/Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:26:17,567 - build_faiss_index - INFO - Processing file: data/raw/investment/form_5year.pdf
+2025-07-23 04:26:18,593 - build_faiss_index - ERROR - Error loading data/raw/investment/form_5year.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:26:18,593 - build_faiss_index - INFO - Processing file: data/raw/investment/One-Stop Service (OSS) Rules, 2020.pdf
+2025-07-23 04:26:21,016 - build_faiss_index - ERROR - Error loading data/raw/investment/One-Stop Service (OSS) Rules, 2020.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:26:21,017 - build_faiss_index - INFO - Processing file: data/raw/investment/Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf
+2025-07-23 04:26:29,244 - build_faiss_index - ERROR - Error loading data/raw/investment/Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:26:29,244 - build_faiss_index - INFO - Processing file: data/raw/investment/Financial-Literacy-Curriculum.pdf
+2025-07-23 04:26:37,330 - build_faiss_index - ERROR - Error loading data/raw/investment/Financial-Literacy-Curriculum.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:26:37,331 - build_faiss_index - INFO - Processing file: data/raw/investment/financial_literacy_guidelines_draft.pdf
+2025-07-23 04:26:38,688 - build_faiss_index - ERROR - Error loading data/raw/investment/financial_literacy_guidelines_draft.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:26:38,688 - build_faiss_index - INFO - Processing file: data/raw/investment/03 OP_ZF_1.pdf
+2025-07-23 04:26:40,086 - build_faiss_index - ERROR - Error loading data/raw/investment/03 OP_ZF_1.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:26:40,086 - build_faiss_index - INFO - Processing file: data/raw/investment/5-Year Bangladesh Savings Certificate.pdf
+2025-07-23 04:26:41,314 - build_faiss_index - ERROR - Error loading data/raw/investment/5-Year Bangladesh Savings Certificate.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:26:41,314 - build_faiss_index - INFO - Processing file: data/raw/investment/Industrial Policy of Bangladesh (2022).pdf
+2025-07-23 04:26:43,623 - src.utils.pdf_processor - INFO - OCR needed for data/raw/investment/Industrial Policy of Bangladesh (2022).pdf
+2025-07-23 04:26:43,626 - build_faiss_index - WARNING - File data/raw/investment/Industrial Policy of Bangladesh (2022).pdf did not pass quality thresholds: {'total_pages': 41, 'avg_text_per_page': 0.0, 'text_density': 0.9984985969920201, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:26:43,626 - build_faiss_index - INFO - Processing file: data/raw/investment/Guidelines for Non-Resident Bangladeshis (NRBs).pdf
+2025-07-23 04:26:57,590 - build_faiss_index - ERROR - Error loading data/raw/investment/Guidelines for Non-Resident Bangladeshis (NRBs).pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:26:57,591 - build_faiss_index - INFO - Processing file: data/raw/investment/Bilateral Investment Treaties (BITs).pdf
+2025-07-23 04:26:59,298 - build_faiss_index - ERROR - Error loading data/raw/investment/Bilateral Investment Treaties (BITs).pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:26:59,298 - build_faiss_index - INFO - Processing file: data/raw/investment/Foreign-Investment-in-Bangladesh-Booklet .pdf
+2025-07-23 04:27:04,903 - build_faiss_index - ERROR - Error loading data/raw/investment/Foreign-Investment-in-Bangladesh-Booklet .pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:04,904 - build_faiss_index - INFO - Processing category: taxation
+2025-07-23 04:27:04,905 - build_faiss_index - INFO - Processing file: data/raw/taxation/5 year sanchoypotro form.pdf
+2025-07-23 04:27:05,030 - build_faiss_index - ERROR - Error loading data/raw/taxation/5 year sanchoypotro form.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:05,030 - build_faiss_index - INFO - Processing file: data/raw/taxation/ডাকঘর সঞ্চয় ব্যাংক- মেয়াদী হিসাব.pdf
+2025-07-23 04:27:05,058 - build_faiss_index - ERROR - Error loading data/raw/taxation/ডাকঘর সঞ্চয় ব্যাংক- মেয়াদী হিসাব.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:05,058 - build_faiss_index - INFO - Processing file: data/raw/taxation/WAGE-EARNERS DEVELOPMENT BOND APPLICATION FORM.pdf
+2025-07-23 04:27:05,101 - build_faiss_index - ERROR - Error loading data/raw/taxation/WAGE-EARNERS DEVELOPMENT BOND APPLICATION FORM.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:05,101 - build_faiss_index - INFO - Processing file: data/raw/taxation/US DOLLAR PREMIUM BOND APPLICATION FORM.pdf
+2025-07-23 04:27:05,145 - build_faiss_index - ERROR - Error loading data/raw/taxation/US DOLLAR PREMIUM BOND APPLICATION FORM.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:05,145 - build_faiss_index - INFO - Processing file: data/raw/taxation/ডাক জীবন বীমা এবং অ্যানুইটি.pdf
+2025-07-23 04:27:05,162 - build_faiss_index - ERROR - Error loading data/raw/taxation/ডাক জীবন বীমা এবং অ্যানুইটি.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:05,162 - build_faiss_index - INFO - Processing file: data/raw/taxation/Tax calculation table.pdf
+2025-07-23 04:27:05,192 - build_faiss_index - ERROR - Error loading data/raw/taxation/Tax calculation table.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:05,192 - build_faiss_index - INFO - Processing file: data/raw/taxation/ডাকঘর সঞ্চয় ব্যাংকের-সাধারণ হিসাব.pdf
+2025-07-23 04:27:05,214 - build_faiss_index - ERROR - Error loading data/raw/taxation/ডাকঘর সঞ্চয় ব্যাংকের-সাধারণ হিসাব.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:05,214 - build_faiss_index - INFO - Processing file: data/raw/taxation/US DOLLAR INVESTMENT BOND APPLICATION FORM.pdf
+2025-07-23 04:27:05,259 - build_faiss_index - ERROR - Error loading data/raw/taxation/US DOLLAR INVESTMENT BOND APPLICATION FORM.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:05,259 - build_faiss_index - INFO - Processing file: data/raw/taxation/Personal Taxation in Bangladesh - Comprehensive Guide.pdf
+2025-07-23 04:27:05,380 - build_faiss_index - ERROR - Error loading data/raw/taxation/Personal Taxation in Bangladesh - Comprehensive Guide.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:05,380 - build_faiss_index - INFO - Processing file: data/raw/taxation/income_tax_ordinance.pdf
+2025-07-23 04:27:17,424 - build_faiss_index - ERROR - Error loading data/raw/taxation/income_tax_ordinance.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:17,425 - build_faiss_index - INFO - Processing file: data/raw/taxation/2021-03-18-14-08-f2aebfe7b6b00610a3081237e0a989e4.pdf
+2025-07-23 04:27:17,520 - build_faiss_index - ERROR - Error loading data/raw/taxation/2021-03-18-14-08-f2aebfe7b6b00610a3081237e0a989e4.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:17,520 - build_faiss_index - INFO - Processing file: data/raw/taxation/2021-03-18-14-07-18991ad56d00da578460250da78664ed.pdf
+2025-07-23 04:27:17,617 - build_faiss_index - ERROR - Error loading data/raw/taxation/2021-03-18-14-07-18991ad56d00da578460250da78664ed.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:17,617 - build_faiss_index - INFO - Processing category: banking
+2025-07-23 04:27:17,617 - build_faiss_index - INFO - Processing file: data/raw/banking/personal_ac_opening_form.pdf
+2025-07-23 04:27:19,220 - build_faiss_index - ERROR - Error loading data/raw/banking/personal_ac_opening_form.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:19,220 - build_faiss_index - INFO - Processing file: data/raw/banking/FAQ e-Banking.pdf
+2025-07-23 04:27:20,389 - build_faiss_index - ERROR - Error loading data/raw/banking/FAQ e-Banking.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:20,389 - build_faiss_index - INFO - Processing file: data/raw/banking/e-KYC Guidelines.pdf
+2025-07-23 04:27:22,489 - build_faiss_index - ERROR - Error loading data/raw/banking/e-KYC Guidelines.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:22,489 - build_faiss_index - INFO - Processing file: data/raw/banking/FAQs on Banking Services SEB.pdf
+2025-07-23 04:27:23,893 - build_faiss_index - ERROR - Error loading data/raw/banking/FAQs on Banking Services SEB.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:23,893 - build_faiss_index - INFO - Processing file: data/raw/banking/RETURN OF INCOME for company.pdf
+2025-07-23 04:27:25,043 - build_faiss_index - ERROR - Error loading data/raw/banking/RETURN OF INCOME for company.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:25,043 - build_faiss_index - INFO - Processing file: data/raw/banking/krishibank_Scheme.pdf
+2025-07-23 04:27:28,862 - build_faiss_index - ERROR - Error loading data/raw/banking/krishibank_Scheme.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:28,863 - build_faiss_index - INFO - Processing file: data/raw/banking/account-opening-form-term-deposit-savings-scheme-special-scheme.pdf
+2025-07-23 04:27:32,253 - src.utils.pdf_processor - INFO - OCR needed for data/raw/banking/account-opening-form-term-deposit-savings-scheme-special-scheme.pdf
+2025-07-23 04:27:32,253 - build_faiss_index - WARNING - File data/raw/banking/account-opening-form-term-deposit-savings-scheme-special-scheme.pdf did not pass quality thresholds: {'total_pages': 4, 'avg_text_per_page': 0.0, 'text_density': 0.01187386759935374, 'image_ratio': 15.25, 'avg_font_size': 0}
+2025-07-23 04:27:32,253 - build_faiss_index - INFO - Processing file: data/raw/banking/FAQ-OBU-IB-AccountOpening - primeBank.pdf
+2025-07-23 04:27:33,426 - build_faiss_index - ERROR - Error loading data/raw/banking/FAQ-OBU-IB-AccountOpening - primeBank.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:33,426 - build_faiss_index - INFO - Processing file: data/raw/banking/Tax calculation table.pdf
+2025-07-23 04:27:34,008 - build_faiss_index - ERROR - Error loading data/raw/banking/Tax calculation table.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:34,009 - build_faiss_index - INFO - Processing file: data/raw/banking/Core Banking Solution BB.pdf
+2025-07-23 04:27:38,262 - build_faiss_index - ERROR - Error loading data/raw/banking/Core Banking Solution BB.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:38,264 - build_faiss_index - INFO - Processing file: data/raw/banking/Student Loans in Bangladesh.pdf
+2025-07-23 04:27:39,312 - build_faiss_index - ERROR - Error loading data/raw/banking/Student Loans in Bangladesh.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:39,312 - build_faiss_index - INFO - Processing file: data/raw/banking/Personal_Account_Opening_Form.pdf
+2025-07-23 04:27:40,855 - build_faiss_index - ERROR - Error loading data/raw/banking/Personal_Account_Opening_Form.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:40,855 - build_faiss_index - INFO - Processing file: data/raw/banking/Guidelines on ICT Security for Banks and Non-Bank Financial Institutions, 2023.pdf
+2025-07-23 04:27:44,735 - build_faiss_index - ERROR - Error loading data/raw/banking/Guidelines on ICT Security for Banks and Non-Bank Financial Institutions, 2023.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:44,735 - build_faiss_index - INFO - Processing file: data/raw/banking/2024-08-04-09-27-3196d924fdcc0bb5fbd7e81e78194897.pdf
+2025-07-23 04:27:47,486 - build_faiss_index - ERROR - Error loading data/raw/banking/2024-08-04-09-27-3196d924fdcc0bb5fbd7e81e78194897.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:47,486 - build_faiss_index - INFO - Processing file: data/raw/banking/আয়কর_নির্দেশিকা_২০২৪-২০২৫.pdf
+2025-07-23 04:27:52,364 - build_faiss_index - ERROR - Error loading data/raw/banking/আয়কর_নির্দেশিকা_২০২৪-২০২৫.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:52,365 - build_faiss_index - INFO - Processing file: data/raw/banking/FORM OF RETURN OF INCOME TAX.pdf
+2025-07-23 04:27:53,806 - build_faiss_index - ERROR - Error loading data/raw/banking/FORM OF RETURN OF INCOME TAX.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:53,806 - build_faiss_index - INFO - Processing file: data/raw/banking/dttl-tax-bangladeshhighlights-2023.pdf
+2025-07-23 04:27:55,226 - build_faiss_index - ERROR - Error loading data/raw/banking/dttl-tax-bangladeshhighlights-2023.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:55,226 - build_faiss_index - INFO - Processing file: data/raw/banking/banking_regulations.pdf
+2025-07-23 04:27:56,386 - build_faiss_index - ERROR - Error loading data/raw/banking/banking_regulations.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:56,387 - build_faiss_index - INFO - Processing file: data/raw/banking/User_Manual_for_bKash.pdf
+2025-07-23 04:27:57,774 - src.utils.pdf_processor - INFO - OCR needed for data/raw/banking/User_Manual_for_bKash.pdf
+2025-07-23 04:27:57,774 - build_faiss_index - WARNING - File data/raw/banking/User_Manual_for_bKash.pdf did not pass quality thresholds: {'total_pages': 9, 'avg_text_per_page': 33.22222222222222, 'text_density': 0.42738692238660997, 'image_ratio': 1.7777777777777777, 'avg_font_size': 11.039999961853027}
+2025-07-23 04:27:57,774 - build_faiss_index - INFO - Processing file: data/raw/banking/Interest Rates Report 2024-2025.pdf
+2025-07-23 04:27:58,907 - build_faiss_index - ERROR - Error loading data/raw/banking/Interest Rates Report 2024-2025.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:27:58,908 - build_faiss_index - INFO - Processing file: data/raw/banking/FAQs-Bank Al Arafah.pdf
+2025-07-23 04:28:00,947 - build_faiss_index - ERROR - Error loading data/raw/banking/FAQs-Bank Al Arafah.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:00,947 - build_faiss_index - INFO - Processing file: data/raw/banking/Aykor_Nirdeshika_2024-2025.pdf
+2025-07-23 04:28:06,739 - build_faiss_index - ERROR - Error loading data/raw/banking/Aykor_Nirdeshika_2024-2025.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:06,739 - build_faiss_index - INFO - Processing file: data/raw/banking/GUIDELINES FOR CONDUCTING ISLAMIC BANKING.pdf
+2025-07-23 04:28:08,748 - build_faiss_index - ERROR - Error loading data/raw/banking/GUIDELINES FOR CONDUCTING ISLAMIC BANKING.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:08,748 - build_faiss_index - INFO - Processing file: data/raw/banking/Complaints BB.pdf
+2025-07-23 04:28:10,635 - build_faiss_index - ERROR - Error loading data/raw/banking/Complaints BB.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:10,635 - build_faiss_index - INFO - Processing file: data/raw/banking/Online_Banking_FAQ.pdf
+2025-07-23 04:28:12,318 - build_faiss_index - ERROR - Error loading data/raw/banking/Online_Banking_FAQ.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:12,318 - build_faiss_index - INFO - Processing file: data/raw/banking/Deposit insurance and customer protection measures.pdf
+2025-07-23 04:28:14,167 - build_faiss_index - ERROR - Error loading data/raw/banking/Deposit insurance and customer protection measures.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:14,167 - build_faiss_index - INFO - Processing file: data/raw/banking/FAQ_MDBDigitalProbashiSavingsAccount_2024.pdf
+2025-07-23 04:28:15,867 - build_faiss_index - ERROR - Error loading data/raw/banking/FAQ_MDBDigitalProbashiSavingsAccount_2024.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:15,868 - build_faiss_index - INFO - Processing file: data/raw/banking/Term_Deposit_Account_Opening_Application_Form_June_20.pdf
+2025-07-23 04:28:17,189 - build_faiss_index - ERROR - Error loading data/raw/banking/Term_Deposit_Account_Opening_Application_Form_June_20.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:17,189 - build_faiss_index - INFO - Processing file: data/raw/banking/FDR-and-Deposit-Scheme-Form-English-Version.pdf
+2025-07-23 04:28:18,660 - build_faiss_index - ERROR - Error loading data/raw/banking/FDR-and-Deposit-Scheme-Form-English-Version.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:18,660 - build_faiss_index - INFO - Processing file: data/raw/banking/Interest rates and lending policies.pdf
+2025-07-23 04:28:20,942 - build_faiss_index - WARNING - File data/raw/banking/Interest rates and lending policies.pdf did not pass quality thresholds: {'total_pages': 19, 'avg_text_per_page': 1392.9473684210527, 'text_density': 0.28762530417189536, 'image_ratio': 54.1578947368421, 'avg_font_size': 10.583165747678875}
+2025-07-23 04:28:20,942 - build_faiss_index - INFO - Processing file: data/raw/banking/NBR_cleanedTAX.pdf
+2025-07-23 04:28:23,133 - build_faiss_index - ERROR - Error loading data/raw/banking/NBR_cleanedTAX.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:23,133 - build_faiss_index - INFO - Processing file: data/raw/banking/BASIC BANK Form.pdf
+2025-07-23 04:28:24,664 - build_faiss_index - WARNING - File data/raw/banking/BASIC BANK Form.pdf did not pass quality thresholds: {'total_pages': 20, 'avg_text_per_page': 624.15, 'text_density': 0.09173845168628103, 'image_ratio': 0.0, 'avg_font_size': 11.0}
+2025-07-23 04:28:24,664 - build_faiss_index - INFO - Processing file: data/raw/banking/Insurance Act 2010 english version.pdf
+2025-07-23 04:28:29,514 - build_faiss_index - ERROR - Error loading data/raw/banking/Insurance Act 2010 english version.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:29,514 - build_faiss_index - INFO - Processing file: data/raw/banking/startup_fund.pdf
+2025-07-23 04:28:30,945 - build_faiss_index - ERROR - Error loading data/raw/banking/startup_fund.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:30,945 - build_faiss_index - INFO - Processing file: data/raw/banking/Bangladesh Electronic Funds Transfer Network.pdf
+2025-07-23 04:28:34,927 - build_faiss_index - ERROR - Error loading data/raw/banking/Bangladesh Electronic Funds Transfer Network.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:34,927 - build_faiss_index - INFO - Processing file: data/raw/banking/Credit policies and loan eligibility criteria.pdf
+2025-07-23 04:28:36,214 - build_faiss_index - ERROR - Error loading data/raw/banking/Credit policies and loan eligibility criteria.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:36,214 - build_faiss_index - INFO - Processing file: data/raw/banking/1688964931_2. Account Opening form (Individual)-Editable.pdf
+2025-07-23 04:28:38,213 - build_faiss_index - ERROR - Error loading data/raw/banking/1688964931_2. Account Opening form (Individual)-Editable.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:38,213 - build_faiss_index - INFO - Processing file: data/raw/banking/docs procedures of loan and advances.pdf
+2025-07-23 04:28:41,253 - build_faiss_index - ERROR - Error loading data/raw/banking/docs procedures of loan and advances.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:41,254 - build_faiss_index - INFO - Processing file: data/raw/banking/EBL_ACCESS_Frequesntly_Asked_Questions.pdf
+2025-07-23 04:28:42,649 - build_faiss_index - ERROR - Error loading data/raw/banking/EBL_ACCESS_Frequesntly_Asked_Questions.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:42,650 - build_faiss_index - INFO - Processing file: data/raw/banking/Guidelines on Agent Banking for the Banks.pdf
+2025-07-23 04:28:44,039 - build_faiss_index - ERROR - Error loading data/raw/banking/Guidelines on Agent Banking for the Banks.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:44,039 - build_faiss_index - INFO - Processing file: data/raw/banking/Foreign exchange transactions and regulations.pdf
+2025-07-23 04:28:49,805 - build_faiss_index - ERROR - Error loading data/raw/banking/Foreign exchange transactions and regulations.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:49,805 - build_faiss_index - INFO - Processing file: data/raw/banking/Mobile Financial Services Guidelines.pdf
+2025-07-23 04:28:50,942 - build_faiss_index - ERROR - Error loading data/raw/banking/Mobile Financial Services Guidelines.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:50,943 - build_faiss_index - INFO - Processing file: data/raw/banking/FAQs on Banking Services IFIC.pdf
+2025-07-23 04:28:52,532 - build_faiss_index - ERROR - Error loading data/raw/banking/FAQs on Banking Services IFIC.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:52,532 - build_faiss_index - INFO - Processing file: data/raw/banking/FAQ_e-Return.pdf
+2025-07-23 04:28:56,978 - build_faiss_index - ERROR - Error loading data/raw/banking/FAQ_e-Return.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:56,978 - build_faiss_index - INFO - Processing file: data/raw/banking/FAQ e-Banking NRB.pdf
+2025-07-23 04:28:57,675 - build_faiss_index - ERROR - Error loading data/raw/banking/FAQ e-Banking NRB.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:57,675 - build_faiss_index - INFO - Processing file: data/raw/banking/Guidelines on Consumer Rights.pdf
+2025-07-23 04:28:59,867 - build_faiss_index - ERROR - Error loading data/raw/banking/Guidelines on Consumer Rights.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:28:59,868 - build_faiss_index - INFO - Processing file: data/raw/banking/Account-Opening-Form-Folder-Individual.pdf
+2025-07-23 04:29:09,194 - build_faiss_index - WARNING - File data/raw/banking/Account-Opening-Form-Folder-Individual.pdf did not pass quality thresholds: {'total_pages': 8, 'avg_text_per_page': 0.0, 'text_density': 1.5737674493665779, 'image_ratio': 0.0, 'avg_font_size': 0}
+2025-07-23 04:29:09,194 - build_faiss_index - INFO - Processing file: data/raw/banking/bd-personal-account-opening-form.pdf
+2025-07-23 04:29:11,170 - build_faiss_index - ERROR - Error loading data/raw/banking/bd-personal-account-opening-form.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:11,170 - build_faiss_index - INFO - Processing category: sme
+2025-07-23 04:29:11,171 - build_faiss_index - INFO - Processing file: data/raw/sme/smepolicye.pdf
+2025-07-23 04:29:13,500 - build_faiss_index - ERROR - Error loading data/raw/sme/smepolicye.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:13,501 - build_faiss_index - INFO - Processing file: data/raw/sme/Requried-documents-for-non-individuals.pdf
+2025-07-23 04:29:14,708 - build_faiss_index - ERROR - Error loading data/raw/sme/Requried-documents-for-non-individuals.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:14,708 - build_faiss_index - INFO - Processing file: data/raw/sme/Business Startup Process in Bangladesh_SC v3.pdf
+2025-07-23 04:29:16,931 - build_faiss_index - ERROR - Error loading data/raw/sme/Business Startup Process in Bangladesh_SC v3.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:16,931 - build_faiss_index - INFO - Processing file: data/raw/sme/mfg-en-case-study-the-grameen-bank-micro-credit-model-lessons-for-australian-indigenous-economic-policy-1999.pdf
+2025-07-23 04:29:19,404 - build_faiss_index - ERROR - Error loading data/raw/sme/mfg-en-case-study-the-grameen-bank-micro-credit-model-lessons-for-australian-indigenous-economic-policy-1999.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:19,404 - build_faiss_index - INFO - Processing file: data/raw/sme/require-document-list-for-account-opening.pdf
+2025-07-23 04:29:20,847 - build_faiss_index - ERROR - Error loading data/raw/sme/require-document-list-for-account-opening.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:20,848 - build_faiss_index - INFO - Processing file: data/raw/sme/Business Startup FORM- I (1).pdf
+2025-07-23 04:29:22,409 - build_faiss_index - ERROR - Error loading data/raw/sme/Business Startup FORM- I (1).pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:22,410 - build_faiss_index - INFO - Processing file: data/raw/sme/Business StartUP Guide.pdf
+2025-07-23 04:29:28,941 - src.utils.pdf_processor - INFO - OCR needed for data/raw/sme/Business StartUP Guide.pdf
+2025-07-23 04:29:28,942 - build_faiss_index - WARNING - File data/raw/sme/Business StartUP Guide.pdf did not pass quality thresholds: {'total_pages': 161, 'avg_text_per_page': 0.0, 'text_density': 0.9993715783817715, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:29:28,942 - build_faiss_index - INFO - Processing file: data/raw/sme/Institutional-Account-Opening-Form-English-Version-Non-PersonalCorporateSME-Accoun.pdf
+2025-07-23 04:29:30,235 - build_faiss_index - ERROR - Error loading data/raw/sme/Institutional-Account-Opening-Form-English-Version-Non-PersonalCorporateSME-Accoun.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:30,236 - build_faiss_index - INFO - Processing file: data/raw/sme/ucb-taqwa-organizational-account-opening-form.pdf
+2025-07-23 04:29:32,341 - build_faiss_index - ERROR - Error loading data/raw/sme/ucb-taqwa-organizational-account-opening-form.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:32,341 - build_faiss_index - INFO - Processing file: data/raw/sme/2022-02-12-07-16-c1f322db1f774143fb098c220c11a802.pdf
+2025-07-23 04:29:34,935 - build_faiss_index - ERROR - Error loading data/raw/sme/2022-02-12-07-16-c1f322db1f774143fb098c220c11a802.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:34,935 - build_faiss_index - INFO - Processing file: data/raw/sme/Financing-Solutions-for-Micro-Small-and-Medium-Enterprises-in-Bangladesh.pdf
+2025-07-23 04:29:38,820 - build_faiss_index - ERROR - Error loading data/raw/sme/Financing-Solutions-for-Micro-Small-and-Medium-Enterprises-in-Bangladesh.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:38,821 - build_faiss_index - INFO - Processing file: data/raw/sme/Basic Bank SME.pdf
+2025-07-23 04:29:41,746 - build_faiss_index - ERROR - Error loading data/raw/sme/Basic Bank SME.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:41,746 - build_faiss_index - INFO - Processing file: data/raw/sme/bpid_opening_Form.pdf
+2025-07-23 04:29:42,895 - build_faiss_index - ERROR - Error loading data/raw/sme/bpid_opening_Form.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:42,895 - build_faiss_index - INFO - Processing file: data/raw/sme/Microfinance-Programme-Brief-Nov-2020.pdf
+2025-07-23 04:29:44,247 - build_faiss_index - ERROR - Error loading data/raw/sme/Microfinance-Programme-Brief-Nov-2020.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:44,248 - build_faiss_index - INFO - Processing file: data/raw/sme/Account-Opening-Non-Ind-Dec-2024.pdf
+2025-07-23 04:29:45,436 - build_faiss_index - ERROR - Error loading data/raw/sme/Account-Opening-Non-Ind-Dec-2024.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:45,437 - build_faiss_index - INFO - Processing file: data/raw/sme/sme_guidelines.pdf
+2025-07-23 04:29:47,266 - build_faiss_index - ERROR - Error loading data/raw/sme/sme_guidelines.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:47,266 - build_faiss_index - INFO - Processing file: data/raw/sme/Non-Individual_Account_Opening_Form_Conventional.pdf
+2025-07-23 04:29:47,270 - src.utils.pdf_processor - INFO - OCR needed for data/raw/sme/Non-Individual_Account_Opening_Form_Conventional.pdf
+2025-07-23 04:29:47,271 - build_faiss_index - WARNING - File data/raw/sme/Non-Individual_Account_Opening_Form_Conventional.pdf did not pass quality thresholds: {'total_pages': 4, 'avg_text_per_page': 0.0, 'text_density': 0.0, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:29:47,271 - build_faiss_index - INFO - Processing category: regulations
+2025-07-23 04:29:47,271 - build_faiss_index - INFO - Processing file: data/raw/regulations/Foreign Exchange Regulation Act, 1947.pdf
+2025-07-23 04:29:48,462 - build_faiss_index - ERROR - Error loading data/raw/regulations/Foreign Exchange Regulation Act, 1947.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:48,462 - build_faiss_index - INFO - Processing file: data/raw/regulations/Negotiable Instruments Act, 1881.pdf
+2025-07-23 04:29:50,454 - build_faiss_index - ERROR - Error loading data/raw/regulations/Negotiable Instruments Act, 1881.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:50,454 - build_faiss_index - INFO - Processing file: data/raw/regulations/Bangladesh Bank Order, 1972.pdf
+2025-07-23 04:29:51,899 - build_faiss_index - ERROR - Error loading data/raw/regulations/Bangladesh Bank Order, 1972.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:51,899 - build_faiss_index - INFO - Processing file: data/raw/regulations/Banking Regulations and Customer Rights in Bangladesh_ A Comprehensive Guide.pdf
+2025-07-23 04:29:52,655 - build_faiss_index - ERROR - Error loading data/raw/regulations/Banking Regulations and Customer Rights in Bangladesh_ A Comprehensive Guide.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:52,655 - build_faiss_index - INFO - Processing file: data/raw/regulations/mfg-en-paper-the-bank-company-act-bangladesh-1991-1991.pdf
+2025-07-23 04:29:55,199 - build_faiss_index - ERROR - Error loading data/raw/regulations/mfg-en-paper-the-bank-company-act-bangladesh-1991-1991.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:55,199 - build_faiss_index - INFO - Processing file: data/raw/regulations/financial_literacy_guidelines_draft.pdf
+2025-07-23 04:29:56,040 - build_faiss_index - ERROR - Error loading data/raw/regulations/financial_literacy_guidelines_draft.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:29:56,040 - build_faiss_index - INFO - Processing file: data/raw/regulations/1384Corporate Laws & Practices.pdf
+2025-07-23 04:30:08,439 - build_faiss_index - ERROR - Error loading data/raw/regulations/1384Corporate Laws & Practices.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:30:08,440 - build_faiss_index - INFO - Processing file: data/raw/regulations/Finance Institutions Act, 1993.pdf
+2025-07-23 04:30:09,757 - build_faiss_index - ERROR - Error loading data/raw/regulations/Finance Institutions Act, 1993.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:30:09,757 - build_faiss_index - INFO - Processing file: data/raw/regulations/Binimoy Operating Rules.pdf
+2025-07-23 04:30:11,290 - build_faiss_index - ERROR - Error loading data/raw/regulations/Binimoy Operating Rules.pdf: `pypdf` package not found, please install it with `pip install pypdf`
+2025-07-23 04:30:11,290 - build_faiss_index - INFO - Processing file: data/raw/regulations/Money Laundering Act 2012.pdf
+2025-07-23 04:30:12,527 - src.utils.pdf_processor - INFO - OCR needed for data/raw/regulations/Money Laundering Act 2012.pdf
+2025-07-23 04:30:12,527 - build_faiss_index - WARNING - File data/raw/regulations/Money Laundering Act 2012.pdf did not pass quality thresholds: {'total_pages': 23, 'avg_text_per_page': 0.0, 'text_density': 0.6037613125895415, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 04:30:12,529 - build_faiss_index - WARNING - No documents to process. Index not updated.
