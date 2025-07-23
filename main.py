@@ -23,6 +23,9 @@ EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
 CACHE_TTL = 86400  # 24 hours in seconds
 
 class FinancialAdvisorBot:
+    LEGAL_DISCLAIMER = "This information is for educational purposes only and not financial advice. Consult a professional for personalized guidance."
+    BLOCKED_PHRASES = ["illegal activity", "harmful content", "unethical advice"]
+
     def __init__(self):
         self.query_processor = QueryProcessor()
         self.pdf_processor = PDFProcessor()
@@ -42,7 +45,7 @@ class FinancialAdvisorBot:
 
             # Set up LLM and retriever
             self.retriever = self.vectorstore.as_retriever()
-            self.llm = OllamaLLM(model="llama3")  # or any other model available
+            self.llm = OllamaLLM(model="mistral")  # Changed from "llama3" to "mistral"
 
             self.qa = RetrievalQA.from_chain_type(
                 llm=self.llm,
@@ -54,6 +57,32 @@ class FinancialAdvisorBot:
         except Exception as e:
             logger.error(f"Error initializing QA system: {str(e)}")
             raise
+
+    def content_filter(self, text: str) -> bool:
+        """Checks if the given text contains any blocked phrases."""
+        text_lower = text.lower()
+        for phrase in self.BLOCKED_PHRASES:
+            if phrase in text_lower:
+                return True
+        return False
+
+    def format_response(self, response_text: str, source_documents: list, category: str, complexity: str) -> Dict:
+        """Formats the final response with source attribution and legal disclaimer."""
+        formatted_sources = []
+        if source_documents:
+            for doc in source_documents:
+                source_name = doc['metadata'].get('source', 'Unknown Source')
+                page_number = doc['metadata'].get('page', 'N/A')
+                formatted_sources.append(f"Source: {source_name} (Page: {page_number})")
+
+        sources_str = "\n\n" + "\n".join(formatted_sources) if formatted_sources else ""
+
+        return {
+            "response": f"{response_text}{sources_str}\n\n{self.LEGAL_DISCLAIMER}",
+            "source_documents": source_documents,
+            "category": category,
+            "complexity": complexity
+        }
 
     def process_query(self, query: str) -> Dict:
         try:
@@ -70,101 +99,89 @@ class FinancialAdvisorBot:
 
             # Keyword-based pre-filtering: filter retriever by category metadata if not general
             if query_info['category'] != 'general':
-                # Create a filtered retriever for the category
-                filtered_docs = [doc for doc in self.vectorstore.docstore._dict.values() 
-                                 if doc.metadata.get('category') == query_info['category']]
-                if filtered_docs:
-                    # Create a temporary FAISS index with filtered docs
-                    # Note: This is a simplified approach; in production, maintain separate indices or use metadata filtering
-                    temp_vectorstore = FAISS.from_documents(filtered_docs, self.vectorstore.embedding_function)
-                    results_with_scores = temp_vectorstore.similarity_search_with_score(query, k=5)
-                else:
-                    results_with_scores = []
+                # Configure retriever with metadata filter
+                filtered_retriever = self.vectorstore.as_retriever(search_kwargs={"filter": {"category": query_info['category']}})
+                results_with_scores = filtered_retriever.invoke(query) # Changed from .get_relevant_documents(query) to .invoke(query)
+                # LangChain's invoke returns Document objects directly, not with scores.
+                # We need to simulate the score or adjust downstream logic if scores are critical.
+                # For now, we'll assign a dummy score or assume relevance based on retrieval.
+                # If scores are needed, we might need to explore custom retriever implementations or direct FAISS search with filters.
+                # For simplicity, let's assume invoke is sufficient for now.
+                # For now, we'll convert to the expected format, assuming a perfect score for retrieved documents.
+                formatted_results = []
+                for doc in results_with_scores:
+                    formatted_results.append({
+                        'content': doc.page_content,
+                        'metadata': doc.metadata,
+                        'score': 1.0 # Assign a dummy score as invoke doesn't return scores
+                    })
+                results_with_scores = formatted_results
+
             else:
                 # Use full vectorstore for general queries
                 results_with_scores = self.vectorstore.similarity_search_with_score(query, k=5)
 
             # Format search results
             search_results = []
-            for i, (doc, score) in enumerate(results_with_scores):
-                search_results.append({
-                    'rank': i + 1,
-                    'content': doc.page_content,
-                    'metadata': doc.metadata,
-                    'score': score
-                })
+            # Adjust this loop to handle both formats (with and without explicit scores from invoke)
+            for i, item in enumerate(results_with_scores):
+                if isinstance(item, tuple): # Original format (doc, score) from similarity_search_with_score
+                    doc, score = item
+                    search_results.append({
+                        'rank': i + 1,
+                        'content': doc.page_content,
+                        'metadata': doc.metadata,
+                        'score': score
+                    })
+                else: # New format from invoke (dict with content, metadata, score)
+                    search_results.append({
+                        'rank': i + 1,
+                        'content': item['content'],
+                        'metadata': item['metadata'],
+                        'score': item.get('score', 1.0) # Use provided score or default to 1.0
+                    })
 
             # Summarize top results content (simple concatenation here; replace with actual summarization if available)
             summarized_content = "\n---\n".join([res['content'][:500] for res in search_results])
 
-            # Add at the top of the file
-            LEGAL_DISCLAIMER = "\n\n---\n*Disclaimer: This is not personalized financial advice; please consult a professional.*"
-            
-            BLOCKED_PHRASES = ["invest all money", "tax evasion", "guaranteed returns"]
-            
-            def content_filter(text):
-                for phrase in BLOCKED_PHRASES:
-                    if phrase in text.lower():
-                        return False
-                return True
-            
-            def format_response(text, category, complexity_level, sources):
-                if complexity_level == 'simple':
-                    formatted = f"{text}\n\n(Source: {', '.join(sources)})"
-                else:
-                    formatted = f"Detailed Response:\n{text}\n\nSources:\n" + '\n'.join([f"- {src}" for src in sources])
-                return formatted + LEGAL_DISCLAIMER
-            
-            # In the process_query method, replace the response generation part with:
-            
-            # Generate response using LLM on summarized content
             # Generate LLM response
             if search_results:
                 response_text = self.llm.invoke(summarized_content)
             else:
                 response_text = "No relevant documents found."
-            
+                
             # Content filtering
-            if not content_filter(response_text):
-                response_text = "Sorry, the response contains content that is not allowed."
-            
-            # Prepare sources list
-            sources = [res['metadata'].get('file_name', 'unknown source') for res in search_results]
-            
-            # Determine complexity
-            complexity_level = 'simple' if len(query.split()) < 10 else 'detailed'
-            
-            # Format response
-            response_text = format_response(response_text, query_info['category'], complexity_level, sources)
-            
-            # Log response quality metrics
-            logger.info(f"Response generated for query: {query[:50]}... Category: {query_info['category']} Complexity: {complexity_level}")
-            
-            # Continue with caching and returning response
-            
-            enhanced_response = {
-                'result': response_text,
-                'category': query_info['category'],
-                'is_followup': query_info['is_followup'],
-                'source_documents': [
-                    {
-                        'content': res['content'][:500],
-                        'metadata': res['metadata'],
-                        'score': res['score']
-                    } for res in search_results
-                ]
-            }
+            if self.content_filter(response_text):
+                logger.warning(f"Blocked response due to sensitive content: {response_text[:50]}...")
+                return {"response": "I cannot provide information on this topic due to content policy restrictions.", "source_documents": [], "category": query_info['category'], "complexity": "low"}
 
-            # Cache the response for non-followup queries
-            if not query_info['is_followup']:
-                self.response_cache.set(query, enhanced_response)
+            # Prepare source documents for output
+            source_documents = []
+            for res in search_results:
+                source_documents.append({
+                    'content': res['content'],
+                    'metadata': res['metadata']
+                })
 
-            logger.info(f"Successfully processed query in category: {query_info['category']}")
-            return enhanced_response
+            # Determine response complexity (placeholder)
+            complexity = "medium" # This would be determined by LLM or other logic
 
+            # Format the final response
+            final_response = self.format_response(
+                response_text,
+                source_documents,
+                query_info['category'],
+                complexity
+            )
+            
+            # Add is_followup field to the response
+            final_response['is_followup'] = query_info['is_followup']
+            
+            return final_response
+            
         except Exception as e:
-            logger.error(f"Error processing query: {str(e)}")
-            return {'error': str(e)}
+            logger.error(f"Error processing query '{query}': {e}")
+            return {"error": str(e), "category": "error", "source_documents": []}
 
 def main():
     bot = FinancialAdvisorBot()
@@ -184,11 +201,11 @@ def main():
 
             # Print the answer
             print("\n🔍 Answer:\n")
-            print(response['result'])
+            print(response['response'])
 
             # Print category and followup status
             print(f"\n📊 Category: {response['category']}")
-            if response['is_followup']:
+            if response.get('is_followup', False):
                 print("ℹ️ This was detected as a follow-up question")
 
             # Print the source documents

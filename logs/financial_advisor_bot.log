@@ -330,3 +330,96 @@
 2025-07-23 21:43:42,744 - faiss.loader - INFO - Successfully loaded faiss.
 2025-07-23 21:43:42,748 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
 2025-07-23 21:43:43,053 - __main__ - INFO - QA system initialized successfully
+2025-07-23 21:44:23,328 - __main__ - INFO - Query category detected: banking
+2025-07-23 21:57:04,477 - __main__ - INFO - Initializing QA system...
+2025-07-23 21:57:10,994 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-23 21:57:15,891 - faiss.loader - INFO - Loading faiss.
+2025-07-23 21:57:15,936 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 21:57:15,941 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-23 21:57:31,927 - __main__ - INFO - QA system initialized successfully
+2025-07-23 21:57:47,658 - __main__ - INFO - Query category detected: banking
+2025-07-23 21:57:48,899 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-07-23 21:57:48,900 - __main__ - ERROR - Error processing query 'how to open a bank account?': model 'llama3' not found (status code: 404)
+2025-07-23 22:04:46,574 - __main__ - INFO - Query category detected: banking
+2025-07-23 22:04:47,780 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-07-23 22:04:47,782 - __main__ - ERROR - Error processing query 'how to open a bank account?': model 'llama3' not found (status code: 404)
+2025-07-23 22:08:25,964 - __main__ - INFO - Query category detected: general
+2025-07-23 22:08:27,036 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-07-23 22:08:27,037 - __main__ - ERROR - Error processing query '': model 'llama3' not found (status code: 404)
+2025-07-23 22:08:27,038 - __main__ - INFO - Query category detected: general
+2025-07-23 22:08:27,192 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-07-23 22:08:27,192 - __main__ - ERROR - Error processing query 'ollama list': model 'llama3' not found (status code: 404)
+2025-07-23 22:09:50,420 - __main__ - INFO - Initializing QA system...
+2025-07-23 22:09:55,909 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-23 22:10:00,944 - faiss.loader - INFO - Loading faiss.
+2025-07-23 22:10:00,988 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 22:10:00,992 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-23 22:10:01,281 - __main__ - INFO - QA system initialized successfully
+2025-07-23 22:10:11,770 - __main__ - INFO - Query category detected: banking
+2025-07-23 22:10:39,785 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 22:13:18,144 - __main__ - ERROR - Error processing query 'how to open a bank account?': 'FinancialAdvisorBot' object has no attribute 'content_filter'
+2025-07-23 22:43:30,536 - __main__ - INFO - Initializing QA system...
+2025-07-23 22:43:35,492 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-23 22:43:40,173 - faiss.loader - INFO - Loading faiss.
+2025-07-23 22:43:40,216 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 22:43:40,220 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-23 22:44:09,017 - __main__ - INFO - QA system initialized successfully
+2025-07-23 22:46:52,417 - __main__ - INFO - Query category detected: banking
+2025-07-23 22:47:14,304 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 22:48:16,489 - src.utils.response_cache - INFO - Cached response for query: how to open a bank account?...
+2025-07-23 22:48:16,493 - __main__ - INFO - Response quality metrics: {'query_length': len(query), 'response_length': len(final_response['response'])}
+2025-07-23 22:52:12,798 - __main__ - INFO - Initializing QA system...
+2025-07-23 22:52:17,927 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-23 22:52:23,464 - faiss.loader - INFO - Loading faiss.
+2025-07-23 22:52:23,500 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 22:52:23,504 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-23 22:52:50,442 - __main__ - INFO - QA system initialized successfully
+2025-07-23 22:57:24,223 - __main__ - INFO - Query category detected: banking
+2025-07-23 22:57:26,066 - src.utils.response_cache - INFO - Cache hit for query: how to open a bank account?...
+2025-07-23 22:57:26,067 - __main__ - INFO - Returning cached response for query: how to open a bank account?...
+2025-07-23 22:59:19,074 - __main__ - INFO - Initializing QA system...
+2025-07-23 22:59:24,963 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-23 22:59:33,020 - faiss.loader - INFO - Loading faiss.
+2025-07-23 22:59:33,075 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 22:59:33,079 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-23 23:00:34,791 - __main__ - INFO - QA system initialized successfully
+2025-07-23 23:03:51,038 - __main__ - INFO - Initializing QA system...
+2025-07-23 23:03:56,345 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-23 23:04:00,586 - faiss.loader - INFO - Loading faiss.
+2025-07-23 23:04:00,631 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 23:04:00,635 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-23 23:04:00,944 - __main__ - INFO - QA system initialized successfully
+2025-07-23 23:04:42,572 - __main__ - INFO - Query category detected: banking
+2025-07-23 23:04:48,289 - src.utils.response_cache - INFO - Cache hit for query: how to open a bank account?...
+2025-07-23 23:04:48,290 - __main__ - INFO - Returning cached response for query: how to open a bank account?...
+2025-07-23 23:06:04,805 - __main__ - INFO - Query category detected: banking
+2025-07-23 23:06:04,816 - src.utils.response_cache - INFO - Cache hit for query: how to open a bank account?...
+2025-07-23 23:06:04,816 - __main__ - INFO - Returning cached response for query: how to open a bank account?...
+2025-07-23 23:07:14,157 - __main__ - INFO - Initializing QA system...
+2025-07-23 23:07:18,849 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-23 23:07:23,070 - faiss.loader - INFO - Loading faiss.
+2025-07-23 23:07:23,103 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 23:07:23,108 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-23 23:07:45,606 - __main__ - INFO - QA system initialized successfully
+2025-07-23 23:07:55,901 - __main__ - INFO - Query category detected: banking
+2025-07-23 23:07:55,903 - src.utils.response_cache - INFO - Cache hit for query: how to open a bank account?...
+2025-07-23 23:07:55,903 - __main__ - INFO - Returning cached response for query: how to open a bank account?...
+2025-07-23 23:08:39,996 - __main__ - INFO - Initializing QA system...
+2025-07-23 23:08:45,636 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-23 23:08:49,886 - faiss.loader - INFO - Loading faiss.
+2025-07-23 23:08:49,931 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 23:08:49,935 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-23 23:08:50,266 - __main__ - INFO - QA system initialized successfully
+2025-07-23 23:09:05,281 - __main__ - INFO - Query category detected: banking
+2025-07-23 23:09:05,284 - src.utils.response_cache - INFO - Cache hit for query: how to open a bank account?...
+2025-07-23 23:09:05,284 - __main__ - INFO - Returning cached response for query: how to open a bank account?...
+2025-07-23 23:09:13,054 - __main__ - INFO - Query category detected: taxation
+2025-07-23 23:09:44,715 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 23:17:30,990 - __main__ - INFO - Initializing QA system...
+2025-07-23 23:17:35,581 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-23 23:17:40,328 - faiss.loader - INFO - Loading faiss.
+2025-07-23 23:17:40,370 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 23:17:40,374 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-23 23:17:40,548 - __main__ - INFO - QA system initialized successfully
+2025-07-23 23:17:40,548 - __main__ - INFO - Query category detected: general
+2025-07-23 23:18:08,972 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
