@@ -1,0 +1,11 @@
+2025-07-24 01:12:33,948 - __main__ - INFO - Starting test run
+2025-07-24 01:12:33,948 - __main__ - INFO - Running test: scripts/tests/test_query_processor.py
+2025-07-24 01:12:35,739 - __main__ - INFO - Test scripts/tests/test_query_processor.py completed successfully
+2025-07-24 01:12:35,740 - __main__ - INFO - Running test: scripts/tests/test_pdf_processor.py
+2025-07-24 01:12:42,828 - __main__ - INFO - Test scripts/tests/test_pdf_processor.py completed successfully
+2025-07-24 01:12:42,828 - __main__ - INFO - Running test: scripts/tests/test_rag_system.py
+2025-07-24 01:20:32,478 - __main__ - INFO - Test scripts/tests/test_rag_system.py completed successfully
+2025-07-24 01:20:32,494 - __main__ - INFO - Test run completed. Passed: 3, Failed: 0
+2025-07-24 01:20:32,494 - __main__ - INFO - Test scripts/tests/test_query_processor.py: PASSED
+2025-07-24 01:20:32,498 - __main__ - INFO - Test scripts/tests/test_pdf_processor.py: PASSED
+2025-07-24 01:20:32,498 - __main__ - INFO - Test scripts/tests/test_rag_system.py: PASSED

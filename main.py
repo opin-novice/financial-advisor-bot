@@ -45,7 +45,7 @@ class FinancialAdvisorBot:
 
             # Set up LLM and retriever
             self.retriever = self.vectorstore.as_retriever()
-            self.llm = OllamaLLM(model="mistral")  # Changed from "llama3" to "mistral"
+            self.llm = OllamaLLM(model="mistral:7b-instruct-v0.2-q4_K_M", temperature=0)  # Changed from "llama3" to "mistral"
 
             self.qa = RetrievalQA.from_chain_type(
                 llm=self.llm,

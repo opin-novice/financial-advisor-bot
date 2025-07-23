@@ -1,0 +1,27 @@
+{
+    "timestamp": "2025-07-24 02:27:32",
+    "total_tests": 3,
+    "passed_tests": 2,
+    "failed_tests": 1,
+    "test_details": [
+        {
+            "script": "scripts/tests/test_query_processor.py",
+            "status": "PASSED"
+        },
+        {
+            "script": "scripts/tests/test_pdf_processor.py",
+            "status": "PASSED"
+        },
+        {
+            "script": "scripts/tests/test_rag_system.py",
+            "status": "FAILED"
+        }
+    ],
+    "quality_metrics": {
+        "overall_confidence": "N/A (requires implementation)",
+        "answer_quality": "N/A (requires implementation)",
+        "source_quality": "N/A (requires implementation)",
+        "context_match": "N/A (requires implementation)"
+    },
+    "average_response_time_seconds": "N/A (requires implementation)"
+}

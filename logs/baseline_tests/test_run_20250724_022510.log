@@ -1,0 +1,16 @@
+2025-07-24 02:25:10,594 - __main__ - INFO - Starting test run
+2025-07-24 02:25:10,594 - __main__ - INFO - Running test: scripts/tests/test_query_processor.py
+2025-07-24 02:25:10,627 - __main__ - INFO - Test scripts/tests/test_query_processor.py completed successfully
+2025-07-24 02:25:10,627 - __main__ - INFO - Running test: scripts/tests/test_pdf_processor.py
+2025-07-24 02:25:15,309 - __main__ - INFO - Test scripts/tests/test_pdf_processor.py completed successfully
+2025-07-24 02:25:15,309 - __main__ - INFO - Running test: scripts/tests/test_rag_system.py
+2025-07-24 02:25:15,520 - __main__ - ERROR - Test scripts/tests/test_rag_system.py failed with error: Traceback (most recent call last):
+  File "/Users/sayed/Desktop/financial-advisor-bot-improved-rag-responses/scripts/tests/test_rag_system.py", line 8, in <module>
+    from src.rag.query_processor import QueryProcessor
+ModuleNotFoundError: No module named 'src'
+
+2025-07-24 02:25:15,521 - __main__ - INFO - Test run completed. Passed: 2, Failed: 1
+2025-07-24 02:25:15,521 - __main__ - INFO - Test scripts/tests/test_query_processor.py: PASSED
+2025-07-24 02:25:15,521 - __main__ - INFO - Test scripts/tests/test_pdf_processor.py: PASSED
+2025-07-24 02:25:15,521 - __main__ - INFO - Test scripts/tests/test_rag_system.py: FAILED
+2025-07-24 02:25:15,522 - __main__ - INFO - Detailed test results saved to logs/baseline_tests/test_results_20250724_022510.json
