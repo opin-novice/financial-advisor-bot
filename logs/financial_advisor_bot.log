@@ -324,3 +324,9 @@
 2025-07-23 19:56:35,110 - __main__ - INFO - Processing time: 223.23 seconds
 2025-07-23 19:56:35,111 - __main__ - ERROR - Error processing query 'How can I improve my credit score?': model 'llama3' not found (status code: 404)
 2025-07-23 19:56:35,152 - __main__ - INFO - RAG system tests completed
+2025-07-23 21:43:28,702 - __main__ - INFO - Initializing QA system...
+2025-07-23 21:43:36,484 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-23 21:43:42,695 - faiss.loader - INFO - Loading faiss.
+2025-07-23 21:43:42,744 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 21:43:42,748 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-23 21:43:43,053 - __main__ - INFO - QA system initialized successfully

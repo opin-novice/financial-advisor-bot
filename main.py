@@ -97,9 +97,51 @@ class FinancialAdvisorBot:
             # Summarize top results content (simple concatenation here; replace with actual summarization if available)
             summarized_content = "\n---\n".join([res['content'][:500] for res in search_results])
 
+            # Add at the top of the file
+            LEGAL_DISCLAIMER = "\n\n---\n*Disclaimer: This is not personalized financial advice; please consult a professional.*"
+            
+            BLOCKED_PHRASES = ["invest all money", "tax evasion", "guaranteed returns"]
+            
+            def content_filter(text):
+                for phrase in BLOCKED_PHRASES:
+                    if phrase in text.lower():
+                        return False
+                return True
+            
+            def format_response(text, category, complexity_level, sources):
+                if complexity_level == 'simple':
+                    formatted = f"{text}\n\n(Source: {', '.join(sources)})"
+                else:
+                    formatted = f"Detailed Response:\n{text}\n\nSources:\n" + '\n'.join([f"- {src}" for src in sources])
+                return formatted + LEGAL_DISCLAIMER
+            
+            # In the process_query method, replace the response generation part with:
+            
             # Generate response using LLM on summarized content
-            response_text = self.llm(summarized_content) if search_results else "No relevant documents found."
-
+            # Generate LLM response
+            if search_results:
+                response_text = self.llm.invoke(summarized_content)
+            else:
+                response_text = "No relevant documents found."
+            
+            # Content filtering
+            if not content_filter(response_text):
+                response_text = "Sorry, the response contains content that is not allowed."
+            
+            # Prepare sources list
+            sources = [res['metadata'].get('file_name', 'unknown source') for res in search_results]
+            
+            # Determine complexity
+            complexity_level = 'simple' if len(query.split()) < 10 else 'detailed'
+            
+            # Format response
+            response_text = format_response(response_text, query_info['category'], complexity_level, sources)
+            
+            # Log response quality metrics
+            logger.info(f"Response generated for query: {query[:50]}... Category: {query_info['category']} Complexity: {complexity_level}")
+            
+            # Continue with caching and returning response
+            
             enhanced_response = {
                 'result': response_text,
                 'category': query_info['category'],
