@@ -31,8 +31,16 @@ def test_end_to_end_queries():
         processing_time = time.time() - start_time
         
         logger.info(f"Processing time: {processing_time:.2f} seconds")
+
+        if 'error' in response:
+            logger.error(f"Error processing query '{query}': {response['error']}")
+            continue
+
         logger.info(f"Response category: {response['category']}")
         logger.info(f"Number of source documents: {len(response['source_documents'])}")
+        assert 'category' in response
+        assert 'source_documents' in response
+        assert len(response['source_documents']) > 0
         logger.info("-" * 50)
 
 if __name__ == "__main__":

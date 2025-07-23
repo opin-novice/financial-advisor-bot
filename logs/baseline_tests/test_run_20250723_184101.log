@@ -1,0 +1,19 @@
+2025-07-23 18:41:01,119 - __main__ - INFO - Starting test run
+2025-07-23 18:41:01,119 - __main__ - INFO - Running test: scripts/tests/test_query_processor.py
+2025-07-23 18:41:02,878 - __main__ - INFO - Test scripts/tests/test_query_processor.py completed successfully
+2025-07-23 18:41:02,879 - __main__ - INFO - Running test: scripts/tests/test_pdf_processor.py
+2025-07-23 18:41:08,109 - __main__ - INFO - Test scripts/tests/test_pdf_processor.py completed successfully
+2025-07-23 18:41:08,110 - __main__ - INFO - Running test: scripts/tests/test_rag_system.py
+2025-07-23 18:41:25,619 - __main__ - ERROR - Test scripts/tests/test_rag_system.py failed with error: /Users/sayed/Desktop/financial-advisor-bot-improved-rag-responses/main.py:101: LangChainDeprecationWarning: The method `BaseLLM.__call__` was deprecated in langchain-core 0.1.7 and will be removed in 1.0. Use :meth:`~invoke` instead.
+  response_text = self.llm(summarized_content) if search_results else "No relevant documents found."
+Traceback (most recent call last):
+  File "/Users/sayed/Desktop/financial-advisor-bot-improved-rag-responses/scripts/tests/test_rag_system.py", line 43, in <module>
+    test_end_to_end_queries()
+  File "/Users/sayed/Desktop/financial-advisor-bot-improved-rag-responses/scripts/tests/test_rag_system.py", line 34, in test_end_to_end_queries
+    logger.info(f"Response category: {response['category']}")
+KeyError: 'category'
+
+2025-07-23 18:41:25,619 - __main__ - INFO - Test run completed. Passed: 2, Failed: 1
+2025-07-23 18:41:25,619 - __main__ - INFO - Test scripts/tests/test_query_processor.py: PASSED
+2025-07-23 18:41:25,619 - __main__ - INFO - Test scripts/tests/test_pdf_processor.py: PASSED
+2025-07-23 18:41:25,619 - __main__ - INFO - Test scripts/tests/test_rag_system.py: FAILED

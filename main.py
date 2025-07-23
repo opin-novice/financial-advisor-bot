@@ -60,7 +60,7 @@ class FinancialAdvisorBot:
             # Process and enhance query
             query_info = self.query_processor.process_query(query)
             logger.info(f"Query category detected: {query_info['category']}")
-            
+
             # Check cache for non-followup queries
             if not query_info['is_followup']:
                 cached_response = self.response_cache.get(query)
@@ -68,19 +68,48 @@ class FinancialAdvisorBot:
                     logger.info(f"Returning cached response for query: {query[:50]}...")
                     return cached_response
 
-            # Get response from QA system
-            response = self.qa.invoke(query)
+            # Keyword-based pre-filtering: filter retriever by category metadata if not general
+            if query_info['category'] != 'general':
+                # Create a filtered retriever for the category
+                filtered_docs = [doc for doc in self.vectorstore.docstore._dict.values() 
+                                 if doc.metadata.get('category') == query_info['category']]
+                if filtered_docs:
+                    # Create a temporary FAISS index with filtered docs
+                    # Note: This is a simplified approach; in production, maintain separate indices or use metadata filtering
+                    temp_vectorstore = FAISS.from_documents(filtered_docs, self.vectorstore.embedding_function)
+                    results_with_scores = temp_vectorstore.similarity_search_with_score(query, k=5)
+                else:
+                    results_with_scores = []
+            else:
+                # Use full vectorstore for general queries
+                results_with_scores = self.vectorstore.similarity_search_with_score(query, k=5)
 
-            # Enhance response with metadata
+            # Format search results
+            search_results = []
+            for i, (doc, score) in enumerate(results_with_scores):
+                search_results.append({
+                    'rank': i + 1,
+                    'content': doc.page_content,
+                    'metadata': doc.metadata,
+                    'score': score
+                })
+
+            # Summarize top results content (simple concatenation here; replace with actual summarization if available)
+            summarized_content = "\n---\n".join([res['content'][:500] for res in search_results])
+
+            # Generate response using LLM on summarized content
+            response_text = self.llm(summarized_content) if search_results else "No relevant documents found."
+
             enhanced_response = {
-                'result': response['result'],
+                'result': response_text,
                 'category': query_info['category'],
                 'is_followup': query_info['is_followup'],
                 'source_documents': [
                     {
-                        'content': doc.page_content[:500],
-                        'metadata': doc.metadata
-                    } for doc in response['source_documents']
+                        'content': res['content'][:500],
+                        'metadata': res['metadata'],
+                        'score': res['score']
+                    } for res in search_results
                 ]
             }
 

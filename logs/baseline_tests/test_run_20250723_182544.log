@@ -1,0 +1,29 @@
+2025-07-23 18:25:44,696 - __main__ - INFO - Starting test run
+2025-07-23 18:25:44,697 - __main__ - INFO - Running test: scripts/tests/test_query_processor.py
+2025-07-23 18:26:18,922 - __main__ - ERROR - Test scripts/tests/test_query_processor.py failed with error: Traceback (most recent call last):
+  File "/Users/sayed/Desktop/financial-advisor-bot-improved-rag-responses/scripts/tests/test_query_processor.py", line 6, in <module>
+    from src.utils.query_processor import QueryProcessor
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1016, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1074, in get_data
+OSError: [Errno 89] Operation canceled
+
+2025-07-23 18:26:18,923 - __main__ - INFO - Running test: scripts/tests/test_pdf_processor.py
+2025-07-23 18:26:37,062 - __main__ - INFO - Test scripts/tests/test_pdf_processor.py completed successfully
+2025-07-23 18:26:37,062 - __main__ - INFO - Running test: scripts/tests/test_rag_system.py
+2025-07-23 18:27:22,681 - __main__ - ERROR - Test scripts/tests/test_rag_system.py failed with error: /Users/sayed/Desktop/financial-advisor-bot-improved-rag-responses/main.py:101: LangChainDeprecationWarning: The method `BaseLLM.__call__` was deprecated in langchain-core 0.1.7 and will be removed in 1.0. Use :meth:`~invoke` instead.
+  response_text = self.llm(summarized_content) if search_results else "No relevant documents found."
+Traceback (most recent call last):
+  File "/Users/sayed/Desktop/financial-advisor-bot-improved-rag-responses/scripts/tests/test_rag_system.py", line 40, in <module>
+    test_end_to_end_queries()
+  File "/Users/sayed/Desktop/financial-advisor-bot-improved-rag-responses/scripts/tests/test_rag_system.py", line 34, in test_end_to_end_queries
+    logger.info(f"Response category: {response['category']}")
+KeyError: 'category'
+
+2025-07-23 18:27:22,681 - __main__ - INFO - Test run completed. Passed: 1, Failed: 2
+2025-07-23 18:27:22,681 - __main__ - INFO - Test scripts/tests/test_query_processor.py: FAILED
+2025-07-23 18:27:22,682 - __main__ - INFO - Test scripts/tests/test_pdf_processor.py: PASSED
+2025-07-23 18:27:22,682 - __main__ - INFO - Test scripts/tests/test_rag_system.py: FAILED
