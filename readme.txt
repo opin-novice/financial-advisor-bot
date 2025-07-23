@@ -17,12 +17,22 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 pip install faiss-cpu
 pip install python-telegram-bot --upgrade
 pip install pypdf
-pip install pymupdf
 
 quantization8bit
 pip install torch transformers accelerate bitsandbytes
 pip install safetensors
+debug
+$env:CUDA_LAUNCH_BLOCKING=1
 
 evaluation
 pip install datasets
-pip install --upgrade --force-reinstall ragas
+pip install ragas
+
+ocr data sanitization
+  install tesseract ocr
+pip install pytesseract pdf2image opencv-python transformers torch reportlab numpy PyMuPDF
+pip install opencv-python matplotlib
+
+
+pip install huggingface_hub
+huggingface-cli login

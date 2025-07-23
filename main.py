@@ -15,7 +15,7 @@ TELEGRAM_TOKEN = "7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw"  # Replace wit
 
 # --- Markdown Escaping Function ---
 def escape_markdown(text: str) -> str:
-    escape_chars = r"_*[]()~`>#+-=|{}.!"
+    escape_chars = r"_*[]()~>#+-=|{}.!"
     return re.sub(f"([{re.escape(escape_chars)}])", r"\\\1", text)
 
 # Load FAISS index and setup QA chain
@@ -27,7 +27,15 @@ embeddings = HuggingFaceEmbeddings(
 
 vectorstore = FAISS.load_local(FAISS_INDEX_PATH, embeddings, allow_dangerous_deserialization=True)
 retriever = vectorstore.as_retriever(search_kwargs={"k": 10})
-llm = OllamaLLM(model=OLLAMA_MODEL)
+
+# Initialize LLaMA model with fine-tuning settings
+llm = OllamaLLM(
+    model=OLLAMA_MODEL,
+    temperature=0.9,
+    max_tokens=1024,
+    repeat_penalty=1.2,
+    beam_width=5
+)
 
 qa_chain = RetrievalQA.from_chain_type(
     llm=llm,
@@ -55,7 +63,7 @@ async def handle_query(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         # Format sources
         if response['source_documents']:
-            sources_text = escape_markdown("\n📚 *Sources*")
+            sources_text = escape_markdown("\n📚 Sources")
             for i, doc in enumerate(response['source_documents'], 1):
                 preview = escape_markdown(doc.page_content[:300].replace('\n', ' '))
                 page = escape_markdown(str(doc.metadata.get('page', 'Unknown')))
@@ -71,7 +79,7 @@ async def handle_query(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(f"⚠️ Error: {e}")
 
 # Main bot setup
-if __name__ == "__main__":
+if __name__== "_main_":
     app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
