@@ -9,6 +9,7 @@ from langchain_community.vectorstores import FAISS
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.utils.pdf_processor import PDFProcessor
+from src.utils.document_manager import DocumentManager
 
 # Setup logging
 logging.basicConfig(
@@ -19,43 +20,23 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Configuration
-DATA_DIR = "data/raw"
 PROCESSED_DIR = "data/processed"
 FAISS_INDEX_PATH = "faiss_index"
 EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
-DOCUMENT_REGISTRY = "data/document_registry.json"
-
-def load_document_registry():
-    """Load the document registry or create a new one if it doesn't exist"""
-    if os.path.exists(DOCUMENT_REGISTRY):
-        with open(DOCUMENT_REGISTRY, 'r') as f:
-            return json.load(f)
-    return {"documents": []}
-
-def save_document_registry(registry):
-    """Save the document registry"""
-    with open(DOCUMENT_REGISTRY, 'w') as f:
-        json.dump(registry, f, indent=2)
 
 def process_and_index_documents():
     """Process PDF documents and build FAISS index"""
     logger.info("Starting document processing and indexing")
     
-    # Initialize PDF processor for quality checks
-    pdf_processor = PDFProcessor()
+    # Initialize document manager
+    document_manager = DocumentManager()
     
-    # Load document registry
-    registry = load_document_registry()
-    processed_files = [doc["file_path"] for doc in registry["documents"]]
-    
-    # Process each category directory
+    # Process each category directory in the processed folder
     all_documents = []
-    categories = [d for d in os.listdir(DATA_DIR) if os.path.isdir(os.path.join(DATA_DIR, d))]
+    categories = [d for d in os.listdir(PROCESSED_DIR) if os.path.isdir(os.path.join(PROCESSED_DIR, d))]
     
     for category in categories:
-        category_dir = os.path.join(DATA_DIR, category)
-        processed_category_dir = os.path.join(PROCESSED_DIR, category)
-        os.makedirs(processed_category_dir, exist_ok=True)
+        category_dir = os.path.join(PROCESSED_DIR, category)
         
         logger.info(f"Processing category: {category}")
         
@@ -65,23 +46,7 @@ def process_and_index_documents():
         for pdf_file in pdf_files:
             file_path = os.path.join(category_dir, pdf_file)
             
-            # Skip already processed files
-            if file_path in processed_files:
-                logger.info(f"Skipping already processed file: {file_path}")
-                continue
-            
             logger.info(f"Processing file: {file_path}")
-            
-            # Check PDF quality
-            quality_result = pdf_processor.process_pdf(file_path)
-            
-            if quality_result["status"] == "error":
-                logger.error(f"Error processing {file_path}: {quality_result['error']}")
-                continue
-                
-            if not quality_result["passes_threshold"]:
-                logger.warning(f"File {file_path} did not pass quality thresholds: {quality_result['metrics']}")
-                continue
             
             # Load and process the PDF
             try:
@@ -94,23 +59,10 @@ def process_and_index_documents():
                     doc.metadata["file_name"] = pdf_file
                 
                 all_documents.extend(documents)
-                
-                # Add to registry
-                registry["documents"].append({
-                    "file_path": file_path,
-                    "category": category,
-                    "processed_date": datetime.now().isoformat(),
-                    "quality_metrics": quality_result["metrics"],
-                    "pages": len(documents)
-                })
-                
                 logger.info(f"Successfully processed {file_path} with {len(documents)} pages")
                 
             except Exception as e:
                 logger.error(f"Error loading {file_path}: {str(e)}")
-    
-    # Save updated registry
-    save_document_registry(registry)
     
     if not all_documents:
         logger.warning("No documents to process. Index not updated.")
@@ -131,7 +83,7 @@ def process_and_index_documents():
     logger.info("Generating embeddings and creating FAISS index")
     embeddings = HuggingFaceEmbeddings(
         model_name=EMBEDDING_MODEL,
-        model_kwargs={"device": "cuda"}  # use "cpu" if needed
+        model_kwargs={"device": "cpu"}  # Changed to CPU for M1 Mac compatibility
     )
     
     # Check if index already exists

@@ -8,6 +8,7 @@ import sys
 # Add project root to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.utils.pdf_processor import PDFProcessor
+from src.utils.document_manager import DocumentManager
 
 # Setup logging
 logging.basicConfig(
@@ -20,6 +21,7 @@ logger = logging.getLogger(__name__)
 class EnglishPDFProcessor:
     def __init__(self):
         self.pdf_processor = PDFProcessor()
+        self.document_manager = DocumentManager()
         self.raw_dir = "data/raw"
         self.processed_dir = "data/processed"
         self.categories = ['banking', 'investment', 'loans', 'regulations', 'sme', 'taxation']
@@ -39,6 +41,11 @@ class EnglishPDFProcessor:
             if not os.path.exists(file_path):
                 logger.error(f"File not found: {file_path}")
                 return False
+            
+            # Check if document has changed since last processing
+            if not self.document_manager.is_document_changed(file_path):
+                logger.info(f"File {file_path} hasn't changed since last processing, skipping")
+                return True  # Consider it successfully processed
             
             # First, check PDF quality and structure
             quality_result = self.pdf_processor.process_pdf(file_path)
@@ -70,6 +77,13 @@ class EnglishPDFProcessor:
             dest_path = os.path.join(dest_dir, os.path.basename(file_path))
             shutil.copy2(file_path, dest_path)
             
+            # Update document registry
+            self.document_manager.add_or_update_document(
+                file_path=file_path,
+                category=category,
+                source='local'
+            )
+            
             logger.info(f"Successfully processed and moved {file_path} to {dest_path}")
             return True
             
@@ -100,9 +114,6 @@ class EnglishPDFProcessor:
 def main():
     processor = EnglishPDFProcessor()
     total, processed = processor.process_all_pdfs()
-    
-    print(f"\nProcessing Summary:")
-    print(f"Total PDFs found: {total}")
     print(f"Successfully processed: {processed}")
     print(f"Failed/Skipped: {total - processed}")
 

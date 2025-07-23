@@ -775,3 +775,314 @@
 2025-07-23 04:30:12,527 - src.utils.pdf_processor - INFO - OCR needed for data/raw/regulations/Money Laundering Act 2012.pdf
 2025-07-23 04:30:12,527 - build_faiss_index - WARNING - File data/raw/regulations/Money Laundering Act 2012.pdf did not pass quality thresholds: {'total_pages': 23, 'avg_text_per_page': 0.0, 'text_density': 0.6037613125895415, 'image_ratio': 1.0, 'avg_font_size': 0}
 2025-07-23 04:30:12,529 - build_faiss_index - WARNING - No documents to process. Index not updated.
+2025-07-23 05:35:10,962 - clean_processed_folder - INFO - Starting cleanup of processed folder
+2025-07-23 05:35:10,983 - clean_processed_folder - INFO - Cleaned and recreated banking directory
+2025-07-23 05:35:10,988 - clean_processed_folder - INFO - Cleaned and recreated investment directory
+2025-07-23 05:35:10,989 - clean_processed_folder - INFO - Cleaned and recreated loans directory
+2025-07-23 05:35:10,994 - clean_processed_folder - INFO - Cleaned and recreated regulations directory
+2025-07-23 05:35:11,000 - clean_processed_folder - INFO - Cleaned and recreated sme directory
+2025-07-23 05:35:11,004 - clean_processed_folder - INFO - Cleaned and recreated taxation directory
+2025-07-23 05:35:11,606 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/personal_ac_opening_form.pdf to data/processed/banking/personal_ac_opening_form.pdf
+2025-07-23 05:35:11,786 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/FAQ e-Banking.pdf to data/processed/banking/FAQ e-Banking.pdf
+2025-07-23 05:35:13,047 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/e-KYC Guidelines.pdf to data/processed/banking/e-KYC Guidelines.pdf
+2025-07-23 05:35:13,283 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/FAQs on Banking Services SEB.pdf to data/processed/banking/FAQs on Banking Services SEB.pdf
+2025-07-23 05:35:13,707 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/RETURN OF INCOME for company.pdf to data/processed/banking/RETURN OF INCOME for company.pdf
+2025-07-23 05:35:25,793 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/krishibank_Scheme.pdf to data/processed/banking/krishibank_Scheme.pdf
+2025-07-23 05:35:29,390 - src.utils.pdf_processor - INFO - OCR needed for data/raw/banking/account-opening-form-term-deposit-savings-scheme-special-scheme.pdf
+2025-07-23 05:35:29,390 - process_english_pdfs - WARNING - File data/raw/banking/account-opening-form-term-deposit-savings-scheme-special-scheme.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 0.0, 'text_density': 0.01187386759935374, 'image_ratio': 15.25, 'avg_font_size': 0}
+2025-07-23 05:35:31,515 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/FAQ-OBU-IB-AccountOpening - primeBank.pdf to data/processed/banking/FAQ-OBU-IB-AccountOpening - primeBank.pdf
+2025-07-23 05:35:33,160 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Tax calculation table.pdf to data/processed/banking/Tax calculation table.pdf
+2025-07-23 05:35:38,241 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Core Banking Solution BB.pdf to data/processed/banking/Core Banking Solution BB.pdf
+2025-07-23 05:35:39,530 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Student Loans in Bangladesh.pdf to data/processed/banking/Student Loans in Bangladesh.pdf
+2025-07-23 05:35:42,161 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Personal_Account_Opening_Form.pdf to data/processed/banking/Personal_Account_Opening_Form.pdf
+2025-07-23 05:36:18,313 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Guidelines on ICT Security for Banks and Non-Bank Financial Institutions, 2023.pdf to data/processed/banking/Guidelines on ICT Security for Banks and Non-Bank Financial Institutions, 2023.pdf
+2025-07-23 05:36:21,189 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/2024-08-04-09-27-3196d924fdcc0bb5fbd7e81e78194897.pdf to data/processed/banking/2024-08-04-09-27-3196d924fdcc0bb5fbd7e81e78194897.pdf
+2025-07-23 05:36:25,897 - process_english_pdfs - WARNING - File data/raw/banking/আয়কর_নির্দেশিকা_২০২৪-২০২৫.pdf is not in English
+2025-07-23 05:36:27,134 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/FORM OF RETURN OF INCOME TAX.pdf to data/processed/banking/FORM OF RETURN OF INCOME TAX.pdf
+2025-07-23 05:36:28,671 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/dttl-tax-bangladeshhighlights-2023.pdf to data/processed/banking/dttl-tax-bangladeshhighlights-2023.pdf
+2025-07-23 05:36:29,696 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/banking_regulations.pdf to data/processed/banking/banking_regulations.pdf
+2025-07-23 05:36:31,224 - src.utils.pdf_processor - INFO - OCR needed for data/raw/banking/User_Manual_for_bKash.pdf
+2025-07-23 05:36:31,224 - process_english_pdfs - WARNING - File data/raw/banking/User_Manual_for_bKash.pdf failed quality checks: {'total_pages': 9, 'avg_text_per_page': 33.22222222222222, 'text_density': 0.42738692238660997, 'image_ratio': 1.7777777777777777, 'avg_font_size': 11.039999961853027}
+2025-07-23 05:36:32,822 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Interest Rates Report 2024-2025.pdf to data/processed/banking/Interest Rates Report 2024-2025.pdf
+2025-07-23 05:36:34,641 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/FAQs-Bank Al Arafah.pdf to data/processed/banking/FAQs-Bank Al Arafah.pdf
+2025-07-23 05:36:38,417 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Aykor_Nirdeshika_2024-2025.pdf to data/processed/banking/Aykor_Nirdeshika_2024-2025.pdf
+2025-07-23 05:36:40,551 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/GUIDELINES FOR CONDUCTING ISLAMIC BANKING.pdf to data/processed/banking/GUIDELINES FOR CONDUCTING ISLAMIC BANKING.pdf
+2025-07-23 05:36:41,978 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Complaints BB.pdf to data/processed/banking/Complaints BB.pdf
+2025-07-23 05:36:44,214 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Online_Banking_FAQ.pdf to data/processed/banking/Online_Banking_FAQ.pdf
+2025-07-23 05:36:45,910 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Deposit insurance and customer protection measures.pdf to data/processed/banking/Deposit insurance and customer protection measures.pdf
+2025-07-23 05:36:47,986 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/FAQ_MDBDigitalProbashiSavingsAccount_2024.pdf to data/processed/banking/FAQ_MDBDigitalProbashiSavingsAccount_2024.pdf
+2025-07-23 05:36:49,459 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Term_Deposit_Account_Opening_Application_Form_June_20.pdf to data/processed/banking/Term_Deposit_Account_Opening_Application_Form_June_20.pdf
+2025-07-23 05:36:51,140 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/FDR-and-Deposit-Scheme-Form-English-Version.pdf to data/processed/banking/FDR-and-Deposit-Scheme-Form-English-Version.pdf
+2025-07-23 05:36:53,427 - process_english_pdfs - WARNING - File data/raw/banking/Interest rates and lending policies.pdf failed quality checks: {'total_pages': 19, 'avg_text_per_page': 1392.9473684210527, 'text_density': 0.28762530417189536, 'image_ratio': 54.1578947368421, 'avg_font_size': 10.583165747678875}
+2025-07-23 05:36:55,198 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/NBR_cleanedTAX.pdf to data/processed/banking/NBR_cleanedTAX.pdf
+2025-07-23 05:36:55,336 - process_english_pdfs - WARNING - File data/raw/banking/BASIC BANK Form.pdf failed quality checks: {'total_pages': 20, 'avg_text_per_page': 624.15, 'text_density': 0.09173845168628103, 'image_ratio': 0.0, 'avg_font_size': 11.0}
+2025-07-23 05:36:59,849 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Insurance Act 2010 english version.pdf to data/processed/banking/Insurance Act 2010 english version.pdf
+2025-07-23 05:37:00,910 - process_english_pdfs - WARNING - File data/raw/banking/startup_fund.pdf is not in English
+2025-07-23 05:37:03,060 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Bangladesh Electronic Funds Transfer Network.pdf to data/processed/banking/Bangladesh Electronic Funds Transfer Network.pdf
+2025-07-23 05:37:03,268 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Credit policies and loan eligibility criteria.pdf to data/processed/banking/Credit policies and loan eligibility criteria.pdf
+2025-07-23 05:37:04,193 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/1688964931_2. Account Opening form (Individual)-Editable.pdf to data/processed/banking/1688964931_2. Account Opening form (Individual)-Editable.pdf
+2025-07-23 05:37:06,612 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/docs procedures of loan and advances.pdf to data/processed/banking/docs procedures of loan and advances.pdf
+2025-07-23 05:37:06,814 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/EBL_ACCESS_Frequesntly_Asked_Questions.pdf to data/processed/banking/EBL_ACCESS_Frequesntly_Asked_Questions.pdf
+2025-07-23 05:37:07,003 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Guidelines on Agent Banking for the Banks.pdf to data/processed/banking/Guidelines on Agent Banking for the Banks.pdf
+2025-07-23 05:37:09,448 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Foreign exchange transactions and regulations.pdf to data/processed/banking/Foreign exchange transactions and regulations.pdf
+2025-07-23 05:37:09,619 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Mobile Financial Services Guidelines.pdf to data/processed/banking/Mobile Financial Services Guidelines.pdf
+2025-07-23 05:37:09,878 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/FAQs on Banking Services IFIC.pdf to data/processed/banking/FAQs on Banking Services IFIC.pdf
+2025-07-23 05:37:10,155 - process_english_pdfs - WARNING - File data/raw/banking/FAQ_e-Return.pdf is not in English
+2025-07-23 05:37:10,272 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/FAQ e-Banking NRB.pdf to data/processed/banking/FAQ e-Banking NRB.pdf
+2025-07-23 05:37:10,964 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/Guidelines on Consumer Rights.pdf to data/processed/banking/Guidelines on Consumer Rights.pdf
+2025-07-23 05:37:15,866 - process_english_pdfs - WARNING - File data/raw/banking/Account-Opening-Form-Folder-Individual.pdf failed quality checks: {'total_pages': 8, 'avg_text_per_page': 0.0, 'text_density': 1.5737674493665779, 'image_ratio': 0.0, 'avg_font_size': 0}
+2025-07-23 05:37:16,620 - process_english_pdfs - INFO - Successfully processed and moved data/raw/banking/bd-personal-account-opening-form.pdf to data/processed/banking/bd-personal-account-opening-form.pdf
+2025-07-23 05:37:17,994 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf to data/processed/investment/Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf
+2025-07-23 05:37:19,622 - process_english_pdfs - WARNING - File data/raw/investment/form_5year.pdf is not in English
+2025-07-23 05:37:21,871 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/One-Stop Service (OSS) Rules, 2020.pdf to data/processed/investment/One-Stop Service (OSS) Rules, 2020.pdf
+2025-07-23 05:37:27,963 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf to data/processed/investment/Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf
+2025-07-23 05:37:34,156 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/Financial-Literacy-Curriculum.pdf to data/processed/investment/Financial-Literacy-Curriculum.pdf
+2025-07-23 05:37:34,362 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/financial_literacy_guidelines_draft.pdf to data/processed/investment/financial_literacy_guidelines_draft.pdf
+2025-07-23 05:37:34,588 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/03 OP_ZF_1.pdf to data/processed/investment/03 OP_ZF_1.pdf
+2025-07-23 05:37:34,636 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/5-Year Bangladesh Savings Certificate.pdf to data/processed/investment/5-Year Bangladesh Savings Certificate.pdf
+2025-07-23 05:37:36,883 - src.utils.pdf_processor - INFO - OCR needed for data/raw/investment/Industrial Policy of Bangladesh (2022).pdf
+2025-07-23 05:37:36,885 - process_english_pdfs - WARNING - File data/raw/investment/Industrial Policy of Bangladesh (2022).pdf failed quality checks: {'total_pages': 41, 'avg_text_per_page': 0.0, 'text_density': 0.9984985969920201, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 05:37:49,352 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/Guidelines for Non-Resident Bangladeshis (NRBs).pdf to data/processed/investment/Guidelines for Non-Resident Bangladeshis (NRBs).pdf
+2025-07-23 05:37:49,825 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/Bilateral Investment Treaties (BITs).pdf to data/processed/investment/Bilateral Investment Treaties (BITs).pdf
+2025-07-23 05:37:53,860 - process_english_pdfs - INFO - Successfully processed and moved data/raw/investment/Foreign-Investment-in-Bangladesh-Booklet .pdf to data/processed/investment/Foreign-Investment-in-Bangladesh-Booklet .pdf
+2025-07-23 05:37:56,126 - src.utils.pdf_processor - INFO - OCR needed for data/raw/loans/Car-Loan-One Bank.pdf
+2025-07-23 05:37:56,126 - process_english_pdfs - WARNING - File data/raw/loans/Car-Loan-One Bank.pdf failed quality checks: {'total_pages': 28, 'avg_text_per_page': 0.0, 'text_density': 0.9285714069648874, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 05:37:59,100 - process_english_pdfs - INFO - Successfully processed and moved data/raw/loans/Car Loan Application Form.pdf to data/processed/loans/Car Loan Application Form.pdf
+2025-07-23 05:37:59,120 - process_english_pdfs - INFO - Successfully processed and moved data/raw/loans/CarLoan.pdf to data/processed/loans/CarLoan.pdf
+2025-07-23 05:37:59,259 - process_english_pdfs - INFO - Successfully processed and moved data/raw/loans/Comprehensive Loan Documentation Guide for Bangladesh.pdf to data/processed/loans/Comprehensive Loan Documentation Guide for Bangladesh.pdf
+2025-07-23 05:37:59,298 - process_english_pdfs - INFO - Successfully processed and moved data/raw/loans/bb_auto_loan_circular.pdf to data/processed/loans/bb_auto_loan_circular.pdf
+2025-07-23 05:38:02,815 - process_english_pdfs - INFO - Successfully processed and moved data/raw/loans/home_loan_application.pdf to data/processed/loans/home_loan_application.pdf
+2025-07-23 05:38:03,301 - process_english_pdfs - INFO - Successfully processed and moved data/raw/regulations/Foreign Exchange Regulation Act, 1947.pdf to data/processed/regulations/Foreign Exchange Regulation Act, 1947.pdf
+2025-07-23 05:38:04,478 - process_english_pdfs - INFO - Successfully processed and moved data/raw/regulations/Negotiable Instruments Act, 1881.pdf to data/processed/regulations/Negotiable Instruments Act, 1881.pdf
+2025-07-23 05:38:05,207 - process_english_pdfs - INFO - Successfully processed and moved data/raw/regulations/Bangladesh Bank Order, 1972.pdf to data/processed/regulations/Bangladesh Bank Order, 1972.pdf
+2025-07-23 05:38:05,369 - process_english_pdfs - INFO - Successfully processed and moved data/raw/regulations/Banking Regulations and Customer Rights in Bangladesh_ A Comprehensive Guide.pdf to data/processed/regulations/Banking Regulations and Customer Rights in Bangladesh_ A Comprehensive Guide.pdf
+2025-07-23 05:38:06,916 - process_english_pdfs - INFO - Successfully processed and moved data/raw/regulations/mfg-en-paper-the-bank-company-act-bangladesh-1991-1991.pdf to data/processed/regulations/mfg-en-paper-the-bank-company-act-bangladesh-1991-1991.pdf
+2025-07-23 05:38:07,137 - process_english_pdfs - INFO - Successfully processed and moved data/raw/regulations/financial_literacy_guidelines_draft.pdf to data/processed/regulations/financial_literacy_guidelines_draft.pdf
+2025-07-23 05:38:18,032 - process_english_pdfs - INFO - Successfully processed and moved data/raw/regulations/1384Corporate Laws & Practices.pdf to data/processed/regulations/1384Corporate Laws & Practices.pdf
+2025-07-23 05:38:18,523 - process_english_pdfs - INFO - Successfully processed and moved data/raw/regulations/Finance Institutions Act, 1993.pdf to data/processed/regulations/Finance Institutions Act, 1993.pdf
+2025-07-23 05:38:19,212 - process_english_pdfs - INFO - Successfully processed and moved data/raw/regulations/Binimoy Operating Rules.pdf to data/processed/regulations/Binimoy Operating Rules.pdf
+2025-07-23 05:38:19,229 - src.utils.pdf_processor - INFO - OCR needed for data/raw/regulations/Money Laundering Act 2012.pdf
+2025-07-23 05:38:19,229 - process_english_pdfs - WARNING - File data/raw/regulations/Money Laundering Act 2012.pdf failed quality checks: {'total_pages': 23, 'avg_text_per_page': 0.0, 'text_density': 0.6037613125895415, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 05:38:20,239 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/smepolicye.pdf to data/processed/sme/smepolicye.pdf
+2025-07-23 05:38:20,320 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/Requried-documents-for-non-individuals.pdf to data/processed/sme/Requried-documents-for-non-individuals.pdf
+2025-07-23 05:38:20,805 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/Business Startup Process in Bangladesh_SC v3.pdf to data/processed/sme/Business Startup Process in Bangladesh_SC v3.pdf
+2025-07-23 05:38:21,421 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/mfg-en-case-study-the-grameen-bank-micro-credit-model-lessons-for-australian-indigenous-economic-policy-1999.pdf to data/processed/sme/mfg-en-case-study-the-grameen-bank-micro-credit-model-lessons-for-australian-indigenous-economic-policy-1999.pdf
+2025-07-23 05:38:21,770 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/require-document-list-for-account-opening.pdf to data/processed/sme/require-document-list-for-account-opening.pdf
+2025-07-23 05:38:21,811 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/Business Startup FORM- I (1).pdf to data/processed/sme/Business Startup FORM- I (1).pdf
+2025-07-23 05:38:25,894 - src.utils.pdf_processor - INFO - OCR needed for data/raw/sme/Business StartUP Guide.pdf
+2025-07-23 05:38:25,896 - process_english_pdfs - WARNING - File data/raw/sme/Business StartUP Guide.pdf failed quality checks: {'total_pages': 161, 'avg_text_per_page': 0.0, 'text_density': 0.9993715783817715, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 05:38:26,168 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/Institutional-Account-Opening-Form-English-Version-Non-PersonalCorporateSME-Accoun.pdf to data/processed/sme/Institutional-Account-Opening-Form-English-Version-Non-PersonalCorporateSME-Accoun.pdf
+2025-07-23 05:38:26,612 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/ucb-taqwa-organizational-account-opening-form.pdf to data/processed/sme/ucb-taqwa-organizational-account-opening-form.pdf
+2025-07-23 05:38:29,092 - process_english_pdfs - WARNING - File data/raw/sme/2022-02-12-07-16-c1f322db1f774143fb098c220c11a802.pdf is not in English
+2025-07-23 05:38:30,632 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/Financing-Solutions-for-Micro-Small-and-Medium-Enterprises-in-Bangladesh.pdf to data/processed/sme/Financing-Solutions-for-Micro-Small-and-Medium-Enterprises-in-Bangladesh.pdf
+2025-07-23 05:38:31,893 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/Basic Bank SME.pdf to data/processed/sme/Basic Bank SME.pdf
+2025-07-23 05:38:31,973 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/bpid_opening_Form.pdf to data/processed/sme/bpid_opening_Form.pdf
+2025-07-23 05:38:34,170 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/Microfinance-Programme-Brief-Nov-2020.pdf to data/processed/sme/Microfinance-Programme-Brief-Nov-2020.pdf
+2025-07-23 05:38:34,355 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/Account-Opening-Non-Ind-Dec-2024.pdf to data/processed/sme/Account-Opening-Non-Ind-Dec-2024.pdf
+2025-07-23 05:38:35,313 - process_english_pdfs - INFO - Successfully processed and moved data/raw/sme/sme_guidelines.pdf to data/processed/sme/sme_guidelines.pdf
+2025-07-23 05:38:35,317 - src.utils.pdf_processor - INFO - OCR needed for data/raw/sme/Non-Individual_Account_Opening_Form_Conventional.pdf
+2025-07-23 05:38:35,318 - process_english_pdfs - WARNING - File data/raw/sme/Non-Individual_Account_Opening_Form_Conventional.pdf failed quality checks: {'total_pages': 4, 'avg_text_per_page': 0.0, 'text_density': 0.0, 'image_ratio': 1.0, 'avg_font_size': 0}
+2025-07-23 05:38:35,430 - process_english_pdfs - WARNING - File data/raw/taxation/5 year sanchoypotro form.pdf is not in English
+2025-07-23 05:38:35,457 - process_english_pdfs - WARNING - File data/raw/taxation/ডাকঘর সঞ্চয় ব্যাংক- মেয়াদী হিসাব.pdf is not in English
+2025-07-23 05:38:35,499 - process_english_pdfs - INFO - Successfully processed and moved data/raw/taxation/WAGE-EARNERS DEVELOPMENT BOND APPLICATION FORM.pdf to data/processed/taxation/WAGE-EARNERS DEVELOPMENT BOND APPLICATION FORM.pdf
+2025-07-23 05:38:35,544 - process_english_pdfs - INFO - Successfully processed and moved data/raw/taxation/US DOLLAR PREMIUM BOND APPLICATION FORM.pdf to data/processed/taxation/US DOLLAR PREMIUM BOND APPLICATION FORM.pdf
+2025-07-23 05:38:35,561 - process_english_pdfs - WARNING - File data/raw/taxation/ডাক জীবন বীমা এবং অ্যানুইটি.pdf is not in English
+2025-07-23 05:38:35,591 - process_english_pdfs - INFO - Successfully processed and moved data/raw/taxation/Tax calculation table.pdf to data/processed/taxation/Tax calculation table.pdf
+2025-07-23 05:38:35,613 - process_english_pdfs - WARNING - File data/raw/taxation/ডাকঘর সঞ্চয় ব্যাংকের-সাধারণ হিসাব.pdf is not in English
+2025-07-23 05:38:35,656 - process_english_pdfs - INFO - Successfully processed and moved data/raw/taxation/US DOLLAR INVESTMENT BOND APPLICATION FORM.pdf to data/processed/taxation/US DOLLAR INVESTMENT BOND APPLICATION FORM.pdf
+2025-07-23 05:38:35,767 - process_english_pdfs - INFO - Successfully processed and moved data/raw/taxation/Personal Taxation in Bangladesh - Comprehensive Guide.pdf to data/processed/taxation/Personal Taxation in Bangladesh - Comprehensive Guide.pdf
+2025-07-23 05:38:47,265 - process_english_pdfs - INFO - Successfully processed and moved data/raw/taxation/income_tax_ordinance.pdf to data/processed/taxation/income_tax_ordinance.pdf
+2025-07-23 05:38:47,355 - process_english_pdfs - WARNING - File data/raw/taxation/2021-03-18-14-08-f2aebfe7b6b00610a3081237e0a989e4.pdf is not in English
+2025-07-23 05:38:47,449 - process_english_pdfs - WARNING - File data/raw/taxation/2021-03-18-14-07-18991ad56d00da578460250da78664ed.pdf is not in English
+2025-07-23 05:38:47,450 - build_faiss_index - INFO - Starting document processing and indexing
+2025-07-23 05:38:47,450 - build_faiss_index - INFO - Processing category: loans
+2025-07-23 05:38:47,450 - build_faiss_index - INFO - Processing file: data/processed/loans/Car Loan Application Form.pdf
+2025-07-23 05:38:48,671 - build_faiss_index - INFO - Successfully processed data/processed/loans/Car Loan Application Form.pdf with 56 pages
+2025-07-23 05:38:48,671 - build_faiss_index - INFO - Processing file: data/processed/loans/CarLoan.pdf
+2025-07-23 05:38:48,677 - build_faiss_index - INFO - Successfully processed data/processed/loans/CarLoan.pdf with 1 pages
+2025-07-23 05:38:48,680 - build_faiss_index - INFO - Processing file: data/processed/loans/Comprehensive Loan Documentation Guide for Bangladesh.pdf
+2025-07-23 05:38:48,820 - build_faiss_index - INFO - Successfully processed data/processed/loans/Comprehensive Loan Documentation Guide for Bangladesh.pdf with 12 pages
+2025-07-23 05:38:48,820 - build_faiss_index - INFO - Processing file: data/processed/loans/bb_auto_loan_circular.pdf
+2025-07-23 05:38:48,837 - build_faiss_index - INFO - Successfully processed data/processed/loans/bb_auto_loan_circular.pdf with 1 pages
+2025-07-23 05:38:48,837 - build_faiss_index - INFO - Processing file: data/processed/loans/home_loan_application.pdf
+2025-07-23 05:38:53,572 - build_faiss_index - INFO - Successfully processed data/processed/loans/home_loan_application.pdf with 56 pages
+2025-07-23 05:38:53,572 - build_faiss_index - INFO - Processing category: investment
+2025-07-23 05:38:53,573 - build_faiss_index - INFO - Processing file: data/processed/investment/Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf
+2025-07-23 05:38:53,768 - build_faiss_index - INFO - Successfully processed data/processed/investment/Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf with 14 pages
+2025-07-23 05:38:53,769 - build_faiss_index - INFO - Processing file: data/processed/investment/One-Stop Service (OSS) Rules, 2020.pdf
+2025-07-23 05:38:53,771 - pypdf._reader - WARNING - Ignoring wrong pointing object 10 0 (offset 0)
+2025-07-23 05:38:53,771 - pypdf._reader - WARNING - Ignoring wrong pointing object 28 0 (offset 0)
+2025-07-23 05:38:53,771 - pypdf._reader - WARNING - Ignoring wrong pointing object 30 0 (offset 0)
+2025-07-23 05:38:53,771 - pypdf._reader - WARNING - Ignoring wrong pointing object 59 0 (offset 0)
+2025-07-23 05:38:54,006 - build_faiss_index - INFO - Successfully processed data/processed/investment/One-Stop Service (OSS) Rules, 2020.pdf with 9 pages
+2025-07-23 05:38:54,006 - build_faiss_index - INFO - Processing file: data/processed/investment/Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf
+2025-07-23 05:38:56,202 - build_faiss_index - INFO - Successfully processed data/processed/investment/Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf with 113 pages
+2025-07-23 05:38:56,202 - build_faiss_index - INFO - Processing file: data/processed/investment/Financial-Literacy-Curriculum.pdf
+2025-07-23 05:39:00,201 - build_faiss_index - INFO - Successfully processed data/processed/investment/Financial-Literacy-Curriculum.pdf with 72 pages
+2025-07-23 05:39:00,201 - build_faiss_index - INFO - Processing file: data/processed/investment/financial_literacy_guidelines_draft.pdf
+2025-07-23 05:39:00,321 - build_faiss_index - INFO - Successfully processed data/processed/investment/financial_literacy_guidelines_draft.pdf with 10 pages
+2025-07-23 05:39:00,321 - build_faiss_index - INFO - Processing file: data/processed/investment/03 OP_ZF_1.pdf
+2025-07-23 05:39:00,955 - build_faiss_index - INFO - Successfully processed data/processed/investment/03 OP_ZF_1.pdf with 6 pages
+2025-07-23 05:39:00,955 - build_faiss_index - INFO - Processing file: data/processed/investment/5-Year Bangladesh Savings Certificate.pdf
+2025-07-23 05:39:01,085 - build_faiss_index - INFO - Successfully processed data/processed/investment/5-Year Bangladesh Savings Certificate.pdf with 5 pages
+2025-07-23 05:39:01,085 - build_faiss_index - INFO - Processing file: data/processed/investment/Guidelines for Non-Resident Bangladeshis (NRBs).pdf
+2025-07-23 05:39:04,798 - build_faiss_index - INFO - Successfully processed data/processed/investment/Guidelines for Non-Resident Bangladeshis (NRBs).pdf with 447 pages
+2025-07-23 05:39:04,798 - build_faiss_index - INFO - Processing file: data/processed/investment/Bilateral Investment Treaties (BITs).pdf
+2025-07-23 05:39:04,939 - build_faiss_index - INFO - Successfully processed data/processed/investment/Bilateral Investment Treaties (BITs).pdf with 18 pages
+2025-07-23 05:39:04,939 - build_faiss_index - INFO - Processing file: data/processed/investment/Foreign-Investment-in-Bangladesh-Booklet .pdf
+2025-07-23 05:39:05,540 - build_faiss_index - INFO - Successfully processed data/processed/investment/Foreign-Investment-in-Bangladesh-Booklet .pdf with 66 pages
+2025-07-23 05:39:05,540 - build_faiss_index - INFO - Processing category: taxation
+2025-07-23 05:39:05,540 - build_faiss_index - INFO - Processing file: data/processed/taxation/WAGE-EARNERS DEVELOPMENT BOND APPLICATION FORM.pdf
+2025-07-23 05:39:05,569 - build_faiss_index - INFO - Successfully processed data/processed/taxation/WAGE-EARNERS DEVELOPMENT BOND APPLICATION FORM.pdf with 2 pages
+2025-07-23 05:39:05,569 - build_faiss_index - INFO - Processing file: data/processed/taxation/US DOLLAR PREMIUM BOND APPLICATION FORM.pdf
+2025-07-23 05:39:05,595 - build_faiss_index - INFO - Successfully processed data/processed/taxation/US DOLLAR PREMIUM BOND APPLICATION FORM.pdf with 2 pages
+2025-07-23 05:39:05,595 - build_faiss_index - INFO - Processing file: data/processed/taxation/Tax calculation table.pdf
+2025-07-23 05:39:05,620 - build_faiss_index - INFO - Successfully processed data/processed/taxation/Tax calculation table.pdf with 2 pages
+2025-07-23 05:39:05,620 - build_faiss_index - INFO - Processing file: data/processed/taxation/US DOLLAR INVESTMENT BOND APPLICATION FORM.pdf
+2025-07-23 05:39:05,645 - build_faiss_index - INFO - Successfully processed data/processed/taxation/US DOLLAR INVESTMENT BOND APPLICATION FORM.pdf with 2 pages
+2025-07-23 05:39:05,646 - build_faiss_index - INFO - Processing file: data/processed/taxation/Personal Taxation in Bangladesh - Comprehensive Guide.pdf
+2025-07-23 05:39:05,745 - build_faiss_index - INFO - Successfully processed data/processed/taxation/Personal Taxation in Bangladesh - Comprehensive Guide.pdf with 9 pages
+2025-07-23 05:39:05,745 - build_faiss_index - INFO - Processing file: data/processed/taxation/income_tax_ordinance.pdf
+2025-07-23 05:39:16,186 - build_faiss_index - INFO - Successfully processed data/processed/taxation/income_tax_ordinance.pdf with 474 pages
+2025-07-23 05:39:16,187 - build_faiss_index - INFO - Processing category: banking
+2025-07-23 05:39:16,187 - build_faiss_index - INFO - Processing file: data/processed/banking/personal_ac_opening_form.pdf
+2025-07-23 05:39:16,262 - build_faiss_index - INFO - Successfully processed data/processed/banking/personal_ac_opening_form.pdf with 8 pages
+2025-07-23 05:39:16,263 - build_faiss_index - INFO - Processing file: data/processed/banking/FAQ e-Banking.pdf
+2025-07-23 05:39:16,351 - build_faiss_index - INFO - Successfully processed data/processed/banking/FAQ e-Banking.pdf with 4 pages
+2025-07-23 05:39:16,351 - build_faiss_index - INFO - Processing file: data/processed/banking/e-KYC Guidelines.pdf
+2025-07-23 05:39:16,985 - build_faiss_index - INFO - Successfully processed data/processed/banking/e-KYC Guidelines.pdf with 38 pages
+2025-07-23 05:39:16,985 - build_faiss_index - INFO - Processing file: data/processed/banking/FAQs on Banking Services SEB.pdf
+2025-07-23 05:39:17,094 - build_faiss_index - INFO - Successfully processed data/processed/banking/FAQs on Banking Services SEB.pdf with 3 pages
+2025-07-23 05:39:17,094 - build_faiss_index - INFO - Processing file: data/processed/banking/RETURN OF INCOME for company.pdf
+2025-07-23 05:39:17,244 - build_faiss_index - INFO - Successfully processed data/processed/banking/RETURN OF INCOME for company.pdf with 8 pages
+2025-07-23 05:39:17,244 - build_faiss_index - INFO - Processing file: data/processed/banking/krishibank_Scheme.pdf
+2025-07-23 05:39:18,890 - build_faiss_index - INFO - Successfully processed data/processed/banking/krishibank_Scheme.pdf with 85 pages
+2025-07-23 05:39:18,890 - build_faiss_index - INFO - Processing file: data/processed/banking/FAQ-OBU-IB-AccountOpening - primeBank.pdf
+2025-07-23 05:39:19,063 - build_faiss_index - INFO - Successfully processed data/processed/banking/FAQ-OBU-IB-AccountOpening - primeBank.pdf with 4 pages
+2025-07-23 05:39:19,063 - build_faiss_index - INFO - Processing file: data/processed/banking/Tax calculation table.pdf
+2025-07-23 05:39:19,089 - build_faiss_index - INFO - Successfully processed data/processed/banking/Tax calculation table.pdf with 2 pages
+2025-07-23 05:39:19,089 - build_faiss_index - INFO - Processing file: data/processed/banking/Core Banking Solution BB.pdf
+2025-07-23 05:39:21,940 - build_faiss_index - INFO - Successfully processed data/processed/banking/Core Banking Solution BB.pdf with 86 pages
+2025-07-23 05:39:21,940 - build_faiss_index - INFO - Processing file: data/processed/banking/Student Loans in Bangladesh.pdf
+2025-07-23 05:39:22,081 - build_faiss_index - INFO - Successfully processed data/processed/banking/Student Loans in Bangladesh.pdf with 3 pages
+2025-07-23 05:39:22,081 - build_faiss_index - INFO - Processing file: data/processed/banking/Personal_Account_Opening_Form.pdf
+2025-07-23 05:39:22,210 - build_faiss_index - INFO - Successfully processed data/processed/banking/Personal_Account_Opening_Form.pdf with 12 pages
+2025-07-23 05:39:22,210 - build_faiss_index - INFO - Processing file: data/processed/banking/Guidelines on ICT Security for Banks and Non-Bank Financial Institutions, 2023.pdf
+2025-07-23 05:39:23,784 - build_faiss_index - INFO - Successfully processed data/processed/banking/Guidelines on ICT Security for Banks and Non-Bank Financial Institutions, 2023.pdf with 85 pages
+2025-07-23 05:39:23,784 - build_faiss_index - INFO - Processing file: data/processed/banking/2024-08-04-09-27-3196d924fdcc0bb5fbd7e81e78194897.pdf
+2025-07-23 05:39:25,306 - build_faiss_index - INFO - Successfully processed data/processed/banking/2024-08-04-09-27-3196d924fdcc0bb5fbd7e81e78194897.pdf with 40 pages
+2025-07-23 05:39:25,307 - build_faiss_index - INFO - Processing file: data/processed/banking/FORM OF RETURN OF INCOME TAX.pdf
+2025-07-23 05:39:25,607 - build_faiss_index - INFO - Successfully processed data/processed/banking/FORM OF RETURN OF INCOME TAX.pdf with 11 pages
+2025-07-23 05:39:25,607 - build_faiss_index - INFO - Processing file: data/processed/banking/dttl-tax-bangladeshhighlights-2023.pdf
+2025-07-23 05:39:25,617 - build_faiss_index - ERROR - Error loading data/processed/banking/dttl-tax-bangladeshhighlights-2023.pdf: cryptography>=3.1 is required for AES algorithm
+2025-07-23 05:39:25,617 - build_faiss_index - INFO - Processing file: data/processed/banking/banking_regulations.pdf
+2025-07-23 05:39:25,630 - build_faiss_index - INFO - Successfully processed data/processed/banking/banking_regulations.pdf with 1 pages
+2025-07-23 05:39:25,630 - build_faiss_index - INFO - Processing file: data/processed/banking/Interest Rates Report 2024-2025.pdf
+2025-07-23 05:39:25,683 - build_faiss_index - INFO - Successfully processed data/processed/banking/Interest Rates Report 2024-2025.pdf with 4 pages
+2025-07-23 05:39:25,683 - build_faiss_index - INFO - Processing file: data/processed/banking/FAQs-Bank Al Arafah.pdf
+2025-07-23 05:39:26,038 - build_faiss_index - INFO - Successfully processed data/processed/banking/FAQs-Bank Al Arafah.pdf with 17 pages
+2025-07-23 05:39:26,038 - build_faiss_index - INFO - Processing file: data/processed/banking/Aykor_Nirdeshika_2024-2025.pdf
+2025-07-23 05:39:27,703 - build_faiss_index - INFO - Successfully processed data/processed/banking/Aykor_Nirdeshika_2024-2025.pdf with 119 pages
+2025-07-23 05:39:27,703 - build_faiss_index - INFO - Processing file: data/processed/banking/GUIDELINES FOR CONDUCTING ISLAMIC BANKING.pdf
+2025-07-23 05:39:27,961 - build_faiss_index - INFO - Successfully processed data/processed/banking/GUIDELINES FOR CONDUCTING ISLAMIC BANKING.pdf with 28 pages
+2025-07-23 05:39:27,961 - build_faiss_index - INFO - Processing file: data/processed/banking/Complaints BB.pdf
+2025-07-23 05:39:28,059 - build_faiss_index - INFO - Successfully processed data/processed/banking/Complaints BB.pdf with 3 pages
+2025-07-23 05:39:28,060 - build_faiss_index - INFO - Processing file: data/processed/banking/Online_Banking_FAQ.pdf
+2025-07-23 05:39:28,084 - build_faiss_index - INFO - Successfully processed data/processed/banking/Online_Banking_FAQ.pdf with 2 pages
+2025-07-23 05:39:28,084 - build_faiss_index - INFO - Processing file: data/processed/banking/Deposit insurance and customer protection measures.pdf
+2025-07-23 05:39:28,115 - build_faiss_index - INFO - Successfully processed data/processed/banking/Deposit insurance and customer protection measures.pdf with 2 pages
+2025-07-23 05:39:28,115 - build_faiss_index - INFO - Processing file: data/processed/banking/FAQ_MDBDigitalProbashiSavingsAccount_2024.pdf
+2025-07-23 05:39:28,226 - build_faiss_index - INFO - Successfully processed data/processed/banking/FAQ_MDBDigitalProbashiSavingsAccount_2024.pdf with 9 pages
+2025-07-23 05:39:28,226 - build_faiss_index - INFO - Processing file: data/processed/banking/Term_Deposit_Account_Opening_Application_Form_June_20.pdf
+2025-07-23 05:39:28,272 - build_faiss_index - INFO - Successfully processed data/processed/banking/Term_Deposit_Account_Opening_Application_Form_June_20.pdf with 6 pages
+2025-07-23 05:39:28,272 - build_faiss_index - INFO - Processing file: data/processed/banking/FDR-and-Deposit-Scheme-Form-English-Version.pdf
+2025-07-23 05:39:28,367 - build_faiss_index - INFO - Successfully processed data/processed/banking/FDR-and-Deposit-Scheme-Form-English-Version.pdf with 4 pages
+2025-07-23 05:39:28,367 - build_faiss_index - INFO - Processing file: data/processed/banking/NBR_cleanedTAX.pdf
+2025-07-23 05:39:29,882 - build_faiss_index - INFO - Successfully processed data/processed/banking/NBR_cleanedTAX.pdf with 33 pages
+2025-07-23 05:39:29,882 - build_faiss_index - INFO - Processing file: data/processed/banking/Insurance Act 2010 english version.pdf
+2025-07-23 05:39:32,187 - build_faiss_index - INFO - Successfully processed data/processed/banking/Insurance Act 2010 english version.pdf with 103 pages
+2025-07-23 05:39:32,187 - build_faiss_index - INFO - Processing file: data/processed/banking/Bangladesh Electronic Funds Transfer Network.pdf
+2025-07-23 05:39:34,707 - build_faiss_index - INFO - Successfully processed data/processed/banking/Bangladesh Electronic Funds Transfer Network.pdf with 83 pages
+2025-07-23 05:39:34,708 - build_faiss_index - INFO - Processing file: data/processed/banking/Credit policies and loan eligibility criteria.pdf
+2025-07-23 05:39:34,883 - build_faiss_index - INFO - Successfully processed data/processed/banking/Credit policies and loan eligibility criteria.pdf with 7 pages
+2025-07-23 05:39:34,883 - build_faiss_index - INFO - Processing file: data/processed/banking/1688964931_2. Account Opening form (Individual)-Editable.pdf
+2025-07-23 05:39:35,255 - build_faiss_index - INFO - Successfully processed data/processed/banking/1688964931_2. Account Opening form (Individual)-Editable.pdf with 14 pages
+2025-07-23 05:39:35,255 - build_faiss_index - INFO - Processing file: data/processed/banking/docs procedures of loan and advances.pdf
+2025-07-23 05:39:35,959 - build_faiss_index - INFO - Successfully processed data/processed/banking/docs procedures of loan and advances.pdf with 40 pages
+2025-07-23 05:39:35,959 - build_faiss_index - INFO - Processing file: data/processed/banking/EBL_ACCESS_Frequesntly_Asked_Questions.pdf
+2025-07-23 05:39:36,068 - build_faiss_index - INFO - Successfully processed data/processed/banking/EBL_ACCESS_Frequesntly_Asked_Questions.pdf with 5 pages
+2025-07-23 05:39:36,068 - build_faiss_index - INFO - Processing file: data/processed/banking/Guidelines on Agent Banking for the Banks.pdf
+2025-07-23 05:39:36,248 - build_faiss_index - INFO - Successfully processed data/processed/banking/Guidelines on Agent Banking for the Banks.pdf with 7 pages
+2025-07-23 05:39:36,248 - build_faiss_index - INFO - Processing file: data/processed/banking/Foreign exchange transactions and regulations.pdf
+2025-07-23 05:39:36,847 - build_faiss_index - INFO - Successfully processed data/processed/banking/Foreign exchange transactions and regulations.pdf with 137 pages
+2025-07-23 05:39:36,847 - build_faiss_index - INFO - Processing file: data/processed/banking/Mobile Financial Services Guidelines.pdf
+2025-07-23 05:39:36,978 - build_faiss_index - INFO - Successfully processed data/processed/banking/Mobile Financial Services Guidelines.pdf with 10 pages
+2025-07-23 05:39:36,978 - build_faiss_index - INFO - Processing file: data/processed/banking/FAQs on Banking Services IFIC.pdf
+2025-07-23 05:39:37,357 - build_faiss_index - INFO - Successfully processed data/processed/banking/FAQs on Banking Services IFIC.pdf with 4 pages
+2025-07-23 05:39:37,357 - build_faiss_index - INFO - Processing file: data/processed/banking/FAQ e-Banking NRB.pdf
+2025-07-23 05:39:37,440 - build_faiss_index - INFO - Successfully processed data/processed/banking/FAQ e-Banking NRB.pdf with 4 pages
+2025-07-23 05:39:37,441 - build_faiss_index - INFO - Processing file: data/processed/banking/Guidelines on Consumer Rights.pdf
+2025-07-23 05:39:37,933 - build_faiss_index - INFO - Successfully processed data/processed/banking/Guidelines on Consumer Rights.pdf with 31 pages
+2025-07-23 05:39:37,933 - build_faiss_index - INFO - Processing file: data/processed/banking/bd-personal-account-opening-form.pdf
+2025-07-23 05:39:38,286 - build_faiss_index - INFO - Successfully processed data/processed/banking/bd-personal-account-opening-form.pdf with 17 pages
+2025-07-23 05:39:38,286 - build_faiss_index - INFO - Processing category: sme
+2025-07-23 05:39:38,286 - build_faiss_index - INFO - Processing file: data/processed/sme/smepolicye.pdf
+2025-07-23 05:39:38,821 - build_faiss_index - INFO - Successfully processed data/processed/sme/smepolicye.pdf with 66 pages
+2025-07-23 05:39:38,821 - build_faiss_index - INFO - Processing file: data/processed/sme/Requried-documents-for-non-individuals.pdf
+2025-07-23 05:39:38,908 - build_faiss_index - INFO - Successfully processed data/processed/sme/Requried-documents-for-non-individuals.pdf with 1 pages
+2025-07-23 05:39:38,908 - build_faiss_index - INFO - Processing file: data/processed/sme/Business Startup Process in Bangladesh_SC v3.pdf
+2025-07-23 05:39:38,910 - pypdf._reader - WARNING - Ignoring wrong pointing object 11 0 (offset 0)
+2025-07-23 05:39:38,910 - pypdf._reader - WARNING - Ignoring wrong pointing object 15 0 (offset 0)
+2025-07-23 05:39:38,910 - pypdf._reader - WARNING - Ignoring wrong pointing object 17 0 (offset 0)
+2025-07-23 05:39:39,157 - build_faiss_index - INFO - Successfully processed data/processed/sme/Business Startup Process in Bangladesh_SC v3.pdf with 12 pages
+2025-07-23 05:39:39,157 - build_faiss_index - INFO - Processing file: data/processed/sme/mfg-en-case-study-the-grameen-bank-micro-credit-model-lessons-for-australian-indigenous-economic-policy-1999.pdf
+2025-07-23 05:39:39,411 - build_faiss_index - INFO - Successfully processed data/processed/sme/mfg-en-case-study-the-grameen-bank-micro-credit-model-lessons-for-australian-indigenous-economic-policy-1999.pdf with 26 pages
+2025-07-23 05:39:39,411 - build_faiss_index - INFO - Processing file: data/processed/sme/require-document-list-for-account-opening.pdf
+2025-07-23 05:39:39,543 - build_faiss_index - INFO - Successfully processed data/processed/sme/require-document-list-for-account-opening.pdf with 9 pages
+2025-07-23 05:39:39,543 - build_faiss_index - INFO - Processing file: data/processed/sme/Business Startup FORM- I (1).pdf
+2025-07-23 05:39:39,629 - build_faiss_index - INFO - Successfully processed data/processed/sme/Business Startup FORM- I (1).pdf with 3 pages
+2025-07-23 05:39:39,629 - build_faiss_index - INFO - Processing file: data/processed/sme/Institutional-Account-Opening-Form-English-Version-Non-PersonalCorporateSME-Accoun.pdf
+2025-07-23 05:39:39,678 - build_faiss_index - INFO - Successfully processed data/processed/sme/Institutional-Account-Opening-Form-English-Version-Non-PersonalCorporateSME-Accoun.pdf with 4 pages
+2025-07-23 05:39:39,678 - build_faiss_index - INFO - Processing file: data/processed/sme/ucb-taqwa-organizational-account-opening-form.pdf
+2025-07-23 05:39:39,789 - build_faiss_index - INFO - Successfully processed data/processed/sme/ucb-taqwa-organizational-account-opening-form.pdf with 6 pages
+2025-07-23 05:39:39,789 - build_faiss_index - INFO - Processing file: data/processed/sme/Financing-Solutions-for-Micro-Small-and-Medium-Enterprises-in-Bangladesh.pdf
+2025-07-23 05:39:40,499 - build_faiss_index - INFO - Successfully processed data/processed/sme/Financing-Solutions-for-Micro-Small-and-Medium-Enterprises-in-Bangladesh.pdf with 64 pages
+2025-07-23 05:39:40,499 - build_faiss_index - INFO - Processing file: data/processed/sme/Basic Bank SME.pdf
+2025-07-23 05:39:41,273 - build_faiss_index - INFO - Successfully processed data/processed/sme/Basic Bank SME.pdf with 48 pages
+2025-07-23 05:39:41,273 - build_faiss_index - INFO - Processing file: data/processed/sme/bpid_opening_Form.pdf
+2025-07-23 05:39:41,306 - build_faiss_index - INFO - Successfully processed data/processed/sme/bpid_opening_Form.pdf with 2 pages
+2025-07-23 05:39:41,306 - build_faiss_index - INFO - Processing file: data/processed/sme/Microfinance-Programme-Brief-Nov-2020.pdf
+2025-07-23 05:39:41,867 - build_faiss_index - INFO - Successfully processed data/processed/sme/Microfinance-Programme-Brief-Nov-2020.pdf with 28 pages
+2025-07-23 05:39:41,867 - build_faiss_index - INFO - Processing file: data/processed/sme/Account-Opening-Non-Ind-Dec-2024.pdf
+2025-07-23 05:39:42,136 - build_faiss_index - INFO - Successfully processed data/processed/sme/Account-Opening-Non-Ind-Dec-2024.pdf with 4 pages
+2025-07-23 05:39:42,137 - build_faiss_index - INFO - Processing file: data/processed/sme/sme_guidelines.pdf
+2025-07-23 05:39:42,986 - build_faiss_index - INFO - Successfully processed data/processed/sme/sme_guidelines.pdf with 34 pages
+2025-07-23 05:39:42,986 - build_faiss_index - INFO - Processing category: regulations
+2025-07-23 05:39:42,986 - build_faiss_index - INFO - Processing file: data/processed/regulations/Foreign Exchange Regulation Act, 1947.pdf
+2025-07-23 05:39:43,556 - build_faiss_index - INFO - Successfully processed data/processed/regulations/Foreign Exchange Regulation Act, 1947.pdf with 23 pages
+2025-07-23 05:39:43,556 - build_faiss_index - INFO - Processing file: data/processed/regulations/Negotiable Instruments Act, 1881.pdf
+2025-07-23 05:39:45,174 - build_faiss_index - INFO - Successfully processed data/processed/regulations/Negotiable Instruments Act, 1881.pdf with 59 pages
+2025-07-23 05:39:45,174 - build_faiss_index - INFO - Processing file: data/processed/regulations/Bangladesh Bank Order, 1972.pdf
+2025-07-23 05:39:45,312 - build_faiss_index - INFO - Successfully processed data/processed/regulations/Bangladesh Bank Order, 1972.pdf with 27 pages
+2025-07-23 05:39:45,312 - build_faiss_index - INFO - Processing file: data/processed/regulations/Banking Regulations and Customer Rights in Bangladesh_ A Comprehensive Guide.pdf
+2025-07-23 05:39:45,448 - build_faiss_index - INFO - Successfully processed data/processed/regulations/Banking Regulations and Customer Rights in Bangladesh_ A Comprehensive Guide.pdf with 13 pages
+2025-07-23 05:39:45,448 - build_faiss_index - INFO - Processing file: data/processed/regulations/mfg-en-paper-the-bank-company-act-bangladesh-1991-1991.pdf
+2025-07-23 05:39:45,618 - build_faiss_index - INFO - Successfully processed data/processed/regulations/mfg-en-paper-the-bank-company-act-bangladesh-1991-1991.pdf with 64 pages
+2025-07-23 05:39:45,619 - build_faiss_index - INFO - Processing file: data/processed/regulations/financial_literacy_guidelines_draft.pdf
+2025-07-23 05:39:45,781 - build_faiss_index - INFO - Successfully processed data/processed/regulations/financial_literacy_guidelines_draft.pdf with 10 pages
+2025-07-23 05:39:45,781 - build_faiss_index - INFO - Processing file: data/processed/regulations/1384Corporate Laws & Practices.pdf
+2025-07-23 05:39:55,500 - build_faiss_index - INFO - Successfully processed data/processed/regulations/1384Corporate Laws & Practices.pdf with 340 pages
+2025-07-23 05:39:55,500 - build_faiss_index - INFO - Processing file: data/processed/regulations/Finance Institutions Act, 1993.pdf
+2025-07-23 05:39:56,876 - build_faiss_index - INFO - Successfully processed data/processed/regulations/Finance Institutions Act, 1993.pdf with 20 pages
+2025-07-23 05:39:56,876 - build_faiss_index - INFO - Processing file: data/processed/regulations/Binimoy Operating Rules.pdf
+2025-07-23 05:39:57,426 - build_faiss_index - INFO - Successfully processed data/processed/regulations/Binimoy Operating Rules.pdf with 37 pages
+2025-07-23 05:39:57,426 - build_faiss_index - INFO - Splitting documents into chunks
+2025-07-23 05:39:57,768 - build_faiss_index - INFO - Created 19965 chunks from 3356 documents
+2025-07-23 05:39:57,768 - build_faiss_index - INFO - Generating embeddings and creating FAISS index
+2025-07-23 05:40:02,974 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2025-07-23 05:40:07,416 - build_faiss_index - INFO - Loading existing index
+2025-07-23 05:40:07,419 - faiss.loader - INFO - Loading faiss.
+2025-07-23 05:40:07,474 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 05:40:07,479 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-23 05:40:16,419 - build_faiss_index - INFO - Adding new documents to existing index
+2025-07-23 06:20:18,699 - build_faiss_index - INFO - Index saved at faiss_index

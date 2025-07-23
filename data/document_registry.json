@@ -1,3 +1,844 @@
 {
-  "documents": []
+    "documents": [
+        {
+            "document_id": 1,
+            "file_path": "data/raw/banking/personal_ac_opening_form.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "04ca7ea186c70c61cebfd5298456059de7669e952c2766a7fe1e288959a2f3ae",
+            "date_added": "2025-07-23T05:35:11.605805",
+            "last_modified": "2025-07-23T05:35:11.605815",
+            "status": "processed"
+        },
+        {
+            "document_id": 2,
+            "file_path": "data/raw/banking/FAQ e-Banking.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "b73bf37015527aa915aed94310457fc1227d6a4647478191baaf02811be12687",
+            "date_added": "2025-07-23T05:35:11.785964",
+            "last_modified": "2025-07-23T05:35:11.785972",
+            "status": "processed"
+        },
+        {
+            "document_id": 3,
+            "file_path": "data/raw/banking/e-KYC Guidelines.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "cbd5ae16266b6c5ec31d02c16066d92ad046abc3dd337d3a04a9add23e938011",
+            "date_added": "2025-07-23T05:35:13.046690",
+            "last_modified": "2025-07-23T05:35:13.046702",
+            "status": "processed"
+        },
+        {
+            "document_id": 4,
+            "file_path": "data/raw/banking/FAQs on Banking Services SEB.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "bca6fa8db6e01ab5d980e9e22d734a5e172890992e9303408962dc7a78d48c44",
+            "date_added": "2025-07-23T05:35:13.283582",
+            "last_modified": "2025-07-23T05:35:13.283594",
+            "status": "processed"
+        },
+        {
+            "document_id": 5,
+            "file_path": "data/raw/banking/RETURN OF INCOME for company.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "fc11500629ecf1c8d8318d68fd0f95deb92cc4a2dbc205888f4e9547338a461c",
+            "date_added": "2025-07-23T05:35:13.707339",
+            "last_modified": "2025-07-23T05:35:13.707351",
+            "status": "processed"
+        },
+        {
+            "document_id": 6,
+            "file_path": "data/raw/banking/krishibank_Scheme.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "cab955b75a7c62f13aa94b62359bc1604b2225deb846caa3d2bd819720207630",
+            "date_added": "2025-07-23T05:35:25.792547",
+            "last_modified": "2025-07-23T05:35:25.792565",
+            "status": "processed"
+        },
+        {
+            "document_id": 7,
+            "file_path": "data/raw/banking/FAQ-OBU-IB-AccountOpening - primeBank.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "1905db52ca87d7c20375d5afc303a4ea9c2519c18a2719a73d22cb5630669fed",
+            "date_added": "2025-07-23T05:35:31.514423",
+            "last_modified": "2025-07-23T05:35:31.514433",
+            "status": "processed"
+        },
+        {
+            "document_id": 8,
+            "file_path": "data/raw/banking/Tax calculation table.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "f8b39bbea6ce9574a93d3bbedcfaa641287b5c21bac786db3c8277dbc8684743",
+            "date_added": "2025-07-23T05:35:33.160032",
+            "last_modified": "2025-07-23T05:35:33.160041",
+            "status": "processed"
+        },
+        {
+            "document_id": 9,
+            "file_path": "data/raw/banking/Core Banking Solution BB.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "4fe7666ddf9847294bffcb17cbaf9b879c124e3658e8d664d31141281a38a8f1",
+            "date_added": "2025-07-23T05:35:38.240223",
+            "last_modified": "2025-07-23T05:35:38.240234",
+            "status": "processed"
+        },
+        {
+            "document_id": 10,
+            "file_path": "data/raw/banking/Student Loans in Bangladesh.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "3ee2d408380408951b1a3b12db5e2bb16a8c49bb57b8dca2998f11bd822b924c",
+            "date_added": "2025-07-23T05:35:39.529320",
+            "last_modified": "2025-07-23T05:35:39.529337",
+            "status": "processed"
+        },
+        {
+            "document_id": 11,
+            "file_path": "data/raw/banking/Personal_Account_Opening_Form.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "7971f00fff582bd378317e0f128f1f499446373b2d4914705a3bd35ef6e9f2a3",
+            "date_added": "2025-07-23T05:35:42.160448",
+            "last_modified": "2025-07-23T05:35:42.160478",
+            "status": "processed"
+        },
+        {
+            "document_id": 12,
+            "file_path": "data/raw/banking/Guidelines on ICT Security for Banks and Non-Bank Financial Institutions, 2023.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "01cfc1ad2e99aa8a1bb17e08123878fb641a0f0dee2444180893c063b9364fff",
+            "date_added": "2025-07-23T05:36:18.312938",
+            "last_modified": "2025-07-23T05:36:18.312945",
+            "status": "processed"
+        },
+        {
+            "document_id": 13,
+            "file_path": "data/raw/banking/2024-08-04-09-27-3196d924fdcc0bb5fbd7e81e78194897.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "e18604758b893a5d677e05489132d7af26922ae685b8fa82b883bf8c969b355c",
+            "date_added": "2025-07-23T05:36:21.189083",
+            "last_modified": "2025-07-23T05:36:21.189089",
+            "status": "processed"
+        },
+        {
+            "document_id": 14,
+            "file_path": "data/raw/banking/FORM OF RETURN OF INCOME TAX.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "781a62cabe8f4621ece5a0d727b94ffe2c1523f7738443c58275284b96430b47",
+            "date_added": "2025-07-23T05:36:27.134459",
+            "last_modified": "2025-07-23T05:36:27.134465",
+            "status": "processed"
+        },
+        {
+            "document_id": 15,
+            "file_path": "data/raw/banking/dttl-tax-bangladeshhighlights-2023.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "781e35baa7d835050168c943f35f18053a8734bc7691486fc554b3d654ffa2ec",
+            "date_added": "2025-07-23T05:36:28.671189",
+            "last_modified": "2025-07-23T05:36:28.671196",
+            "status": "processed"
+        },
+        {
+            "document_id": 16,
+            "file_path": "data/raw/banking/banking_regulations.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "21106c5eaf7ad38038fb7d66dafc720a5c050f4d74f1a84f837e68487b745632",
+            "date_added": "2025-07-23T05:36:29.695534",
+            "last_modified": "2025-07-23T05:36:29.695547",
+            "status": "processed"
+        },
+        {
+            "document_id": 17,
+            "file_path": "data/raw/banking/Interest Rates Report 2024-2025.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "52ad863c510aa040716c80265a688b0b5469f4eaced03b55d5db2f52771ec170",
+            "date_added": "2025-07-23T05:36:32.822280",
+            "last_modified": "2025-07-23T05:36:32.822287",
+            "status": "processed"
+        },
+        {
+            "document_id": 18,
+            "file_path": "data/raw/banking/FAQs-Bank Al Arafah.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "5204fc3a123004d12c4a4ae67a390af78a047b6ca528f9808bc1d8c52ea24395",
+            "date_added": "2025-07-23T05:36:34.641185",
+            "last_modified": "2025-07-23T05:36:34.641195",
+            "status": "processed"
+        },
+        {
+            "document_id": 19,
+            "file_path": "data/raw/banking/Aykor_Nirdeshika_2024-2025.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "e08c2c02939bee17cf52d1d2072a2901fff93c1be9b8be400db4f30a04dc6cd0",
+            "date_added": "2025-07-23T05:36:38.417331",
+            "last_modified": "2025-07-23T05:36:38.417339",
+            "status": "processed"
+        },
+        {
+            "document_id": 20,
+            "file_path": "data/raw/banking/GUIDELINES FOR CONDUCTING ISLAMIC BANKING.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "83a19fcd251a28588b21e641ca282d2b8b0258c9e4ea5482444eef64b4b52caa",
+            "date_added": "2025-07-23T05:36:40.551066",
+            "last_modified": "2025-07-23T05:36:40.551072",
+            "status": "processed"
+        },
+        {
+            "document_id": 21,
+            "file_path": "data/raw/banking/Complaints BB.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "ccbb477876b426956adf96f2007c55bab8a02243fb1689f3126a0538d93b40c0",
+            "date_added": "2025-07-23T05:36:41.977696",
+            "last_modified": "2025-07-23T05:36:41.977704",
+            "status": "processed"
+        },
+        {
+            "document_id": 22,
+            "file_path": "data/raw/banking/Online_Banking_FAQ.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "e7f9f99cd643bc0d7226559ac872ad06f37a29b58f54b2daece713e2e993353d",
+            "date_added": "2025-07-23T05:36:44.213882",
+            "last_modified": "2025-07-23T05:36:44.213890",
+            "status": "processed"
+        },
+        {
+            "document_id": 23,
+            "file_path": "data/raw/banking/Deposit insurance and customer protection measures.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "6d026036a13f72659a6a12122d0238d43cf7b77e5015a6fb835b45088fbf6da0",
+            "date_added": "2025-07-23T05:36:45.910350",
+            "last_modified": "2025-07-23T05:36:45.910358",
+            "status": "processed"
+        },
+        {
+            "document_id": 24,
+            "file_path": "data/raw/banking/FAQ_MDBDigitalProbashiSavingsAccount_2024.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "3dfa686b7d624ff7a145995971c8e398757a6f96b08e122eed29db9883bd54e1",
+            "date_added": "2025-07-23T05:36:47.985979",
+            "last_modified": "2025-07-23T05:36:47.985987",
+            "status": "processed"
+        },
+        {
+            "document_id": 25,
+            "file_path": "data/raw/banking/Term_Deposit_Account_Opening_Application_Form_June_20.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "a784424b41c12d48eeec4972a330c9442b8a7a41191aee268cc34ee7a4cb65ec",
+            "date_added": "2025-07-23T05:36:49.458760",
+            "last_modified": "2025-07-23T05:36:49.458766",
+            "status": "processed"
+        },
+        {
+            "document_id": 26,
+            "file_path": "data/raw/banking/FDR-and-Deposit-Scheme-Form-English-Version.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "f87928839b46a964e7c76d222386f9a006ffea296d4477aedafe6fbb6045c5c9",
+            "date_added": "2025-07-23T05:36:51.139740",
+            "last_modified": "2025-07-23T05:36:51.139747",
+            "status": "processed"
+        },
+        {
+            "document_id": 27,
+            "file_path": "data/raw/banking/NBR_cleanedTAX.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "aa53aae556a6d8e8ffd177235ec1158cd4773b472c83f9f68451c7cf8f7d5fa1",
+            "date_added": "2025-07-23T05:36:55.197383",
+            "last_modified": "2025-07-23T05:36:55.197392",
+            "status": "processed"
+        },
+        {
+            "document_id": 28,
+            "file_path": "data/raw/banking/Insurance Act 2010 english version.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "a375f9ead3abb276f760ca52e3e1c3c4b7e8148123c56cbde5b79aa0f36cf5df",
+            "date_added": "2025-07-23T05:36:59.848349",
+            "last_modified": "2025-07-23T05:36:59.848356",
+            "status": "processed"
+        },
+        {
+            "document_id": 29,
+            "file_path": "data/raw/banking/Bangladesh Electronic Funds Transfer Network.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "e9311258a9d43158c9a7021be7c6bfe3871262c6ec0a919a4c49b3d9d5c4f71d",
+            "date_added": "2025-07-23T05:37:03.059826",
+            "last_modified": "2025-07-23T05:37:03.059833",
+            "status": "processed"
+        },
+        {
+            "document_id": 30,
+            "file_path": "data/raw/banking/Credit policies and loan eligibility criteria.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "f69fc7370ebd8abfba2e7a7c0484b9da92f3cff32aac95d0628a2bd9dacb485e",
+            "date_added": "2025-07-23T05:37:03.267678",
+            "last_modified": "2025-07-23T05:37:03.267686",
+            "status": "processed"
+        },
+        {
+            "document_id": 31,
+            "file_path": "data/raw/banking/1688964931_2. Account Opening form (Individual)-Editable.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "14afc2cabbb4cad09caa60bd0fe3560c0f8d90d3f2f2b61a093b9a565d25fb69",
+            "date_added": "2025-07-23T05:37:04.193258",
+            "last_modified": "2025-07-23T05:37:04.193265",
+            "status": "processed"
+        },
+        {
+            "document_id": 32,
+            "file_path": "data/raw/banking/docs procedures of loan and advances.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "60dea7203d0958ef7a8184130ba03982cf7fc370425dba8cfbd22344c2423116",
+            "date_added": "2025-07-23T05:37:06.611499",
+            "last_modified": "2025-07-23T05:37:06.611511",
+            "status": "processed"
+        },
+        {
+            "document_id": 33,
+            "file_path": "data/raw/banking/EBL_ACCESS_Frequesntly_Asked_Questions.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "489df00194d5dd3ddce03fd0461f5755a83a45ffad06a8ea4eef6dac82a2980e",
+            "date_added": "2025-07-23T05:37:06.813384",
+            "last_modified": "2025-07-23T05:37:06.813405",
+            "status": "processed"
+        },
+        {
+            "document_id": 34,
+            "file_path": "data/raw/banking/Guidelines on Agent Banking for the Banks.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "cadadfee9ec66f0d2bed21ffc38f0e97b81a876f289d215f4a85a3375bdf0e7b",
+            "date_added": "2025-07-23T05:37:07.003062",
+            "last_modified": "2025-07-23T05:37:07.003070",
+            "status": "processed"
+        },
+        {
+            "document_id": 35,
+            "file_path": "data/raw/banking/Foreign exchange transactions and regulations.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "fd148762f742d200e60ff9192f0d46133b4a8c7b93c45fb5efb5a3f5740078c4",
+            "date_added": "2025-07-23T05:37:09.447623",
+            "last_modified": "2025-07-23T05:37:09.447631",
+            "status": "processed"
+        },
+        {
+            "document_id": 36,
+            "file_path": "data/raw/banking/Mobile Financial Services Guidelines.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "aa4bee15eb8fff9cebb896d3ce79bb89c7cf503347a381c9764faa12ac1690a2",
+            "date_added": "2025-07-23T05:37:09.619344",
+            "last_modified": "2025-07-23T05:37:09.619350",
+            "status": "processed"
+        },
+        {
+            "document_id": 37,
+            "file_path": "data/raw/banking/FAQs on Banking Services IFIC.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "b4f97aa5f595be9169a6aab807ad3f43baf0c87f9dc051864649545a073059d8",
+            "date_added": "2025-07-23T05:37:09.877866",
+            "last_modified": "2025-07-23T05:37:09.877873",
+            "status": "processed"
+        },
+        {
+            "document_id": 38,
+            "file_path": "data/raw/banking/FAQ e-Banking NRB.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "b73bf37015527aa915aed94310457fc1227d6a4647478191baaf02811be12687",
+            "date_added": "2025-07-23T05:37:10.272361",
+            "last_modified": "2025-07-23T05:37:10.272369",
+            "status": "processed"
+        },
+        {
+            "document_id": 39,
+            "file_path": "data/raw/banking/Guidelines on Consumer Rights.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "b60e0e79feb9e5f5a3cd2c06572fbc2041ce23a4772315e23c1f07d3b1f72c43",
+            "date_added": "2025-07-23T05:37:10.963845",
+            "last_modified": "2025-07-23T05:37:10.963852",
+            "status": "processed"
+        },
+        {
+            "document_id": 40,
+            "file_path": "data/raw/banking/bd-personal-account-opening-form.pdf",
+            "category": "banking",
+            "source": "local",
+            "hash": "fac7b0964125e302fbee2bb66ef40d35d4d14482f279665e63bfbf5ffa2cbd84",
+            "date_added": "2025-07-23T05:37:16.618876",
+            "last_modified": "2025-07-23T05:37:16.618883",
+            "status": "processed"
+        },
+        {
+            "document_id": 41,
+            "file_path": "data/raw/investment/Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf",
+            "category": "investment",
+            "source": "local",
+            "hash": "b62b41d98eee01e13dce23e1281a4299741927c90f9314fb47b31e327ac8f7f0",
+            "date_added": "2025-07-23T05:37:17.994345",
+            "last_modified": "2025-07-23T05:37:17.994352",
+            "status": "processed"
+        },
+        {
+            "document_id": 42,
+            "file_path": "data/raw/investment/One-Stop Service (OSS) Rules, 2020.pdf",
+            "category": "investment",
+            "source": "local",
+            "hash": "4e7aea626a90376ed4a9f5213ff76e3fec25ece046736bcb1c82e458b5438cc8",
+            "date_added": "2025-07-23T05:37:21.871114",
+            "last_modified": "2025-07-23T05:37:21.871124",
+            "status": "processed"
+        },
+        {
+            "document_id": 43,
+            "file_path": "data/raw/investment/Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf",
+            "category": "investment",
+            "source": "local",
+            "hash": "876bf189e3f77aa1eceae70630fb159bfc38497ef78fa6f44627062ef01df7c6",
+            "date_added": "2025-07-23T05:37:27.962786",
+            "last_modified": "2025-07-23T05:37:27.962794",
+            "status": "processed"
+        },
+        {
+            "document_id": 44,
+            "file_path": "data/raw/investment/Financial-Literacy-Curriculum.pdf",
+            "category": "investment",
+            "source": "local",
+            "hash": "0405cb3ccf0b38d7c5c1a4f8cd3969383449dbc9d3c69d4618c45c66902089f3",
+            "date_added": "2025-07-23T05:37:34.155675",
+            "last_modified": "2025-07-23T05:37:34.155683",
+            "status": "processed"
+        },
+        {
+            "document_id": 45,
+            "file_path": "data/raw/investment/financial_literacy_guidelines_draft.pdf",
+            "category": "investment",
+            "source": "local",
+            "hash": "64e4d5e63b5a7b1af4537a6852941bc419f284620552d30f73b682179086682d",
+            "date_added": "2025-07-23T05:37:34.361536",
+            "last_modified": "2025-07-23T05:37:34.361544",
+            "status": "processed"
+        },
+        {
+            "document_id": 46,
+            "file_path": "data/raw/investment/03 OP_ZF_1.pdf",
+            "category": "investment",
+            "source": "local",
+            "hash": "52734981ffb496477faea5f1ff2d37ee90bc7f709b065755450259339a1e07d4",
+            "date_added": "2025-07-23T05:37:34.587480",
+            "last_modified": "2025-07-23T05:37:34.587486",
+            "status": "processed"
+        },
+        {
+            "document_id": 47,
+            "file_path": "data/raw/investment/5-Year Bangladesh Savings Certificate.pdf",
+            "category": "investment",
+            "source": "local",
+            "hash": "9411153c49c7535ef8a198456810283c8a7f3c5a83a46ac63bdd446075b91246",
+            "date_added": "2025-07-23T05:37:34.636156",
+            "last_modified": "2025-07-23T05:37:34.636160",
+            "status": "processed"
+        },
+        {
+            "document_id": 48,
+            "file_path": "data/raw/investment/Guidelines for Non-Resident Bangladeshis (NRBs).pdf",
+            "category": "investment",
+            "source": "local",
+            "hash": "8af43fd929855ff8d23aded063163270b7488e41011b9cb9bb37b4b8c57f7b3e",
+            "date_added": "2025-07-23T05:37:49.351386",
+            "last_modified": "2025-07-23T05:37:49.351402",
+            "status": "processed"
+        },
+        {
+            "document_id": 49,
+            "file_path": "data/raw/investment/Bilateral Investment Treaties (BITs).pdf",
+            "category": "investment",
+            "source": "local",
+            "hash": "e2aaf3b25fa200113a7dd4c5e75df2c25850d25b14ed192c3a0464e0c5ab3b70",
+            "date_added": "2025-07-23T05:37:49.825135",
+            "last_modified": "2025-07-23T05:37:49.825145",
+            "status": "processed"
+        },
+        {
+            "document_id": 50,
+            "file_path": "data/raw/investment/Foreign-Investment-in-Bangladesh-Booklet .pdf",
+            "category": "investment",
+            "source": "local",
+            "hash": "61c65f249a35753451637b1fee8ad73a755ce21028ec780d90ca0e6023d08550",
+            "date_added": "2025-07-23T05:37:53.859757",
+            "last_modified": "2025-07-23T05:37:53.859764",
+            "status": "processed"
+        },
+        {
+            "document_id": 51,
+            "file_path": "data/raw/loans/Car Loan Application Form.pdf",
+            "category": "loans",
+            "source": "local",
+            "hash": "22d08ae8cbadefaeba701d17d02aa50c4fea191ac8e7dbd8c9ea965025eb4b99",
+            "date_added": "2025-07-23T05:37:59.099718",
+            "last_modified": "2025-07-23T05:37:59.099725",
+            "status": "processed"
+        },
+        {
+            "document_id": 52,
+            "file_path": "data/raw/loans/CarLoan.pdf",
+            "category": "loans",
+            "source": "local",
+            "hash": "739e6ad80be940aeb074fb7e8b7ed3044c3a3b80040303f4c6227094eec6f5db",
+            "date_added": "2025-07-23T05:37:59.119544",
+            "last_modified": "2025-07-23T05:37:59.119549",
+            "status": "processed"
+        },
+        {
+            "document_id": 53,
+            "file_path": "data/raw/loans/Comprehensive Loan Documentation Guide for Bangladesh.pdf",
+            "category": "loans",
+            "source": "local",
+            "hash": "d768f7d60d99378c997a84ee33eaeae0fa5bfd858b9059b909fe881651486ff6",
+            "date_added": "2025-07-23T05:37:59.258700",
+            "last_modified": "2025-07-23T05:37:59.258710",
+            "status": "processed"
+        },
+        {
+            "document_id": 54,
+            "file_path": "data/raw/loans/bb_auto_loan_circular.pdf",
+            "category": "loans",
+            "source": "local",
+            "hash": "866dccdcbeb2fefbe9554f27db7a0aea824af1a253d6ee79af84bf2e208a6e0c",
+            "date_added": "2025-07-23T05:37:59.297382",
+            "last_modified": "2025-07-23T05:37:59.297387",
+            "status": "processed"
+        },
+        {
+            "document_id": 55,
+            "file_path": "data/raw/loans/home_loan_application.pdf",
+            "category": "loans",
+            "source": "local",
+            "hash": "19bbee28243a5d15c508fb53d4859fbe6d2472c1772ac8bb38cd463e33e137a7",
+            "date_added": "2025-07-23T05:38:02.814856",
+            "last_modified": "2025-07-23T05:38:02.814865",
+            "status": "processed"
+        },
+        {
+            "document_id": 56,
+            "file_path": "data/raw/regulations/Foreign Exchange Regulation Act, 1947.pdf",
+            "category": "regulations",
+            "source": "local",
+            "hash": "75881d39855e7274cf819dbd899f77d56e1594b474a495ec90e04527d6842b80",
+            "date_added": "2025-07-23T05:38:03.298540",
+            "last_modified": "2025-07-23T05:38:03.298546",
+            "status": "processed"
+        },
+        {
+            "document_id": 57,
+            "file_path": "data/raw/regulations/Negotiable Instruments Act, 1881.pdf",
+            "category": "regulations",
+            "source": "local",
+            "hash": "0a365219a89f5ced4577493ffba81f9c6b4f73e383062bc8cc28aa7f3bb4f503",
+            "date_added": "2025-07-23T05:38:04.477691",
+            "last_modified": "2025-07-23T05:38:04.477697",
+            "status": "processed"
+        },
+        {
+            "document_id": 58,
+            "file_path": "data/raw/regulations/Bangladesh Bank Order, 1972.pdf",
+            "category": "regulations",
+            "source": "local",
+            "hash": "e53398b582f64f65452b136726925004139405965f91143199e43fc2843ce16c",
+            "date_added": "2025-07-23T05:38:05.206608",
+            "last_modified": "2025-07-23T05:38:05.206618",
+            "status": "processed"
+        },
+        {
+            "document_id": 59,
+            "file_path": "data/raw/regulations/Banking Regulations and Customer Rights in Bangladesh_ A Comprehensive Guide.pdf",
+            "category": "regulations",
+            "source": "local",
+            "hash": "ff3d3beb740523d0e32b48a9180c13c05fb0ed017f68b61cd29e461308b41b2e",
+            "date_added": "2025-07-23T05:38:05.368010",
+            "last_modified": "2025-07-23T05:38:05.368039",
+            "status": "processed"
+        },
+        {
+            "document_id": 60,
+            "file_path": "data/raw/regulations/mfg-en-paper-the-bank-company-act-bangladesh-1991-1991.pdf",
+            "category": "regulations",
+            "source": "local",
+            "hash": "7164b3767d4be0dded9f9e13abd453829514429036e3c62e693e6b0e53837fba",
+            "date_added": "2025-07-23T05:38:06.915441",
+            "last_modified": "2025-07-23T05:38:06.915450",
+            "status": "processed"
+        },
+        {
+            "document_id": 61,
+            "file_path": "data/raw/regulations/financial_literacy_guidelines_draft.pdf",
+            "category": "regulations",
+            "source": "local",
+            "hash": "64e4d5e63b5a7b1af4537a6852941bc419f284620552d30f73b682179086682d",
+            "date_added": "2025-07-23T05:38:07.136763",
+            "last_modified": "2025-07-23T05:38:07.136771",
+            "status": "processed"
+        },
+        {
+            "document_id": 62,
+            "file_path": "data/raw/regulations/1384Corporate Laws & Practices.pdf",
+            "category": "regulations",
+            "source": "local",
+            "hash": "482f20104f1a354a54f8bc918d45746a2a69e968e794d1070347a6c7f29e177d",
+            "date_added": "2025-07-23T05:38:18.031478",
+            "last_modified": "2025-07-23T05:38:18.031495",
+            "status": "processed"
+        },
+        {
+            "document_id": 63,
+            "file_path": "data/raw/regulations/Finance Institutions Act, 1993.pdf",
+            "category": "regulations",
+            "source": "local",
+            "hash": "ee55fa46366841a18840a3a392ba035d043e2dfcfe686f2e362d9f10fc02c423",
+            "date_added": "2025-07-23T05:38:18.523033",
+            "last_modified": "2025-07-23T05:38:18.523039",
+            "status": "processed"
+        },
+        {
+            "document_id": 64,
+            "file_path": "data/raw/regulations/Binimoy Operating Rules.pdf",
+            "category": "regulations",
+            "source": "local",
+            "hash": "ce60df23e46f38ea5cbf1296c5c593057cb18f0e364217556ac4e03997ba2d4d",
+            "date_added": "2025-07-23T05:38:19.211258",
+            "last_modified": "2025-07-23T05:38:19.211266",
+            "status": "processed"
+        },
+        {
+            "document_id": 65,
+            "file_path": "data/raw/sme/smepolicye.pdf",
+            "category": "sme",
+            "source": "local",
+            "hash": "724d4ec61e4478a9c2699eb163dd7e93adaf3e33b46d3726111a271aa5095d1e",
+            "date_added": "2025-07-23T05:38:20.238211",
+            "last_modified": "2025-07-23T05:38:20.238216",
+            "status": "processed"
+        },
+        {
+            "document_id": 66,
+            "file_path": "data/raw/sme/Requried-documents-for-non-individuals.pdf",
+            "category": "sme",
+            "source": "local",
+            "hash": "a40fba190b1f129fdf8f79609138e48356b6490d26cc1f4a957f0d14bd9d4737",
+            "date_added": "2025-07-23T05:38:20.318997",
+            "last_modified": "2025-07-23T05:38:20.319005",
+            "status": "processed"
+        },
+        {
+            "document_id": 67,
+            "file_path": "data/raw/sme/Business Startup Process in Bangladesh_SC v3.pdf",
+            "category": "sme",
+            "source": "local",
+            "hash": "b6ec4760f9693b83b48d43aff3d365920d40240c7395ecaedd1189d21bbc263a",
+            "date_added": "2025-07-23T05:38:20.804513",
+            "last_modified": "2025-07-23T05:38:20.804520",
+            "status": "processed"
+        },
+        {
+            "document_id": 68,
+            "file_path": "data/raw/sme/mfg-en-case-study-the-grameen-bank-micro-credit-model-lessons-for-australian-indigenous-economic-policy-1999.pdf",
+            "category": "sme",
+            "source": "local",
+            "hash": "8c2a6e582aa9ebd150618b9ffe4815ba9aa04ec82bd6bbfd638d3253ec84a40e",
+            "date_added": "2025-07-23T05:38:21.420133",
+            "last_modified": "2025-07-23T05:38:21.420140",
+            "status": "processed"
+        },
+        {
+            "document_id": 69,
+            "file_path": "data/raw/sme/require-document-list-for-account-opening.pdf",
+            "category": "sme",
+            "source": "local",
+            "hash": "8ec4569e6a923bf888519374b23899e5164b9e7ca76b818c7067b37d01cce3ed",
+            "date_added": "2025-07-23T05:38:21.769921",
+            "last_modified": "2025-07-23T05:38:21.769928",
+            "status": "processed"
+        },
+        {
+            "document_id": 70,
+            "file_path": "data/raw/sme/Business Startup FORM- I (1).pdf",
+            "category": "sme",
+            "source": "local",
+            "hash": "a834a30cbfe40fcd98b70650efb7bb145f983faf3f2778bd95d661d7433eb852",
+            "date_added": "2025-07-23T05:38:21.810793",
+            "last_modified": "2025-07-23T05:38:21.810799",
+            "status": "processed"
+        },
+        {
+            "document_id": 71,
+            "file_path": "data/raw/sme/Institutional-Account-Opening-Form-English-Version-Non-PersonalCorporateSME-Accoun.pdf",
+            "category": "sme",
+            "source": "local",
+            "hash": "7ddf7e4b1a4eac310631b7a6d7857b8cdfff4a4bed2a316f769239a51b346d58",
+            "date_added": "2025-07-23T05:38:26.167403",
+            "last_modified": "2025-07-23T05:38:26.167410",
+            "status": "processed"
+        },
+        {
+            "document_id": 72,
+            "file_path": "data/raw/sme/ucb-taqwa-organizational-account-opening-form.pdf",
+            "category": "sme",
+            "source": "local",
+            "hash": "7fd3c76ecf26cae4a36aa5a45dfadd5f610f7f518266eb31ca5b41a3dc2f1c1d",
+            "date_added": "2025-07-23T05:38:26.611078",
+            "last_modified": "2025-07-23T05:38:26.611085",
+            "status": "processed"
+        },
+        {
+            "document_id": 73,
+            "file_path": "data/raw/sme/Financing-Solutions-for-Micro-Small-and-Medium-Enterprises-in-Bangladesh.pdf",
+            "category": "sme",
+            "source": "local",
+            "hash": "96a77e951cabbd545ed1be93c46ee0911ca5e8f0d39f09d1e5e0d99fe9803120",
+            "date_added": "2025-07-23T05:38:30.631538",
+            "last_modified": "2025-07-23T05:38:30.631545",
+            "status": "processed"
+        },
+        {
+            "document_id": 74,
+            "file_path": "data/raw/sme/Basic Bank SME.pdf",
+            "category": "sme",
+            "source": "local",
+            "hash": "5ea3a3ed5ae2c94a6777707258b68e62e079662fe6db176b4d444878ff2edd1b",
+            "date_added": "2025-07-23T05:38:31.892786",
+            "last_modified": "2025-07-23T05:38:31.892794",
+            "status": "processed"
+        },
+        {
+            "document_id": 75,
+            "file_path": "data/raw/sme/bpid_opening_Form.pdf",
+            "category": "sme",
+            "source": "local",
+            "hash": "9761be131c993c30121cc799866f68743e6f514605cf71fc7ee6eff6c097da0d",
+            "date_added": "2025-07-23T05:38:31.971276",
+            "last_modified": "2025-07-23T05:38:31.971287",
+            "status": "processed"
+        },
+        {
+            "document_id": 76,
+            "file_path": "data/raw/sme/Microfinance-Programme-Brief-Nov-2020.pdf",
+            "category": "sme",
+            "source": "local",
+            "hash": "2387c87a9c849c6072b3a93939e8b2a674ccd59f8fe8cf04d1c6a07d1fb30af7",
+            "date_added": "2025-07-23T05:38:34.169268",
+            "last_modified": "2025-07-23T05:38:34.169275",
+            "status": "processed"
+        },
+        {
+            "document_id": 77,
+            "file_path": "data/raw/sme/Account-Opening-Non-Ind-Dec-2024.pdf",
+            "category": "sme",
+            "source": "local",
+            "hash": "c4e6b73eee71b66c29c54c14f36e387d3e49b523acb7eb858e20b3c72a4c20a8",
+            "date_added": "2025-07-23T05:38:34.354809",
+            "last_modified": "2025-07-23T05:38:34.354818",
+            "status": "processed"
+        },
+        {
+            "document_id": 78,
+            "file_path": "data/raw/sme/sme_guidelines.pdf",
+            "category": "sme",
+            "source": "local",
+            "hash": "52100acb7921c8253dc471bd9473a813baae146d6aa72072c0f7953f5b401064",
+            "date_added": "2025-07-23T05:38:35.312087",
+            "last_modified": "2025-07-23T05:38:35.312093",
+            "status": "processed"
+        },
+        {
+            "document_id": 79,
+            "file_path": "data/raw/taxation/WAGE-EARNERS DEVELOPMENT BOND APPLICATION FORM.pdf",
+            "category": "taxation",
+            "source": "local",
+            "hash": "90773e141bcf8ea12b0ef211b3f080359c33ea55869778c3c1ca23bd4d3d9196",
+            "date_added": "2025-07-23T05:38:35.498324",
+            "last_modified": "2025-07-23T05:38:35.498328",
+            "status": "processed"
+        },
+        {
+            "document_id": 80,
+            "file_path": "data/raw/taxation/US DOLLAR PREMIUM BOND APPLICATION FORM.pdf",
+            "category": "taxation",
+            "source": "local",
+            "hash": "25c832857a346bd963e703c5dd3a121e4cb347d1b4cb6ba034929b053de3cf8a",
+            "date_added": "2025-07-23T05:38:35.543638",
+            "last_modified": "2025-07-23T05:38:35.543643",
+            "status": "processed"
+        },
+        {
+            "document_id": 81,
+            "file_path": "data/raw/taxation/Tax calculation table.pdf",
+            "category": "taxation",
+            "source": "local",
+            "hash": "f8b39bbea6ce9574a93d3bbedcfaa641287b5c21bac786db3c8277dbc8684743",
+            "date_added": "2025-07-23T05:38:35.590838",
+            "last_modified": "2025-07-23T05:38:35.590842",
+            "status": "processed"
+        },
+        {
+            "document_id": 82,
+            "file_path": "data/raw/taxation/US DOLLAR INVESTMENT BOND APPLICATION FORM.pdf",
+            "category": "taxation",
+            "source": "local",
+            "hash": "7fe7a6b83d82e8b87da53f257832dda4ab918e72691a1cb1b07c41c70099e04e",
+            "date_added": "2025-07-23T05:38:35.655861",
+            "last_modified": "2025-07-23T05:38:35.655867",
+            "status": "processed"
+        },
+        {
+            "document_id": 83,
+            "file_path": "data/raw/taxation/Personal Taxation in Bangladesh - Comprehensive Guide.pdf",
+            "category": "taxation",
+            "source": "local",
+            "hash": "8e8e250397cc65d79a9b4b41c008e6d4b00a527e78cdf98fde7db4c8296cadad",
+            "date_added": "2025-07-23T05:38:35.766500",
+            "last_modified": "2025-07-23T05:38:35.766506",
+            "status": "processed"
+        },
+        {
+            "document_id": 84,
+            "file_path": "data/raw/taxation/income_tax_ordinance.pdf",
+            "category": "taxation",
+            "source": "local",
+            "hash": "7ae12a2071ed0e74de95e43e1c3a2a9d6307dd3c5e200f4517b793652339c2bf",
+            "date_added": "2025-07-23T05:38:47.263939",
+            "last_modified": "2025-07-23T05:38:47.263947",
+            "status": "processed"
+        }
+    ]
 }
