@@ -73,10 +73,12 @@ class ResponseCache:
         key = self._generate_key(query)
         cache_file = os.path.join(self.cache_dir, f"{key}.json")
         
-        # Save response to cache file
+        # Create a serializable copy of the response
         try:
+            serializable_response = self._make_serializable(response)
+            
             with open(cache_file, 'w') as f:
-                json.dump(response, f, indent=2)
+                json.dump(serializable_response, f, indent=2)
             
             # Update cache index
             self.cache_index["entries"][key] = {
@@ -88,6 +90,25 @@ class ResponseCache:
             logger.info(f"Cached response for query: {query[:50]}...")
         except Exception as e:
             logger.error(f"Error caching response: {str(e)}")
+    
+    def _make_serializable(self, obj):
+        """Convert non-serializable objects to serializable format"""
+        if isinstance(obj, dict):
+            serializable = {}
+            for key, value in obj.items():
+                if key == 'source_documents':
+                    # Convert Document objects to dictionaries
+                    serializable[key] = [{
+                        'page_content': doc.page_content,
+                        'metadata': doc.metadata
+                    } for doc in value]
+                else:
+                    serializable[key] = self._make_serializable(value)
+            return serializable
+        elif isinstance(obj, list):
+            return [self._make_serializable(item) for item in obj]
+        else:
+            return obj
     
     def clear_expired(self):
         """Clear expired cache entries"""

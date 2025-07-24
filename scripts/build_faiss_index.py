@@ -68,16 +68,22 @@ def process_and_index_documents():
         logger.warning("No documents to process. Index not updated.")
         return
     
-    # Split documents into chunks
+    # Split documents into chunks and preserve metadata
     logger.info("Splitting documents into chunks")
-    # Adjust chunk size for better memory management
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=500,  # Reduced from 1000 for better memory management
-        chunk_overlap=100,  # Reduced from 200
+        chunk_size=500,
+        chunk_overlap=100,
         separators=["\n\n", "\n", ".", " ", ""]
     )
-    chunks = text_splitter.split_documents(all_documents)
-    logger.info(f"Created {len(chunks)} chunks from {len(all_documents)} documents")
+    
+    all_chunks = []
+    for doc in all_documents:
+        chunks = text_splitter.split_documents([doc])
+        for chunk in chunks:
+            chunk.metadata = doc.metadata
+        all_chunks.extend(chunks)
+    
+    logger.info(f"Created {len(all_chunks)} chunks from {len(all_documents)} documents")
     
     # Generate embeddings and create FAISS index
     logger.info("Generating embeddings and creating FAISS index")
@@ -91,10 +97,10 @@ def process_and_index_documents():
         logger.info("Loading existing index")
         vectorstore = FAISS.load_local(FAISS_INDEX_PATH, embeddings, allow_dangerous_deserialization=True)
         logger.info("Adding new documents to existing index")
-        vectorstore.add_documents(chunks)
+        vectorstore.add_documents(all_chunks)
     else:
         logger.info("Creating new index")
-        vectorstore = FAISS.from_documents(chunks, embeddings)
+        vectorstore = FAISS.from_documents(all_chunks, embeddings)
     
     # Save the index
     vectorstore.save_local(FAISS_INDEX_PATH)

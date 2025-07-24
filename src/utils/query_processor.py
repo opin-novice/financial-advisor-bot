@@ -3,10 +3,11 @@ from typing import Dict, List
 class QueryProcessor:
     def __init__(self):
         self.financial_terms = {
-            'banking': ['account', 'deposit', 'withdrawal', 'transfer', 'balance'],
-            'investment': ['stocks', 'bonds', 'mutual funds', 'portfolio', 'returns'],
-            'loans': ['interest', 'mortgage', 'credit', 'EMI', 'collateral'],
-            'taxation': ['tax', 'returns', 'deduction', 'exemption', 'filing']
+            'banking': ['account', 'deposit', 'withdrawal', 'transfer', 'balance', 'bank', 'card', 'e-kyc', 'cheque'],
+            'investment': ['stocks', 'bonds', 'mutual funds', 'portfolio', 'returns', 'sanchayapatra', 'certificate', 'investment', 'bida'],
+            'loans': ['interest', 'mortgage', 'credit', 'emi', 'collateral', 'loan', 'borrow', 'application'],
+            'taxation': ['tax', 'returns', 'deduction', 'exemption', 'filing', 'income', 'vat', 'nbr'],
+            'sme': ['sme', 'small business', 'startup', 'enterprise', 'trade license']
         }
         self.last_query = None
         self.last_category = None
