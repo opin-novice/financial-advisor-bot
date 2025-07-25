@@ -1,0 +1,107 @@
+from langchain_ollama import OllamaLLM
+from langchain.chains import RetrievalQA
+from langchain_community.vectorstores import FAISS
+from langchain_huggingface import HuggingFaceEmbeddings
+from sentence_transformers import SentenceTransformer, util
+from termcolor import colored
+#just 3 questions and answer is given to check the code. We can also add pdf 
+
+# Configuration
+FAISS_INDEX_PATH = "faiss_index"
+EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
+OLLAMA_MODEL = "llama3.2:3b"
+SIMILARITY_MODEL = "all-MiniLM-L6-v2"  # Fast & good for similarity comparison
+
+# Load embeddings and vector store
+embeddings = HuggingFaceEmbeddings(
+    model_name=EMBEDDING_MODEL,
+    model_kwargs={"device": "cpu"}
+)
+
+vectorstore = FAISS.load_local(
+    FAISS_INDEX_PATH,
+    embeddings,
+    allow_dangerous_deserialization=True
+)
+
+retriever = vectorstore.as_retriever(search_kwargs={"k": 10})
+
+# Load Ollama LLM
+llm = OllamaLLM(
+    model=OLLAMA_MODEL,
+    temperature=0.6,
+    repeat_penalty=1.2,
+    num_beams=3,
+    max_tokens=2048
+)
+
+# Load similarity model
+similarity_model = SentenceTransformer(SIMILARITY_MODEL)
+
+# Setup QA chain
+qa_chain = RetrievalQA.from_chain_type(
+    llm=llm,
+    chain_type="stuff",
+    retriever=retriever,
+    return_source_documents=True
+)
+
+# Evaluation samples
+eval_samples = [
+    {
+        "query": "What is the VAT rate in Bangladesh?",
+        "expected_answer": "The VAT rate in Bangladesh is 15%."
+    },
+    {
+        "query": "What is the TAX certificate?",
+        "expected_answer": "The Tax Certificate refers to the Income Tax Ordinance, 1984."
+    },
+    {
+        "query": "How much penalty is there for late tax submission?",
+        "expected_answer": "A penalty or interest is charged on late submissions of tax in Bangladesh."
+    }
+]
+
+def semantic_similarity(a: str, b: str) -> float:
+    emb1 = similarity_model.encode(a, convert_to_tensor=True)
+    emb2 = similarity_model.encode(b, convert_to_tensor=True)
+    return util.pytorch_cos_sim(emb1, emb2).item()
+
+def evaluate_rag(samples):
+    total = len(samples)
+    similarity_sum = 0.0
+    
+    for idx, sample in enumerate(samples, 1):
+        print(colored(f"\n=== Question {idx} ===", "cyan"))
+        print(f"🔹 Query: {sample['query']}")
+        print(f"🔹 Expected: {sample['expected_answer']}")
+        
+        response = qa_chain.invoke(sample["query"])
+        generated_answer = response["result"].strip()
+        sources = response.get("source_documents", [])
+        
+        print(colored(f"🔸 Generated: {generated_answer}", "yellow"))
+        
+        similarity = semantic_similarity(generated_answer, sample['expected_answer'])
+        similarity_sum += similarity
+        
+        print(f"🔍 Semantic Similarity: {similarity:.2f}")
+        
+        source_texts = " ".join([doc.page_content for doc in sources])
+        grounded = generated_answer.lower() in source_texts.lower()
+        
+        if similarity >= 0.75:
+            print(colored("✅ Answer is semantically correct.", "green"))
+        else:
+            print(colored("❌ Answer is semantically incorrect.", "red"))
+        
+        if grounded:
+            print(colored("📚 Answer is grounded in source documents.", "green"))
+        else:
+            print(colored("⚠️  Answer may not be grounded in the sources.", "red"))
+    
+    average_similarity = (similarity_sum / total)*100
+    print(colored(f"\n🔵 Average Semantic Similarity: {average_similarity:.3f}", "blue"))
+
+if __name__ == "__main__":
+    evaluate_rag(eval_samples)
