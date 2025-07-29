@@ -1,9 +1,11 @@
 import logging
 import os
+import asyncio
 from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 from main import FinancialAdvisorBot
+from concurrent.futures import ThreadPoolExecutor
 
 # Load environment variables
 load_dotenv()

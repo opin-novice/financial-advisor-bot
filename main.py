@@ -23,23 +23,23 @@ logger = logging.getLogger(__name__)
 FAISS_INDEX_PATH = "faiss_index"
 EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
 CACHE_TTL = 86400  # 24 hours in seconds
-LLM_MODEL = "mistral:7b-instruct-v0.2-q4_K_M"
+LLM_MODEL = os.getenv('OLLAMA_MODEL', 'llama3.2:1b-extended')  # Use faster model from env
 
-# Speed optimization settings
-MAX_DOCS_FOR_RETRIEVAL = 8  # Reduced from 10 for faster processing
-MAX_DOCS_FOR_CONTEXT = 3   # Reduced for faster LLM processing
-CONTEXT_CHUNK_SIZE = 1500  # Limit context size per document
+# Speed optimization settings for faster responses
+MAX_DOCS_FOR_RETRIEVAL = 5  # Further reduced for speed
+MAX_DOCS_FOR_CONTEXT = 2   # Use fewer docs for faster processing
+CONTEXT_CHUNK_SIZE = 800   # Smaller chunks for faster processing
 
 # Enhanced prompt template for better RAG responses
 PROMPT_TEMPLATE = """
-Use the following pieces of context to answer the question at the end.
-If you don't know the answer from the context, just say that you don't know, don't try to make up an answer.
-Be concise and helpful.
+You are a helpful financial advisor. Use the following context to answer the question.
+Provide specific information from the context when available. If the context doesn't contain enough information, say what you do know and suggest what additional information might be needed.
 
 Context: {context}
 
 Question: {question}
-Helpful Answer:
+
+Answer based on the context above:
 """
 QA_CHAIN_PROMPT = PromptTemplate(
     input_variables=["context", "question"],
