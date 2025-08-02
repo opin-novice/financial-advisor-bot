@@ -1,52 +1,222 @@
 import os
+import re
+import logging
+from typing import List, Dict, Any
+import torch
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_ollama import OllamaLLM
-from langchain.chains import RetrievalQA
+from langchain.chains import StuffDocumentsChain, LLMChain
+from langchain.prompts import PromptTemplate
+from langchain.schema import Document
+from telegram import Update
+from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
+from sentence_transformers import CrossEncoder
+import json
 
-# Configuration
-FAISS_INDEX_PATH = "faiss_index_"
-EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
+# --- Configuration ----------------------------------------------------------
+FAISS_INDEX_PATH   = "faiss_index"
 
-# Load FAISS index
-print("[INFO] Loading FAISS index...")
+#EMBEDDING_MODEL    = "BAAI/bge-base-en-v1.5"
+#after fine tuning the embed model is changed 
+#this embedding model is not pretrained like BAAI/bge-base-en-v1.5 rather than trained on qa_paris,jasonl
+#thats why its know what is the domain is 
+EMBEDDING_MODEL = "./ft_bge"
+OLLAMA_MODEL       = "llama3.2:1b"
+TELEGRAM_TOKEN     = os.getenv("TG_TOKEN", "7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw")  # <- do NOT commit real token
+
+# --- Logging ----------------------------------------------------------------
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# --- Markdown escape for Telegram ------------------------------------------
+_ESCAPE_RE = re.compile(r"([_*\[\]()~`>#+\-=|{}.!\\])")
+def escape_markdown(text: str) -> str:
+    return _ESCAPE_RE.sub(r"\\\1", text)
+
+# --- Embeddings -------------------------------------------------------------
+device = "cuda" if torch.cuda.is_available() else "cpu"
 embeddings = HuggingFaceEmbeddings(
     model_name=EMBEDDING_MODEL,
-    model_kwargs={"device": "cuda"}  # use "cpu" if needed
-)
-vectorstore = FAISS.load_local(FAISS_INDEX_PATH, embeddings, allow_dangerous_deserialization=True)
-
-# Set up LLM and retriever
-retriever = vectorstore.as_retriever()
-llm = OllamaLLM(model="llama3")  # or any other model available
-
-qa = RetrievalQA.from_chain_type(
-    llm=llm,
-    chain_type="stuff",
-    retriever=retriever,
-    return_source_documents=True
+    model_kwargs={"device": device}
 )
 
-# Query loop
-while True:
-    query = input("Ask me anything (type 'exit' to quit):\n> ")
-    if query.lower() == "exit":
-        break
+# --- Load FAISS index --------------------------------------------------------
+vectorstore = FAISS.load_local(
+    FAISS_INDEX_PATH,
+    embeddings,
+    allow_dangerous_deserialization=True
+)
+
+# --- Cross-encoder re-ranker -------------------------------------------------
+reranker = CrossEncoder("BAAI/bge-reranker-large", device=device)
+
+# --- Ollama LLM --------------------------------------------------------------
+llm = OllamaLLM(
+    model=OLLAMA_MODEL,
+    temperature=0.5,
+    top_p=0.8,
+    top_k=35,
+    max_tokens=512,
+    repeat_penalty=1.2
+)
+
+# --- Prompts ----------------------------------------------------------------
+REFORMAT_PROMPT = PromptTemplate(
+    input_variables=["question"],
+    template="Rephrase the following question in one concise sentence:\n\n{question}"
+)
+
+HYDE_PROMPT = PromptTemplate(
+    input_variables=["question"],
+    template="Provide a short hypothetical answer (2-3 sentences) to the question:\n\n{question}"
+)
+
+QA_PROMPT = PromptTemplate(
+    input_variables=["context", "question"],
+    template="""Use the following context to answer the question.
+If the context does not contain the answer, say you don't know.
+Keep the answer concise.
+
+Context:
+{context}
+
+Question: {question}
+Answer:"""
+)
+
+# --- LangChain objects -------------------------------------------------------
+llm_chain_reformat  = LLMChain(llm=llm, prompt=REFORMAT_PROMPT)
+llm_chain_hyde      = LLMChain(llm=llm, prompt=HYDE_PROMPT)
+llm_chain_qa        = LLMChain(llm=llm, prompt=QA_PROMPT)
+combine_chain       = StuffDocumentsChain(
+    llm_chain=llm_chain_qa,
+    document_variable_name="context"
+)
+
+# --- Helper: parse simple metadata filters from user query ------------------
+def extract_filters(query: str) -> tuple[str, Dict[str, Any]]:
+    """
+    Very small DSL:
+        ... source:somefile.pdf ...   -> filter by filename substring
+        ... page:12 ...               -> filter by exact page int
+    Returns (cleaned_query, dict_of_filters)
+    """
+    filters: Dict[str, Any] = {}
+    cleaned = query
+
+    # source pattern
+    m = re.search(r'\bsource:([^\s]+)', query, flags=re.I)
+    if m:
+        filters["source"] = m.group(1).strip()
+        cleaned = cleaned.replace(m.group(0), "")
+
+    # page pattern
+    m = re.search(r'\bpage:(\d+)\b', query, flags=re.I)
+    if m:
+        filters["page"] = int(m.group(1))
+        cleaned = cleaned.replace(m.group(0), "")
+
+    return cleaned.strip(), filters
+
+# --- Helper: HyDE ------------------------------------------------------------
+def build_hypothetical_doc(question: str) -> Document:
+    hypo_answer = llm_chain_hyde.run(question).strip()
+    logger.info("[HyDE] Hypothetical answer: %s", hypo_answer)
+    # we embed the hypothetical answer as if it were a real chunk
+    return Document(page_content=hypo_answer, metadata={"source": "Hypo_DOC"})
+
+# --- Helper: re-rank ---------------------------------------------------------
+def rerank_documents(query: str, docs: List[Document], top_n: int = 15) -> List[Document]:
+    pairs = [[query, doc.page_content] for doc in docs]
+    scores = reranker.predict(pairs)
+    reranked = sorted(zip(scores, docs), key=lambda x: x[0], reverse=True)
+    return [doc for score, doc in reranked[:top_n]]
+
+# --- In-memory cache ---------------------------------------------------------
+query_cache: dict[str, Any] = {}
+
+# --- Telegram handlers -------------------------------------------------------
+async def start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("FinAuxi: How can I help you with your finances?")
+
+async def handle_query(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    raw_query = update.message.text.strip()
+    if not raw_query:
+        await update.message.reply_text("❗ Please send a non-empty question.")
+        return
+
+    # cache hit
+    if raw_query in query_cache:
+        logger.info("[CACHE HIT] %s", raw_query)
+        await send_response(update, query_cache[raw_query])
+        return
+
     try:
-        response = qa.invoke(query)
+        # 1) Parse optional metadata filters
+        user_query, filters = extract_filters(raw_query)
+        if filters:
+            logger.info("Parsed filters: %s", filters)
 
-        # Print the answer
-        print("\n🔍 Answer:\n")
-        print(response['result'])
+        # 2) Optional query reformulation
+        #    (makes the vector search more robust to typos / synonyms)
+        reformatted = llm_chain_reformat.run(user_query).strip()
+        logger.info("[Reformat] %s  ->  %s", user_query, reformatted)
 
-        # Print the source documents
-        print("\n📚 Sources:")
-        for i, doc in enumerate(response['source_documents'], 1):
-            print(f"\n--- Source {i} ---")
-            print(doc.page_content[:500])  # show the first 500 characters of the chunk
-            if 'metadata' in doc and 'page' in doc.metadata:
-                print(f"[Page: {doc.metadata['page']}]")
-            print("-" * 40)
+        # 3) Build retriever with optional pre-filter
+        base_retriever = vectorstore.as_retriever(
+            search_kwargs={"k": 25, "filter": filters or None}
+        )
+
+        # 4) HyDE: embed hypothetical answer and add to retrieval set
+        hypo_doc = build_hypothetical_doc(reformatted)
+        hypo_embedding = embeddings.embed_documents([hypo_doc.page_content])[0]
+
+        # retrieve 25 docs, then append HyDE doc
+        retrieved = base_retriever.get_relevant_documents(reformatted)
+        retrieved.append(hypo_doc)
+
+        # 5) Re-rank top-N
+        top_docs = rerank_documents(reformatted, retrieved, top_n=7)
+
+        # 6) Final LLM call
+        answer = combine_chain.run(input_documents=top_docs, question=user_query)
+        resp = {"result": answer, "source_documents": top_docs}
+
+        # 7) cache & send
+        query_cache[raw_query] = resp
+        await send_response(update, resp)
 
     except Exception as e:
-        print(f"[ERROR] {e}")
+        logger.exception("Error handling query")
+        await update.message.reply_text(f"⚠️ Error: {e}")
+
+async def send_response(update: Update, resp: dict):
+    # answer
+    text = escape_markdown(f"🔍 *Answer*\n{resp['result']}")
+    await update.message.reply_text(text, parse_mode="MarkdownV2")
+
+    # sources
+    if resp.get("source_documents"):
+        src_text = escape_markdown("📚 *Sources*")
+        for i, doc in enumerate(resp["source_documents"], 1):
+            preview = escape_markdown(doc.page_content[:250].replace("\n", " "))
+            src = escape_markdown(str(doc.metadata.get("source", "Unknown")))
+            page = doc.metadata.get("page", "")
+            page_str = f", page {page}" if page else ""
+            src_text += f"\n*Source {i}* — {src}{page_str}\n_{preview}_"
+        await update.message.reply_text(src_text, parse_mode="MarkdownV2")
+
+    await update.message.reply_text("FinAuxi: Anything else I can help you with?")
+
+# --- Main --------------------------------------------------------------------
+if __name__ == "__main__":
+    if TELEGRAM_TOKEN == "PUT_YOURS_HERE":
+        raise RuntimeError("Please set TG_TOKEN env variable to your Telegram token.")
+
+    app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_query))
+
+    logger.info("Bot started. Press Ctrl+C to stop.")
+    app.run_polling()
