@@ -1,0 +1,94 @@
+[
+ 
+  {
+    "question": "What is the short title of the rules issued under the Income Tax Ordinance, 1984?",
+    "answer": "The Income Tax Rules, 1984",
+    "contexts": ["1. Short title. — These rules may be called the Income Tax Rules, 1984."],
+    "ground_truth": "The Income Tax Rules, 1984"
+  },
+  {
+    "question": "Who is defined as a \"defaulter\" in the Income Tax Rules, 1984?",
+    "answer": "The assessee mentioned in the certificate",
+    "contexts": ["(b) \"defaulter\" means the assessee mentioned in the certificate;"],
+    "ground_truth": "The assessee mentioned in the certificate"
+  },
+  {
+    "question": "Which professionals must maintain accounts in Form A(1) as per Rule 8?",
+    "answer": "Medical practitioners such as doctors, surgeons, physicians, dentists, psychiatrists, homeopaths, tabibs, vaids, veterinary surgeons",
+    "contexts": ["accounts shall be maintained by medical practitioners, whether known as doctors, surgeons, physicians, dentists, psychiatrists, homeopaths, tabibs, vaids, veterinary surgeons"],
+    "ground_truth": "Medical practitioners such as doctors, surgeons, physicians, dentists, psychiatrists, homeopaths, tabibs, vaids, veterinary surgeons"
+  },
+  {
+    "question": "What form must legal practitioners use to maintain their case register?",
+    "answer": "Form A(2)",
+    "contexts": ["Form A (2) CASE REGISTER [To be maintained by legal practitioners...]"],
+    "ground_truth": "Form A(2)"
+  },
+  {
+    "question": "When must the accounts specified in Rule 8 be maintained from?",
+    "answer": "From the income years beginning on or after the first day of July, 1984",
+    "contexts": ["(6) The accounts in the forms specified in sub-rule(1) shall be maintained with effect from the income years beginning on or after the first day of July, 1984."],
+    "ground_truth": "From the income years beginning on or after the first day of July, 1984"
+  },
+  {
+    "question": "Under what condition must a house property owner maintain a bank account under Rule 8A?",
+    "answer": "If they receive more than Tk 25,000 per month in rent",
+    "contexts": ["where any person... receives any sum or aggregate of sums exceeding taka 25,000/- per month... shall maintain a bank account"],
+    "ground_truth": "If they receive more than Tk 25,000 per month in rent"
+  },
+  {
+    "question": "What rate of tax is deducted from contractors under Rule 16 when payment exceeds Tk 25 lakh but not Tk 3 crore?",
+    "answer": "4%",
+    "contexts": ["5. Where the payment exceeds taka 25,00,000 (twenty five lakh) but does not exceed taka 3,00,00,000 (three crore) 4%"],
+    "ground_truth": "4%"
+  },
+  {
+    "question": "What is the tax collection rate for import of crude petroleum oils under Rule 17A?",
+    "answer": "2% on the value of imported goods",
+    "contexts": ["(b) two per cent on the value of the imported goods in the case of import of goods specified below: (1) Petroleum oils and oils obtained from bituminous minerals, crude"],
+    "ground_truth": "2%"
+  },
+  {
+    "question": "Which authority collects tax on export of manpower under Rule 17C?",
+    "answer": "Director General, Bureau of Manpower, Employment and Training",
+    "contexts": ["the Director General, Bureau of manpower, Employment and Training shall... collect tax... on account of export of manpower"],
+    "ground_truth": "Director General, Bureau of Manpower, Employment and Training"
+  },
+  {
+    "question": "What percentage is collected as advance tax on public auction sales under Rule 17D?",
+    "answer": "5%",
+    "contexts": ["shall collect... as advance tax from the auction purchaser [at the rate of 5%] of the sale price"],
+    "ground_truth": "5%"
+  },
+  {
+    "question": "When must tax deducted at source be paid to the Government under Rule 13?",
+    "answer": "Within two weeks from the end of the month of deduction",
+    "contexts": ["All sums deducted... shall be paid to the credit of the Government within [two weeks from the end of the month]"],
+    "ground_truth": "Within two weeks from the end of the month of deduction"
+  },
+  {
+    "question": "Who must issue a certificate of tax deduction under Rule 18?",
+    "answer": "All paying authorities",
+    "contexts": ["All paying authorities shall issue a certificate as required under section 58 of the Ordinance"],
+    "ground_truth": "All paying authorities"
+  },
+  {
+    "question": "What is the threshold for annual interest reporting under Rule 20?",
+    "answer": "Exceeding taka 15,000",
+    "contexts": ["in respect of amounts of interest... exceeding taka 1 [15,000]"],
+    "ground_truth": "Exceeding taka 15,000"
+  },
+  {
+    "question": "Which form is prescribed for individual income tax return under Rule 24?",
+    "answer": "IT-11GA",
+    "contexts": ["IT - 11GA FORM OF RETURN OF INCOME... FOR INDIVIDUAL AND OTHER TAXPAYERS"],
+    "ground_truth": "IT-11GA"
+  },
+
+{
+    "question": "Under Rule 25AAAA, which taxpayers are exempt from submitting a Statement of Assets & Liabilities?",
+    "answer": "Individual taxpayers whose total income from business or profession does not exceed Tk 3 lakh in the income year.",
+    "contexts": ["Income Tax Rules 1984, Rule 25AAAA"],
+    "ground_truth": "Individuals with business income ≤ Tk 3 lakh."
+  }
+]
