@@ -1,0 +1,144 @@
+2025-08-06 23:08:16,280 - INFO - Initializing Multilingual FAISS + LLM...
+2025-08-06 23:08:16,280 - INFO - Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+2025-08-06 23:08:22,871 - INFO - Loading faiss.
+2025-08-06 23:08:22,901 - INFO - Successfully loaded faiss.
+2025-08-06 23:08:22,906 - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-08-06 23:08:24,999 - INFO - Use pytorch device: mps
+2025-08-06 23:08:26,176 - INFO - Initializing Multilingual FAISS + LLM...
+2025-08-06 23:08:26,182 - INFO - Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+2025-08-06 23:08:32,618 - INFO - Use pytorch device: mps
+2025-08-06 23:08:33,299 - INFO - Processing multilingual query (category=general, language=english): What is TIN number?
+2025-08-06 23:09:10,924 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-08-06 23:09:14,846 - INFO - Processing multilingual query (category=banking, language=bangla): ব্যাংক অ্যাকাউন্ট খোলার জন্য কী প্রয়োজন?
+2025-08-06 23:09:36,767 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-08-07 00:40:39,512 - INFO - Initializing Multilingual FAISS + LLM...
+2025-08-07 00:40:39,513 - INFO - Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+2025-08-07 00:40:44,694 - INFO - Loading faiss.
+2025-08-07 00:40:44,896 - INFO - Successfully loaded faiss.
+2025-08-07 00:40:44,900 - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-08-07 00:40:47,225 - INFO - Use pytorch device: mps
+2025-08-07 00:40:48,576 - INFO - Initializing Multilingual FAISS + LLM...
+2025-08-07 00:40:48,580 - INFO - Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+2025-08-07 00:40:55,256 - INFO - Use pytorch device: mps
+2025-08-07 00:40:56,028 - INFO - Processing multilingual query (category=general, language=spanish): ¿Qué es el número TIN?
+2025-08-07 00:40:56,029 - INFO - Processing Spanish query: ¿Qué es el número TIN?...
+2025-08-07 00:40:56,107 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:40:56,108 - ERROR - Error in Spanish to English translation: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:41:00,962 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:41:00,964 - ERROR - Error processing multilingual query: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:41:00,968 - INFO - Processing multilingual query (category=banking, language=spanish): ¿Cómo abrir una cuenta bancaria?
+2025-08-07 00:41:00,968 - INFO - Processing Spanish query: ¿Cómo abrir una cuenta bancaria?...
+2025-08-07 00:41:01,008 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:41:01,008 - ERROR - Error in Spanish to English translation: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:41:02,041 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:41:02,041 - ERROR - Error processing multilingual query: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:41:02,044 - INFO - Processing multilingual query (category=loans, language=spanish): ¿Cuáles son los requisitos para un préstamo?
+2025-08-07 00:41:02,044 - INFO - Processing Spanish query: ¿Cuáles son los requisitos para un préstamo?...
+2025-08-07 00:41:02,059 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:41:02,059 - ERROR - Error in Spanish to English translation: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:41:02,849 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:41:02,849 - ERROR - Error processing multilingual query: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:41:02,849 - INFO - Initializing Multilingual FAISS + LLM...
+2025-08-07 00:41:02,851 - INFO - Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+2025-08-07 00:41:10,091 - INFO - Use pytorch device: mps
+2025-08-07 00:41:11,671 - INFO - Processing multilingual query (category=general, language=english): What is TIN number?
+2025-08-07 00:41:13,154 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:41:13,154 - ERROR - Error processing multilingual query: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:41:13,155 - INFO - Processing multilingual query (category=banking, language=bangla): ব্যাংক অ্যাকাউন্ট খোলার জন্য কী প্রয়োজন?
+2025-08-07 00:41:14,013 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:41:14,013 - ERROR - Error processing multilingual query: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:41:14,016 - INFO - Processing multilingual query (category=banking, language=spanish): ¿Qué documentos necesito para abrir una cuenta?
+2025-08-07 00:41:14,016 - INFO - Processing Spanish query: ¿Qué documentos necesito para abrir una cuenta?...
+2025-08-07 00:41:14,034 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:41:14,034 - ERROR - Error in Spanish to English translation: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:41:15,020 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:41:15,020 - ERROR - Error processing multilingual query: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:51:20,299 - INFO - Initializing Multilingual FAISS + LLM...
+2025-08-07 00:51:20,301 - INFO - Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+2025-08-07 00:51:24,908 - INFO - Loading faiss.
+2025-08-07 00:51:24,967 - INFO - Successfully loaded faiss.
+2025-08-07 00:51:24,971 - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-08-07 00:51:27,056 - INFO - Use pytorch device: mps
+2025-08-07 00:51:28,329 - INFO - Initializing Multilingual FAISS + LLM...
+2025-08-07 00:51:28,336 - INFO - Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+2025-08-07 00:51:36,516 - INFO - Use pytorch device: mps
+2025-08-07 00:51:37,246 - INFO - Processing multilingual query (category=general, language=spanish): ¿Qué es el número TIN?
+2025-08-07 00:51:37,247 - INFO - Processing Spanish query: ¿Qué es el número TIN?...
+2025-08-07 00:51:37,342 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:51:37,342 - ERROR - Error in Spanish to English translation: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:51:40,027 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:51:40,028 - ERROR - Error processing multilingual query: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:51:40,031 - INFO - Processing multilingual query (category=banking, language=spanish): ¿Cómo abrir una cuenta bancaria?
+2025-08-07 00:51:40,031 - INFO - Processing Spanish query: ¿Cómo abrir una cuenta bancaria?...
+2025-08-07 00:51:40,064 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:51:40,064 - ERROR - Error in Spanish to English translation: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:51:40,632 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:51:40,632 - ERROR - Error processing multilingual query: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:51:40,634 - INFO - Processing multilingual query (category=loans, language=spanish): ¿Cuáles son los requisitos para un préstamo?
+2025-08-07 00:51:40,634 - INFO - Processing Spanish query: ¿Cuáles son los requisitos para un préstamo?...
+2025-08-07 00:51:40,666 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:51:40,666 - ERROR - Error in Spanish to English translation: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:51:41,353 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:51:41,354 - ERROR - Error processing multilingual query: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:51:41,354 - INFO - Initializing Multilingual FAISS + LLM...
+2025-08-07 00:51:41,356 - INFO - Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+2025-08-07 00:51:48,384 - INFO - Use pytorch device: mps
+2025-08-07 00:51:50,118 - INFO - Processing multilingual query (category=general, language=english): What is TIN number?
+2025-08-07 00:51:51,464 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:51:51,464 - ERROR - Error processing multilingual query: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:51:51,465 - INFO - Processing multilingual query (category=banking, language=bangla): ব্যাংক অ্যাকাউন্ট খোলার জন্য কী প্রয়োজন?
+2025-08-07 00:51:52,124 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:51:52,125 - ERROR - Error processing multilingual query: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:51:52,127 - INFO - Processing multilingual query (category=banking, language=spanish): ¿Qué documentos necesito para abrir una cuenta?
+2025-08-07 00:51:52,127 - INFO - Processing Spanish query: ¿Qué documentos necesito para abrir una cuenta?...
+2025-08-07 00:51:52,172 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:51:52,172 - ERROR - Error in Spanish to English translation: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:51:52,816 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 404 Not Found"
+2025-08-07 00:51:52,816 - ERROR - Error processing multilingual query: model 'gemma3n:e4b' not found (status code: 404)
+2025-08-07 00:53:50,279 - INFO - Initializing Multilingual FAISS + LLM...
+2025-08-07 00:53:50,280 - INFO - Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+2025-08-07 00:53:55,104 - INFO - Loading faiss.
+2025-08-07 00:53:55,149 - INFO - Successfully loaded faiss.
+2025-08-07 00:53:55,155 - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-08-07 00:53:57,355 - INFO - Use pytorch device: mps
+2025-08-07 00:53:58,690 - INFO - Initializing Multilingual FAISS + LLM...
+2025-08-07 00:53:58,694 - INFO - Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+2025-08-07 00:54:05,293 - INFO - Use pytorch device: mps
+2025-08-07 00:54:06,704 - INFO - Processing multilingual query (category=general, language=spanish): ¿Qué es el número TIN?
+2025-08-07 00:54:06,705 - INFO - Processing Spanish query: ¿Qué es el número TIN?...
+2025-08-07 00:54:11,790 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-08-07 00:54:19,314 - INFO - Spanish to English translation completed
+2025-08-07 00:54:35,351 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-08-07 00:54:43,005 - INFO - Translating English response to Spanish...
+2025-08-07 00:54:43,834 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-08-07 00:54:53,061 - INFO - English to Spanish translation completed
+2025-08-07 00:54:53,093 - INFO - Processing multilingual query (category=banking, language=spanish): ¿Cómo abrir una cuenta bancaria?
+2025-08-07 00:54:53,093 - INFO - Processing Spanish query: ¿Cómo abrir una cuenta bancaria?...
+2025-08-07 00:54:53,516 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-08-07 00:54:56,419 - INFO - Spanish to English translation completed
+2025-08-07 00:55:08,889 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-08-07 00:55:18,436 - INFO - Translating English response to Spanish...
+2025-08-07 00:55:19,477 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-08-07 00:55:42,118 - INFO - English to Spanish translation completed
+2025-08-07 00:55:42,140 - INFO - Processing multilingual query (category=loans, language=spanish): ¿Cuáles son los requisitos para un préstamo?
+2025-08-07 00:55:42,140 - INFO - Processing Spanish query: ¿Cuáles son los requisitos para un préstamo?...
+2025-08-07 00:55:42,836 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-08-07 00:55:51,010 - INFO - Spanish to English translation completed
+2025-08-07 00:56:16,588 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-08-07 00:56:18,872 - INFO - Translating English response to Spanish...
+2025-08-07 00:56:19,543 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-08-07 00:56:21,387 - INFO - English to Spanish translation completed
+2025-08-07 00:56:21,693 - INFO - Initializing Multilingual FAISS + LLM...
+2025-08-07 00:56:21,707 - INFO - Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+2025-08-07 00:56:28,233 - INFO - Use pytorch device: mps
+2025-08-07 00:56:31,999 - INFO - Processing multilingual query (category=general, language=english): What is TIN number?
+2025-08-07 00:56:53,956 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-08-07 00:56:58,789 - INFO - Processing multilingual query (category=banking, language=bangla): ব্যাংক অ্যাকাউন্ট খোলার জন্য কী প্রয়োজন?
+2025-08-07 00:57:19,908 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-08-07 00:58:17,529 - INFO - Processing multilingual query (category=banking, language=spanish): ¿Qué documentos necesito para abrir una cuenta?
+2025-08-07 00:58:17,531 - INFO - Processing Spanish query: ¿Qué documentos necesito para abrir una cuenta?...
+2025-08-07 00:58:18,075 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-08-07 00:58:27,310 - INFO - Spanish to English translation completed
+2025-08-07 00:58:44,080 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-08-07 00:59:09,110 - INFO - Translating English response to Spanish...
+2025-08-07 00:59:11,314 - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"

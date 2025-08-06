@@ -1,0 +1,735 @@
+2025-08-06 20:31:15,743 - INFO - ============================================================
+2025-08-06 20:31:15,743 - INFO - 🚀 Starting Multilingual Delta Index Update
+2025-08-06 20:31:15,743 - INFO - ============================================================
+2025-08-06 20:31:15,744 - INFO - Found 103 PDF files in data
+2025-08-06 20:31:15,745 - INFO - Found 122 PDF files in unsant_data
+2025-08-06 20:31:15,745 - INFO - Total PDF files found: 225
+2025-08-06 20:31:16,121 - INFO - 📄 Processing 225 PDF(s)...
+2025-08-06 20:31:16,121 - INFO -   - personal_ac_opening_form.pdf
+2025-08-06 20:31:16,121 - INFO -   - Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf
+2025-08-06 20:31:16,121 - INFO -   - smepolicye.pdf
+2025-08-06 20:31:16,121 - INFO -   - FAQ e-Banking.pdf
+2025-08-06 20:31:16,121 - INFO -   - Foreign Exchange Regulation Act, 1947.pdf
+2025-08-06 20:31:16,121 - INFO -   - e-KYC Guidelines.pdf
+2025-08-06 20:31:16,121 - INFO -   - 5 year sanchoypotro form.pdf
+2025-08-06 20:31:16,121 - INFO -   - form_5year.pdf
+2025-08-06 20:31:16,121 - INFO -   - ডাকঘর সঞ্চয় ব্যাংক- মেয়াদী হিসাব.pdf
+2025-08-06 20:31:16,121 - INFO -   - WAGE-EARNERS DEVELOPMENT BOND APPLICATION FORM.pdf
+2025-08-06 20:31:16,122 - INFO -   - FAQs on Banking Services SEB.pdf
+2025-08-06 20:31:16,122 - INFO -   - Requried-documents-for-non-individuals.pdf
+2025-08-06 20:31:16,122 - INFO -   - Negotiable Instruments Act, 1881.pdf
+2025-08-06 20:31:16,122 - INFO -   - RETURN OF INCOME for company.pdf
+2025-08-06 20:31:16,122 - INFO -   - US DOLLAR PREMIUM BOND APPLICATION FORM.pdf
+2025-08-06 20:31:16,122 - INFO -   - One-Stop Service (OSS) Rules, 2020.pdf
+2025-08-06 20:31:16,122 - INFO -   - Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf
+2025-08-06 20:31:16,122 - INFO -   - krishibank_Scheme.pdf
+2025-08-06 20:31:16,122 - INFO -   - account-opening-form-term-deposit-savings-scheme-special-scheme.pdf
+2025-08-06 20:31:16,122 - INFO -   - Financial-Literacy-Curriculum.pdf
+2025-08-06 20:31:16,122 - INFO -   - Business Startup Process in Bangladesh_SC v3.pdf
+2025-08-06 20:31:16,122 - INFO -   - mfg-en-case-study-the-grameen-bank-micro-credit-model-lessons-for-australian-indigenous-economic-policy-1999.pdf
+2025-08-06 20:31:16,122 - INFO -   - Bangladesh Bank Order, 1972.pdf
+2025-08-06 20:31:16,122 - INFO -   - FAQ-OBU-IB-AccountOpening - primeBank.pdf
+2025-08-06 20:31:16,122 - INFO -   - ডাক জীবন বীমা এবং অ্যানুইটি.pdf
+2025-08-06 20:31:16,122 - INFO -   - Tax calculation table.pdf
+2025-08-06 20:31:16,122 - INFO -   - Core Banking Solution BB.pdf
+2025-08-06 20:31:16,122 - INFO -   - ডাকঘর সঞ্চয় ব্যাংকের-সাধারণ হিসাব.pdf
+2025-08-06 20:31:16,122 - INFO -   - Car-Loan-One Bank.pdf
+2025-08-06 20:31:16,122 - INFO -   - require-document-list-for-account-opening.pdf
+2025-08-06 20:31:16,122 - INFO -   - Student Loans in Bangladesh.pdf
+2025-08-06 20:31:16,123 - INFO -   - Business Startup FORM- I (1).pdf
+2025-08-06 20:31:16,123 - INFO -   - Car Loan Application Form.pdf
+2025-08-06 20:31:16,123 - INFO -   - Personal_Account_Opening_Form.pdf
+2025-08-06 20:31:16,123 - INFO -   - US DOLLAR INVESTMENT BOND APPLICATION FORM.pdf
+2025-08-06 20:31:16,123 - INFO -   - Business StartUP Guide.pdf
+2025-08-06 20:31:16,123 - INFO -   - Banking Regulations and Customer Rights in Bangladesh_ A Comprehensive Guide.pdf
+2025-08-06 20:31:16,123 - INFO -   - mfg-en-paper-the-bank-company-act-bangladesh-1991-1991.pdf
+2025-08-06 20:31:16,123 - INFO -   - financial_literacy_guidelines_draft.pdf
+2025-08-06 20:31:16,123 - INFO -   - Guidelines on ICT Security for Banks and Non-Bank Financial Institutions, 2023.pdf
+2025-08-06 20:31:16,123 - INFO -   - Institutional-Account-Opening-Form-English-Version-Non-PersonalCorporateSME-Accoun.pdf
+2025-08-06 20:31:16,123 - INFO -   - 03 OP_ZF_1.pdf
+2025-08-06 20:31:16,123 - INFO -   - 2024-08-04-09-27-3196d924fdcc0bb5fbd7e81e78194897.pdf
+2025-08-06 20:31:16,123 - INFO -   - আয়কর_নির্দেশিকা_২০২৪-২০২৫.pdf
+2025-08-06 20:31:16,125 - INFO -   - ucb-taqwa-organizational-account-opening-form.pdf
+2025-08-06 20:31:16,125 - INFO -   - FORM OF RETURN OF INCOME TAX.pdf
+2025-08-06 20:31:16,125 - INFO -   - 2022-02-12-07-16-c1f322db1f774143fb098c220c11a802.pdf
+2025-08-06 20:31:16,125 - INFO -   - CarLoan.pdf
+2025-08-06 20:31:16,125 - INFO -   - Personal Taxation in Bangladesh - Comprehensive Guide.pdf
+2025-08-06 20:31:16,125 - INFO -   - 5-Year Bangladesh Savings Certificate.pdf
+2025-08-06 20:31:16,125 - INFO -   - dttl-tax-bangladeshhighlights-2023.pdf
+2025-08-06 20:31:16,125 - INFO -   - banking_regulations.pdf
+2025-08-06 20:31:16,125 - INFO -   - User_Manual_for_bKash.pdf
+2025-08-06 20:31:16,125 - INFO -   - Interest Rates Report 2024-2025.pdf
+2025-08-06 20:31:16,125 - INFO -   - 1384Corporate Laws & Practices.pdf
+2025-08-06 20:31:16,125 - INFO -   - Comprehensive Loan Documentation Guide for Bangladesh.pdf
+2025-08-06 20:31:16,125 - INFO -   - Industrial Policy of Bangladesh (2022).pdf
+2025-08-06 20:31:16,125 - INFO -   - FAQs-Bank Al Arafah.pdf
+2025-08-06 20:31:16,125 - INFO -   - Guidelines for Non-Resident Bangladeshis (NRBs).pdf
+2025-08-06 20:31:16,125 - INFO -   - Aykor_Nirdeshika_2024-2025.pdf
+2025-08-06 20:31:16,125 - INFO -   - bb_auto_loan_circular.pdf
+2025-08-06 20:31:16,125 - INFO -   - GUIDELINES FOR CONDUCTING ISLAMIC BANKING.pdf
+2025-08-06 20:31:16,125 - INFO -   - Complaints BB.pdf
+2025-08-06 20:31:16,125 - INFO -   - Online_Banking_FAQ.pdf
+2025-08-06 20:31:16,125 - INFO -   - Deposit insurance and customer protection measures.pdf
+2025-08-06 20:31:16,125 - INFO -   - income_tax_ordinance.pdf
+2025-08-06 20:31:16,125 - INFO -   - FAQ_MDBDigitalProbashiSavingsAccount_2024.pdf
+2025-08-06 20:31:16,125 - INFO -   - Term_Deposit_Account_Opening_Application_Form_June_20.pdf
+2025-08-06 20:31:16,125 - INFO -   - FDR-and-Deposit-Scheme-Form-English-Version.pdf
+2025-08-06 20:31:16,126 - INFO -   - Financing-Solutions-for-Micro-Small-and-Medium-Enterprises-in-Bangladesh.pdf
+2025-08-06 20:31:16,126 - INFO -   - Finance Institutions Act, 1993.pdf
+2025-08-06 20:31:16,126 - INFO -   - Basic Bank SME.pdf
+2025-08-06 20:31:16,126 - INFO -   - bpid_opening_Form.pdf
+2025-08-06 20:31:16,126 - INFO -   - Interest rates and lending policies.pdf
+2025-08-06 20:31:16,126 - INFO -   - NBR_cleanedTAX.pdf
+2025-08-06 20:31:16,126 - INFO -   - BASIC BANK Form.pdf
+2025-08-06 20:31:16,126 - INFO -   - Insurance Act 2010 english version.pdf
+2025-08-06 20:31:16,126 - INFO -   - home_loan_application.pdf
+2025-08-06 20:31:16,126 - INFO -   - startup_fund.pdf
+2025-08-06 20:31:16,126 - INFO -   - Bangladesh Electronic Funds Transfer Network.pdf
+2025-08-06 20:31:16,126 - INFO -   - 2021-03-18-14-08-f2aebfe7b6b00610a3081237e0a989e4.pdf
+2025-08-06 20:31:16,126 - INFO -   - Credit policies and loan eligibility criteria.pdf
+2025-08-06 20:31:16,126 - INFO -   - Microfinance-Programme-Brief-Nov-2020.pdf
+2025-08-06 20:31:16,126 - INFO -   - 1688964931_2. Account Opening form (Individual)-Editable.pdf
+2025-08-06 20:31:16,126 - INFO -   - docs procedures of loan and advances.pdf
+2025-08-06 20:31:16,126 - INFO -   - EBL_ACCESS_Frequesntly_Asked_Questions.pdf
+2025-08-06 20:31:16,126 - INFO -   - Guidelines on Agent Banking for the Banks.pdf
+2025-08-06 20:31:16,126 - INFO -   - 2021-03-18-14-07-18991ad56d00da578460250da78664ed.pdf
+2025-08-06 20:31:16,126 - INFO -   - Binimoy Operating Rules.pdf
+2025-08-06 20:31:16,126 - INFO -   - Account-Opening-Non-Ind-Dec-2024.pdf
+2025-08-06 20:31:16,126 - INFO -   - sme_guidelines.pdf
+2025-08-06 20:31:16,126 - INFO -   - Foreign exchange transactions and regulations.pdf
+2025-08-06 20:31:16,126 - INFO -   - Mobile Financial Services Guidelines.pdf
+2025-08-06 20:31:16,126 - INFO -   - FAQs on Banking Services IFIC.pdf
+2025-08-06 20:31:16,126 - INFO -   - Money Laundering Act 2012.pdf
+2025-08-06 20:31:16,126 - INFO -   - FAQ_e-Return.pdf
+2025-08-06 20:31:16,126 - INFO -   - FAQ e-Banking NRB.pdf
+2025-08-06 20:31:16,126 - INFO -   - Bilateral Investment Treaties (BITs).pdf
+2025-08-06 20:31:16,126 - INFO -   - Guidelines on Consumer Rights.pdf
+2025-08-06 20:31:16,127 - INFO -   - Account-Opening-Form-Folder-Individual.pdf
+2025-08-06 20:31:16,127 - INFO -   - bd-personal-account-opening-form.pdf
+2025-08-06 20:31:16,127 - INFO -   - Non-Individual_Account_Opening_Form_Conventional.pdf
+2025-08-06 20:31:16,127 - INFO -   - Foreign-Investment-in-Bangladesh-Booklet .pdf
+2025-08-06 20:31:16,127 - INFO -   - personal_ac_opening_form.pdf
+2025-08-06 20:31:16,127 - INFO -   - Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf
+2025-08-06 20:31:16,127 - INFO -   - smepolicye.pdf
+2025-08-06 20:31:16,127 - INFO -   - FAQ e-Banking.pdf
+2025-08-06 20:31:16,127 - INFO -   - Foreign Exchange Regulation Act, 1947.pdf
+2025-08-06 20:31:16,127 - INFO -   - e-KYC Guidelines.pdf
+2025-08-06 20:31:16,127 - INFO -   - 5 year sanchoypotro form.pdf
+2025-08-06 20:31:16,127 - INFO -   - form_5year.pdf
+2025-08-06 20:31:16,127 - INFO -   - ডাকঘর সঞ্চয় ব্যাংক- মেয়াদী হিসাব.pdf
+2025-08-06 20:31:16,127 - INFO -   - WAGE-EARNERS DEVELOPMENT BOND APPLICATION FORM.pdf
+2025-08-06 20:31:16,127 - INFO -   - FAQs on Banking Services SEB.pdf
+2025-08-06 20:31:16,127 - INFO -   - স্বাভাবিক_ব্যক্তি_করদাতার_রিটার্ন_আইটি_ঘ২০২৩.pdf
+2025-08-06 20:31:16,127 - INFO -   - Requried-documents-for-non-individuals.pdf
+2025-08-06 20:31:16,127 - INFO -   - Negotiable Instruments Act, 1881.pdf
+2025-08-06 20:31:16,127 - INFO -   - RETURN OF INCOME for company.pdf
+2025-08-06 20:31:16,127 - INFO -   - US DOLLAR PREMIUM BOND APPLICATION FORM.pdf
+2025-08-06 20:31:16,127 - INFO -   - One-Stop Service (OSS) Rules, 2020.pdf
+2025-08-06 20:31:16,127 - INFO -   - Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf
+2025-08-06 20:31:16,127 - INFO -   - 9.pdf
+2025-08-06 20:31:16,127 - INFO -   - krishibank_Scheme.pdf
+2025-08-06 20:31:16,127 - INFO -   - account-opening-form-term-deposit-savings-scheme-special-scheme.pdf
+2025-08-06 20:31:16,127 - INFO -   - Financial-Literacy-Curriculum.pdf
+2025-08-06 20:31:16,127 - INFO -   - Business Startup Process in Bangladesh_SC v3.pdf
+2025-08-06 20:31:16,127 - INFO -   - mfg-en-case-study-the-grameen-bank-micro-credit-model-lessons-for-australian-indigenous-economic-policy-1999.pdf
+2025-08-06 20:31:16,128 - INFO -   - Financial Reporting Law-2015.pdf
+2025-08-06 20:31:16,128 - INFO -   - Bangladesh Bank Order, 1972.pdf
+2025-08-06 20:31:16,128 - INFO -   - 5936-Ordinance-33-Law-26_June_2025.pdf
+2025-08-06 20:31:16,128 - INFO -   - FAQ-OBU-IB-AccountOpening - primeBank.pdf
+2025-08-06 20:31:16,128 - INFO -   - ডাক জীবন বীমা এবং অ্যানুইটি.pdf
+2025-08-06 20:31:16,128 - INFO -   - Tax calculation table.pdf
+2025-08-06 20:31:16,128 - INFO -   - Core Banking Solution BB.pdf
+2025-08-06 20:31:16,128 - INFO -   - ডাকঘর সঞ্চয় ব্যাংকের-সাধারণ হিসাব.pdf
+2025-08-06 20:31:16,128 - INFO -   - Car-Loan-One Bank.pdf
+2025-08-06 20:31:16,128 - INFO -   - require-document-list-for-account-opening.pdf
+2025-08-06 20:31:16,128 - INFO -   - Student Loans in Bangladesh.pdf
+2025-08-06 20:31:16,128 - INFO -   - স্বাভাবিক_ব্যক্তি_করদাতার_রিটার্ন_আইটি-১১গ(২০২৩).pdf
+2025-08-06 20:31:16,128 - INFO -   - Business Startup FORM- I (1).pdf
+2025-08-06 20:31:16,128 - INFO -   - Car Loan Application Form.pdf
+2025-08-06 20:31:16,128 - INFO -   - Personal_Account_Opening_Form.pdf
+2025-08-06 20:31:16,128 - INFO -   - US DOLLAR INVESTMENT BOND APPLICATION FORM.pdf
+2025-08-06 20:31:16,128 - INFO -   - Business StartUP Guide.pdf
+2025-08-06 20:31:16,128 - INFO -   - Banking Regulations and Customer Rights in Bangladesh_ A Comprehensive Guide.pdf
+2025-08-06 20:31:16,128 - INFO -   - mfg-en-paper-the-bank-company-act-bangladesh-1991-1991.pdf
+2025-08-06 20:31:16,128 - INFO -   - financial_literacy_guidelines_draft.pdf
+2025-08-06 20:31:16,128 - INFO -   - VAT-Instruction_(2025-26).pdf
+2025-08-06 20:31:16,128 - INFO -   - Guidelines on ICT Security for Banks and Non-Bank Financial Institutions, 2023.pdf
+2025-08-06 20:31:16,128 - INFO -   - Institutional-Account-Opening-Form-English-Version-Non-PersonalCorporateSME-Accoun.pdf
+2025-08-06 20:31:16,128 - INFO -   - 03 OP_ZF_1.pdf
+2025-08-06 20:31:16,128 - INFO -   - 2024-08-04-09-27-3196d924fdcc0bb5fbd7e81e78194897.pdf
+2025-08-06 20:31:16,128 - INFO -   - আয়কর_নির্দেশিকা_২০২৪-২০২৫.pdf
+2025-08-06 20:31:16,128 - INFO -   - ucb-taqwa-organizational-account-opening-form.pdf
+2025-08-06 20:31:16,128 - INFO -   - FORM OF RETURN OF INCOME TAX.pdf
+2025-08-06 20:31:16,129 - INFO -   - nikosh_font.pdf
+2025-08-06 20:31:16,129 - INFO -   - আইটি-১১_ছ_(২০২৩)_আয়কর_রিটার্ন_প্রাপ্তি_স্বীকার_পত্র__প্রত্যয়ন_পত্র_.pdf
+2025-08-06 20:31:16,129 - INFO -   - 5722-Ordinance-28-Law-02_June.pdf
+2025-08-06 20:31:16,129 - INFO -   - 2022-02-12-07-16-c1f322db1f774143fb098c220c11a802.pdf
+2025-08-06 20:31:16,129 - INFO -   - CarLoan.pdf
+2025-08-06 20:31:16,129 - INFO -   - Personal Taxation in Bangladesh - Comprehensive Guide.pdf
+2025-08-06 20:31:16,129 - INFO -   - 5-Year Bangladesh Savings Certificate.pdf
+2025-08-06 20:31:16,129 - INFO -   - dttl-tax-bangladeshhighlights-2023.pdf
+2025-08-06 20:31:16,129 - INFO -   - banking_regulations.pdf
+2025-08-06 20:31:16,129 - INFO -   - Pension Simplification Order 2020.pdf
+2025-08-06 20:31:16,129 - INFO -   - User_Manual_for_bKash.pdf
+2025-08-06 20:31:16,129 - INFO -   - Interest Rates Report 2024-2025.pdf
+2025-08-06 20:31:16,129 - INFO -   - 1384Corporate Laws & Practices.pdf
+2025-08-06 20:31:16,129 - INFO -   - আইটি-১২৪_(২০২৩).pdf
+2025-08-06 20:31:16,129 - INFO -   - Comprehensive Loan Documentation Guide for Bangladesh.pdf
+2025-08-06 20:31:16,129 - INFO -   - Industrial Policy of Bangladesh (2022).pdf
+2025-08-06 20:31:16,129 - INFO -   - FAQs-Bank Al Arafah.pdf
+2025-08-06 20:31:16,129 - INFO -   - Guidelines for Non-Resident Bangladeshis (NRBs).pdf
+2025-08-06 20:31:16,129 - INFO -   - Aykor_Nirdeshika_2024-2025.pdf
+2025-08-06 20:31:16,129 - INFO -   - bb_auto_loan_circular.pdf
+2025-08-06 20:31:16,129 - INFO -   - GUIDELINES FOR CONDUCTING ISLAMIC BANKING.pdf
+2025-08-06 20:31:16,129 - INFO -   - Complaints BB.pdf
+2025-08-06 20:31:16,129 - INFO -   - Online_Banking_FAQ.pdf
+2025-08-06 20:31:16,129 - INFO -   - Deposit insurance and customer protection measures.pdf
+2025-08-06 20:31:16,129 - INFO -   - income_tax_ordinance.pdf
+2025-08-06 20:31:16,129 - INFO -   - FAQ_MDBDigitalProbashiSavingsAccount_2024.pdf
+2025-08-06 20:31:16,129 - INFO -   - Term_Deposit_Account_Opening_Application_Form_June_20.pdf
+2025-08-06 20:31:16,129 - INFO -   - FDR-and-Deposit-Scheme-Form-English-Version.pdf
+2025-08-06 20:31:16,129 - INFO -   - Financing-Solutions-for-Micro-Small-and-Medium-Enterprises-in-Bangladesh.pdf
+2025-08-06 20:31:16,129 - INFO -   - Finance Institutions Act, 1993.pdf
+2025-08-06 20:31:16,129 - INFO -   - কোম্পানি_করদাতাদের_জন্য_রিটার্ন_আইটি_১১ঘ২০২৩.pdf
+2025-08-06 20:31:16,130 - INFO -   - Basic Bank SME.pdf
+2025-08-06 20:31:16,130 - INFO -   - VATR2016.pdf
+2025-08-06 20:31:16,130 - INFO -   - bpid_opening_Form.pdf
+2025-08-06 20:31:16,130 - INFO -   - Interest rates and lending policies.pdf
+2025-08-06 20:31:16,130 - INFO -   - NBR_cleanedTAX.pdf
+2025-08-06 20:31:16,130 - INFO -   - BASIC BANK Form.pdf
+2025-08-06 20:31:16,130 - INFO -   - Insurance Act 2010 english version.pdf
+2025-08-06 20:31:16,130 - INFO -   - home_loan_application.pdf
+2025-08-06 20:31:16,130 - INFO -   - startup_fund.pdf
+2025-08-06 20:31:16,130 - INFO -   - আইটি-৯০_(২০২৩).pdf
+2025-08-06 20:31:16,130 - INFO -   - Bangladesh Electronic Funds Transfer Network.pdf
+2025-08-06 20:31:16,130 - INFO -   - 2021-03-18-14-08-f2aebfe7b6b00610a3081237e0a989e4.pdf
+2025-08-06 20:31:16,130 - INFO -   - Credit policies and loan eligibility criteria.pdf
+2025-08-06 20:31:16,130 - INFO -   - Microfinance-Programme-Brief-Nov-2020.pdf
+2025-08-06 20:31:16,130 - INFO -   - 1688964931_2. Account Opening form (Individual)-Editable.pdf
+2025-08-06 20:31:16,130 - INFO -   - docs procedures of loan and advances.pdf
+2025-08-06 20:31:16,130 - INFO -   - EBL_ACCESS_Frequesntly_Asked_Questions.pdf
+2025-08-06 20:31:16,130 - INFO -   - Guidelines on Agent Banking for the Banks.pdf
+2025-08-06 20:31:16,130 - INFO -   - 6.pdf
+2025-08-06 20:31:16,130 - INFO -   - 2021-03-18-14-07-18991ad56d00da578460250da78664ed.pdf
+2025-08-06 20:31:16,130 - INFO -   - Binimoy Operating Rules.pdf
+2025-08-06 20:31:16,130 - INFO -   - Account-Opening-Non-Ind-Dec-2024.pdf
+2025-08-06 20:31:16,130 - INFO -   - sme_guidelines.pdf
+2025-08-06 20:31:16,130 - INFO -   - 5.pdf
+2025-08-06 20:31:16,130 - INFO -   - Foreign exchange transactions and regulations.pdf
+2025-08-06 20:31:16,130 - INFO -   - Mobile Financial Services Guidelines.pdf
+2025-08-06 20:31:16,130 - INFO -   - আইটি-১১চ_(২০২৩)_স্বাভাবিক_ব্যক্তি_ও_কোম্পানি_করদাতা_ব্যতীত_অন্যান্য_করদাতার_জন্য.pdf
+2025-08-06 20:31:16,130 - INFO -   - 10mar.pdf
+2025-08-06 20:31:16,130 - INFO -   - FAQs on Banking Services IFIC.pdf
+2025-08-06 20:31:16,130 - INFO -   - Money Laundering Act 2012.pdf
+2025-08-06 20:31:16,131 - INFO -   - FAQ_e-Return.pdf
+2025-08-06 20:31:16,131 - INFO -   - FAQ e-Banking NRB.pdf
+2025-08-06 20:31:16,131 - INFO -   - Bilateral Investment Treaties (BITs).pdf
+2025-08-06 20:31:16,131 - INFO -   - Income_Tax_act.pdf
+2025-08-06 20:31:16,131 - INFO -   - Guidelines on Consumer Rights.pdf
+2025-08-06 20:31:16,131 - INFO -   - Account-Opening-Form-Folder-Individual.pdf
+2025-08-06 20:31:16,131 - INFO -   - bd-personal-account-opening-form.pdf
+2025-08-06 20:31:16,131 - INFO -   - Non-Individual_Account_Opening_Form_Conventional.pdf
+2025-08-06 20:31:16,131 - INFO -   - Foreign-Investment-in-Bangladesh-Booklet .pdf
+2025-08-06 20:31:16,131 - INFO - Building multilingual index for 225 files...
+2025-08-06 20:31:16,134 - INFO - Use pytorch device_name: mps
+2025-08-06 20:31:16,135 - INFO - Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+2025-08-06 20:31:26,325 - INFO - Processing: personal_ac_opening_form.pdf
+2025-08-06 20:31:41,179 - INFO - Created 33 chunks from personal_ac_opening_form.pdf (english)
+2025-08-06 20:31:41,180 - INFO - Processing: Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf
+2025-08-06 20:31:48,469 - INFO - Created 28 chunks from Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf (english)
+2025-08-06 20:31:48,469 - INFO - Processing: smepolicye.pdf
+2025-08-06 20:32:23,732 - INFO - Created 257 chunks from smepolicye.pdf (english)
+2025-08-06 20:32:23,733 - INFO - Processing: FAQ e-Banking.pdf
+2025-08-06 20:32:28,430 - INFO - Created 35 chunks from FAQ e-Banking.pdf (english)
+2025-08-06 20:32:28,431 - INFO - Processing: Foreign Exchange Regulation Act, 1947.pdf
+2025-08-06 20:32:37,701 - INFO - Created 58 chunks from Foreign Exchange Regulation Act, 1947.pdf (english)
+2025-08-06 20:32:37,702 - INFO - Processing: e-KYC Guidelines.pdf
+2025-08-06 20:32:50,205 - INFO - Created 155 chunks from e-KYC Guidelines.pdf (english)
+2025-08-06 20:32:50,206 - INFO - Processing: 5 year sanchoypotro form.pdf
+2025-08-06 20:32:50,283 - INFO - Created 1 chunks from 5 year sanchoypotro form.pdf (mixed)
+2025-08-06 20:32:50,283 - INFO - Processing: form_5year.pdf
+2025-08-06 20:32:50,361 - INFO - Created 1 chunks from form_5year.pdf (mixed)
+2025-08-06 20:32:50,361 - INFO - Processing: ডাকঘর সঞ্চয় ব্যাংক- মেয়াদী হিসাব.pdf
+2025-08-06 20:32:52,033 - INFO - Created 1 chunks from ডাকঘর সঞ্চয় ব্যাংক- মেয়াদী হিসাব.pdf (mixed)
+2025-08-06 20:32:52,034 - INFO - Processing: WAGE-EARNERS DEVELOPMENT BOND APPLICATION FORM.pdf
+2025-08-06 20:32:53,560 - INFO - Created 14 chunks from WAGE-EARNERS DEVELOPMENT BOND APPLICATION FORM.pdf (english)
+2025-08-06 20:32:53,561 - INFO - Processing: FAQs on Banking Services SEB.pdf
+2025-08-06 20:32:56,904 - INFO - Created 32 chunks from FAQs on Banking Services SEB.pdf (english)
+2025-08-06 20:32:56,905 - INFO - Processing: Requried-documents-for-non-individuals.pdf
+2025-08-06 20:32:57,641 - INFO - Created 4 chunks from Requried-documents-for-non-individuals.pdf (english)
+2025-08-06 20:32:57,642 - INFO - Processing: Negotiable Instruments Act, 1881.pdf
+2025-08-06 20:33:21,203 - INFO - Created 268 chunks from Negotiable Instruments Act, 1881.pdf (english)
+2025-08-06 20:33:21,204 - INFO - Processing: RETURN OF INCOME for company.pdf
+2025-08-06 20:33:23,786 - INFO - Created 12 chunks from RETURN OF INCOME for company.pdf (english)
+2025-08-06 20:33:23,787 - INFO - Processing: US DOLLAR PREMIUM BOND APPLICATION FORM.pdf
+2025-08-06 20:33:24,802 - INFO - Created 11 chunks from US DOLLAR PREMIUM BOND APPLICATION FORM.pdf (english)
+2025-08-06 20:33:24,802 - INFO - Processing: One-Stop Service (OSS) Rules, 2020.pdf
+2025-08-06 20:33:27,260 - INFO - Created 15 chunks from One-Stop Service (OSS) Rules, 2020.pdf (english)
+2025-08-06 20:33:27,261 - INFO - Processing: Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf
+2025-08-06 20:34:25,292 - INFO - Created 607 chunks from Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf (english)
+2025-08-06 20:34:25,294 - INFO - Processing: krishibank_Scheme.pdf
+2025-08-06 20:35:11,375 - INFO - Created 351 chunks from krishibank_Scheme.pdf (english)
+2025-08-06 20:35:11,377 - INFO - Processing: account-opening-form-term-deposit-savings-scheme-special-scheme.pdf
+2025-08-06 20:35:11,407 - WARNING - Very little text extracted from account-opening-form-term-deposit-savings-scheme-special-scheme.pdf
+2025-08-06 20:35:11,408 - INFO - Processing: Financial-Literacy-Curriculum.pdf
+2025-08-06 20:35:39,051 - INFO - Created 303 chunks from Financial-Literacy-Curriculum.pdf (english)
+2025-08-06 20:35:39,052 - INFO - Processing: Business Startup Process in Bangladesh_SC v3.pdf
+2025-08-06 20:35:42,432 - INFO - Created 11 chunks from Business Startup Process in Bangladesh_SC v3.pdf (english)
+2025-08-06 20:35:42,433 - INFO - Processing: mfg-en-case-study-the-grameen-bank-micro-credit-model-lessons-for-australian-indigenous-economic-policy-1999.pdf
+2025-08-06 20:36:06,324 - INFO - Created 219 chunks from mfg-en-case-study-the-grameen-bank-micro-credit-model-lessons-for-australian-indigenous-economic-policy-1999.pdf (english)
+2025-08-06 20:36:06,325 - INFO - Processing: Bangladesh Bank Order, 1972.pdf
+2025-08-06 20:36:17,380 - INFO - Created 88 chunks from Bangladesh Bank Order, 1972.pdf (english)
+2025-08-06 20:36:17,380 - INFO - Processing: FAQ-OBU-IB-AccountOpening - primeBank.pdf
+2025-08-06 20:36:21,086 - INFO - Created 36 chunks from FAQ-OBU-IB-AccountOpening - primeBank.pdf (english)
+2025-08-06 20:36:21,087 - INFO - Processing: ডাক জীবন বীমা এবং অ্যানুইটি.pdf
+2025-08-06 20:36:21,840 - INFO - Created 2 chunks from ডাক জীবন বীমা এবং অ্যানুইটি.pdf (english)
+2025-08-06 20:36:21,842 - INFO - Processing: Tax calculation table.pdf
+2025-08-06 20:36:23,168 - INFO - Created 6 chunks from Tax calculation table.pdf (english)
+2025-08-06 20:36:23,169 - INFO - Processing: Core Banking Solution BB.pdf
+2025-08-06 20:37:30,388 - INFO - Created 1029 chunks from Core Banking Solution BB.pdf (english)
+2025-08-06 20:37:30,389 - INFO - Processing: ডাকঘর সঞ্চয় ব্যাংকের-সাধারণ হিসাব.pdf
+2025-08-06 20:37:32,469 - INFO - Created 1 chunks from ডাকঘর সঞ্চয় ব্যাংকের-সাধারণ হিসাব.pdf (mixed)
+2025-08-06 20:37:32,469 - INFO - Processing: Car-Loan-One Bank.pdf
+2025-08-06 20:37:36,700 - INFO - Created 49 chunks from Car-Loan-One Bank.pdf (english)
+2025-08-06 20:37:36,701 - INFO - Processing: require-document-list-for-account-opening.pdf
+2025-08-06 20:37:50,664 - INFO - Created 104 chunks from require-document-list-for-account-opening.pdf (english)
+2025-08-06 20:37:50,665 - INFO - Processing: Student Loans in Bangladesh.pdf
+2025-08-06 20:37:52,111 - INFO - Created 16 chunks from Student Loans in Bangladesh.pdf (english)
+2025-08-06 20:37:52,112 - INFO - Processing: Business Startup FORM- I (1).pdf
+2025-08-06 20:37:54,135 - INFO - Created 8 chunks from Business Startup FORM- I (1).pdf (english)
+2025-08-06 20:37:54,136 - INFO - Processing: Car Loan Application Form.pdf
+2025-08-06 20:38:05,450 - INFO - Created 138 chunks from Car Loan Application Form.pdf (english)
+2025-08-06 20:38:05,451 - INFO - Processing: Personal_Account_Opening_Form.pdf
+2025-08-06 20:38:20,564 - INFO - Created 74 chunks from Personal_Account_Opening_Form.pdf (english)
+2025-08-06 20:38:20,566 - INFO - Processing: US DOLLAR INVESTMENT BOND APPLICATION FORM.pdf
+2025-08-06 20:38:22,536 - INFO - Created 11 chunks from US DOLLAR INVESTMENT BOND APPLICATION FORM.pdf (english)
+2025-08-06 20:38:22,536 - INFO - Processing: Business StartUP Guide.pdf
+2025-08-06 20:38:55,972 - INFO - Created 422 chunks from Business StartUP Guide.pdf (english)
+2025-08-06 20:38:55,973 - INFO - Processing: Banking Regulations and Customer Rights in Bangladesh_ A Comprehensive Guide.pdf
+2025-08-06 20:38:59,633 - INFO - Created 18 chunks from Banking Regulations and Customer Rights in Bangladesh_ A Comprehensive Guide.pdf (english)
+2025-08-06 20:38:59,633 - INFO - Processing: mfg-en-paper-the-bank-company-act-bangladesh-1991-1991.pdf
+2025-08-06 20:39:25,475 - INFO - Created 276 chunks from mfg-en-paper-the-bank-company-act-bangladesh-1991-1991.pdf (english)
+2025-08-06 20:39:25,475 - INFO - Processing: financial_literacy_guidelines_draft.pdf
+2025-08-06 20:39:30,807 - INFO - Created 53 chunks from financial_literacy_guidelines_draft.pdf (english)
+2025-08-06 20:39:30,808 - INFO - Processing: Guidelines on ICT Security for Banks and Non-Bank Financial Institutions, 2023.pdf
+2025-08-06 20:40:10,046 - INFO - Created 518 chunks from Guidelines on ICT Security for Banks and Non-Bank Financial Institutions, 2023.pdf (english)
+2025-08-06 20:40:10,047 - INFO - Processing: Institutional-Account-Opening-Form-English-Version-Non-PersonalCorporateSME-Accoun.pdf
+2025-08-06 20:40:16,757 - INFO - Created 67 chunks from Institutional-Account-Opening-Form-English-Version-Non-PersonalCorporateSME-Accoun.pdf (english)
+2025-08-06 20:40:16,758 - INFO - Processing: 03 OP_ZF_1.pdf
+2025-08-06 20:40:20,510 - INFO - Created 42 chunks from 03 OP_ZF_1.pdf (english)
+2025-08-06 20:40:20,510 - INFO - Processing: 2024-08-04-09-27-3196d924fdcc0bb5fbd7e81e78194897.pdf
+2025-08-06 20:40:57,554 - INFO - Created 196 chunks from 2024-08-04-09-27-3196d924fdcc0bb5fbd7e81e78194897.pdf (mixed)
+2025-08-06 20:40:57,556 - INFO - Processing: আয়কর_নির্দেশিকা_২০২৪-২০২৫.pdf
+2025-08-06 20:41:09,680 - INFO - Created 25 chunks from আয়কর_নির্দেশিকা_২০২৪-২০২৫.pdf (mixed)
+2025-08-06 20:41:09,681 - INFO - Processing: ucb-taqwa-organizational-account-opening-form.pdf
+2025-08-06 20:41:17,745 - INFO - Created 97 chunks from ucb-taqwa-organizational-account-opening-form.pdf (english)
+2025-08-06 20:41:17,746 - INFO - Processing: FORM OF RETURN OF INCOME TAX.pdf
+2025-08-06 20:41:23,786 - INFO - Created 72 chunks from FORM OF RETURN OF INCOME TAX.pdf (english)
+2025-08-06 20:41:23,787 - INFO - Processing: 2022-02-12-07-16-c1f322db1f774143fb098c220c11a802.pdf
+2025-08-06 20:41:26,802 - INFO - Created 11 chunks from 2022-02-12-07-16-c1f322db1f774143fb098c220c11a802.pdf (english)
+2025-08-06 20:41:26,803 - INFO - Processing: CarLoan.pdf
+2025-08-06 20:41:27,607 - INFO - Created 5 chunks from CarLoan.pdf (english)
+2025-08-06 20:41:27,608 - INFO - Processing: Personal Taxation in Bangladesh - Comprehensive Guide.pdf
+2025-08-06 20:41:29,696 - INFO - Created 11 chunks from Personal Taxation in Bangladesh - Comprehensive Guide.pdf (english)
+2025-08-06 20:41:29,697 - INFO - Processing: 5-Year Bangladesh Savings Certificate.pdf
+2025-08-06 20:41:31,137 - INFO - Created 9 chunks from 5-Year Bangladesh Savings Certificate.pdf (english)
+2025-08-06 20:41:31,137 - INFO - Processing: dttl-tax-bangladeshhighlights-2023.pdf
+2025-08-06 20:41:38,627 - INFO - Created 78 chunks from dttl-tax-bangladeshhighlights-2023.pdf (english)
+2025-08-06 20:41:38,628 - INFO - Processing: banking_regulations.pdf
+2025-08-06 20:41:40,016 - INFO - Created 5 chunks from banking_regulations.pdf (english)
+2025-08-06 20:41:40,016 - INFO - Processing: User_Manual_for_bKash.pdf
+2025-08-06 20:41:40,033 - INFO - Created 1 chunks from User_Manual_for_bKash.pdf (english)
+2025-08-06 20:41:40,034 - INFO - Processing: Interest Rates Report 2024-2025.pdf
+2025-08-06 20:41:42,563 - INFO - Created 18 chunks from Interest Rates Report 2024-2025.pdf (english)
+2025-08-06 20:41:42,564 - INFO - Processing: 1384Corporate Laws & Practices.pdf
+2025-08-06 20:43:55,395 - INFO - Created 1808 chunks from 1384Corporate Laws & Practices.pdf (english)
+2025-08-06 20:43:55,397 - INFO - Processing: Comprehensive Loan Documentation Guide for Bangladesh.pdf
+2025-08-06 20:43:58,376 - INFO - Created 22 chunks from Comprehensive Loan Documentation Guide for Bangladesh.pdf (english)
+2025-08-06 20:43:58,378 - INFO - Processing: Industrial Policy of Bangladesh (2022).pdf
+2025-08-06 20:43:58,394 - WARNING - Very little text extracted from Industrial Policy of Bangladesh (2022).pdf
+2025-08-06 20:43:58,398 - INFO - Processing: FAQs-Bank Al Arafah.pdf
+2025-08-06 20:44:04,322 - INFO - Created 98 chunks from FAQs-Bank Al Arafah.pdf (english)
+2025-08-06 20:44:04,322 - INFO - Processing: Guidelines for Non-Resident Bangladeshis (NRBs).pdf
+2025-08-06 20:45:42,998 - INFO - Created 1759 chunks from Guidelines for Non-Resident Bangladeshis (NRBs).pdf (english)
+2025-08-06 20:45:42,999 - INFO - Processing: Aykor_Nirdeshika_2024-2025.pdf
+2025-08-06 20:46:11,080 - INFO - Created 593 chunks from Aykor_Nirdeshika_2024-2025.pdf (english)
+2025-08-06 20:46:11,081 - INFO - Processing: bb_auto_loan_circular.pdf
+2025-08-06 20:46:12,422 - INFO - Created 7 chunks from bb_auto_loan_circular.pdf (english)
+2025-08-06 20:46:12,422 - INFO - Processing: GUIDELINES FOR CONDUCTING ISLAMIC BANKING.pdf
+2025-08-06 20:46:20,749 - INFO - Created 147 chunks from GUIDELINES FOR CONDUCTING ISLAMIC BANKING.pdf (english)
+2025-08-06 20:46:20,750 - INFO - Processing: Complaints BB.pdf
+2025-08-06 20:46:22,085 - INFO - Created 7 chunks from Complaints BB.pdf (english)
+2025-08-06 20:46:22,085 - INFO - Processing: Online_Banking_FAQ.pdf
+2025-08-06 20:46:22,926 - INFO - Created 14 chunks from Online_Banking_FAQ.pdf (english)
+2025-08-06 20:46:22,927 - INFO - Processing: Deposit insurance and customer protection measures.pdf
+2025-08-06 20:46:23,856 - INFO - Created 10 chunks from Deposit insurance and customer protection measures.pdf (english)
+2025-08-06 20:46:23,856 - INFO - Processing: income_tax_ordinance.pdf
+2025-08-06 20:47:35,716 - INFO - Created 1282 chunks from income_tax_ordinance.pdf (english)
+2025-08-06 20:47:35,717 - INFO - Processing: FAQ_MDBDigitalProbashiSavingsAccount_2024.pdf
+2025-08-06 20:47:39,927 - INFO - Created 58 chunks from FAQ_MDBDigitalProbashiSavingsAccount_2024.pdf (english)
+2025-08-06 20:47:39,927 - INFO - Processing: Term_Deposit_Account_Opening_Application_Form_June_20.pdf
+2025-08-06 20:47:41,625 - INFO - Created 18 chunks from Term_Deposit_Account_Opening_Application_Form_June_20.pdf (english)
+2025-08-06 20:47:41,626 - INFO - Processing: FDR-and-Deposit-Scheme-Form-English-Version.pdf
+2025-08-06 20:47:44,389 - INFO - Created 57 chunks from FDR-and-Deposit-Scheme-Form-English-Version.pdf (english)
+2025-08-06 20:47:44,389 - INFO - Processing: Financing-Solutions-for-Micro-Small-and-Medium-Enterprises-in-Bangladesh.pdf
+2025-08-06 20:48:11,635 - INFO - Created 622 chunks from Financing-Solutions-for-Micro-Small-and-Medium-Enterprises-in-Bangladesh.pdf (english)
+2025-08-06 20:48:11,636 - INFO - Processing: Finance Institutions Act, 1993.pdf
+2025-08-06 20:48:19,535 - INFO - Created 64 chunks from Finance Institutions Act, 1993.pdf (english)
+2025-08-06 20:48:19,536 - INFO - Processing: Basic Bank SME.pdf
+2025-08-06 20:48:30,129 - INFO - Created 205 chunks from Basic Bank SME.pdf (english)
+2025-08-06 20:48:30,130 - INFO - Processing: bpid_opening_Form.pdf
+2025-08-06 20:48:32,040 - INFO - Created 16 chunks from bpid_opening_Form.pdf (english)
+2025-08-06 20:48:32,041 - INFO - Processing: Interest rates and lending policies.pdf
+2025-08-06 20:48:37,793 - INFO - Created 79 chunks from Interest rates and lending policies.pdf (english)
+2025-08-06 20:48:37,794 - INFO - Processing: NBR_cleanedTAX.pdf
+2025-08-06 20:48:50,503 - INFO - Created 163 chunks from NBR_cleanedTAX.pdf (english)
+2025-08-06 20:48:50,504 - INFO - Processing: BASIC BANK Form.pdf
+2025-08-06 20:48:53,824 - INFO - Created 39 chunks from BASIC BANK Form.pdf (english)
+2025-08-06 20:48:53,824 - INFO - Processing: Insurance Act 2010 english version.pdf
+2025-08-06 20:49:16,877 - INFO - Created 281 chunks from Insurance Act 2010 english version.pdf (english)
+2025-08-06 20:49:16,878 - INFO - Processing: home_loan_application.pdf
+2025-08-06 20:50:04,506 - INFO - Created 616 chunks from home_loan_application.pdf (english)
+2025-08-06 20:50:04,508 - INFO - Processing: startup_fund.pdf
+2025-08-06 20:50:06,100 - INFO - Created 3 chunks from startup_fund.pdf (english)
+2025-08-06 20:50:06,101 - INFO - Processing: Bangladesh Electronic Funds Transfer Network.pdf
+2025-08-06 20:50:32,127 - INFO - Created 426 chunks from Bangladesh Electronic Funds Transfer Network.pdf (english)
+2025-08-06 20:50:32,128 - INFO - Processing: 2021-03-18-14-08-f2aebfe7b6b00610a3081237e0a989e4.pdf
+2025-08-06 20:50:32,174 - INFO - Created 1 chunks from 2021-03-18-14-08-f2aebfe7b6b00610a3081237e0a989e4.pdf (mixed)
+2025-08-06 20:50:32,174 - INFO - Processing: Credit policies and loan eligibility criteria.pdf
+2025-08-06 20:50:36,936 - INFO - Created 35 chunks from Credit policies and loan eligibility criteria.pdf (english)
+2025-08-06 20:50:36,936 - INFO - Processing: Microfinance-Programme-Brief-Nov-2020.pdf
+2025-08-06 20:50:40,980 - INFO - Created 66 chunks from Microfinance-Programme-Brief-Nov-2020.pdf (english)
+2025-08-06 20:50:40,980 - INFO - Processing: 1688964931_2. Account Opening form (Individual)-Editable.pdf
+2025-08-06 20:50:57,038 - INFO - Created 223 chunks from 1688964931_2. Account Opening form (Individual)-Editable.pdf (english)
+2025-08-06 20:50:57,039 - INFO - Processing: docs procedures of loan and advances.pdf
+2025-08-06 20:51:03,060 - INFO - Created 115 chunks from docs procedures of loan and advances.pdf (english)
+2025-08-06 20:51:03,061 - INFO - Processing: EBL_ACCESS_Frequesntly_Asked_Questions.pdf
+2025-08-06 20:51:12,583 - INFO - Created 54 chunks from EBL_ACCESS_Frequesntly_Asked_Questions.pdf (english)
+2025-08-06 20:51:12,585 - INFO - Processing: Guidelines on Agent Banking for the Banks.pdf
+2025-08-06 20:51:23,397 - INFO - Created 57 chunks from Guidelines on Agent Banking for the Banks.pdf (english)
+2025-08-06 20:51:23,398 - INFO - Processing: 2021-03-18-14-07-18991ad56d00da578460250da78664ed.pdf
+2025-08-06 20:51:23,505 - INFO - Created 1 chunks from 2021-03-18-14-07-18991ad56d00da578460250da78664ed.pdf (mixed)
+2025-08-06 20:51:23,505 - INFO - Processing: Binimoy Operating Rules.pdf
+2025-08-06 20:51:44,008 - INFO - Created 182 chunks from Binimoy Operating Rules.pdf (english)
+2025-08-06 20:51:44,010 - INFO - Processing: Account-Opening-Non-Ind-Dec-2024.pdf
+2025-08-06 20:51:47,490 - INFO - Created 30 chunks from Account-Opening-Non-Ind-Dec-2024.pdf (english)
+2025-08-06 20:51:47,491 - INFO - Processing: sme_guidelines.pdf
+2025-08-06 20:52:00,861 - INFO - Created 191 chunks from sme_guidelines.pdf (english)
+2025-08-06 20:52:00,861 - INFO - Processing: Foreign exchange transactions and regulations.pdf
+2025-08-06 20:53:59,214 - INFO - Created 631 chunks from Foreign exchange transactions and regulations.pdf (english)
+2025-08-06 20:53:59,224 - INFO - Processing: Mobile Financial Services Guidelines.pdf
+2025-08-06 20:54:04,996 - INFO - Created 65 chunks from Mobile Financial Services Guidelines.pdf (english)
+2025-08-06 20:54:04,997 - INFO - Processing: FAQs on Banking Services IFIC.pdf
+2025-08-06 20:54:10,097 - INFO - Created 68 chunks from FAQs on Banking Services IFIC.pdf (english)
+2025-08-06 20:54:10,098 - INFO - Processing: Money Laundering Act 2012.pdf
+2025-08-06 20:54:17,231 - INFO - Created 70 chunks from Money Laundering Act 2012.pdf (english)
+2025-08-06 20:54:17,232 - INFO - Processing: FAQ_e-Return.pdf
+2025-08-06 20:54:20,544 - INFO - Created 19 chunks from FAQ_e-Return.pdf (english)
+2025-08-06 20:54:20,545 - INFO - Processing: FAQ e-Banking NRB.pdf
+2025-08-06 20:54:23,312 - INFO - Created 35 chunks from FAQ e-Banking NRB.pdf (english)
+2025-08-06 20:54:23,312 - INFO - Processing: Bilateral Investment Treaties (BITs).pdf
+2025-08-06 20:54:33,506 - INFO - Created 116 chunks from Bilateral Investment Treaties (BITs).pdf (english)
+2025-08-06 20:54:33,507 - INFO - Processing: Guidelines on Consumer Rights.pdf
+2025-08-06 20:54:45,397 - INFO - Created 95 chunks from Guidelines on Consumer Rights.pdf (english)
+2025-08-06 20:54:45,398 - INFO - Processing: Account-Opening-Form-Folder-Individual.pdf
+2025-08-06 20:54:46,168 - INFO - Created 2 chunks from Account-Opening-Form-Folder-Individual.pdf (english)
+2025-08-06 20:54:46,168 - INFO - Processing: bd-personal-account-opening-form.pdf
+2025-08-06 20:55:04,164 - INFO - Created 144 chunks from bd-personal-account-opening-form.pdf (english)
+2025-08-06 20:55:04,167 - INFO - Processing: Non-Individual_Account_Opening_Form_Conventional.pdf
+2025-08-06 20:55:04,221 - WARNING - Very little text extracted from Non-Individual_Account_Opening_Form_Conventional.pdf
+2025-08-06 20:55:04,221 - INFO - Processing: Foreign-Investment-in-Bangladesh-Booklet .pdf
+2025-08-06 20:55:24,901 - INFO - Created 219 chunks from Foreign-Investment-in-Bangladesh-Booklet .pdf (english)
+2025-08-06 20:55:24,902 - INFO - Processing: personal_ac_opening_form.pdf
+2025-08-06 20:55:29,523 - INFO - Created 32 chunks from personal_ac_opening_form.pdf (english)
+2025-08-06 20:55:29,523 - INFO - Processing: Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf
+2025-08-06 20:55:31,569 - INFO - Created 28 chunks from Supporting Information for Investments in Bangladesh - Comprehensive Guide.pdf (english)
+2025-08-06 20:55:31,569 - INFO - Processing: smepolicye.pdf
+2025-08-06 20:56:08,357 - INFO - Created 258 chunks from smepolicye.pdf (english)
+2025-08-06 20:56:08,359 - INFO - Processing: FAQ e-Banking.pdf
+2025-08-06 20:56:12,403 - INFO - Created 36 chunks from FAQ e-Banking.pdf (english)
+2025-08-06 20:56:12,403 - INFO - Processing: Foreign Exchange Regulation Act, 1947.pdf
+2025-08-06 20:56:20,256 - INFO - Created 58 chunks from Foreign Exchange Regulation Act, 1947.pdf (english)
+2025-08-06 20:56:20,262 - INFO - Processing: e-KYC Guidelines.pdf
+2025-08-06 20:56:39,689 - INFO - Created 153 chunks from e-KYC Guidelines.pdf (english)
+2025-08-06 20:56:39,690 - INFO - Processing: 5 year sanchoypotro form.pdf
+2025-08-06 20:56:39,774 - INFO - Created 1 chunks from 5 year sanchoypotro form.pdf (mixed)
+2025-08-06 20:56:39,774 - INFO - Processing: form_5year.pdf
+2025-08-06 20:56:39,846 - INFO - Created 1 chunks from form_5year.pdf (mixed)
+2025-08-06 20:56:39,846 - INFO - Processing: ডাকঘর সঞ্চয় ব্যাংক- মেয়াদী হিসাব.pdf
+2025-08-06 20:56:41,523 - INFO - Created 5 chunks from ডাকঘর সঞ্চয় ব্যাংক- মেয়াদী হিসাব.pdf (bangla)
+2025-08-06 20:56:41,524 - INFO - Processing: WAGE-EARNERS DEVELOPMENT BOND APPLICATION FORM.pdf
+2025-08-06 20:56:42,708 - INFO - Created 14 chunks from WAGE-EARNERS DEVELOPMENT BOND APPLICATION FORM.pdf (english)
+2025-08-06 20:56:42,708 - INFO - Processing: FAQs on Banking Services SEB.pdf
+2025-08-06 20:56:46,090 - INFO - Created 31 chunks from FAQs on Banking Services SEB.pdf (english)
+2025-08-06 20:56:46,091 - INFO - Processing: স্বাভাবিক_ব্যক্তি_করদাতার_রিটার্ন_আইটি_ঘ২০২৩.pdf
+2025-08-06 20:56:47,215 - INFO - Created 3 chunks from স্বাভাবিক_ব্যক্তি_করদাতার_রিটার্ন_আইটি_ঘ২০২৩.pdf (bangla)
+2025-08-06 20:56:47,220 - INFO - Processing: Requried-documents-for-non-individuals.pdf
+2025-08-06 20:56:48,420 - INFO - Created 5 chunks from Requried-documents-for-non-individuals.pdf (english)
+2025-08-06 20:56:48,420 - INFO - Processing: Negotiable Instruments Act, 1881.pdf
+2025-08-06 20:57:15,959 - INFO - Created 267 chunks from Negotiable Instruments Act, 1881.pdf (english)
+2025-08-06 20:57:15,959 - INFO - Processing: RETURN OF INCOME for company.pdf
+2025-08-06 20:57:18,022 - INFO - Created 12 chunks from RETURN OF INCOME for company.pdf (english)
+2025-08-06 20:57:18,022 - INFO - Processing: US DOLLAR PREMIUM BOND APPLICATION FORM.pdf
+2025-08-06 20:57:19,005 - INFO - Created 11 chunks from US DOLLAR PREMIUM BOND APPLICATION FORM.pdf (english)
+2025-08-06 20:57:19,007 - INFO - Processing: One-Stop Service (OSS) Rules, 2020.pdf
+2025-08-06 20:57:24,475 - INFO - Created 37 chunks from One-Stop Service (OSS) Rules, 2020.pdf (english)
+2025-08-06 20:57:24,477 - INFO - Processing: Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf
+2025-08-06 20:58:13,968 - INFO - Created 605 chunks from Bangladesh Investment Development Authority (BIDA) Act, 2016.pdf (english)
+2025-08-06 20:58:13,970 - INFO - Processing: 9.pdf
+2025-08-06 20:58:16,589 - INFO - Created 10 chunks from 9.pdf (mixed)
+2025-08-06 20:58:16,589 - INFO - Processing: krishibank_Scheme.pdf
+2025-08-06 20:59:21,197 - INFO - Created 350 chunks from krishibank_Scheme.pdf (english)
+2025-08-06 20:59:21,205 - INFO - Processing: account-opening-form-term-deposit-savings-scheme-special-scheme.pdf
+2025-08-06 20:59:21,797 - WARNING - Very little text extracted from account-opening-form-term-deposit-savings-scheme-special-scheme.pdf
+2025-08-06 20:59:21,798 - INFO - Processing: Financial-Literacy-Curriculum.pdf
+2025-08-06 21:00:06,690 - INFO - Created 294 chunks from Financial-Literacy-Curriculum.pdf (english)
+2025-08-06 21:00:06,693 - INFO - Processing: Business Startup Process in Bangladesh_SC v3.pdf
+2025-08-06 21:00:12,088 - INFO - Created 61 chunks from Business Startup Process in Bangladesh_SC v3.pdf (english)
+2025-08-06 21:00:12,088 - INFO - Processing: mfg-en-case-study-the-grameen-bank-micro-credit-model-lessons-for-australian-indigenous-economic-policy-1999.pdf
+2025-08-06 21:00:24,610 - INFO - Created 215 chunks from mfg-en-case-study-the-grameen-bank-micro-credit-model-lessons-for-australian-indigenous-economic-policy-1999.pdf (english)
+2025-08-06 21:00:24,612 - INFO - Processing: Financial Reporting Law-2015.pdf
+2025-08-06 21:00:24,650 - WARNING - Very little text extracted from Financial Reporting Law-2015.pdf
+2025-08-06 21:00:24,650 - INFO - Processing: Bangladesh Bank Order, 1972.pdf
+2025-08-06 21:00:31,311 - INFO - Created 87 chunks from Bangladesh Bank Order, 1972.pdf (english)
+2025-08-06 21:00:31,312 - INFO - Processing: 5936-Ordinance-33-Law-26_June_2025.pdf
+2025-08-06 21:00:43,283 - INFO - Created 171 chunks from 5936-Ordinance-33-Law-26_June_2025.pdf (english)
+2025-08-06 21:00:43,283 - INFO - Processing: FAQ-OBU-IB-AccountOpening - primeBank.pdf
+2025-08-06 21:00:45,310 - INFO - Created 36 chunks from FAQ-OBU-IB-AccountOpening - primeBank.pdf (english)
+2025-08-06 21:00:45,310 - INFO - Processing: ডাক জীবন বীমা এবং অ্যানুইটি.pdf
+2025-08-06 21:00:45,791 - INFO - Created 2 chunks from ডাক জীবন বীমা এবং অ্যানুইটি.pdf (bangla)
+2025-08-06 21:00:45,791 - INFO - Processing: Tax calculation table.pdf
+2025-08-06 21:00:46,336 - INFO - Created 6 chunks from Tax calculation table.pdf (english)
+2025-08-06 21:00:46,336 - INFO - Processing: Core Banking Solution BB.pdf
+2025-08-06 21:01:23,292 - INFO - Created 1026 chunks from Core Banking Solution BB.pdf (english)
+2025-08-06 21:01:23,294 - INFO - Processing: ডাকঘর সঞ্চয় ব্যাংকের-সাধারণ হিসাব.pdf
+2025-08-06 21:01:24,569 - INFO - Created 3 chunks from ডাকঘর সঞ্চয় ব্যাংকের-সাধারণ হিসাব.pdf (bangla)
+2025-08-06 21:01:24,570 - INFO - Processing: Car-Loan-One Bank.pdf
+2025-08-06 21:01:24,608 - WARNING - Very little text extracted from Car-Loan-One Bank.pdf
+2025-08-06 21:01:24,608 - INFO - Processing: require-document-list-for-account-opening.pdf
+2025-08-06 21:01:29,538 - INFO - Created 104 chunks from require-document-list-for-account-opening.pdf (english)
+2025-08-06 21:01:29,538 - INFO - Processing: Student Loans in Bangladesh.pdf
+2025-08-06 21:01:30,540 - INFO - Created 19 chunks from Student Loans in Bangladesh.pdf (english)
+2025-08-06 21:01:30,541 - INFO - Processing: স্বাভাবিক_ব্যক্তি_করদাতার_রিটার্ন_আইটি-১১গ(২০২৩).pdf
+2025-08-06 21:01:33,241 - INFO - Created 13 chunks from স্বাভাবিক_ব্যক্তি_করদাতার_রিটার্ন_আইটি-১১গ(২০২৩).pdf (bangla)
+2025-08-06 21:01:33,241 - INFO - Processing: Business Startup FORM- I (1).pdf
+2025-08-06 21:01:33,862 - INFO - Created 8 chunks from Business Startup FORM- I (1).pdf (english)
+2025-08-06 21:01:33,863 - INFO - Processing: Car Loan Application Form.pdf
+2025-08-06 21:01:41,168 - INFO - Created 141 chunks from Car Loan Application Form.pdf (english)
+2025-08-06 21:01:41,169 - INFO - Processing: Personal_Account_Opening_Form.pdf
+2025-08-06 21:01:46,564 - INFO - Created 78 chunks from Personal_Account_Opening_Form.pdf (english)
+2025-08-06 21:01:46,564 - INFO - Processing: US DOLLAR INVESTMENT BOND APPLICATION FORM.pdf
+2025-08-06 21:01:47,227 - INFO - Created 11 chunks from US DOLLAR INVESTMENT BOND APPLICATION FORM.pdf (english)
+2025-08-06 21:01:47,227 - INFO - Processing: Business StartUP Guide.pdf
+2025-08-06 21:01:47,398 - WARNING - Very little text extracted from Business StartUP Guide.pdf
+2025-08-06 21:01:47,398 - INFO - Processing: Banking Regulations and Customer Rights in Bangladesh_ A Comprehensive Guide.pdf
+2025-08-06 21:01:48,854 - INFO - Created 18 chunks from Banking Regulations and Customer Rights in Bangladesh_ A Comprehensive Guide.pdf (english)
+2025-08-06 21:01:48,854 - INFO - Processing: mfg-en-paper-the-bank-company-act-bangladesh-1991-1991.pdf
+2025-08-06 21:02:03,970 - INFO - Created 277 chunks from mfg-en-paper-the-bank-company-act-bangladesh-1991-1991.pdf (english)
+2025-08-06 21:02:03,971 - INFO - Processing: financial_literacy_guidelines_draft.pdf
+2025-08-06 21:02:07,590 - INFO - Created 53 chunks from financial_literacy_guidelines_draft.pdf (english)
+2025-08-06 21:02:07,590 - INFO - Processing: VAT-Instruction_(2025-26).pdf
+2025-08-06 21:02:17,692 - INFO - Created 50 chunks from VAT-Instruction_(2025-26).pdf (bangla)
+2025-08-06 21:02:17,693 - INFO - Processing: Guidelines on ICT Security for Banks and Non-Bank Financial Institutions, 2023.pdf
+2025-08-06 21:02:41,954 - INFO - Created 508 chunks from Guidelines on ICT Security for Banks and Non-Bank Financial Institutions, 2023.pdf (english)
+2025-08-06 21:02:41,955 - INFO - Processing: Institutional-Account-Opening-Form-English-Version-Non-PersonalCorporateSME-Accoun.pdf
+2025-08-06 21:02:46,763 - INFO - Created 81 chunks from Institutional-Account-Opening-Form-English-Version-Non-PersonalCorporateSME-Accoun.pdf (english)
+2025-08-06 21:02:46,764 - INFO - Processing: 03 OP_ZF_1.pdf
+2025-08-06 21:02:49,486 - INFO - Created 42 chunks from 03 OP_ZF_1.pdf (english)
+2025-08-06 21:02:49,487 - INFO - Processing: 2024-08-04-09-27-3196d924fdcc0bb5fbd7e81e78194897.pdf
+2025-08-06 21:03:07,756 - INFO - Created 201 chunks from 2024-08-04-09-27-3196d924fdcc0bb5fbd7e81e78194897.pdf (mixed)
+2025-08-06 21:03:07,758 - INFO - Processing: আয়কর_নির্দেশিকা_২০২৪-২০২৫.pdf
+2025-08-06 21:03:28,198 - INFO - Created 162 chunks from আয়কর_নির্দেশিকা_২০২৪-২০২৫.pdf (bangla)
+2025-08-06 21:03:28,199 - INFO - Processing: ucb-taqwa-organizational-account-opening-form.pdf
+2025-08-06 21:03:35,008 - INFO - Created 112 chunks from ucb-taqwa-organizational-account-opening-form.pdf (english)
+2025-08-06 21:03:35,009 - INFO - Processing: FORM OF RETURN OF INCOME TAX.pdf
+2025-08-06 21:03:39,481 - INFO - Created 72 chunks from FORM OF RETURN OF INCOME TAX.pdf (english)
+2025-08-06 21:03:39,482 - INFO - Processing: nikosh_font.pdf
+2025-08-06 21:03:39,491 - INFO - Created 1 chunks from nikosh_font.pdf (bangla)
+2025-08-06 21:03:39,491 - INFO - Processing: আইটি-১১_ছ_(২০২৩)_আয়কর_রিটার্ন_প্রাপ্তি_স্বীকার_পত্র__প্রত্যয়ন_পত্র_.pdf
+2025-08-06 21:03:39,924 - INFO - Created 1 chunks from আইটি-১১_ছ_(২০২৩)_আয়কর_রিটার্ন_প্রাপ্তি_স্বীকার_পত্র__প্রত্যয়ন_পত্র_.pdf (bangla)
+2025-08-06 21:03:39,924 - INFO - Processing: 5722-Ordinance-28-Law-02_June.pdf
+2025-08-06 21:04:00,421 - INFO - Created 222 chunks from 5722-Ordinance-28-Law-02_June.pdf (mixed)
+2025-08-06 21:04:00,422 - INFO - Processing: 2022-02-12-07-16-c1f322db1f774143fb098c220c11a802.pdf
+2025-08-06 21:04:02,877 - INFO - Created 11 chunks from 2022-02-12-07-16-c1f322db1f774143fb098c220c11a802.pdf (english)
+2025-08-06 21:04:02,877 - INFO - Processing: CarLoan.pdf
+2025-08-06 21:04:03,452 - INFO - Created 5 chunks from CarLoan.pdf (english)
+2025-08-06 21:04:03,453 - INFO - Processing: Personal Taxation in Bangladesh - Comprehensive Guide.pdf
+2025-08-06 21:04:04,603 - INFO - Created 11 chunks from Personal Taxation in Bangladesh - Comprehensive Guide.pdf (english)
+2025-08-06 21:04:04,603 - INFO - Processing: 5-Year Bangladesh Savings Certificate.pdf
+2025-08-06 21:04:05,534 - INFO - Created 9 chunks from 5-Year Bangladesh Savings Certificate.pdf (english)
+2025-08-06 21:04:05,534 - INFO - Processing: dttl-tax-bangladeshhighlights-2023.pdf
+2025-08-06 21:04:10,095 - INFO - Created 78 chunks from dttl-tax-bangladeshhighlights-2023.pdf (english)
+2025-08-06 21:04:10,096 - INFO - Processing: banking_regulations.pdf
+2025-08-06 21:04:10,633 - INFO - Created 5 chunks from banking_regulations.pdf (english)
+2025-08-06 21:04:10,633 - INFO - Processing: Pension Simplification Order 2020.pdf
+2025-08-06 21:04:10,693 - WARNING - Very little text extracted from Pension Simplification Order 2020.pdf
+2025-08-06 21:04:10,693 - INFO - Processing: User_Manual_for_bKash.pdf
+2025-08-06 21:04:10,767 - INFO - Created 1 chunks from User_Manual_for_bKash.pdf (english)
+2025-08-06 21:04:10,767 - INFO - Processing: Interest Rates Report 2024-2025.pdf
+2025-08-06 21:04:12,059 - INFO - Created 18 chunks from Interest Rates Report 2024-2025.pdf (english)
+2025-08-06 21:04:12,059 - INFO - Processing: 1384Corporate Laws & Practices.pdf
+2025-08-06 21:05:39,004 - INFO - Created 1828 chunks from 1384Corporate Laws & Practices.pdf (english)
+2025-08-06 21:05:39,007 - INFO - Processing: আইটি-১২৪_(২০২৩).pdf
+2025-08-06 21:05:40,381 - INFO - Created 3 chunks from আইটি-১২৪_(২০২৩).pdf (bangla)
+2025-08-06 21:05:40,381 - INFO - Processing: Comprehensive Loan Documentation Guide for Bangladesh.pdf
+2025-08-06 21:05:41,927 - INFO - Created 22 chunks from Comprehensive Loan Documentation Guide for Bangladesh.pdf (english)
+2025-08-06 21:05:41,928 - INFO - Processing: Industrial Policy of Bangladesh (2022).pdf
+2025-08-06 21:05:41,988 - WARNING - Very little text extracted from Industrial Policy of Bangladesh (2022).pdf
+2025-08-06 21:05:41,988 - INFO - Processing: FAQs-Bank Al Arafah.pdf
+2025-08-06 21:05:46,467 - INFO - Created 97 chunks from FAQs-Bank Al Arafah.pdf (english)
+2025-08-06 21:05:46,468 - INFO - Processing: Guidelines for Non-Resident Bangladeshis (NRBs).pdf
+2025-08-06 21:07:17,397 - INFO - Created 1763 chunks from Guidelines for Non-Resident Bangladeshis (NRBs).pdf (english)
+2025-08-06 21:07:17,398 - INFO - Processing: Aykor_Nirdeshika_2024-2025.pdf
+2025-08-06 21:07:41,663 - INFO - Created 613 chunks from Aykor_Nirdeshika_2024-2025.pdf (english)
+2025-08-06 21:07:41,664 - INFO - Processing: bb_auto_loan_circular.pdf
+2025-08-06 21:07:42,861 - INFO - Created 7 chunks from bb_auto_loan_circular.pdf (english)
+2025-08-06 21:07:42,862 - INFO - Processing: GUIDELINES FOR CONDUCTING ISLAMIC BANKING.pdf
+2025-08-06 21:07:49,884 - INFO - Created 146 chunks from GUIDELINES FOR CONDUCTING ISLAMIC BANKING.pdf (english)
+2025-08-06 21:07:49,885 - INFO - Processing: Complaints BB.pdf
+2025-08-06 21:07:50,578 - INFO - Created 9 chunks from Complaints BB.pdf (english)
+2025-08-06 21:07:50,578 - INFO - Processing: Online_Banking_FAQ.pdf
+2025-08-06 21:07:51,488 - INFO - Created 14 chunks from Online_Banking_FAQ.pdf (english)
+2025-08-06 21:07:51,488 - INFO - Processing: Deposit insurance and customer protection measures.pdf
+2025-08-06 21:07:52,445 - INFO - Created 10 chunks from Deposit insurance and customer protection measures.pdf (english)
+2025-08-06 21:07:52,446 - INFO - Processing: income_tax_ordinance.pdf
+2025-08-06 21:09:04,549 - INFO - Created 1337 chunks from income_tax_ordinance.pdf (english)
+2025-08-06 21:09:04,550 - INFO - Processing: FAQ_MDBDigitalProbashiSavingsAccount_2024.pdf
+2025-08-06 21:09:08,233 - INFO - Created 58 chunks from FAQ_MDBDigitalProbashiSavingsAccount_2024.pdf (english)
+2025-08-06 21:09:08,233 - INFO - Processing: Term_Deposit_Account_Opening_Application_Form_June_20.pdf
+2025-08-06 21:09:10,260 - INFO - Created 19 chunks from Term_Deposit_Account_Opening_Application_Form_June_20.pdf (english)
+2025-08-06 21:09:10,260 - INFO - Processing: FDR-and-Deposit-Scheme-Form-English-Version.pdf
+2025-08-06 21:09:13,202 - INFO - Created 62 chunks from FDR-and-Deposit-Scheme-Form-English-Version.pdf (english)
+2025-08-06 21:09:13,202 - INFO - Processing: Financing-Solutions-for-Micro-Small-and-Medium-Enterprises-in-Bangladesh.pdf
+2025-08-06 21:09:40,367 - INFO - Created 621 chunks from Financing-Solutions-for-Micro-Small-and-Medium-Enterprises-in-Bangladesh.pdf (english)
+2025-08-06 21:09:40,368 - INFO - Processing: Finance Institutions Act, 1993.pdf
+2025-08-06 21:09:44,978 - INFO - Created 67 chunks from Finance Institutions Act, 1993.pdf (english)
+2025-08-06 21:09:44,980 - INFO - Processing: কোম্পানি_করদাতাদের_জন্য_রিটার্ন_আইটি_১১ঘ২০২৩.pdf
+2025-08-06 21:09:46,562 - INFO - Created 9 chunks from কোম্পানি_করদাতাদের_জন্য_রিটার্ন_আইটি_১১ঘ২০২৩.pdf (bangla)
+2025-08-06 21:09:46,563 - INFO - Processing: Basic Bank SME.pdf
+2025-08-06 21:09:56,085 - INFO - Created 206 chunks from Basic Bank SME.pdf (english)
+2025-08-06 21:09:56,086 - INFO - Processing: VATR2016.pdf
+2025-08-06 21:10:12,063 - INFO - Created 86 chunks from VATR2016.pdf (mixed)
+2025-08-06 21:10:12,065 - INFO - Processing: bpid_opening_Form.pdf
+2025-08-06 21:10:13,161 - INFO - Created 16 chunks from bpid_opening_Form.pdf (english)
+2025-08-06 21:10:13,161 - INFO - Processing: Interest rates and lending policies.pdf
+2025-08-06 21:10:17,522 - INFO - Created 79 chunks from Interest rates and lending policies.pdf (english)
+2025-08-06 21:10:17,522 - INFO - Processing: NBR_cleanedTAX.pdf
+2025-08-06 21:10:26,300 - INFO - Created 164 chunks from NBR_cleanedTAX.pdf (english)
+2025-08-06 21:10:26,300 - INFO - Processing: BASIC BANK Form.pdf
+2025-08-06 21:10:29,296 - INFO - Created 39 chunks from BASIC BANK Form.pdf (english)
+2025-08-06 21:10:29,297 - INFO - Processing: Insurance Act 2010 english version.pdf
+2025-08-06 21:10:46,223 - INFO - Created 270 chunks from Insurance Act 2010 english version.pdf (english)
+2025-08-06 21:10:46,225 - INFO - Processing: home_loan_application.pdf
+2025-08-06 21:10:58,969 - INFO - Created 235 chunks from home_loan_application.pdf (english)
+2025-08-06 21:10:58,970 - INFO - Processing: startup_fund.pdf
+2025-08-06 21:11:00,115 - INFO - Created 3 chunks from startup_fund.pdf (english)
+2025-08-06 21:11:00,115 - INFO - Processing: আইটি-৯০_(২০২৩).pdf
+2025-08-06 21:11:00,520 - INFO - Created 1 chunks from আইটি-৯০_(২০২৩).pdf (mixed)
+2025-08-06 21:11:00,520 - INFO - Processing: Bangladesh Electronic Funds Transfer Network.pdf
+2025-08-06 21:11:20,805 - INFO - Created 421 chunks from Bangladesh Electronic Funds Transfer Network.pdf (english)
+2025-08-06 21:11:20,807 - INFO - Processing: 2021-03-18-14-08-f2aebfe7b6b00610a3081237e0a989e4.pdf
+2025-08-06 21:11:20,862 - INFO - Created 1 chunks from 2021-03-18-14-08-f2aebfe7b6b00610a3081237e0a989e4.pdf (mixed)
+2025-08-06 21:11:20,862 - INFO - Processing: Credit policies and loan eligibility criteria.pdf
+2025-08-06 21:11:23,542 - INFO - Created 36 chunks from Credit policies and loan eligibility criteria.pdf (english)
+2025-08-06 21:11:23,542 - INFO - Processing: Microfinance-Programme-Brief-Nov-2020.pdf
+2025-08-06 21:11:27,563 - INFO - Created 66 chunks from Microfinance-Programme-Brief-Nov-2020.pdf (english)
+2025-08-06 21:11:27,564 - INFO - Processing: 1688964931_2. Account Opening form (Individual)-Editable.pdf
+2025-08-06 21:11:38,414 - INFO - Created 223 chunks from 1688964931_2. Account Opening form (Individual)-Editable.pdf (english)
+2025-08-06 21:11:38,415 - INFO - Processing: docs procedures of loan and advances.pdf
+2025-08-06 21:11:43,776 - INFO - Created 111 chunks from docs procedures of loan and advances.pdf (english)
+2025-08-06 21:11:43,777 - INFO - Processing: EBL_ACCESS_Frequesntly_Asked_Questions.pdf
+2025-08-06 21:11:47,220 - INFO - Created 53 chunks from EBL_ACCESS_Frequesntly_Asked_Questions.pdf (english)
+2025-08-06 21:11:47,222 - INFO - Processing: Guidelines on Agent Banking for the Banks.pdf
+2025-08-06 21:11:50,289 - INFO - Created 57 chunks from Guidelines on Agent Banking for the Banks.pdf (english)
+2025-08-06 21:11:50,289 - INFO - Processing: 6.pdf
+2025-08-06 21:11:51,926 - INFO - Created 3 chunks from 6.pdf (mixed)
+2025-08-06 21:11:51,928 - INFO - Processing: 2021-03-18-14-07-18991ad56d00da578460250da78664ed.pdf
+2025-08-06 21:11:51,982 - INFO - Created 1 chunks from 2021-03-18-14-07-18991ad56d00da578460250da78664ed.pdf (mixed)
+2025-08-06 21:11:51,982 - INFO - Processing: Binimoy Operating Rules.pdf
+2025-08-06 21:12:01,498 - INFO - Created 182 chunks from Binimoy Operating Rules.pdf (english)
+2025-08-06 21:12:01,499 - INFO - Processing: Account-Opening-Non-Ind-Dec-2024.pdf
+2025-08-06 21:12:03,607 - INFO - Created 31 chunks from Account-Opening-Non-Ind-Dec-2024.pdf (english)
+2025-08-06 21:12:03,607 - INFO - Processing: sme_guidelines.pdf
+2025-08-06 21:12:12,706 - INFO - Created 190 chunks from sme_guidelines.pdf (english)
+2025-08-06 21:12:12,707 - INFO - Processing: 5.pdf
+2025-08-06 21:12:12,743 - WARNING - Very little text extracted from 5.pdf
+2025-08-06 21:12:12,743 - INFO - Processing: Foreign exchange transactions and regulations.pdf
+2025-08-06 21:12:46,742 - INFO - Created 625 chunks from Foreign exchange transactions and regulations.pdf (english)
+2025-08-06 21:12:46,745 - INFO - Processing: Mobile Financial Services Guidelines.pdf
+2025-08-06 21:12:49,541 - INFO - Created 64 chunks from Mobile Financial Services Guidelines.pdf (english)
+2025-08-06 21:12:49,542 - INFO - Processing: আইটি-১১চ_(২০২৩)_স্বাভাবিক_ব্যক্তি_ও_কোম্পানি_করদাতা_ব্যতীত_অন্যান্য_করদাতার_জন্য.pdf
+2025-08-06 21:12:51,137 - INFO - Created 11 chunks from আইটি-১১চ_(২০২৩)_স্বাভাবিক_ব্যক্তি_ও_কোম্পানি_করদাতা_ব্যতীত_অন্যান্য_করদাতার_জন্য.pdf (bangla)
+2025-08-06 21:12:51,137 - INFO - Processing: 10mar.pdf
+2025-08-06 21:12:53,177 - INFO - Created 16 chunks from 10mar.pdf (mixed)
+2025-08-06 21:12:53,178 - INFO - Processing: FAQs on Banking Services IFIC.pdf
+2025-08-06 21:12:56,033 - INFO - Created 67 chunks from FAQs on Banking Services IFIC.pdf (english)
+2025-08-06 21:12:56,035 - INFO - Processing: Money Laundering Act 2012.pdf
+2025-08-06 21:12:56,059 - WARNING - Very little text extracted from Money Laundering Act 2012.pdf
+2025-08-06 21:12:56,059 - INFO - Processing: FAQ_e-Return.pdf
+2025-08-06 21:13:01,353 - INFO - Created 73 chunks from FAQ_e-Return.pdf (bangla)
+2025-08-06 21:13:01,354 - INFO - Processing: FAQ e-Banking NRB.pdf
+2025-08-06 21:13:03,484 - INFO - Created 36 chunks from FAQ e-Banking NRB.pdf (english)
+2025-08-06 21:13:03,484 - INFO - Processing: Bilateral Investment Treaties (BITs).pdf
+2025-08-06 21:13:10,734 - INFO - Created 115 chunks from Bilateral Investment Treaties (BITs).pdf (english)
+2025-08-06 21:13:10,736 - INFO - Processing: Income_Tax_act.pdf
+2025-08-06 21:14:10,368 - INFO - Created 753 chunks from Income_Tax_act.pdf (english)
+2025-08-06 21:14:10,370 - INFO - Processing: Guidelines on Consumer Rights.pdf
+2025-08-06 21:14:21,226 - INFO - Created 94 chunks from Guidelines on Consumer Rights.pdf (english)
+2025-08-06 21:14:21,228 - INFO - Processing: Account-Opening-Form-Folder-Individual.pdf
+2025-08-06 21:14:22,568 - WARNING - Very little text extracted from Account-Opening-Form-Folder-Individual.pdf
+2025-08-06 21:14:22,568 - INFO - Processing: bd-personal-account-opening-form.pdf
+2025-08-06 21:14:41,830 - INFO - Created 160 chunks from bd-personal-account-opening-form.pdf (english)
+2025-08-06 21:14:41,832 - INFO - Processing: Non-Individual_Account_Opening_Form_Conventional.pdf
+2025-08-06 21:14:41,863 - WARNING - Very little text extracted from Non-Individual_Account_Opening_Form_Conventional.pdf
+2025-08-06 21:14:41,863 - INFO - Processing: Foreign-Investment-in-Bangladesh-Booklet .pdf
+2025-08-06 21:14:53,830 - INFO - Created 216 chunks from Foreign-Investment-in-Bangladesh-Booklet .pdf (english)
+2025-08-06 21:14:53,832 - INFO - Language distribution: {'bangla': 13, 'english': 180, 'mixed': 19, 'unknown': 0}
+2025-08-06 21:14:53,832 - INFO - Total chunks created: 34234
+2025-08-06 21:14:53,833 - INFO - Using device: cpu
+2025-08-06 21:14:53,862 - INFO - Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+2025-08-06 21:15:00,757 - INFO - Building FAISS index...
+2025-08-06 21:42:04,720 - INFO - ✅ Multilingual FAISS index built successfully
+2025-08-06 21:42:04,753 - INFO - 💾 Saving new index...
+2025-08-06 21:42:04,978 - INFO - State saved with 225 files
+2025-08-06 21:42:04,978 - INFO - ============================================================
+2025-08-06 21:42:04,978 - INFO - ✅ Multilingual index updated successfully!
+2025-08-06 21:42:04,978 - INFO - 📊 Total files in state: 225
+2025-08-06 21:42:04,978 - INFO - 📊 Files processed this run: 225
+2025-08-06 21:42:04,978 - INFO - 📁 Index location: faiss_index_multilingual
+2025-08-06 21:42:04,978 - INFO - ============================================================
+2025-08-06 21:42:05,006 - INFO - 🔍 Verifying multilingual index...
+2025-08-06 21:42:05,009 - INFO - Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+2025-08-06 21:42:11,801 - INFO - ✅ English search 'bank account opening': 3 results
+2025-08-06 21:42:11,802 - INFO -    Sample result from 1688964931_2. Account Opening form (Individual)-Editable.pdf (english): Savings Account A Savings Account may be opened by any person or persons properly introduced and app...
+2025-08-06 21:42:12,014 - INFO - ✅ Bangla search 'ব্যাংক অ্যাকাউন্ট': 3 results
+2025-08-06 21:42:12,015 - INFO -    Sample result from bd-personal-account-opening-form.pdf (english): 0 Million in Current Savings account me us and my our account(s) and or dealing relationship(s) with...
+2025-08-06 21:42:12,107 - INFO - ✅ English search 'loan application': 3 results
+2025-08-06 21:42:12,107 - INFO -    Sample result from Comprehensive Loan Documentation Guide for Bangladesh.pdf (english): These loans are offered by commercial banks, specialized housing finance institutions, and governmen...
+2025-08-06 21:42:12,172 - INFO - ✅ Bangla search 'ঋণের আবেদন': 3 results
+2025-08-06 21:42:12,172 - INFO -    Sample result from আয়কর_নির্দেশিকা_২০২৪-২০২৫.pdf (bangla): আইটি ১০তব (২০২৩) 107 (ই) ঋণ প্রোন (ঋণ িহণকারীর নাম ও এনআইতর্ উদেি করুন) টাকা (ঈ) সঞ্চয়ী দময়াতে আমান...
+2025-08-06 21:42:12,172 - INFO - ✅ Index verification completed successfully
+2025-08-06 21:42:12,190 - INFO - ============================================================
+2025-08-06 21:42:12,190 - INFO - 🚀 Starting Multilingual Delta Index Update
+2025-08-06 21:42:12,190 - INFO - ============================================================
+2025-08-06 21:42:12,192 - INFO - Found 103 PDF files in data
+2025-08-06 21:42:12,194 - INFO - Found 122 PDF files in unsant_data
+2025-08-06 21:42:12,194 - INFO - Total PDF files found: 225
+2025-08-06 21:42:12,442 - INFO - ✅ No new/changed PDFs found. Index is up to date.
+2025-08-06 23:06:19,869 - INFO - ============================================================
+2025-08-06 23:06:19,870 - INFO - 🚀 Starting Multilingual Delta Index Update
+2025-08-06 23:06:19,870 - INFO - ============================================================
+2025-08-06 23:06:19,871 - INFO - Found 103 PDF files in data
+2025-08-06 23:06:19,872 - INFO - Found 122 PDF files in unsant_data
+2025-08-06 23:06:19,872 - INFO - Total PDF files found: 225
+2025-08-06 23:06:20,148 - INFO - ✅ No new/changed PDFs found. Index is up to date.
+2025-08-06 23:06:20,148 - INFO - 🔍 Verifying multilingual index...
+2025-08-06 23:06:20,150 - INFO - Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-mpnet-base-v2
+2025-08-06 23:06:28,222 - INFO - ✅ English search 'bank account opening': 3 results
+2025-08-06 23:06:28,222 - INFO -    Sample result from 1688964931_2. Account Opening form (Individual)-Editable.pdf (english): Savings Account A Savings Account may be opened by any person or persons properly introduced and app...
+2025-08-06 23:06:28,376 - INFO - ✅ Bangla search 'ব্যাংক অ্যাকাউন্ট': 3 results
+2025-08-06 23:06:28,376 - INFO -    Sample result from bd-personal-account-opening-form.pdf (english): 0 Million in Current Savings account me us and my our account(s) and or dealing relationship(s) with...
+2025-08-06 23:06:28,439 - INFO - ✅ English search 'loan application': 3 results
+2025-08-06 23:06:28,439 - INFO -    Sample result from Comprehensive Loan Documentation Guide for Bangladesh.pdf (english): These loans are offered by commercial banks, specialized housing finance institutions, and governmen...
+2025-08-06 23:06:28,496 - INFO - ✅ Bangla search 'ঋণের আবেদন': 3 results
+2025-08-06 23:06:28,496 - INFO -    Sample result from আয়কর_নির্দেশিকা_২০২৪-২০২৫.pdf (bangla): আইটি ১০তব (২০২৩) 107 (ই) ঋণ প্রোন (ঋণ িহণকারীর নাম ও এনআইতর্ উদেি করুন) টাকা (ঈ) সঞ্চয়ী দময়াতে আমান...
+2025-08-06 23:06:28,496 - INFO - ✅ Index verification completed successfully
