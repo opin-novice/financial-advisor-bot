@@ -1,0 +1,480 @@
+#this is main.py
+import os
+import re
+import logging
+from typing import List, Dict, Any
+import torch
+from langchain_community.vectorstores import FAISS
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_ollama import OllamaLLM
+from langchain.chains import StuffDocumentsChain, LLMChain
+from langchain.prompts import PromptTemplate
+from langchain.schema import Document
+from telegram import Update, File, Document as TelegramDoc, PhotoSize
+from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
+from sentence_transformers import CrossEncoder
+import json
+import pytesseract
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
+# --- NEW: for PDF and image support ---
+import fitz         # PyMuPDF for PDFs
+from PIL import Image
+import pytesseract
+import io
+# --------------------------------------
+
+# --- Configuration ----------------------------------------------------------
+FAISS_INDEX_PATH   = "faiss_index"
+
+#EMBEDDING_MODEL    = "BAAI/bge-base-en-v1.5"
+#after fine tuning the embed model is changed 
+#this embedding model is not pretrained like BAAI/bge-base-en-v1.5 rather than trained on qa_paris,jasonl
+#thats why its know what is the domain is 
+EMBEDDING_MODEL = "./ft_bge"
+OLLAMA_MODEL       = "llama3.2:1b"
+TELEGRAM_TOKEN     = os.getenv("TG_TOKEN", "7283974888:AAHLS1jodnbWxA-fqIz9YpPmpmdKcef7skw")  # <- do NOT commit real token
+
+# --- Logging ----------------------------------------------------------------
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# --- Markdown escape for Telegram ------------------------------------------
+_ESCAPE_RE = re.compile(r"([_*\[\]()~`>#+\-=|{}.!\\])")
+def escape_markdown(text: str) -> str:
+    return _ESCAPE_RE.sub(r"\\\1", text)
+
+# --- Embeddings -------------------------------------------------------------
+device = "cuda" if torch.cuda.is_available() else "cpu"
+embeddings = HuggingFaceEmbeddings(
+    model_name=EMBEDDING_MODEL,
+    model_kwargs={"device": device}
+)
+
+# --- Load FAISS index --------------------------------------------------------
+vectorstore = FAISS.load_local(
+    FAISS_INDEX_PATH,
+    embeddings,
+    allow_dangerous_deserialization=True
+)
+
+# --- Hybrid Search Retriever -------------------------------------------------
+from langchain.retrievers import EnsembleRetriever
+from langchain_community.retrievers import BM25Retriever
+from langchain.schema import Document
+
+# Create BM25 retriever for keyword search
+def create_bm25_retriever():
+    # Get all documents from FAISS for BM25
+    all_docs = vectorstore.similarity_search("", k=10000)  # Get all docs
+    bm25_retriever = BM25Retriever.from_documents(all_docs)
+    bm25_retriever.k = 5
+    return bm25_retriever
+
+# Create ensemble retriever
+dense_retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
+bm25_retriever = create_bm25_retriever()
+
+ensemble_retriever = EnsembleRetriever(
+    retrievers=[dense_retriever, bm25_retriever],
+    weights=[0.7, 0.3]  # Give more weight to semantic search
+)
+
+# --- Cross-encoder re-ranker -------------------------------------------------
+reranker = CrossEncoder("BAAI/bge-reranker-large", device=device)
+
+# --- Ollama LLM --------------------------------------------------------------
+llm = OllamaLLM(
+    model=OLLAMA_MODEL,
+    temperature=0.5,
+    top_p=0.8,
+    top_k=35,
+    max_tokens=512,
+    repeat_penalty=1.2
+)
+
+# --- Prompts ----------------------------------------------------------------
+REFORMAT_PROMPT = PromptTemplate(
+    input_variables=["question"],
+    template="Rephrase the following question in one concise sentence:\n\n{question}"
+)
+
+HYDE_PROMPT = PromptTemplate(
+    input_variables=["question"],
+    template="Provide a short hypothetical answer (2-3 sentences) to the question:\n\n{question}"
+)
+
+QA_PROMPT = PromptTemplate(
+    input_variables=["context", "question"],
+    template="""You are a financial advisor specializing in Bangladeshi tax law and regulations. Use the following context to answer the question accurately and professionally.
+
+IMPORTANT GUIDELINES:
+- Only use information from the provided context
+- If the context doesn't contain the answer, say "I cannot find specific information about this in the provided documents"
+- Be precise with numbers, percentages, and dates
+- Cite specific rules, sections, or forms when mentioned
+- Keep answers concise but complete
+- Use professional language appropriate for financial advice
+
+Context:
+{context}
+
+Question: {question}
+
+Answer:"""
+)
+
+# --- LangChain objects -------------------------------------------------------
+llm_chain_reformat  = LLMChain(llm=llm, prompt=REFORMAT_PROMPT)
+llm_chain_hyde      = LLMChain(llm=llm, prompt=HYDE_PROMPT)
+llm_chain_qa        = LLMChain(llm=llm, prompt=QA_PROMPT)
+combine_chain       = StuffDocumentsChain(
+    llm_chain=llm_chain_qa,
+    document_variable_name="context"
+)
+
+# --- Helper: parse simple metadata filters from user query ------------------
+def extract_filters(query: str) -> tuple[str, Dict[str, Any]]:
+    """
+    Very small DSL:
+        ... source:somefile.pdf ...   -> filter by filename substring
+        ... page:12 ...               -> filter by exact page int
+    Returns (cleaned_query, dict_of_filters)
+    """
+    filters: Dict[str, Any] = {}
+    cleaned = query
+
+    # source pattern
+    m = re.search(r'\bsource:([^\s]+)', query, flags=re.I)
+    if m:
+        filters["source"] = m.group(1).strip()
+        cleaned = cleaned.replace(m.group(0), "")
+
+    # page pattern
+    m = re.search(r'\bpage:(\d+)\b', query, flags=re.I)
+    if m:
+        filters["page"] = int(m.group(1))
+        cleaned = cleaned.replace(m.group(0), "")
+
+    return cleaned.strip(), filters
+
+# --- Query Expansion & Reformulation -----------------------------------------
+def expand_query(query: str) -> List[str]:
+    """Generate multiple query variations for better retrieval"""
+    # Original query
+    queries = [query]
+    
+    # Generate hypothetical answer
+    try:
+        hyde_answer = llm_chain_hyde.run(query)
+        queries.append(hyde_answer)
+    except:
+        pass
+    
+    # Reformat query
+    try:
+        reformatted = llm_chain_reformat.run(query)
+        queries.append(reformatted)
+    except:
+        pass
+    
+    return queries
+
+def multi_query_retrieval(query: str, retriever, top_k: int = 10) -> List[Document]:
+    """Retrieve documents using multiple query variations"""
+    expanded_queries = expand_query(query)
+    all_docs = []
+    
+    for q in expanded_queries:
+        docs = retriever.get_relevant_documents(q)
+        all_docs.extend(docs)
+    
+    # Remove duplicates and return top_k
+    seen = set()
+    unique_docs = []
+    for doc in all_docs:
+        if doc.page_content not in seen:
+            seen.add(doc.page_content)
+            unique_docs.append(doc)
+    
+    return unique_docs[:top_k]
+
+# --- Helper: HyDE ------------------------------------------------------------
+def build_hypothetical_doc(question: str) -> Document:
+    hypo_answer = llm_chain_hyde.run(question).strip()
+    logger.info("[HyDE] Hypothetical answer: %s", hypo_answer)
+    # we embed the hypothetical answer as if it were a real chunk
+    return Document(page_content=hypo_answer, metadata={"source": "Hypo_DOC"})
+
+# --- Helper: re-rank ---------------------------------------------------------
+def rerank_documents(query: str, docs: List[Document], top_n: int = 15) -> List[Document]:
+    pairs = [[query, doc.page_content] for doc in docs]
+    scores = reranker.predict(pairs)
+    reranked = sorted(zip(scores, docs), key=lambda x: x[0], reverse=True)
+    return [doc for score, doc in reranked[:top_n]]
+
+# --- Context Window Management ------------------------------------------------
+def truncate_context(docs: List[Document], max_tokens: int = 4000) -> List[Document]:
+    """Truncate context to fit within token limits"""
+    total_content = ""
+    selected_docs = []
+    
+    for doc in docs:
+        # Rough token estimation (1 token ≈ 4 characters)
+        estimated_tokens = len(doc.page_content) // 4
+        
+        if len(total_content) + len(doc.page_content) < max_tokens * 4:
+            total_content += doc.page_content + "\n\n"
+            selected_docs.append(doc)
+        else:
+            break
+    
+    return selected_docs
+
+def smart_context_selection(query: str, docs: List[Document], max_docs: int = 8) -> List[Document]:
+    """Intelligently select most relevant documents within context limits"""
+    # Re-rank documents by relevance to query
+    reranked_docs = rerank_documents(query, docs, top_n=max_docs)
+    
+    # Truncate to fit context window
+    return truncate_context(reranked_docs)
+
+# --- In-memory cache ---------------------------------------------------------
+query_cache: dict[str, Any] = {}
+
+# --- Response Validation ------------------------------------------------------
+def validate_response(response: str, context: str, query: str) -> dict:
+    """Validate if response is grounded in context"""
+    validation = {
+        "is_grounded": False,
+        "confidence": 0.0,
+        "issues": []
+    }
+    
+    # Check if response contains "I cannot find" or similar
+    if any(phrase in response.lower() for phrase in ["cannot find", "don't know", "not provided", "no information"]):
+        validation["is_grounded"] = True
+        validation["confidence"] = 0.95  # High confidence for honest "don't know"
+        return validation
+    
+    # Simple semantic overlap check
+    response_words = set(response.lower().split())
+    context_words = set(context.lower().split())
+    
+    # Remove common stop words
+    stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'can', 'this', 'that', 'these', 'those', 'i', 'you', 'he', 'she', 'it', 'we', 'they', 'me', 'him', 'her', 'us', 'them'}
+    
+    response_clean = response_words - stop_words
+    context_clean = context_words - stop_words
+    
+    # Calculate overlap
+    if len(response_clean) > 0:
+        overlap = len(response_clean.intersection(context_clean))
+        overlap_ratio = overlap / len(response_clean)
+        
+        # Boost confidence for longer, more detailed responses
+        length_boost = min(0.2, len(response) / 1000)  # Up to 20% boost for longer responses
+        
+        # Base confidence on overlap ratio
+        base_confidence = min(0.9, overlap_ratio * 1.5)  # Scale up overlap ratio
+        
+        # Add length boost
+        final_confidence = min(0.95, base_confidence + length_boost)
+        
+        validation["is_grounded"] = final_confidence > 0.3
+        validation["confidence"] = final_confidence
+        
+        if final_confidence < 0.5:
+            validation["issues"].append("Low semantic overlap with context")
+    else:
+        validation["confidence"] = 0.3
+        validation["issues"].append("Response too short for meaningful validation")
+    
+    return validation
+
+# --- Telegram handlers -------------------------------------------------------
+async def start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("FinAuxi: How can I help you with your finances?")
+
+async def handle_query(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    raw_query = update.message.text.strip()
+    if not raw_query:
+        await update.message.reply_text("❗ Please send a non-empty question.")
+        return
+
+    # cache hit
+    if raw_query in query_cache:
+        logger.info("[CACHE HIT] %s", raw_query)
+        await send_response(update, query_cache[raw_query])
+        return
+
+    try:
+        # 1) Parse optional metadata filters
+        user_query, filters = extract_filters(raw_query)
+        if filters:
+            logger.info("Parsed filters: %s", filters)
+
+        # 2) Optional query reformulation
+        #    (makes the vector search more robust to typos / synonyms)
+        reformatted = llm_chain_reformat.run(user_query).strip()
+        logger.info("[Reformat] %s  ->  %s", user_query, reformatted)
+
+        # 3) Use hybrid search (ensemble of dense + sparse retrieval)
+        base_retriever = ensemble_retriever
+        if filters:
+            # If filters are specified, fall back to dense search only
+            base_retriever = vectorstore.as_retriever(
+                search_kwargs={"k": 25, "filter": filters}
+            )
+
+        # 4) Multi-query retrieval with HyDE
+        retrieved = multi_query_retrieval(reformatted, base_retriever, top_k=25)
+        
+        # Add HyDE document
+        hypo_doc = build_hypothetical_doc(reformatted)
+        retrieved.append(hypo_doc)
+
+        # 5) Smart context selection and re-ranking
+        top_docs = smart_context_selection(reformatted, retrieved, max_docs=7)
+
+        # 6) Final LLM call
+        answer = combine_chain.run(input_documents=top_docs, question=user_query)
+        
+        # 7) Validate response with document relevance
+        context_text = "\n".join([doc.page_content for doc in top_docs])
+        
+        # Calculate average document relevance for confidence boost
+        doc_relevance_scores = []
+        for doc in top_docs:
+            if doc.metadata.get("source") != "Hypo_DOC":  # Skip HyDE documents
+                # Simple relevance score based on query-doc similarity
+                query_words = set(reformatted.lower().split())
+                doc_words = set(doc.page_content.lower().split())
+                relevance = len(query_words.intersection(doc_words)) / max(len(query_words), 1)
+                doc_relevance_scores.append(relevance)
+        
+        avg_relevance = sum(doc_relevance_scores) / len(doc_relevance_scores) if doc_relevance_scores else 0.3
+        
+        validation = validate_response(answer, context_text, user_query)
+        
+        # Boost confidence based on document relevance
+        if validation["confidence"] > 0.3:
+            relevance_boost = min(0.15, avg_relevance * 0.3)  # Up to 15% boost
+            validation["confidence"] = min(0.95, validation["confidence"] + relevance_boost)
+        
+        resp = {
+            "result": answer, 
+            "source_documents": top_docs,
+            "validation": validation,
+            "avg_doc_relevance": avg_relevance
+        }
+
+        # 8) cache & send
+        query_cache[raw_query] = resp
+        await send_response(update, resp)
+
+    except Exception as e:
+        logger.exception("Error handling query")
+        await update.message.reply_text(f"⚠️ Error: {e}")
+
+# --- NEW: PDF query handler --------------------------------------------------
+async def handle_pdf(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    doc: TelegramDoc = update.message.document
+    if not doc.file_name.lower().endswith(".pdf"):
+        await update.message.reply_text("❗ Please send a valid PDF document.")
+        return
+
+    file: File = await doc.get_file()
+    pdf_bytes = await file.download_as_bytearray()
+
+    try:
+        pdf_doc = fitz.open("pdf", pdf_bytes)
+        extracted_text = "\n".join(page.get_text() for page in pdf_doc)
+        if not extracted_text.strip():
+            raise ValueError("Empty PDF content")
+
+        # Treat extracted text as a single document
+        document = Document(page_content=extracted_text, metadata={"source": doc.file_name})
+
+        # You can prompt the user for a question; here, we summarize:
+        question = "Summarize the uploaded PDF."
+        answer = combine_chain.run(input_documents=[document], question=question)
+
+        await update.message.reply_text(escape_markdown(f"📄 *PDF Answer:*\n{answer}"), parse_mode="MarkdownV2")
+    except Exception as e:
+        logger.exception("PDF parsing failed")
+        await update.message.reply_text(f"⚠️ Error processing PDF: {e}")
+
+# --- NEW: Image query handler with Tesseract config tweaks and debug ---------
+async def handle_image(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    photo: PhotoSize = update.message.photo[-1]  # highest resolution
+    file: File = await photo.get_file()
+    img_bytes = await file.download_as_bytearray()
+
+    try:
+        image = Image.open(io.BytesIO(img_bytes))
+        # --- Tesseract config tweaks here ---
+        # psm 6: Assume a single uniform block of text
+        custom_config = r'--oem 3 --psm 6'
+        extracted_text = pytesseract.image_to_string(image, config=custom_config)
+
+        # Optional: Send OCR result to user for debugging
+        await update.message.reply_text(f"OCR text: {extracted_text}")
+
+        if not extracted_text.strip():
+            await update.message.reply_text("❗ Couldn't extract readable text from the image.")
+            return
+
+        document = Document(page_content=extracted_text, metadata={"source": "User_Image"})
+        question = "What does this image contain?"
+        answer = combine_chain.run(input_documents=[document], question=question)
+        await update.message.reply_text(escape_markdown(f"🖼️ *Image Answer:*\n{answer}"), parse_mode="MarkdownV2")
+    except Exception as e:
+        logger.exception("Image OCR failed")
+        await update.message.reply_text(f"⚠️ Error processing image: {e}")
+
+# --- Response Sender ---------------------------------------------------------
+async def send_response(update: Update, resp: dict):
+    # answer
+    text = escape_markdown(f"🔍 *Answer*\n{resp['result']}")
+    await update.message.reply_text(text, parse_mode="MarkdownV2")
+
+    # validation info
+    if resp.get("validation"):
+        validation = resp["validation"]
+        confidence = validation.get("confidence", 0.0)
+        is_grounded = validation.get("is_grounded", False)
+        
+        if is_grounded:
+            confidence_text = f"✅ *Confidence: {confidence:.1%}*"
+        else:
+            confidence_text = f"⚠️ *Confidence: {confidence:.1%}*"
+        
+        await update.message.reply_text(escape_markdown(confidence_text), parse_mode="MarkdownV2")
+
+    # sources
+    if resp.get("source_documents"):
+        src_text = escape_markdown("📚 *Sources*")
+        for i, doc in enumerate(resp["source_documents"], 1):
+            preview = escape_markdown(doc.page_content[:250].replace("\n", " "))
+            src = escape_markdown(str(doc.metadata.get("source", "Unknown")))
+            page = doc.metadata.get("page", "")
+            page_str = f", page {page}" if page else ""
+            src_text += f"\n*Source {i}* — {src}{page_str}\n_{preview}_"
+        await update.message.reply_text(src_text, parse_mode="MarkdownV2")
+
+    await update.message.reply_text("FinAuxi: Anything else I can help you with?")
+
+# --- Main --------------------------------------------------------------------
+if __name__ == "__main__":
+    if TELEGRAM_TOKEN == "PUT_YOURS_HERE":
+        raise RuntimeError("Please set TG_TOKEN env variable to your Telegram token.")
+
+    app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_query))
+    app.add_handler(MessageHandler(filters.Document.PDF, handle_pdf))        # NEW PDF handler
+    app.add_handler(MessageHandler(filters.PHOTO, handle_image))             # NEW image handler
+
+    logger.info("Bot started. Press Ctrl+C to stop.")
+    app.run_polling()
