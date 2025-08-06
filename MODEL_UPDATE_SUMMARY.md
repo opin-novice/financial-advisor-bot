@@ -2,34 +2,34 @@
 
 ## ✅ Successfully Updated Files
 
-The following files have been updated to use `gemma3n:e2b` model:
+The following files have been updated to use `gemma3n:e4b` model:
 
 ### Core Application Files
 1. **`multilingual_main.py`** (Line 37)
-   - Updated: `OLLAMA_MODEL = "gemma3n:e2b"`
+   - Updated: `OLLAMA_MODEL = "gemma3n:e4b"`
 
 2. **`main.py`** (Line 29)
-   - Updated: `OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma3n:e2b")`
+   - Updated: `OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma3n:e4b")`
 
 3. **`spanish_translator.py`** (Line 23)
-   - Updated: `def __init__(self, ollama_model: str = "gemma3n:e2b"):`
+   - Updated: `def __init__(self, ollama_model: str = "gemma3n:e4b"):`
 
 ### Evaluation Files
 4. **`multilingual_eval.py`** (Line 31)
-   - Updated: `OLLAMA_MODEL = "gemma3n:e2b"`
+   - Updated: `OLLAMA_MODEL = "gemma3n:e4b"`
 
 5. **`eval.py`** (Line 31)
-   - Updated: `OLLAMA_MODEL = "gemma3n:e2b"  # must be served locally`
+   - Updated: `OLLAMA_MODEL = "gemma3n:e4b"  # must be served locally`
 
 ### Setup and Testing Files
 6. **`setup_multilingual.py`** (Line 54)
-   - Updated: `"gemma3n:e2b",` in models_to_install list
+   - Updated: `"gemma3n:e4b",` in models_to_install list
 
 7. **`test_multilingual.py`** (Line 307)
-   - Updated: `print("- Verify model is installed: ollama pull gemma3n:e2b")`
+   - Updated: `print("- Verify model is installed: ollama pull gemma3n:e4b")`
 
 8. **`readme.txt`** (Line 8)
-   - Updated: `ollama pull gemma3n:e2b`
+   - Updated: `ollama pull gemma3n:e4b`
 
 ## 🔧 Next Steps
 
@@ -37,7 +37,7 @@ Before running the bot, make sure to:
 
 1. **Install the Gemma model in Ollama:**
    ```bash
-   ollama pull gemma3n:e2b
+   ollama pull gemma3n:e4b
    ```
 
 2. **Verify the model is available:**
@@ -50,7 +50,7 @@ Before running the bot, make sure to:
    python -c "
    from multilingual_main import MultilingualFinancialAdvisorBot
    bot = MultilingualFinancialAdvisorBot()
-   print('✅ Bot initialized successfully with gemma3n:e2b')
+   print('✅ Bot initialized successfully with gemma3n:e4b')
    "
    ```
 
