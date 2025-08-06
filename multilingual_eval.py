@@ -28,7 +28,7 @@ warnings.filterwarnings("ignore")
 # ------------------------------------------------------------------
 FAISS_INDEX_PATH = "faiss_index_multilingual"
 EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
-OLLAMA_MODEL = "llama3.2:3b"
+OLLAMA_MODEL = "gemma3n:e2b"
 EVAL_FILE_ENGLISH = "dataqa/eval_set.json"
 EVAL_FILE_BANGLA = "dataqa/eval_set_bangla.json"  # We'll create this
 LOG_FILE = "logs/multilingual_evaluation.json"

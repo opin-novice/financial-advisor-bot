@@ -5,7 +5,7 @@ pip install langchain_ollama
 pip install -U langchain-huggingface
 
 install ollama then:
-ollama pull llama3.2:3b
+ollama pull gemma3n:e2b
 
 for gpu
 pip uninstall torch

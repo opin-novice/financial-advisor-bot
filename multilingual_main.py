@@ -34,7 +34,7 @@ FAISS_INDEX_PATH = "faiss_index_multilingual"
 # Using multilingual embedding model that supports Bangla and English
 EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
 # Alternative: "BAAI/bge-m3" (better for multilingual)
-OLLAMA_MODEL = "gemma3n:e4b" 
+OLLAMA_MODEL = "gemma3n:e2b" 
 CACHE_TTL = 86400  # 24 hours
 
 # Retrieval Settings

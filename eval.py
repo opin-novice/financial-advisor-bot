@@ -28,7 +28,7 @@ from langchain_community.vectorstores import FAISS
 # ------------------------------------------------------------------
 FAISS_INDEX_PATH = "faiss_index"
 EMBEDDING_MODEL  = "sentence-transformers/all-mpnet-base-v2"     # or "BAAI/bge-base-en-v1.5"
-OLLAMA_MODEL     = "llama3.2:3b"  # must be served locally
+OLLAMA_MODEL     = "gemma3n:e2b"  # must be served locally
 EVAL_FILE        = "dataqa/eval_set.json"
 
 # ------------------------------------------------------------------

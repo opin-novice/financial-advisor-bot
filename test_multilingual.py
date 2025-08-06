@@ -304,7 +304,7 @@ def main():
     
     if not results.get("Bot Queries", False):
         print("- Check Ollama is running: ollama serve")
-        print("- Verify model is installed: ollama pull llama3.2:3b")
+        print("- Verify model is installed: ollama pull gemma3n:e2b")
     
     print("\n🔗 For detailed setup instructions, see: README_MULTILINGUAL.md")
 

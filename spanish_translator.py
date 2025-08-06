@@ -20,7 +20,7 @@ class SpanishTranslator:
     Uses Ollama for translation to maintain consistency with the bot
     """
     
-    def __init__(self, ollama_model: str = "gemma3n:e4b"):
+    def __init__(self, ollama_model: str = "gemma3n:e2b"):
         self.ollama_model = ollama_model
         self.spanish_keywords = {
             'banco', 'cuenta', 'préstamo', 'crédito', 'dinero', 'inversión',

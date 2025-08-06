@@ -51,7 +51,7 @@ def install_ollama_models():
     print("[INFO] Installing Ollama models...")
     
     models_to_install = [
-        "llama3.2:3b",
+        "gemma3n:e2b",
         # "aya:8b",  # Multilingual model (if available)
     ]
     

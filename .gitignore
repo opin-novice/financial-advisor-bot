@@ -1,2 +1,16 @@
 
 faiss_index_multilingual/index.faiss
+
+# Environment variables (contains sensitive tokens)
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+logs/*.log
+
+# macOS
+.DS_Store

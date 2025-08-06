@@ -1,0 +1,52 @@
+# Core Python dependencies for Financial Advisor Telegram Bot
+# Minimum Python version: 3.8+
+
+# Environment management
+python-dotenv>=1.0.0
+
+# Core ML/AI dependencies
+torch>=2.0.0
+numpy>=1.21.0
+scikit-learn>=1.0.0
+nltk>=3.8
+sentence-transformers>=2.2.0
+
+# Language detection and processing
+langdetect>=1.0.9
+indic-nlp-library>=0.81
+
+# PDF and image processing
+PyMuPDF>=1.23.0
+pytesseract>=0.3.10
+pdf2image>=1.17.0
+Pillow>=9.0.0
+
+# LangChain ecosystem
+langchain>=0.1.0
+langchain-community>=0.0.10
+langchain-huggingface>=0.0.6
+langchain-ollama>=0.1.0
+
+# Vector database
+faiss-cpu>=1.7.4
+
+# Telegram bot framework
+python-telegram-bot>=20.0
+
+# Transformer models and cross-encoders
+transformers>=4.21.0
+
+# Utilities
+tqdm>=4.64.0
+pandas>=1.5.0
+datasets>=2.0.0
+
+# Evaluation (optional)
+ragas>=0.1.0
+
+# Alternative language detection (optional)
+# polyglot>=16.7.4
+
+# GPU support (uncomment if CUDA available)
+# faiss-gpu>=1.7.4
+# torch-audio  # For GPU acceleration

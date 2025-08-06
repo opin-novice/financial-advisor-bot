@@ -2,49 +2,147 @@ import os
 import re
 import logging
 import time
-from typing import Dict, List
+from typing import List, Dict, Any, Tuple
+import torch
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_ollama import OllamaLLM
-from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain.chains import create_retrieval_chain
+from langchain.chains import StuffDocumentsChain, LLMChain
 from langchain.prompts import PromptTemplate
 from langchain.schema import Document
-from telegram import Update
+from telegram import Update, File, Document as TelegramDoc, PhotoSize
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 from sentence_transformers import CrossEncoder
+import pytesseract
+from PIL import Image
+import fitz
+import io
+import warnings
+warnings.filterwarnings("ignore")
 
-# --- Logging ---
-logging.basicConfig(
-    filename='logs/telegram_financial_bot.log',
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
+# Load environment variables from .env file
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+    print("✅ Environment variables loaded from .env file")
+except ImportError:
+    print("⚠️ python-dotenv not installed. Using system environment variables.")
+    pass
+
+# ---------- Spanish Translator Dependency -----------
+from spanish_translator import SpanishTranslator
+
+# ---------- CONFIGURATION ----------
+FAISS_INDEX_PATH   = os.getenv("FAISS_INDEX_PATH", "faiss_index_multilingual")
+EMBEDDING_MODEL    = os.getenv("EMBEDDING_MODEL", "sentence-transformers/paraphrase-multilingual-mpnet-base-v2")
+OLLAMA_MODEL       = os.getenv("OLLAMA_MODEL", "gemma3n:e2b")
+TELEGRAM_TOKEN     = os.getenv("TG_TOKEN", "YOUR_TOKEN_HERE")
+CACHE_TTL          = 86400
+
+# OCR path (edit as needed)
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
+# Retrieval / ranking
+MAX_DOCS_FOR_RETRIEVAL = 15
+MAX_DOCS_FOR_CONTEXT   = 6
+CONTEXT_CHUNK_SIZE     = 1800
+CROSS_ENCODER_MODEL    = 'cross-encoder/mmarco-mMiniLMv2-L12-H384-v1'
+RELEVANCE_THRESHOLD    = 0.15
+SEMANTIC_WEIGHT        = 0.75
+LEXICAL_WEIGHT         = 0.25
+PHRASE_BONUS_MULTIPLIER = 1.5
+LENGTH_BONUS_MULTIPLIER = 0.3
+
+# ------------- LOGGING -------------
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# --- Config ---
-FAISS_INDEX_PATH = "faiss_index"
-EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
-OLLAMA_MODEL = "gemma3n:e4b"
-CACHE_TTL = 86400  # 24 hours
+# ------------- CACHE -------------
+class ResponseCache:
+    def __init__(self, ttl=CACHE_TTL):
+        self.ttl = ttl
+        self.cache = {}
 
-# Retrieval Settings
-MAX_DOCS_FOR_RETRIEVAL = 12
-MAX_DOCS_FOR_CONTEXT = 5
-CONTEXT_CHUNK_SIZE = 1500
+    def get(self, query):
+        entry = self.cache.get(query)
+        if entry and time.time() - entry["time"] < self.ttl:
+            return entry["response"]
+        return None
 
-# Cross-Encoder Re-ranking Configuration
-CROSS_ENCODER_MODEL = 'cross-encoder/ms-marco-MiniLM-L-6-v2'
-RELEVANCE_THRESHOLD = 0.2     # Minimum relevance score to keep documents (adjusted for BGE-M3)
+    def set(self, query, response):
+        self.cache[query] = {"response": response, "time": time.time()}
 
-# Hybrid Re-ranking Configuration
-SEMANTIC_WEIGHT = 0.7         # Weight for Cross-Encoder semantic scoring
-LEXICAL_WEIGHT = 0.3          # Weight for lexical scoring
-PHRASE_BONUS_MULTIPLIER = 2   # Multiplier for consecutive word matches
-LENGTH_BONUS_MULTIPLIER = 0.5 # Multiplier for document length bonus
+query_cache = ResponseCache()
 
-# --- Prompt (Bangladesh Context) ---
-PROMPT_TEMPLATE = """
+# ------------- EMBEDDINGS -------------
+device = "cuda" if torch.cuda.is_available() else "cpu"
+embeddings = HuggingFaceEmbeddings(
+    model_name=EMBEDDING_MODEL,
+    model_kwargs={"device": device}
+)
+
+# ------------- FAISS INDEX -------------
+vectorstore = FAISS.load_local(
+    FAISS_INDEX_PATH,
+    embeddings,
+    allow_dangerous_deserialization=True
+)
+
+# ------------- RETRIEVERS -------------
+from langchain.retrievers import EnsembleRetriever
+from langchain_community.retrievers import BM25Retriever
+
+def create_bm25_retriever():
+    all_docs = vectorstore.similarity_search("", k=10000)
+    bm25_retriever = BM25Retriever.from_documents(all_docs)
+    bm25_retriever.k = 5
+    return bm25_retriever
+
+dense_retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
+bm25_retriever = create_bm25_retriever()
+ensemble_retriever = EnsembleRetriever(
+    retrievers=[dense_retriever, bm25_retriever],
+    weights=[SEMANTIC_WEIGHT, LEXICAL_WEIGHT]
+)
+
+# ------------- CROSS ENCODER -------------
+try:
+    reranker = CrossEncoder(CROSS_ENCODER_MODEL, device=device)
+except Exception as e:
+    logger.warning(f"Could not load CrossEncoder: {e}")
+    reranker = None
+
+# ------------- OLLAMA LLM -------------
+llm = OllamaLLM(
+    model=OLLAMA_MODEL,
+    temperature=0.5,
+    top_p=0.8,
+    top_k=35,
+    max_tokens=1500,
+    repeat_penalty=1.2
+)
+
+# ------------- MULTILINGUAL PROMPTS -------------
+BANGLA_PROMPT_TEMPLATE = """
+আপনি বাংলাদেশের ব্যাংকিং এবং আর্থিক সেবা বিষয়ে বিশেষজ্ঞ একজন সহায়ক আর্থিক পরামর্শদাতা।
+সর্বদা বন্ধুত্বপূর্ণ এবং স্বাভাবিক ভাষায় উত্তর দিন।
+
+গুরুত্বপূর্ণ নির্দেশনা:
+- প্রদত্ত তথ্যের ভিত্তিতে উত্তর দিন
+- ফর্ম ফিল্ড, খালি টেমপ্লেট, এবং অসম্পূর্ণ নথির অংশ উপেক্ষা করুন
+- "প্রসঙ্গ অনুযায়ী" বলবেন না - সরাসরি উত্তর দিন
+- যথেষ্ট তথ্য না থাকলে বলুন "এ বিষয়ে আমার কাছে নির্দিষ্ট তথ্য নেই"
+- মুদ্রা হিসেবে বাংলাদেশী টাকা (৳/টক) ব্যবহার করুন
+- সংক্ষিপ্ত এবং ব্যবহারিক উত্তর দিন
+
+প্রসঙ্গ তথ্য:
+{context}
+
+প্রশ্ন: {input}
+
+উত্তর:"""
+
+ENGLISH_PROMPT_TEMPLATE = """
 You are a helpful financial advisor specializing in Bangladesh's banking and financial services.
 Always respond in a natural, conversational tone as if speaking to a friend.
 
@@ -62,416 +160,393 @@ Context Information:
 Question: {input}
 
 Answer:"""
-QA_PROMPT = PromptTemplate(input_variables=["context", "input"], template=PROMPT_TEMPLATE)
 
-# --- Cache ---
-class ResponseCache:
-    def __init__(self, ttl=CACHE_TTL):
-        self.ttl = ttl
-        self.cache = {}
+SPANISH_PROMPT_TEMPLATE = ENGLISH_PROMPT_TEMPLATE
 
-    def get(self, query):
-        entry = self.cache.get(query)
-        if entry and time.time() - entry["time"] < self.ttl:
-            return entry["response"]
-        return None
+# ------------- LANGUAGE DETECTION & PROMPT -------------
+BANGLA_KEYWORDS = ['ব্যাংক', 'টাকা', 'ঋণ', 'হিসাব', 'সুদ', 'বিনিয়োগ', 'কর', 'আয়কর', 'সঞ্চয়', 'আবেদন']
+ENGLISH_KEYWORDS = ['bank', 'loan', 'account', 'interest', 'investment', 'tax', 'income', 'savings', 'application']
+SPANISH_KEYWORDS = ['banco', 'cuenta', 'préstamo', 'crédito', 'dinero', 'inversión', 'impuesto', 'ahorro', 'tarjeta', 'financiero']
 
-    def set(self, query, response):
-        self.cache[query] = {"response": response, "time": time.time()}
+import langdetect
+from langdetect import detect
 
-# --- Query Categorizer ---
-class QueryProcessor:
-    def process(self, query: str) -> str:
-        q = query.lower()
-        if "tax" in q: return "taxation"
-        if "loan" in q: return "loans"
-        if "investment" in q: return "investment"
-        if "bank" in q: return "banking"
-        return "general"
-
-# --- Financial Advisor Bot ---
-class FinancialAdvisorTelegramBot:
+class LanguageProcessor:
     def __init__(self):
-        self.cache = ResponseCache()
-        self.processor = QueryProcessor()
-        self._init_rag()
-
-    def _init_rag(self):
-        print("[INFO] Initializing FAISS and LLM...")
-        logger.info("Initializing FAISS + LLM...")
-
-        embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL, model_kwargs={"device": "cpu"})
-        print(f"[INFO] Loading FAISS index from: {FAISS_INDEX_PATH}")
-        self.vectorstore = FAISS.load_local(FAISS_INDEX_PATH, embeddings, allow_dangerous_deserialization=True)
-        print("[INFO] ✅ FAISS index loaded successfully.")
-
-        self.llm = OllamaLLM(
-            model=OLLAMA_MODEL,
-            temperature=0.5,
-            max_tokens=1200,
-            top_p=0.9,
-            repeat_penalty=1.1
-        )
-        print(f"[INFO] ✅ Ollama LLM initialized with model: {OLLAMA_MODEL}")
-
-        # Initialize Cross-Encoder for advanced re-ranking
-        print("[INFO] Loading Cross-Encoder for document re-ranking...")
+        self.bangla_keywords = set(BANGLA_KEYWORDS)
+        self.english_keywords = set(ENGLISH_KEYWORDS)
+        self.spanish_keywords = set(SPANISH_KEYWORDS)
+    
+    def detect_language(self, text: str) -> str:
         try:
-            self.reranker = CrossEncoder(CROSS_ENCODER_MODEL)
-            print("[INFO] ✅ Cross-Encoder loaded successfully.")
-        except Exception as e:
-            print(f"[WARNING] Failed to load Cross-Encoder: {e}")
-            print("[INFO] Falling back to simple re-ranking...")
-            self.reranker = None
-
-        self.doc_chain = create_stuff_documents_chain(self.llm, QA_PROMPT)
-        retriever = self.vectorstore.as_retriever(search_kwargs={"k": MAX_DOCS_FOR_RETRIEVAL})
-        self.qa_chain = create_retrieval_chain(retriever, self.doc_chain)
-
-    def _rank_and_filter(self, docs: List[Document], query: str) -> List[Document]:
-        """Advanced re-ranking using hybrid approach combining Cross-Encoder and lexical scoring"""
-        if not docs:
-            return docs
-        
-        # Use hybrid re-ranking if Cross-Encoder is available
-        if self.reranker is not None:
-            return self._hybrid_rerank(docs, query)
+            detected = detect(text.lower())
+            if detected == 'bn':
+                return 'bangla'
+            elif detected == 'en':
+                return 'english'
+            elif detected == 'es':
+                return 'spanish'
+        except:
+            pass
+        # Fallback: check for keywords or Bangla unicode
+        text_lower = text.lower()
+        bangla_count = sum(1 for word in self.bangla_keywords if word in text)
+        english_count = sum(1 for word in self.english_keywords if word in text_lower)
+        spanish_count = sum(1 for word in self.spanish_keywords if word in text_lower)
+        bangla_chars = len([c for c in text if '\u0980' <= c <= '\u09FF'])
+        if bangla_chars > 0 or bangla_count > max(english_count, spanish_count):
+            return 'bangla'
+        elif spanish_count > english_count:
+            return 'spanish'
         else:
-            # Fallback to improved lexical matching
-            return self._lexical_rerank(docs, query)
+            return 'english'
     
-    def _hybrid_rerank(self, docs: List[Document], query: str) -> List[Document]:
-        """Hybrid re-ranking combining Cross-Encoder semantic scoring with lexical features"""
-        if not docs:
-            return docs
-        
-        try:
-            # First, filter out form fields and templates
-            informative_docs = []
-            for doc in docs:
-                if not self._is_form_field_or_template(doc.page_content):
-                    informative_docs.append(doc)
-                else:
-                    print(f"[INFO] 🚫 Filtered out form field: {doc.page_content[:50]}...")
-            
-            if not informative_docs:
-                print("[WARNING] All documents were filtered as form fields. Using original documents.")
-                informative_docs = docs
-            
-            # Log filtering statistics
-            self._log_reranking_stats(len(docs), len(informative_docs), "Form Field Filtering")
-            
-            print(f"[INFO] Re-ranking {len(informative_docs)} informative documents using Hybrid approach...")
-            
-            # Get Cross-Encoder scores
-            pairs = []
-            for doc in informative_docs:
-                content = doc.page_content[:1000]
-                pairs.append([query, content])
-            
-            cross_encoder_scores = self.reranker.predict(pairs)
-            
-            # Get lexical scores
-            lexical_scores = self._get_lexical_scores(informative_docs, query)
-            
-            # Combine scores with weights
-            combined_scores = []
-            for i, doc in enumerate(informative_docs):
-                # Normalize scores to 0-1 range
-                ce_score = max(0, cross_encoder_scores[i])  # Cross-encoder scores are usually positive
-                lex_score = lexical_scores[i] / max(lexical_scores) if max(lexical_scores) > 0 else 0
-                
-                # Weighted combination (70% semantic, 30% lexical)
-                combined_score = SEMANTIC_WEIGHT * ce_score + LEXICAL_WEIGHT * lex_score
-                combined_scores.append((doc, combined_score))
-            
-            # Sort by combined score
-            ranked_docs = [doc for doc, _ in sorted(combined_scores, key=lambda x: x[1], reverse=True)]
-            
-            # Filter by minimum relevance threshold
-            filtered_docs = [doc for doc, score in combined_scores if score > RELEVANCE_THRESHOLD]
-            
-            # Log final statistics
-            self._log_reranking_stats(len(informative_docs), len(filtered_docs), "Hybrid Re-ranking")
-            
-            print(f"[INFO] ✅ Hybrid re-ranking completed. Kept {len(filtered_docs)} relevant documents.")
-            return filtered_docs[:MAX_DOCS_FOR_CONTEXT]
-            
-        except Exception as e:
-            print(f"[WARNING] Hybrid re-ranking failed: {e}")
-            return self._lexical_rerank(docs, query)
-    
-    def _get_lexical_scores(self, docs: List[Document], query: str) -> List[float]:
-        """Calculate lexical similarity scores for documents"""
-        query_terms = set(query.lower().split())
-        stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'can'}
-        query_terms = query_terms - stop_words
-        
-        scores = []
-        for doc in docs:
-            content_lower = doc.page_content.lower()
-            
-            exact_matches = sum(1 for t in query_terms if t in content_lower)
-            partial_matches = sum(1 for t in query_terms if any(t in word for word in content_lower.split()))
-            
-            # Phrase matching
-            query_words = query.lower().split()
-            phrase_bonus = 0
-            for i in range(len(query_words) - 1):
-                phrase = f"{query_words[i]} {query_words[i+1]}"
-                if phrase in content_lower:
-                    phrase_bonus += PHRASE_BONUS_MULTIPLIER
-            
-            # Length bonus
-            length_bonus = min(len(content_lower) / 1000, 1.0) * LENGTH_BONUS_MULTIPLIER
-            
-            score = (exact_matches * 3 + 
-                    partial_matches * 1 + 
-                    phrase_bonus + 
-                    length_bonus)
-            
-            scores.append(score)
-        
-        return scores
+    def get_prompt_template(self, language: str) -> PromptTemplate:
+        if language == 'bangla':
+            return PromptTemplate(input_variables=["context", "input"], template=BANGLA_PROMPT_TEMPLATE)
+        elif language == 'spanish':
+            return PromptTemplate(input_variables=["context", "input"], template=SPANISH_PROMPT_TEMPLATE)
+        else:
+            return PromptTemplate(input_variables=["context", "input"], template=ENGLISH_PROMPT_TEMPLATE)
 
-    def _is_form_field_or_template(self, content: str) -> bool:
-        """Detect if content is just a form field or template rather than informative text"""
-        import re
-        content_lower = content.lower().strip()
-        
-        # Check for common form field patterns
-        form_patterns = [
-            r':\s*\.{3,}',  # ": ..."
-            r':\s*_{3,}',   # ": ___"
-            r':\s*\d+\.\s*$',  # ": 5."
-            r'\(if any\):\s*\d+',  # "(if any): 5"
-            r'^\w+\s+no\.\s*$',  # "Passport No."
-            r'^\s*(name|address|phone|email|passport|tin|nid|bin|vat)?\s*:\s*(if any)?\s*\d*\.?\s*$',
-            r'^\s*[a-z\s]+\s*:\s*\.{3,}',  # "Field Name: ..."
-            r'^\s*[a-z\s]+\s*:\s*_{3,}',   # "Field Name: ___"
-            r'^\s*\d+\.\s*[a-z\s]*\s*:\s*\.{3,}',  # "1. Field: ..."
-            r'^\s*\([^)]*\)\s*:\s*\.{3,}',  # "(Optional): ..."
-            r'^\s*[a-z\s]+\s*\([^)]*\)\s*:\s*\.{3,}',  # "Field (if any): ..."
-        ]
-        
-        for pattern in form_patterns:
-            if re.search(pattern, content_lower):
-                return True
-        
-        # Check if content is too short and uninformative
-        if len(content.strip()) < 30 and ':' in content:
-            return True
-            
-        # Check for repetitive dots, underscores, or numbers
-        if content.count('.') > len(content) * 0.3 or content.count('_') > 5:
-            return True
-        
-        # Check for common form field keywords
-        form_keywords = ['signature', 'date', 'seal', 'stamp', 'official use only', 'for office use']
-        if any(keyword in content_lower for keyword in form_keywords):
-            return True
-            
-        return False
+lang_processor = LanguageProcessor()
+spanish_translator = SpanishTranslator(OLLAMA_MODEL)
 
-    def _log_reranking_stats(self, original_count: int, filtered_count: int, method: str):
-        """Log re-ranking statistics for monitoring"""
-        print(f"[INFO] 📊 Re-ranking Stats ({method}):")
-        print(f"   - Original documents: {original_count}")
-        print(f"   - After filtering: {filtered_count}")
-        print(f"   - Filtered out: {original_count - filtered_count}")
-        if original_count > 0:
-            retention_rate = (filtered_count / original_count) * 100
-            print(f"   - Retention rate: {retention_rate:.1f}%")
+# ----------- LLM CHAINS -----------
+REFORMAT_PROMPT = PromptTemplate(
+    input_variables=["question"],
+    template="Rephrase the following question in one concise sentence:\n\n{question}"
+)
+HYDE_PROMPT = PromptTemplate(
+    input_variables=["question"],
+    template="Provide a short hypothetical answer (2-3 sentences) to the question:\n\n{question}"
+)
+llm_chain_reformat  = LLMChain(llm=llm, prompt=REFORMAT_PROMPT)
+llm_chain_hyde      = LLMChain(llm=llm, prompt=HYDE_PROMPT)
 
-    def _cross_encoder_rerank(self, docs: List[Document], query: str) -> List[Document]:
-        """Advanced semantic re-ranking using cross-encoder with form field filtering"""
-        if not docs:
-            return docs
-        
-        try:
-            # First, filter out form fields and templates
-            informative_docs = []
-            for doc in docs:
-                if not self._is_form_field_or_template(doc.page_content):
-                    informative_docs.append(doc)
-                else:
-                    print(f"[INFO] 🚫 Filtered out form field: {doc.page_content[:50]}...")
-            
-            if not informative_docs:
-                print("[WARNING] All documents were filtered as form fields. Using original documents.")
-                informative_docs = docs
-            
-            print(f"[INFO] Re-ranking {len(informative_docs)} informative documents using Cross-Encoder...")
-            
-            # Create query-document pairs for cross-encoder
-            pairs = []
-            for doc in informative_docs:
-                # Truncate document content to reasonable length for cross-encoder
-                content = doc.page_content[:1000]  # Keep first 1000 chars for relevance scoring
-                pairs.append([query, content])
-            
-            # Get relevance scores from cross-encoder
-            scores = self.reranker.predict(pairs)
-            
-            # Combine documents with scores and sort by relevance
-            scored_docs = list(zip(informative_docs, scores))
-            ranked_docs = [doc for doc, _ in sorted(scored_docs, key=lambda x: x[1], reverse=True)]
-            
-            # Filter out documents with very low relevance scores
-            filtered_docs = [doc for doc, score in scored_docs if score > RELEVANCE_THRESHOLD]
-            
-            print(f"[INFO] ✅ Cross-Encoder re-ranking completed. Kept {len(filtered_docs)} relevant documents.")
-            return filtered_docs[:MAX_DOCS_FOR_CONTEXT]  # Return top documents
-            
-        except Exception as e:
-            print(f"[WARNING] Cross-Encoder re-ranking failed: {e}")
-            return self._lexical_rerank(docs, query)
-    
-    def _lexical_rerank(self, docs: List[Document], query: str) -> List[Document]:
-        """Improved lexical re-ranking as fallback with enhanced scoring"""
-        if not docs:
-            return docs
-        
-        # Enhanced query preprocessing
-        query_terms = set(query.lower().split())
-        # Remove common stop words for better matching
-        stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'can'}
-        query_terms = query_terms - stop_words
-        
-        scored = []
-        
-        for doc in docs:
-            content_lower = doc.page_content.lower()
-            
-            # Skip form fields and templates
-            if self._is_form_field_or_template(doc.page_content):
-                continue
-            
-            # Enhanced scoring system
-            exact_matches = sum(1 for t in query_terms if t in content_lower)
-            partial_matches = sum(1 for t in query_terms if any(t in word for word in content_lower.split()))
-            
-            # Bonus for consecutive word matches (phrases)
-            query_words = query.lower().split()
-            phrase_bonus = 0
-            for i in range(len(query_words) - 1):
-                phrase = f"{query_words[i]} {query_words[i+1]}"
-                if phrase in content_lower:
-                    phrase_bonus += PHRASE_BONUS_MULTIPLIER
-            
-            # Bonus for document length (prefer longer, more informative documents)
-            length_bonus = min(len(content_lower) / 1000, 1.0) * LENGTH_BONUS_MULTIPLIER # Cap at 1.0
-            
-            # Calculate final score with weights
-            score = (exact_matches * 3 + 
-                    partial_matches * 1 + 
-                    phrase_bonus + 
-                    length_bonus)
-            
-            if score > 0:  # Only include documents with some relevance
-                scored.append((doc, score))
-        
-        # Sort by score and return top documents
-        ranked = [d for d, s in sorted(scored, key=lambda x: x[1], reverse=True)]
-        return ranked[:MAX_DOCS_FOR_CONTEXT]
+# ----------- UTILS -----------
+_ESCAPE_RE = re.compile(r"([_*\[\]()~`>#+\-=|{}.!\\])")
+def escape_markdown(text: str) -> str:
+    return _ESCAPE_RE.sub(r"\\\1", text)
 
-    def _prepare_docs(self, docs: List[Document]) -> List[Document]:
-        processed = []
-        for d in docs[:MAX_DOCS_FOR_CONTEXT]:
-            content = d.page_content[:CONTEXT_CHUNK_SIZE] + ("...[truncated]" if len(d.page_content) > CONTEXT_CHUNK_SIZE else "")
-            processed.append(Document(page_content=content, metadata=d.metadata))
-        return processed
+def extract_filters(query: str) -> Tuple[str, Dict[str, Any]]:
+    filters: Dict[str, Any] = {}
+    cleaned = query
+    m = re.search(r'\bsource:([^\s]+)', query, flags=re.I)
+    if m:
+        filters["source"] = m.group(1).strip()
+        cleaned = cleaned.replace(m.group(0), "")
+    m = re.search(r'\bpage:(\d+)\b', query, flags=re.I)
+    if m:
+        filters["page"] = int(m.group(1))
+        cleaned = cleaned.replace(m.group(0), "")
+    return cleaned.strip(), filters
 
-    def process_query(self, query: str) -> Dict:
-        category = self.processor.process(query)
-        logger.info(f"Processing query (category={category}): {query}")
-        print(f"[INFO] 🔍 Received query: {query}")
+def expand_query(query: str) -> List[str]:
+    queries = [query]
+    try:
+        hyde_answer = llm_chain_hyde.run(query)
+        queries.append(hyde_answer)
+    except: pass
+    try:
+        reformatted = llm_chain_reformat.run(query)
+        queries.append(reformatted)
+    except: pass
+    return queries
 
-        cached = self.cache.get(query)
-        if cached:
-            print("[INFO] ✅ Cache hit - returning stored response.")
-            return cached
+def multi_query_retrieval(query: str, retriever, top_k: int = 10) -> List[Document]:
+    expanded_queries = expand_query(query)
+    all_docs = []
+    for q in expanded_queries:
+        docs = retriever.get_relevant_documents(q)
+        all_docs.extend(docs)
+    seen = set()
+    unique_docs = []
+    for doc in all_docs:
+        if doc.page_content not in seen:
+            seen.add(doc.page_content)
+            unique_docs.append(doc)
+    return unique_docs[:top_k]
 
-        try:
-            retrieved = self.vectorstore.similarity_search(query, k=MAX_DOCS_FOR_RETRIEVAL)
-            filtered = self._rank_and_filter(retrieved, query)
-            if not filtered:
-                print("[INFO] ❌ No relevant documents found.")
-                return {"response": "I could not find relevant information in my database.", "sources": [], "contexts": []}
+def build_hypothetical_doc(question: str) -> Document:
+    hypo_answer = llm_chain_hyde.run(question).strip()
+    logger.info("[HyDE] Hypothetical answer: %s", hypo_answer)
+    return Document(page_content=hypo_answer, metadata={"source": "Hypo_DOC"})
 
-            docs = self._prepare_docs(filtered)
+def rerank_documents(query: str, docs: List[Document], top_n: int = 15) -> List[Document]:
+    if not reranker:
+        return docs[:top_n]
+    pairs = [[query, doc.page_content[:1000]] for doc in docs]
+    scores = reranker.predict(pairs)
+    reranked = sorted(zip(scores, docs), key=lambda x: x[0], reverse=True)
+    return [doc for score, doc in reranked[:top_n]]
 
-            print("[INFO] ✅ Running LLM to generate answer...")
-            result = self.qa_chain.invoke({"input": query})
+def truncate_context(docs: List[Document], max_tokens: int = 4000) -> List[Document]:
+    total_content = ""
+    selected_docs = []
+    for doc in docs:
+        if len(total_content) + len(doc.page_content) < max_tokens * 4:
+            total_content += doc.page_content + "\n\n"
+            selected_docs.append(doc)
+        else:
+            break
+    return selected_docs
 
-            answer = result.get("answer") or result.get("result") or result.get("output_text") or str(result)
-            print("[INFO] ✅ Answer generated successfully.")
+def smart_context_selection(query: str, docs: List[Document], max_docs: int = 8) -> List[Document]:
+    reranked_docs = rerank_documents(query, docs, top_n=max_docs)
+    return truncate_context(reranked_docs)
 
-            context_texts = [d.page_content for d in docs]
+def validate_response(response: str, context: str, query: str) -> dict:
+    validation = {"is_grounded": False, "confidence": 0.0, "issues": []}
+    if any(phrase in response.lower() for phrase in ["cannot find", "don't know", "not provided", "no information"]):
+        validation["is_grounded"] = True
+        validation["confidence"] = 0.95
+        return validation
+    response_words = set(response.lower().split())
+    context_words = set(context.lower().split())
+    stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'can', 'this', 'that', 'these', 'those', 'i', 'you', 'he', 'she', 'it', 'we', 'they', 'me', 'him', 'her', 'us', 'them'}
+    response_clean = response_words - stop_words
+    context_clean = context_words - stop_words
+    if len(response_clean) > 0:
+        overlap = len(response_clean.intersection(context_clean))
+        overlap_ratio = overlap / len(response_clean)
+        length_boost = min(0.2, len(response) / 1000)
+        base_confidence = min(0.9, overlap_ratio * 1.5)
+        final_confidence = min(0.95, base_confidence + length_boost)
+        validation["is_grounded"] = final_confidence > 0.3
+        validation["confidence"] = final_confidence
+        if final_confidence < 0.5:
+            validation["issues"].append("Low semantic overlap with context")
+    else:
+        validation["confidence"] = 0.3
+        validation["issues"].append("Response too short for meaningful validation")
+    return validation
 
-            response = {
-                "response": answer,
-                "sources": [{"file": d.metadata.get("source", "Unknown")} for d in docs],
-                "contexts": context_texts
-            }
-            self.cache.set(query, response)
-            return response
+# ------------- MAIN QUERY PIPELINE (MULTILINGUAL) -------------
+async def process_user_query(raw_query: str) -> Dict:
+    # Detect language (pre-translate Spanish for all downstream chains)
+    detected_language = lang_processor.detect_language(raw_query)
+    orig_query = raw_query
+    query_for_search = raw_query
 
-        except Exception as e:
-            logger.error(f"Error processing query: {e}")
-            print(f"[ERROR] {e}")
-            return {"response": f"Error: {e}", "sources": [], "contexts": []}
+    # Translate if Spanish
+    if detected_language == 'spanish':
+        logger.info("Translating Spanish query to English...")
+        english_query, _ = spanish_translator.process_spanish_query(raw_query)
+        query_for_search = english_query
+        logger.info(f"Translated Spanish query: {english_query}")
 
-# --- Telegram Handlers ---
-bot_instance = FinancialAdvisorTelegramBot()
+    # Check cache
+    cached = query_cache.get(orig_query)
+    if cached:
+        logger.info("[CACHE HIT] %s", orig_query)
+        return cached
+
+    # Filter extraction
+    user_query, filters = extract_filters(query_for_search)
+    logger.info(f"Parsed filters: {filters}")
+
+    # Query reformulation (robustness)
+    try:
+        reformatted = llm_chain_reformat.run(user_query).strip()
+    except:
+        reformatted = user_query
+
+    # Retriever (ensemble, with fallback to filtered dense if needed)
+    base_retriever = ensemble_retriever
+    if filters:
+        base_retriever = vectorstore.as_retriever(search_kwargs={"k": 25, "filter": filters})
+
+    # Multi-query retrieval & HyDE
+    retrieved = multi_query_retrieval(reformatted, base_retriever, top_k=25)
+    hypo_doc = build_hypothetical_doc(reformatted)
+    retrieved.append(hypo_doc)
+
+    # Context selection
+    top_docs = smart_context_selection(reformatted, retrieved, max_docs=MAX_DOCS_FOR_CONTEXT)
+    context_text = "\n".join([doc.page_content for doc in top_docs])
+
+    # Dynamic prompt (detect again in case of OCR/PDF)
+    prompt_language = detected_language
+    if prompt_language == 'spanish':
+        # downstream prompt must be English, since we translated
+        prompt_language = 'english'
+    prompt = lang_processor.get_prompt_template(prompt_language)
+    llm_chain_qa = LLMChain(llm=llm, prompt=prompt)
+    combine_chain = StuffDocumentsChain(
+        llm_chain=llm_chain_qa,
+        document_variable_name="context"
+    )
+
+    # Run QA
+    try:
+        answer = combine_chain.run(input_documents=top_docs, question=user_query)
+    except Exception as e:
+        logger.exception("LLM failed")
+        answer = f"Error: {e}"
+
+    # Translate answer back to Spanish if necessary
+    if detected_language == 'spanish':
+        logger.info("Translating English answer to Spanish...")
+        answer = spanish_translator.process_english_response(answer, orig_query)
+
+    # Validate
+    doc_relevance_scores = []
+    for doc in top_docs:
+        if doc.metadata.get("source") != "Hypo_DOC":
+            query_words = set(reformatted.lower().split())
+            doc_words = set(doc.page_content.lower().split())
+            relevance = len(query_words.intersection(doc_words)) / max(len(query_words), 1)
+            doc_relevance_scores.append(relevance)
+    avg_relevance = sum(doc_relevance_scores) / len(doc_relevance_scores) if doc_relevance_scores else 0.3
+    validation = validate_response(answer, context_text, user_query)
+    if validation["confidence"] > 0.3:
+        relevance_boost = min(0.15, avg_relevance * 0.3)
+        validation["confidence"] = min(0.95, validation["confidence"] + relevance_boost)
+
+    response = {
+        "result": answer,
+        "source_documents": top_docs,
+        "validation": validation,
+        "avg_doc_relevance": avg_relevance,
+        "language": detected_language
+    }
+    query_cache.set(orig_query, response)
+    return response
+
+# ------------- TELEGRAM HANDLERS -------------
+async def start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    welcome_msg = (
+        "🇧🇩 স্বাগতম! আমি আপনার আর্থিক পরামর্শদাতা।\n"
+        "🇬🇧 Welcome! I'm your financial advisor.\n"
+        "🇪🇸 ¡Bienvenido! Soy tu asesor financiero.\n\n"
+        "আপনি বাংলা, ইংরেজি বা স্প্যানিশ ভাষায় যেকোনো আর্থিক প্রশ্ন করতে পারেন।\n"
+        "You can ask any financial question in Bangla, English, or Spanish.\n"
+        "Puedes hacer cualquier pregunta financiera en bengalí, inglés o español."
+    )
+    await update.message.reply_text(welcome_msg)
+
+async def handle_query(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    user_query = update.message.text.strip()
+    if not user_query:
+        await update.message.reply_text("Please enter a valid question. / দয়া করে একটি বৈধ প্রশ্ন লিখুন। / Por favor ingrese una pregunta válida.")
+        return
+
+    detected_lang = lang_processor.detect_language(user_query)
+    processing_msg = {
+        'bangla': "আপনার প্রশ্ন প্রক্রিয়া করা হচ্ছে...",
+        'spanish': "Procesando tu pregunta...",
+        'english': "Processing your question..."
+    }.get(detected_lang, "Processing your question...")
+
+    await update.message.reply_text(processing_msg)
+
+    response = await process_user_query(user_query)
+    answer = response.get("result") if isinstance(response, dict) else str(response)
+    await send_in_chunks(update, answer)
+
+    # Send sources
+    if isinstance(response, dict) and response.get("source_documents"):
+        grouped = {}
+        for i, doc in enumerate(response["source_documents"]):
+            filename = doc.metadata.get("source", "Unknown")
+            grouped.setdefault(filename, []).append(doc.page_content)
+
+        lang = response.get("language", "english")
+        header = {
+            'bangla': "📄 উৎস নথিসমূহ:",
+            'spanish': "📄 Documentos Fuente:",
+            'english': "📄 Retrieved Documents:"
+        }.get(lang, "📄 Retrieved Documents:")
+        organized_output = header + "\n"
+        for file, chunks in grouped.items():
+            organized_output += f"\n📂 **{file}**\n"
+            for idx, chunk in enumerate(chunks, 1):
+                chunk_label = {
+                    'bangla': f"অংশ {idx}",
+                    'spanish': f"Fragmento {idx}",
+                    'english': f"Chunk {idx}"
+                }.get(lang, f"Chunk {idx}")
+                organized_output += f"\n🔹 {chunk_label}:\n{chunk}\n"
+        await send_in_chunks(update, organized_output)
 
 async def send_in_chunks(update: Update, text: str):
     MAX_LEN = 4000
     for i in range(0, len(text), MAX_LEN):
         await update.message.reply_text(text[i:i+MAX_LEN])
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Hi! Ask me any financial question.")
-
-async def handle_query(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    user_query = update.message.text.strip()
-    if not user_query:
-        await update.message.reply_text("Please enter a valid question.")
+# ------------- PDF/IMAGE HANDLERS -------------
+async def handle_pdf(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    doc: TelegramDoc = update.message.document
+    if not doc.file_name.lower().endswith(".pdf"):
+        await update.message.reply_text("❗ Please send a valid PDF document.")
         return
+    file: File = await doc.get_file()
+    pdf_bytes = await file.download_as_bytearray()
+    try:
+        pdf_doc = fitz.open("pdf", pdf_bytes)
+        extracted_text = "\n".join(page.get_text() for page in pdf_doc)
+        if not extracted_text.strip():
+            raise ValueError("Empty PDF content")
+        document = Document(page_content=extracted_text, metadata={"source": doc.file_name})
+        # Language detection for OCR/PDF content!
+        prompt_language = lang_processor.detect_language(extracted_text)
+        prompt = lang_processor.get_prompt_template(prompt_language)
+        llm_chain_qa = LLMChain(llm=llm, prompt=prompt)
+        combine_chain = StuffDocumentsChain(
+            llm_chain=llm_chain_qa,
+            document_variable_name="context"
+        )
+        question = {
+            "bangla": "এই PDF টি সংক্ষেপে ব্যাখ্যা করুন।",
+            "spanish": "Resume el PDF subido.",
+            "english": "Summarize the uploaded PDF."
+        }.get(prompt_language, "Summarize the uploaded PDF.")
+        answer = combine_chain.run(input_documents=[document], question=question)
+        await update.message.reply_text(escape_markdown(f"📄 *PDF Answer:*\n{answer}"), parse_mode="MarkdownV2")
+    except Exception as e:
+        logger.exception("PDF parsing failed")
+        await update.message.reply_text(f"⚠️ Error processing PDF: {e}")
 
-    print(f"[INFO] 👤 User asked: {user_query}")
-    await update.message.reply_text("Processing your question...")
-    response = bot_instance.process_query(user_query)
+async def handle_image(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    photo: PhotoSize = update.message.photo[-1]
+    file: File = await photo.get_file()
+    img_bytes = await file.download_as_bytearray()
+    try:
+        image = Image.open(io.BytesIO(img_bytes))
+        custom_config = r'--oem 3 --psm 6'
+        extracted_text = pytesseract.image_to_string(image, config=custom_config)
+        await update.message.reply_text(f"OCR text: {extracted_text}")
+        if not extracted_text.strip():
+            await update.message.reply_text("❗ Couldn't extract readable text from the image.")
+            return
+        document = Document(page_content=extracted_text, metadata={"source": "User_Image"})
+        prompt_language = lang_processor.detect_language(extracted_text)
+        prompt = lang_processor.get_prompt_template(prompt_language)
+        llm_chain_qa = LLMChain(llm=llm, prompt=prompt)
+        combine_chain = StuffDocumentsChain(
+            llm_chain=llm_chain_qa,
+            document_variable_name="context"
+        )
+        question = {
+            "bangla": "এই ছবিতে কী আছে?",
+            "spanish": "¿Qué contiene esta imagen?",
+            "english": "What does this image contain?"
+        }.get(prompt_language, "What does this image contain?")
+        answer = combine_chain.run(input_documents=[document], question=question)
+        await update.message.reply_text(escape_markdown(f"🖼️ *Image Answer:*\n{answer}"), parse_mode="MarkdownV2")
+    except Exception as e:
+        logger.exception("Image OCR failed")
+        await update.message.reply_text(f"⚠️ Error processing image: {e}")
 
-    # ✅ Send the final answer
-    answer = response.get("response") if isinstance(response, dict) else str(response)
-    await send_in_chunks(update, answer)
-
-    # ✅ Organize chunks by source file
-    if isinstance(response, dict) and response.get("sources") and response.get("contexts"):
-        grouped = {}
-        for i, src in enumerate(response["sources"]):
-            filename = src["file"]
-            grouped.setdefault(filename, []).append(response["contexts"][i])
-
-        # ✅ Build organized output
-        organized_output = "📄 Retrieved Documents:\n"
-        for file, chunks in grouped.items():
-            organized_output += f"\n📂 **{file}**\n"
-            for idx, chunk in enumerate(chunks, 1):
-                organized_output += f"\n🔹 Chunk {idx}:\n{chunk}\n"
-
-        await send_in_chunks(update, organized_output)
-
-    print("[INFO] ✅ Response sent to user.")
-
-# --- Run Bot ---
+# ------------- MAIN ENTRYPOINT -------------
 if __name__ == "__main__":
-    token = os.getenv("TELEGRAM_TOKEN", "7596897324:AAG3TsT18amwRF2nRBcr1JS6NdGs96Ie-D0")
-    print("[INFO] 🚀 Starting Telegram Financial Advisor Bot...")
-    app = ApplicationBuilder().token(token).build()
-    logger.info("Bot started successfully.")
-    print("[INFO] ✅ Telegram Bot is now polling for messages...")
+    if TELEGRAM_TOKEN == "YOUR_TOKEN_HERE":
+        raise RuntimeError("Please set TG_TOKEN env variable to your Telegram token.")
+    app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_query))
+    app.add_handler(MessageHandler(filters.Document.PDF, handle_pdf))
+    app.add_handler(MessageHandler(filters.PHOTO, handle_image))
+    logger.info("Bot started. Press Ctrl+C to stop.")
     app.run_polling()
