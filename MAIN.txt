@@ -26,7 +26,7 @@ from spanish_translator import SpanishTranslator
 # ---------- CONFIGURATION ----------
 FAISS_INDEX_PATH   = os.getenv("FAISS_INDEX_PATH", "faiss_index_multilingual")
 EMBEDDING_MODEL    = os.getenv("EMBEDDING_MODEL", "sentence-transformers/paraphrase-multilingual-mpnet-base-v2")
-OLLAMA_MODEL       = os.getenv("OLLAMA_MODEL", "llama3.2:1b")
+OLLAMA_MODEL       = os.getenv("OLLAMA_MODEL", "gemma3n:e4b")
 TELEGRAM_TOKEN     = os.getenv("TG_TOKEN", "YOUR_TOKEN_HERE")
 CACHE_TTL          = 86400
 
