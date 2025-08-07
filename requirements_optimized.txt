@@ -1,0 +1,65 @@
+# M1 MacBook Air Optimized Dependencies (8GB RAM)
+
+# Core RAG Dependencies - Updated versions for M1 compatibility
+langchain==0.1.20
+langchain-community==0.0.38
+langchain-groq==0.1.5
+langchain-huggingface==0.0.3
+
+# Vector Database - CPU optimized for M1
+faiss-cpu==1.8.0
+
+# Embedding Models - Optimized for M1 and memory efficiency
+sentence-transformers==2.7.0
+transformers==4.40.2
+
+# PyTorch - M1 optimized version with MPS support
+torch==2.3.0
+torchvision==0.18.0
+torchaudio==2.3.0
+
+# PDF Processing - M1 compatible
+PyMuPDF==1.24.5
+
+# Text Processing - Memory optimized
+nltk==3.8.1
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.25.0
+
+# Machine Learning - M1 optimized
+numpy==1.26.4
+scikit-learn==1.4.2
+
+# Cross-encoder for re-ranking - Memory efficient
+sentence-transformers[cross-encoder]==2.7.0
+
+# System & Utilities - M1 compatible
+psutil==5.9.8
+python-telegram-bot==21.3
+python-dotenv==1.0.1
+
+# Async support for better performance
+aiofiles==23.2.1
+asyncio-throttle==1.0.2
+
+# Memory profiling and optimization (optional)
+memory-profiler==0.61.0
+pympler==0.9
+
+# Evaluation (if using RAGAS) - Updated versions
+ragas==0.1.11
+datasets==2.19.1
+
+# Additional M1 optimizations
+accelerate==0.30.1  # For model loading optimization
+safetensors==0.4.3  # Faster model serialization
+
+# JSON handling for structured responses
+orjson==3.10.3  # Faster JSON parsing
+
+# Caching for better performance
+diskcache==5.6.3
+
+# Progress bars and monitoring
+tqdm==4.66.4
+rich==13.7.1  # Better console output

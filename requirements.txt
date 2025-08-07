@@ -1,0 +1,34 @@
+# Core RAG Dependencies
+langchain==0.1.0
+langchain-community==0.0.20
+langchain-groq==0.0.1
+langchain-huggingface==0.3.1
+
+# Vector Database
+faiss-cpu==1.7.4
+
+# Embedding Models
+sentence-transformers==2.2.2
+transformers==4.36.2
+
+# PDF Processing
+PyMuPDF==1.23.8
+
+# Text Processing
+nltk==3.8.1
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.23.0
+
+# Machine Learning
+torch==2.1.2
+numpy==1.24.3
+scikit-learn==1.3.2
+
+# System & Utilities
+psutil==5.9.6
+python-telegram-bot==20.7
+python-dotenv==1.0.0
+
+# Evaluation (if using RAGAS)
+ragas==0.1.0
+datasets==2.15.0 

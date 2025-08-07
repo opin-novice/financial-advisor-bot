@@ -1,0 +1,12 @@
+{
+  "context_precision": 0.99999999995,
+  "context_recall": 1.0,
+  "faithfulness": 0.5,
+  "answer_relevancy": 0.5371861488122235,
+  "metadata": {
+    "samples_evaluated": 1,
+    "model": "llama3-8b-8192",
+    "max_tokens": 500,
+    "delay_seconds": 40
+  }
+}

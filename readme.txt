@@ -47,3 +47,14 @@ pip install pymupdf pillow numpy
 
 pip install huggingface_hub
 huggingface-cli login
+
+groq shift
+pip install groq
+pip install langchain-groq
+
+semantic chunking
+
+pip install sentence-transformers nltk scikit-learn
+pip install FlagEmbedding
+
+run setup_nltk.py before docadd.py
