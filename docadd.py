@@ -15,10 +15,10 @@ import re
 # --- Configuration ---
 PDF_DIR = "data"              # Folder containing your PDF files
 FAISS_INDEX_PATH = "faiss_index"
-EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
+EMBEDDING_MODEL = "BAAI/bge-m3"
 
 # ✅ Semantic Chunking Settings
-SENTENCE_EMBEDDING_MODEL = "all-MiniLM-L6-v2"  # For sentence similarity
+SENTENCE_EMBEDDING_MODEL = "all-MiniLM-L6-v2"  # For sentence similarity - for better chunking - all-mpnet-base-v2 use this
 MAX_CHUNK_SIZE = 1200          # Maximum tokens per chunk
 MIN_CHUNK_SIZE = 200           # Minimum tokens per chunk
 SIMILARITY_THRESHOLD = 0.7     # Threshold for grouping sentences
@@ -270,10 +270,11 @@ print(f"[INFO] Total semantic chunks prepared for embedding: {len(documents)}")
 
 # --- Embedding Setup ---
 print("[INFO] Generating embeddings...")
-device = "cuda" if torch.cuda.is_available() else "cpu"
+# Use MPS for M1 Mac, CUDA for NVIDIA GPUs, or CPU as fallback
+device = "mps" if torch.backends.mps.is_available() else ("cuda" if torch.cuda.is_available() else "cpu")
 embeddings = HuggingFaceEmbeddings(
     model_name=EMBEDDING_MODEL,
-    model_kwargs={"device": device}
+    model_kwargs={"device": device, "model_kwargs": {"torch_dtype": torch.float16 if device != "cpu" else torch.float32}}
 )
 
 # --- Create and Save FAISS Index ---
