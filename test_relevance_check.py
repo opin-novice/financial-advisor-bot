@@ -2,6 +2,7 @@
 """
 Test relevance checking functionality
 """
+import pytest
 from langchain.schema import Document
 from rag_utils import RAGUtils
 
@@ -36,11 +37,11 @@ def test_relevance_checking():
         is_relevant3, confidence3 = rag.check_query_relevance(query, [])
         print(f"✅ Test 3 - Empty docs: Relevant={is_relevant3}, Confidence={confidence3:.3f}")
         
-        return True
+        assert True  # All tests passed
         
     except Exception as e:
         print(f"❌ Relevance checking test failed: {e}")
-        return False
+        pytest.fail(f"Relevance checking test failed: {e}")
 
 def test_query_refinement():
     """Test query refinement with better output handling"""
@@ -65,11 +66,11 @@ def test_query_refinement():
                 
             print(f"📝 '{query}' -> '{refined_clean[:100]}{'...' if len(refined_clean) > 100 else ''}'")
         
-        return True
+        assert True  # All tests passed
         
     except Exception as e:
         print(f"❌ Query refinement test failed: {e}")
-        return False
+        pytest.fail(f"Query refinement test failed: {e}")
 
 if __name__ == "__main__":
     print("🚀 Testing RAG Relevance & Refinement")

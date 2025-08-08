@@ -4,6 +4,7 @@ Comprehensive test suite for the Advanced RAG Feedback Loop
 """
 import sys
 import os
+import pytest
 from typing import List
 from langchain.schema import Document
 
@@ -41,11 +42,13 @@ def test_feedback_loop_initialization():
         )
         
         print("✅ Advanced RAG Feedback Loop initialized successfully")
-        return feedback_loop, vectorstore, rag_utils
+        assert feedback_loop is not None
+        assert vectorstore is not None
+        assert rag_utils is not None
         
     except Exception as e:
         print(f"❌ Feedback loop initialization failed: {e}")
-        return None, None, None
+        pytest.fail(f"Feedback loop initialization failed: {e}")
 
 def test_feedback_loop_retrieval(feedback_loop):
     """Test the feedback loop retrieval process"""
@@ -53,7 +56,7 @@ def test_feedback_loop_retrieval(feedback_loop):
     
     if feedback_loop is None:
         print("❌ Skipping retrieval test - feedback loop not initialized")
-        return False
+        pytest.skip("Feedback loop not initialized")
     
     try:
         # Test queries with different complexity levels
@@ -101,11 +104,11 @@ def test_feedback_loop_retrieval(feedback_loop):
                 else:
                     print(f"   ⚠️  Test {i} - unexpectedly high relevance for irrelevant query")
         
-        return True
+        assert True  # Test completed successfully
         
     except Exception as e:
         print(f"❌ Feedback loop retrieval test failed: {e}")
-        return False
+        pytest.fail(f"Feedback loop retrieval test failed: {e}")
 
 def test_configuration_modes():
     """Test different configuration modes"""
@@ -135,11 +138,11 @@ def test_configuration_modes():
             
             print(f"   ✅ '{mode}' mode configuration valid")
         
-        return True
+        assert True  # All configuration modes tested successfully
         
     except Exception as e:
         print(f"❌ Configuration modes test failed: {e}")
-        return False
+        pytest.fail(f"Configuration modes test failed: {e}")
 
 def test_refinement_strategies():
     """Test individual refinement strategies"""
@@ -203,11 +206,11 @@ def test_refinement_strategies():
             except Exception as e:
                 print(f"   ❌ Strategy '{strategy}' failed: {e}")
         
-        return True
+        assert True  # All refinement strategies tested successfully
         
     except Exception as e:
         print(f"❌ Refinement strategies test failed: {e}")
-        return False
+        pytest.fail(f"Refinement strategies test failed: {e}")
 
 def test_integration_with_main():
     """Test integration with main bot class"""
@@ -240,17 +243,17 @@ def test_integration_with_main():
                 else:
                     print("⚠️  Feedback loop metadata missing (might be using traditional mode)")
                 
-                return True
+                assert True  # Integration test successful
             else:
                 print("❌ Query processing returned unexpected result")
-                return False
+                pytest.fail("Query processing returned unexpected result")
         else:
             print("⚠️  Feedback loop not initialized - using traditional RAG")
-            return True  # This is acceptable fallback behavior
+            assert True  # This is acceptable fallback behavior
         
     except Exception as e:
         print(f"❌ Integration test failed: {e}")
-        return False
+        pytest.fail(f"Integration test failed: {e}")
 
 def test_fallback_behavior():
     """Test fallback to traditional RAG when feedback loop fails"""
@@ -281,11 +284,11 @@ def test_fallback_behavior():
             
             # Restore original setting
             config.FEEDBACK_LOOP_CONFIG["enable_feedback_loop"] = original_setting
-            return True
+            assert True  # Fallback behavior test successful
         else:
             print("❌ Traditional RAG fallback failed")
             config.FEEDBACK_LOOP_CONFIG["enable_feedback_loop"] = original_setting
-            return False
+            pytest.fail("Traditional RAG fallback failed")
         
     except Exception as e:
         print(f"❌ Fallback behavior test failed: {e}")
@@ -294,7 +297,7 @@ def test_fallback_behavior():
             config.FEEDBACK_LOOP_CONFIG["enable_feedback_loop"] = original_setting
         except:
             pass
-        return False
+        pytest.fail(f"Fallback behavior test failed: {e}")
 
 if __name__ == "__main__":
     print("🚀 Advanced RAG Feedback Loop Test Suite")

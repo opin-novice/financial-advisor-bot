@@ -3,16 +3,26 @@
 Quick test script to verify Groq rate limiting works
 """
 import time
+import pytest
 from langchain_groq import ChatGroq
 
 # Same settings as eval.py
 GROQ_MODEL = "llama3-8b-8192"
-GROQ_API_KEY = "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"
 MAX_TOKENS = 500
 DELAY_SECONDS = 40
 
+# Get API key from environment
+import os
+from dotenv import load_dotenv
+load_dotenv()
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+
 def test_rate_limiting():
     """Test basic rate limiting with Groq"""
+    if not GROQ_API_KEY or GROQ_API_KEY == "your_groq_api_key_here":
+        print("⚠️ GROQ_API_KEY not found in environment or using template value")
+        pytest.skip("GROQ_API_KEY not found in environment or using template value")
+        
     print("🧪 Testing Groq Rate Limiting")
     print(f"📊 Model: {GROQ_MODEL}")
     print(f"⚙️ Max tokens: {MAX_TOKENS}, Delay: {DELAY_SECONDS}s")
@@ -58,17 +68,17 @@ def test_rate_limiting():
                         print(f"✅ Retry successful: {response.content[:100]}...")
                     except Exception as retry_e:
                         print(f"❌ Retry failed: {retry_e}")
-                        return False
+                        pytest.fail(f"Retry failed: {retry_e}")
                 else:
                     print(f"❌ Non-rate-limit error: {e}")
-                    return False
+                    pytest.fail(f"Non-rate-limit error: {e}")
         
         print("\n🎉 Rate limiting test passed!")
-        return True
+        assert True  # Test passed
         
     except Exception as e:
         print(f"❌ Test setup failed: {e}")
-        return False
+        pytest.fail(f"Test setup failed: {e}")
 
 if __name__ == "__main__":
     success = test_rate_limiting()

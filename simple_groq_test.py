@@ -3,6 +3,7 @@
 Simple Groq API connectivity test
 """
 import sys
+import pytest
 
 def test_groq_basic():
     """Test basic Groq API connection without RAG pipeline"""
@@ -11,8 +12,15 @@ def test_groq_basic():
     try:
         from langchain_groq import ChatGroq
         
-        # Using the API key from your config
-        api_key = "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"
+        # Try to get API key from environment or config
+        import os
+        from dotenv import load_dotenv
+        load_dotenv()
+        
+        api_key = os.getenv("GROQ_API_KEY")
+        if not api_key or api_key == "your_groq_api_key_here":
+            print("⚠️ GROQ_API_KEY not found in environment or using template value")
+            pytest.skip("GROQ_API_KEY not found in environment or using template value")
         
         llm = ChatGroq(
             model="llama3-8b-8192",
@@ -24,11 +32,11 @@ def test_groq_basic():
         # Simple test query
         response = llm.invoke("What is 2+2? Answer briefly.")
         print(f"✅ Groq API working! Response: {response.content}")
-        return True
+        assert response.content is not None
         
     except Exception as e:
         print(f"❌ Groq API test failed: {e}")
-        return False
+        pytest.fail(f"Groq API test failed: {e}")
 
 def test_rag_utils():
     """Test RAG utilities separately"""
@@ -44,11 +52,11 @@ def test_rag_utils():
         refined = rag.refine_query(original_query)
         print(f"📝 Query refinement: '{original_query}' -> '{refined}'")
         
-        return True
+        assert refined is not None
         
     except Exception as e:
         print(f"❌ RAG utilities test failed: {e}")
-        return False
+        pytest.fail(f"RAG utilities test failed: {e}")
 
 if __name__ == "__main__":
     print("🚀 Simple Groq API Test")

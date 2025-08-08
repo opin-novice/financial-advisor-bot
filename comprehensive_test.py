@@ -3,6 +3,7 @@
 Comprehensive test of the RAG system with Groq API
 """
 import sys
+import pytest
 from langchain.schema import Document
 
 def test_full_integration():
@@ -44,11 +45,11 @@ def test_full_integration():
                 print(f"❌ Query {i} failed: {e}")
                 return False
         
-        return True
+        assert True  # Full integration test successful
         
     except Exception as e:
         print(f"❌ Full integration test failed: {e}")
-        return False
+        pytest.fail(f"Full integration test failed: {e}")
 
 def test_rag_utils_integration():
     """Test RAG utilities integration"""
@@ -78,11 +79,11 @@ def test_rag_utils_integration():
         validation = rag.validate_answer(query, answer, contexts)
         print(f"✅ Answer validation: Valid={validation['valid']}, Confidence={validation['confidence']:.3f}")
         
-        return True
+        assert True  # RAG utilities integration test successful
         
     except Exception as e:
         print(f"❌ RAG utilities integration test failed: {e}")
-        return False
+        pytest.fail(f"RAG utilities integration test failed: {e}")
 
 def test_environment_security():
     """Test that environment variables are properly loaded"""
@@ -100,18 +101,18 @@ def test_environment_security():
             print("✅ GROQ_API_KEY loaded from environment")
         else:
             print("❌ GROQ_API_KEY not properly loaded")
-            return False
+            pytest.fail("GROQ_API_KEY not properly loaded")
             
         if groq_model:
             print(f"✅ GROQ_MODEL loaded: {groq_model}")
         else:
             print("⚠️  GROQ_MODEL not set, using default")
         
-        return True
+        assert True  # Environment security test successful
         
     except Exception as e:
         print(f"❌ Environment security test failed: {e}")
-        return False
+        pytest.fail(f"Environment security test failed: {e}")
 
 if __name__ == "__main__":
     print("🚀 Comprehensive RAG System Test")

@@ -31,8 +31,8 @@ class RAGConfig:
             # Core Settings
             "enable_feedback_loop": self._get_bool_env("ENABLE_FEEDBACK_LOOP", True),
             "max_iterations": int(os.getenv("FEEDBACK_MAX_ITERATIONS", "3")),
-            "relevance_threshold": float(os.getenv("FEEDBACK_RELEVANCE_THRESHOLD", "0.3")),
-            "confidence_threshold": float(os.getenv("FEEDBACK_CONFIDENCE_THRESHOLD", "0.2")),
+            "relevance_threshold": float(os.getenv("FEEDBACK_RELEVANCE_THRESHOLD", "0.2")),
+            "confidence_threshold": float(os.getenv("FEEDBACK_CONFIDENCE_THRESHOLD", "0.15")),
             "max_docs_retrieval": int(os.getenv("FEEDBACK_MAX_DOCS", "12")),
             
             # Refinement Strategies (in order of preference)
@@ -66,8 +66,9 @@ class RAGConfig:
     
     def _validate_config(self):
         """Validate configuration values"""
+        # Only warn about missing API key, don't fail initialization
         if not self.GROQ_API_KEY:
-            raise ValueError("GROQ_API_KEY environment variable is required")
+            print("⚠️  GROQ_API_KEY environment variable not set - some features may not work")
         
         if self.FEEDBACK_LOOP_CONFIG["max_iterations"] < 1:
             raise ValueError("max_iterations must be at least 1")
@@ -109,8 +110,8 @@ class RAGConfig:
         elif mode == "balanced":
             return {
                 "max_iterations": 3,
-                "relevance_threshold": 0.3,
-                "confidence_threshold": 0.2,
+                "relevance_threshold": 0.2,
+                "confidence_threshold": 0.15,
                 "refinement_strategies": [
                     "domain_expansion", "synonym_expansion", "context_addition"
                 ]
@@ -119,8 +120,8 @@ class RAGConfig:
         elif mode == "thorough":
             return {
                 "max_iterations": 4,
-                "relevance_threshold": 0.2,
-                "confidence_threshold": 0.15,
+                "relevance_threshold": 0.15,
+                "confidence_threshold": 0.1,
                 "refinement_strategies": [
                     "domain_expansion", "synonym_expansion", 
                     "context_addition", "query_decomposition"

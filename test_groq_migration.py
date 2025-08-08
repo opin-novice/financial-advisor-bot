@@ -4,13 +4,21 @@ Test script to verify Groq API migration for RAG pipeline
 Run this after setting your GROQ_API_KEY environment variable
 """
 import os
+import pytest
 
 def test_groq_connection():
     """Test basic Groq API connection"""
     print("🧪 Testing Groq API connection...")
     
-    # Using API key directly
-    api_key = "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"
+    # Try to get API key from environment
+    import os
+    from dotenv import load_dotenv
+    load_dotenv()
+    
+    api_key = os.getenv("GROQ_API_KEY")
+    if not api_key or api_key == "your_groq_api_key_here":
+        print("⚠️ GROQ_API_KEY not found in environment or using template value")
+        pytest.skip("GROQ_API_KEY not found in environment or using template value")
     
     try:
         from langchain_groq import ChatGroq
@@ -24,11 +32,11 @@ def test_groq_connection():
         
         response = llm.invoke("What is 2+2?")
         print(f"✅ Groq API working! Response: {response.content}")
-        return True
+        assert True  # Test passed
         
     except Exception as e:
         print(f"❌ Groq API test failed: {e}")
-        return False
+        pytest.fail(f"Groq API test failed: {e}")
 
 def test_rag_pipeline():
     """Test the complete RAG pipeline"""
@@ -45,11 +53,11 @@ def test_rag_pipeline():
         print(f"📝 Query: {test_query}")
         print(f"🤖 Response preview: {result.get('response', 'No response')[:150]}...")
         
-        return True
+        assert True  # Test passed
         
     except Exception as e:
         print(f"❌ RAG pipeline test failed: {e}")
-        return False
+        pytest.fail(f"RAG pipeline test failed: {e}")
 
 if __name__ == "__main__":
     print("🚀 Testing Groq Migration")

@@ -55,21 +55,23 @@ You can understand and respond in both English and Bangla languages.
 Always respond in a natural, conversational tone as if speaking to a friend.
 
 IMPORTANT INSTRUCTIONS:
-- Answer based on the provided information
+- Answer based on the provided information, even if it's partially relevant
+- Extract and synthesize useful information from the context to provide a helpful response
 - Ignore form fields, blank templates, placeholder text, and incomplete document fragments
-- Never say "According to the context" - just answer directly
-- If you don't have enough information, say "I don't have specific information about that"
+- Never say "According to the context" - just answer directly and naturally
+- If information is limited, provide what you can and suggest where to get more details
 - Use Bangladeshi Taka (৳/Tk) as currency
-- Be concise and practical
+- Be concise but comprehensive - aim to be helpful even with partial information
 - IMPORTANT: Respond in the SAME LANGUAGE as the user's question (either English or Bangla)
 - The context may contain both English and Bangla text - use whichever is relevant to answer the question
+- Focus on providing actionable, practical advice
 
 Context Information:
 {context}
 
 Question: {input}
 
-Answer:"""
+Answer (provide a helpful response based on available information):"""
 QA_PROMPT = PromptTemplate(input_variables=["context", "input"], template=PROMPT_TEMPLATE)
 
 # --- Cache ---
@@ -339,8 +341,13 @@ class FinancialAdvisorTelegramBot:
         print(f"[INFO] ✅ Answer validation - Valid: {validation['valid']}, Confidence: {validation['confidence']:.2f}")
         
         # If answer is not valid according to validation, provide a fallback response
-        if not validation['valid'] or validation['confidence'] < 0.3:
-            answer = "I'm not confident in my answer based on the available information. Please rephrase your question or ask about a different topic."
+        # Lowered confidence threshold from 0.3 to 0.15 to be less conservative
+        if not validation['valid'] or validation['confidence'] < 0.15:
+            # Even with low confidence, try to provide a helpful answer with a disclaimer
+            if validation['confidence'] > 0.05 and answer and len(answer.strip()) > 20:
+                answer = f"{answer}\n\n⚠️ *Note: I have moderate confidence in this answer. Please verify the information with official sources or consult a financial advisor for specific advice.*"
+            else:
+                answer = "I'm not confident in my answer based on the available information. Please rephrase your question or ask about a different topic."
 
         response = {
             "response": answer,
@@ -394,8 +401,13 @@ class FinancialAdvisorTelegramBot:
         print(f"[INFO] ✅ Answer validation - Valid: {validation['valid']}, Confidence: {validation['confidence']:.2f}")
         
         # If answer is not valid according to validation, provide a fallback response
-        if not validation['valid'] or validation['confidence'] < 0.3:
-            answer = "I'm not confident in my answer based on the available information. Please rephrase your question or ask about a different topic."
+        # Lowered confidence threshold from 0.3 to 0.15 to be less conservative
+        if not validation['valid'] or validation['confidence'] < 0.15:
+            # Even with low confidence, try to provide a helpful answer with a disclaimer
+            if validation['confidence'] > 0.05 and answer and len(answer.strip()) > 20:
+                answer = f"{answer}\n\n⚠️ *Note: I have moderate confidence in this answer. Please verify the information with official sources or consult a financial advisor for specific advice.*"
+            else:
+                answer = "I'm not confident in my answer based on the available information. Please rephrase your question or ask about a different topic."
 
         response = {
             "response": answer,
