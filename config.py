@@ -12,7 +12,7 @@ class RAGConfig:
         
         # Basic RAG Configuration
         self.FAISS_INDEX_PATH = "faiss_index"
-        self.EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
+        self.EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
         self.GROQ_MODEL = os.getenv("GROQ_MODEL", "llama3-8b-8192")
         self.GROQ_API_KEY = os.getenv("GROQ_API_KEY")
         self.CACHE_TTL = 86400  # 24 hours

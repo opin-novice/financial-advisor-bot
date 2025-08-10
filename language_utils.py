@@ -10,6 +10,15 @@ from langchain.prompts import PromptTemplate
 
 logger = logging.getLogger(__name__)
 
+def normalize_language_code(detected_lang: str) -> str:
+    """Normalize language codes for consistency"""
+    lang_mapping = {
+        'bangla': 'bengali',
+        'bn': 'bengali',
+        'en': 'english'
+    }
+    return lang_mapping.get(detected_lang.lower(), detected_lang.lower())
+
 class LanguageDetector:
     """
     Detects language (Bangla vs English) and provides language-specific prompts
@@ -86,11 +95,22 @@ class LanguageDetector:
         
         # Determine language and confidence
         if combined_score > 0.3:  # Threshold for Bangla detection
-            language = 'bangla'
+            language = 'bengali'
             confidence = min(0.95, 0.5 + combined_score)  # Scale confidence
         else:
             language = 'english'
             confidence = min(0.95, 0.5 + (1 - combined_score))
+        
+        # Special handling for mixed language queries
+        # If there are Bengali characters but also many English words, consider it mixed
+        if bangla_chars > 0 and english_word_count > bangla_word_count and total_words > 2:
+            # Mixed query with English dominance - treat as English but lower confidence
+            if combined_score < 0.7:  # Not heavily Bengali
+                language = 'english'
+                confidence = max(0.6, confidence * 0.8)  # Reduce confidence for mixed queries
+        
+        # Normalize language code for consistency
+        language = normalize_language_code(language)
         
         logger.info(f"Language detection: '{text[:50]}...' -> {language} (confidence: {confidence:.2f})")
         return language, confidence
@@ -100,12 +120,12 @@ class LanguageDetector:
         Get language-specific prompt template for RAG responses
         
         Args:
-            language: 'bangla' or 'english'
+            language: 'bengali' or 'english'
             
         Returns:
             PromptTemplate configured for the specified language
         """
-        if language == 'bangla':
+        if language == 'bengali':
             return self._get_bangla_prompt()
         else:
             return self._get_english_prompt()
@@ -163,12 +183,12 @@ Answer:"""
         
         Args:
             message: System message in English
-            target_language: 'bangla' or 'english'
+            target_language: 'bengali' or 'english'
             
         Returns:
             Translated message
         """
-        if target_language != 'bangla':
+        if target_language != 'bengali':
             return message
         
         # Translation dictionary for common system messages
@@ -184,17 +204,26 @@ Answer:"""
         
         return translations.get(message, message)
     
+    def determine_response_language(self, query_language: str, user_preference: Optional[str] = None) -> str:
+        """Determine appropriate response language based on query and preferences"""
+        if user_preference:
+            return user_preference
+        elif query_language == 'bengali':
+            return 'bengali'  # Bengali queries get Bengali responses
+        else:
+            return 'english'  # English queries get English responses
+    
     def format_confidence_message(self, language: str) -> str:
         """
         Get confidence disclaimer message in the appropriate language
         
         Args:
-            language: 'bangla' or 'english'
+            language: 'bengali' or 'english'
             
         Returns:
             Formatted confidence message
         """
-        if language == 'bangla':
+        if language == 'bengali':
             return "\n\n⚠️ *দ্রষ্টব্য: এই উত্তরে আমার মাঝারি আস্থা রয়েছে। অনুগ্রহ করে সরকারি সূত্র থেকে তথ্য যাচাই করুন বা নির্দিষ্ট পরামর্শের জন্য একজন আর্থিক পরামর্শদাতার সাথে পরামর্শ করুন।*"
         else:
             return "\n\n⚠️ *Note: I have moderate confidence in this answer. Please verify the information with official sources or consult a financial advisor for specific advice.*"
@@ -210,21 +239,21 @@ class BilingualResponseFormatter:
     
     def format_sources_section(self, language: str) -> str:
         """Get sources section header in appropriate language"""
-        if language == 'bangla':
+        if language == 'bengali':
             return "📄 প্রাপ্ত নথিসমূহ:"
         else:
             return "📄 Retrieved Documents:"
     
     def format_document_header(self, doc_idx: int, filename: str, language: str) -> str:
         """Format document header in appropriate language"""
-        if language == 'bangla':
+        if language == 'bengali':
             return f"\n📂 **নথি {doc_idx}: {filename}**\n"
         else:
             return f"\n📂 **Document {doc_idx}: {filename}**\n"
     
     def format_chunk_header(self, chunk_idx: int, language: str) -> str:
         """Format chunk header in appropriate language"""
-        if language == 'bangla':
+        if language == 'bengali':
             return f"\n🔹 অংশ {chunk_idx}:\n"
         else:
             return f"\n🔹 Chunk {chunk_idx}:\n"
@@ -244,7 +273,7 @@ class BilingualResponseFormatter:
         # Add language detection info for debugging (only in development)
         debug_info = ""
         if confidence < 0.8:  # Low confidence detection
-            if detected_language == 'bangla':
+            if detected_language == 'bengali':
                 debug_info = f"\n\n🔍 *ভাষা সনাক্তকরণ: বাংলা (আস্থা: {confidence:.1%})*"
             else:
                 debug_info = f"\n\n🔍 *Language detection: English (confidence: {confidence:.1%})*"

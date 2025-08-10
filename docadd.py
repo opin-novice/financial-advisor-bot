@@ -15,7 +15,7 @@ import re
 # --- Configuration ---
 PDF_DIR = "data"              # Folder containing your PDF files
 FAISS_INDEX_PATH = "faiss_index"
-EMBEDDING_MODEL = "BAAI/bge-m3"
+EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
 
 # ✅ Semantic Chunking Settings
 SENTENCE_EMBEDDING_MODEL = "all-MiniLM-L6-v2"  # For sentence similarity - for better chunking - all-mpnet-base-v2 use this

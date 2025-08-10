@@ -143,9 +143,8 @@ class FinancialAdvisorTelegramBot:
             print("[INFO] Falling back to simple re-ranking...")
             self.reranker = None
 
-        self.doc_chain = create_stuff_documents_chain(self.llm, QA_PROMPT)
-        retriever = self.vectorstore.as_retriever(search_kwargs={"k": MAX_DOCS_FOR_RETRIEVAL})
-        self.qa_chain = create_retrieval_chain(retriever, self.doc_chain)
+        # Initialize retriever without creating chain yet (will be done per query with appropriate prompt)
+        self.retriever = self.vectorstore.as_retriever(search_kwargs={"k": MAX_DOCS_FOR_RETRIEVAL})
         
         # Initialize Advanced RAG Feedback Loop
         print("[INFO] Initializing Advanced RAG Feedback Loop...")
@@ -332,6 +331,20 @@ class FinancialAdvisorTelegramBot:
         
         return processed
 
+    def _create_language_specific_chain(self, detected_language: str):
+        """Create retrieval chain with appropriate language-specific prompt"""
+        # Determine response language
+        response_language = self.language_detector.determine_response_language(detected_language)
+        
+        # Get language-specific prompt
+        language_prompt = self.language_detector.get_language_specific_prompt(response_language)
+        
+        # Create document chain with language-specific prompt
+        doc_chain = create_stuff_documents_chain(self.llm, language_prompt)
+        
+        # Create retrieval chain
+        return create_retrieval_chain(self.retriever, doc_chain)
+
     def process_query(self, query: str) -> Dict:
         """
         Enhanced process_query with language detection and bilingual response
@@ -391,6 +404,9 @@ class FinancialAdvisorTelegramBot:
         """Process query using the Advanced RAG Feedback Loop"""
         print("[INFO] 🔄 Using Advanced RAG Feedback Loop...")
         
+        # Detect language for appropriate prompt selection
+        detected_language, _ = self.language_detector.detect_language(query)
+        
         # Step 1: Use feedback loop to get the best documents
         feedback_result = self.feedback_loop.retrieve_with_feedback_loop(query, category)
         
@@ -413,9 +429,10 @@ class FinancialAdvisorTelegramBot:
 
         docs = self._prepare_docs(filtered)
 
-        # Step 3: Generate answer using the best query from feedback loop
+        # Step 3: Generate answer using language-appropriate chain
         print("[INFO] ✅ Running LLM to generate answer...")
-        result = self.qa_chain.invoke({"input": feedback_result["query_used"]})
+        qa_chain = self._create_language_specific_chain(detected_language)
+        result = qa_chain.invoke({"input": feedback_result["query_used"]})
         answer = result.get("answer") or result.get("result") or result.get("output_text") or str(result)
         print("[INFO] ✅ Answer generated successfully.")
 
@@ -458,8 +475,12 @@ class FinancialAdvisorTelegramBot:
         """Traditional RAG processing without feedback loop"""
         print("[INFO] 🔄 Using traditional RAG approach...")
         
-        # Step 1: Retrieve documents
-        result = self.qa_chain.invoke({"input": query})
+        # Detect language for appropriate prompt selection
+        detected_language, _ = self.language_detector.detect_language(query)
+        
+        # Step 1: Create language-specific chain and retrieve documents
+        qa_chain = self._create_language_specific_chain(detected_language)
+        result = qa_chain.invoke({"input": query})
         answer = result.get("answer") or result.get("result") or result.get("output_text") or str(result)
         
         # Step 2: Get source documents
@@ -519,7 +540,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         user_language = detected_lang
     
     # Send welcome message in appropriate language
-    if user_language == 'bangla':
+    if user_language == 'bengali':
         welcome_message = "হ্যালো! আমাকে যেকোনো আর্থিক প্রশ্ন করুন। আমি বাংলা এবং ইংরেজি দুই ভাষাতেই উত্তর দিতে পারি।"
     else:
         welcome_message = "Hi! Ask me any financial question. I can respond in both English and Bangla based on your question language."

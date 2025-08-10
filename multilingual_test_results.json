@@ -1,0 +1,255 @@
+{
+  "language_detection": {
+    "accuracy": 0.9230769230769231,
+    "correct_detections": 12,
+    "total_tests": 13,
+    "detailed_results": [
+      {
+        "query": "How to open a bank account?",
+        "expected": "english",
+        "detected": "english",
+        "confidence": 0.95,
+        "correct": true
+      },
+      {
+        "query": "What are the loan eligibility criteria?",
+        "expected": "english",
+        "detected": "english",
+        "confidence": 0.95,
+        "correct": true
+      },
+      {
+        "query": "Tax calculation methods for individuals",
+        "expected": "english",
+        "detected": "english",
+        "confidence": 0.95,
+        "correct": true
+      },
+      {
+        "query": "Investment opportunities in Bangladesh",
+        "expected": "english",
+        "detected": "english",
+        "confidence": 0.95,
+        "correct": true
+      },
+      {
+        "query": "Mobile banking services available",
+        "expected": "english",
+        "detected": "english",
+        "confidence": 0.95,
+        "correct": true
+      },
+      {
+        "query": "ব্যাংক অ্যাকাউন্ট কিভাবে খুলবো?",
+        "expected": "bengali",
+        "detected": "bengali",
+        "confidence": 0.95,
+        "correct": true
+      },
+      {
+        "query": "ঋণের যোগ্যতার মাপদণ্ড কি?",
+        "expected": "bengali",
+        "detected": "bengali",
+        "confidence": 0.95,
+        "correct": true
+      },
+      {
+        "query": "ব্যক্তিগত কর গণনার পদ্ধতি",
+        "expected": "bengali",
+        "detected": "bengali",
+        "confidence": 0.95,
+        "correct": true
+      },
+      {
+        "query": "বাংলাদেশে বিনিয়োগের সুযোগ",
+        "expected": "bengali",
+        "detected": "bengali",
+        "confidence": 0.95,
+        "correct": true
+      },
+      {
+        "query": "মোবাইল ব্যাংকিং সেবা",
+        "expected": "bengali",
+        "detected": "bengali",
+        "confidence": 0.95,
+        "correct": true
+      },
+      {
+        "query": "How to ব্যাংক অ্যাকাউন্ট খুলবো?",
+        "expected": "english",
+        "detected": "bengali",
+        "confidence": 0.95,
+        "correct": false
+      },
+      {
+        "query": "NID card requirements",
+        "expected": "english",
+        "detected": "english",
+        "confidence": 0.95,
+        "correct": true
+      },
+      {
+        "query": "জাতীয় পরিচয়পত্র",
+        "expected": "bengali",
+        "detected": "bengali",
+        "confidence": 0.95,
+        "correct": true
+      }
+    ]
+  },
+  "cross_language_similarity": {
+    "average_similarity": 0.7967393770572655,
+    "similarities": [
+      0.6567178447282427,
+      0.7121876736161796,
+      0.8439800934099511,
+      0.8477154119357224,
+      0.9230958615962316
+    ],
+    "detailed_results": [
+      {
+        "english_query": "How to open a bank account",
+        "bengali_query": "ব্যাংক অ্যাকাউন্ট খোলার নিয়ম",
+        "similarity": 0.6567178447282427
+      },
+      {
+        "english_query": "Loan eligibility requirements",
+        "bengali_query": "ঋণের যোগ্যতার শর্ত",
+        "similarity": 0.7121876736161796
+      },
+      {
+        "english_query": "Tax calculation methods",
+        "bengali_query": "কর গণনার পদ্ধতি",
+        "similarity": 0.8439800934099511
+      },
+      {
+        "english_query": "Investment opportunities",
+        "bengali_query": "বিনিয়োগের সুযোগ",
+        "similarity": 0.8477154119357224
+      },
+      {
+        "english_query": "Mobile banking services",
+        "bengali_query": "মোবাইল ব্যাংকিং সেবা",
+        "similarity": 0.9230958615962316
+      }
+    ]
+  },
+  "retrieval_quality": {
+    "success_rate": 1.0,
+    "successful_retrievals": 6,
+    "total_queries": 6,
+    "detailed_results": [
+      {
+        "language": "english",
+        "query": "How to open a bank account in Bangladesh?",
+        "sources_found": 5,
+        "response_generated": true,
+        "successful": true
+      },
+      {
+        "language": "bengali",
+        "query": "ব্যাংক অ্যাকাউন্ট খোলার নিয়ম কি?",
+        "sources_found": 2,
+        "response_generated": true,
+        "successful": true
+      },
+      {
+        "language": "english",
+        "query": "What are the loan eligibility criteria?",
+        "sources_found": 3,
+        "response_generated": true,
+        "successful": true
+      },
+      {
+        "language": "bengali",
+        "query": "ঋণের যোগ্যতার মাপদণ্ড কি?",
+        "sources_found": 2,
+        "response_generated": true,
+        "successful": true
+      },
+      {
+        "language": "english",
+        "query": "Tax calculation process",
+        "sources_found": 3,
+        "response_generated": true,
+        "successful": true
+      },
+      {
+        "language": "bengali",
+        "query": "কর গণনার প্রক্রিয়া",
+        "sources_found": 2,
+        "response_generated": true,
+        "successful": true
+      }
+    ]
+  },
+  "response_quality": {
+    "consistency_rate": 1.0,
+    "consistent_responses": 4,
+    "total_tests": 4,
+    "detailed_results": [
+      {
+        "query_language": "english",
+        "query": "How to open a bank account?",
+        "expected_response_languages": [
+          "english",
+          "bengali"
+        ],
+        "actual_response_language": "english",
+        "confidence": 0.95,
+        "consistent": true,
+        "response_preview": "To open a bank account in Bangladesh, you can follow these steps:\n\n1. Go to the Internet Banking sec..."
+      },
+      {
+        "query_language": "bengali",
+        "query": "ব্যাংক অ্যাকাউন্ট কিভাবে খুলবো?",
+        "expected_response_languages": [
+          "bengali"
+        ],
+        "actual_response_language": "bengali",
+        "confidence": 0.95,
+        "consistent": true,
+        "response_preview": "আমি আপনাকে বলতে চাই, ব্যাংক অ্যাকাউন্ট খুলতে চাইলে কী করতে হবে? আমি আপনাকে বলতে চাই, প্রথমে আপনাকে ব..."
+      },
+      {
+        "query_language": "english",
+        "query": "What are loan requirements?",
+        "expected_response_languages": [
+          "english",
+          "bengali"
+        ],
+        "actual_response_language": "english",
+        "confidence": 0.95,
+        "consistent": true,
+        "response_preview": "As a Bangladeshi financial advisor, I'm happy to provide information on loan requirements in Banglad..."
+      },
+      {
+        "query_language": "bengali",
+        "query": "ঋণের শর্তাবলী কি?",
+        "expected_response_languages": [
+          "bengali"
+        ],
+        "actual_response_language": "bengali",
+        "confidence": 0.95,
+        "consistent": true,
+        "response_preview": "ঋণের শর্তাবলী হলো:\n\n1. ঋণের পরিমাণ সীমা: প্রথম ঋণের পরিমাণ সীমা হলো A 550, আর অতিরিক্ত ঋণের পরিমাণ স..."
+      }
+    ]
+  },
+  "overall_metrics": {
+    "overall_score": 0.9807692307692308,
+    "individual_scores": {
+      "language_detection": 0.9230769230769231,
+      "cross_language_similarity": 1.0,
+      "retrieval_quality": 1.0,
+      "response_consistency": 1.0
+    },
+    "weights": {
+      "language_detection": 0.25,
+      "cross_language_similarity": 0.2,
+      "retrieval_quality": 0.3,
+      "response_consistency": 0.25
+    },
+    "grade": "A+ (Excellent)"
+  }
+}
