@@ -19,11 +19,10 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-# Import RAG utilities and language detection
+# Import RAG utilities
 from rag_utils import RAGUtils
 from advanced_rag_feedback import AdvancedRAGFeedbackLoop
 from config import config
-from language_utils import LanguageDetector, BilingualResponseFormatter
 
 # --- Logging ---
 logging.basicConfig(
@@ -49,7 +48,7 @@ CONTEXT_CHUNK_SIZE = config.CONTEXT_CHUNK_SIZE
 CROSS_ENCODER_MODEL = config.CROSS_ENCODER_MODEL
 RELEVANCE_THRESHOLD = config.RELEVANCE_THRESHOLD
 
-# --- Enhanced Bilingual Prompt Template ---
+# --- Prompt (Bangladesh Context) ---
 PROMPT_TEMPLATE = """
 You are a helpful financial advisor specializing in Bangladesh's banking and financial services.
 You can understand and respond in both English and Bangla languages.
@@ -63,55 +62,50 @@ IMPORTANT INSTRUCTIONS:
 - If information is limited, provide what you can and suggest where to get more details
 - Use Bangladeshi Taka (৳/Tk) as currency
 - Be concise but comprehensive - aim to be helpful even with partial information
-- CRITICAL: Respond in the SAME LANGUAGE as the user's question (either English or Bangla)
+- IMPORTANT: Respond in the SAME LANGUAGE as the user's question (either English or Bangla)
 - The context may contain both English and Bangla text - use whichever is relevant to answer the question
 - Focus on providing actionable, practical advice
-- If the user asks in Bangla, respond completely in Bangla using natural, conversational Bengali
-- If the user asks in English, respond completely in English
 
 Context Information:
 {context}
 
 Question: {input}
 
-Answer (provide a helpful response in the same language as the question):"""
+Answer (provide a helpful response based on available information):"""
 QA_PROMPT = PromptTemplate(input_variables=["context", "input"], template=PROMPT_TEMPLATE)
 
 # --- Cache ---
 class ResponseCache:
-    def __init__(self, ttl: int = CACHE_TTL):
-        self.cache = {}
+    def __init__(self, ttl=CACHE_TTL):
         self.ttl = ttl
+        self.cache = {}
 
-    def get(self, key: str):
-        if key in self.cache:
-            timestamp, value = self.cache[key]
-            if time.time() - timestamp < self.ttl:
-                return value
-            else:
-                del self.cache[key]
+    def get(self, query):
+        entry = self.cache.get(query)
+        if entry and time.time() - entry["time"] < self.ttl:
+            return entry["response"]
         return None
 
-    def set(self, key: str, value):
-        self.cache[key] = (time.time(), value)
+    def set(self, query, response):
+        self.cache[query] = {"response": response, "time": time.time()}
 
-# --- Query Processing ---
+# --- Query Categorizer ---
 class QueryProcessor:
     def process(self, query: str) -> str:
+        q = query.lower()
+        if "tax" in q: return "taxation"
+        if "loan" in q: return "loans"
+        if "investment" in q: return "investment"
+        if "bank" in q: return "banking"
         return "general"
 
-# --- Financial Advisor Bot with Language Detection ---
+# --- Financial Advisor Bot ---
 class FinancialAdvisorTelegramBot:
     def __init__(self):
         self.cache = ResponseCache()
         self.processor = QueryProcessor()
         self.rag_utils = RAGUtils()  # Initialize RAG utilities
         self.feedback_loop = None  # Will be initialized after RAG setup
-        
-        # Initialize language detection components
-        self.language_detector = LanguageDetector()
-        self.response_formatter = BilingualResponseFormatter(self.language_detector)
-        
         self._init_rag()
 
     def _init_rag(self):
@@ -204,188 +198,110 @@ class FinancialAdvisorTelegramBot:
         if len(content.strip()) < 30 and ':' in content:
             return True
             
+        # Check for repetitive dots, underscores, or numbers
+        if content.count('.') > len(content) * 0.3 or content.count('_') > 5:
+            return True
+            
         return False
 
     def _cross_encoder_rerank(self, docs: List[Document], query: str) -> List[Document]:
-        """Re-rank documents using Cross-Encoder model"""
-        if not docs or not self.reranker:
-            return docs
-        
-        try:
-            # Prepare query-document pairs for scoring
-            pairs = []
-            valid_docs = []
-            
-            for doc in docs:
-                content = doc.page_content.strip()
-                
-                # Skip form fields and templates
-                if self._is_form_field_or_template(content):
-                    continue
-                
-                # Skip very short or empty content
-                if len(content) < 50:
-                    continue
-                
-                pairs.append([query, content])
-                valid_docs.append(doc)
-            
-            if not pairs:
-                print("[INFO] ⚠️ No valid documents after filtering form fields")
-                return docs[:MAX_DOCS_FOR_CONTEXT]  # Return original docs as fallback
-            
-            # Get relevance scores
-            scores = self.reranker.predict(pairs)
-            
-            # Combine documents with scores and sort
-            doc_scores = list(zip(valid_docs, scores))
-            doc_scores.sort(key=lambda x: x[1], reverse=True)
-            
-            # Filter by relevance threshold and limit
-            filtered_docs = []
-            for doc, score in doc_scores:
-                if score >= RELEVANCE_THRESHOLD and len(filtered_docs) < MAX_DOCS_FOR_CONTEXT:
-                    filtered_docs.append(doc)
-                    print(f"[INFO] ✅ Document relevance score: {score:.3f}")
-            
-            if not filtered_docs:
-                print(f"[INFO] ⚠️ No documents above relevance threshold ({RELEVANCE_THRESHOLD})")
-                # Return top documents even if below threshold, but limit to 2
-                filtered_docs = [doc for doc, _ in doc_scores[:2]]
-            
-            return filtered_docs
-            
-        except Exception as e:
-            print(f"[WARNING] Cross-encoder re-ranking failed: {e}")
-            return docs[:MAX_DOCS_FOR_CONTEXT]
-
-    def _lexical_rerank(self, docs: List[Document], query: str) -> List[Document]:
-        """Fallback lexical re-ranking when Cross-Encoder is not available"""
+        """Advanced semantic re-ranking using cross-encoder with form field filtering"""
         if not docs:
             return docs
         
-        query_lower = query.lower()
-        query_words = set(query_lower.split())
+        try:
+            # First, filter out form fields and templates
+            informative_docs = []
+            for doc in docs:
+                if not self._is_form_field_or_template(doc.page_content):
+                    informative_docs.append(doc)
+                else:
+                    print(f"[INFO] 🚫 Filtered out form field: {doc.page_content[:50]}...")
+            
+            if not informative_docs:
+                print("[WARNING] All documents were filtered as form fields. Using original documents.")
+                informative_docs = docs
+            
+            print(f"[INFO] Re-ranking {len(informative_docs)} informative documents using Cross-Encoder...")
+            
+            # Create query-document pairs for cross-encoder
+            pairs = []
+            for doc in informative_docs:
+                # Truncate document content to reasonable length for cross-encoder
+                content = doc.page_content[:1000]  # Keep first 1000 chars for relevance scoring
+                pairs.append([query, content])
+            
+            # Get relevance scores from cross-encoder
+            scores = self.reranker.predict(pairs)
+            
+            # Combine documents with scores and sort by relevance
+            scored_docs = list(zip(informative_docs, scores))
+            ranked_docs = [doc for doc, _ in sorted(scored_docs, key=lambda x: x[1], reverse=True)]
+            
+            # Filter out documents with very low relevance scores
+            filtered_docs = [doc for doc, score in scored_docs if score > RELEVANCE_THRESHOLD]
+            
+            print(f"[INFO] ✅ Cross-Encoder re-ranking completed. Kept {len(filtered_docs)} relevant documents.")
+            return filtered_docs[:MAX_DOCS_FOR_CONTEXT]  # Return top documents
+            
+        except Exception as e:
+            print(f"[WARNING] Cross-Encoder re-ranking failed: {e}")
+            return self._lexical_rerank(docs, query)
+    
+    def _lexical_rerank(self, docs: List[Document], query: str) -> List[Document]:
+        """Improved lexical re-ranking as fallback"""
+        if not docs:
+            return docs
         
-        scored_docs = []
+        terms = set(query.lower().split())
+        scored = []
+        
         for doc in docs:
-            content = doc.page_content.strip()
+            content_lower = doc.page_content.lower()
             
-            # Skip form fields and templates
-            if self._is_form_field_or_template(content):
-                continue
+            # Count exact term matches
+            exact_matches = sum(1 for t in terms if t in content_lower)
             
-            # Skip very short content
-            if len(content) < 50:
-                continue
+            # Bonus for partial matches (substrings)
+            partial_matches = sum(1 for t in terms if any(t in word for word in content_lower.split()))
             
-            content_lower = content.lower()
-            content_words = set(content_lower.split())
+            # Calculate final score
+            score = exact_matches * 2 + partial_matches * 0.5
             
-            # Calculate simple overlap score
-            overlap = len(query_words.intersection(content_words))
-            total_query_words = len(query_words)
-            
-            if total_query_words > 0:
-                score = overlap / total_query_words
-            else:
-                score = 0
-            
-            # Boost score for exact phrase matches
-            if query_lower in content_lower:
-                score += 0.5
-            
-            scored_docs.append((doc, score))
+            if score > 0:  # Only include documents with some relevance
+                scored.append((doc, score))
         
-        # Sort by score and return top documents
-        scored_docs.sort(key=lambda x: x[1], reverse=True)
-        
-        # Filter by a minimum score and limit
-        min_score = 0.1  # Lower threshold for lexical matching
-        filtered_docs = []
-        
-        for doc, score in scored_docs:
-            if score >= min_score and len(filtered_docs) < MAX_DOCS_FOR_CONTEXT:
-                filtered_docs.append(doc)
-                print(f"[INFO] ✅ Document lexical score: {score:.3f}")
-        
-        if not filtered_docs and scored_docs:
-            # If no docs meet threshold, return the best one
-            filtered_docs = [scored_docs[0][0]]
-            print(f"[INFO] ⚠️ Using best document despite low score: {scored_docs[0][1]:.3f}")
-        
-        return filtered_docs
+        # Sort by score and return
+        return [d for d, s in sorted(scored, key=lambda x: x[1], reverse=True)]
 
     def _prepare_docs(self, docs: List[Document]) -> List[Document]:
-        """Prepare documents by truncating content if needed"""
         processed = []
-        for doc in docs:
-            content = doc.page_content
-            if len(content) > CONTEXT_CHUNK_SIZE:
-                content = content[:CONTEXT_CHUNK_SIZE] + "..."
-            
-            processed_doc = Document(
-                page_content=content,
-                metadata=doc.metadata
-            )
-            processed.append(processed_doc)
-        
+        for d in docs[:MAX_DOCS_FOR_CONTEXT]:
+            content = d.page_content[:CONTEXT_CHUNK_SIZE] + ("...[truncated]" if len(d.page_content) > CONTEXT_CHUNK_SIZE else "")
+            processed.append(Document(page_content=content, metadata=d.metadata))
         return processed
 
     def process_query(self, query: str) -> Dict:
-        """
-        Enhanced process_query with language detection and bilingual response
-        """
-        # Detect language of the query
-        detected_language, confidence = self.language_detector.detect_language(query)
-        print(f"[INFO] 🌐 Language detected: {detected_language} (confidence: {confidence:.2f})")
-        
         category = self.processor.process(query)
-        logger.info(f"Processing query (category={category}, language={detected_language}): {query}")
+        logger.info(f"Processing query (category={category}): {query}")
         print(f"[INFO] 🔍 Received query: {query}")
 
-        # Create language-aware cache key
-        cache_key = f"{detected_language}:{query}"
-        cached = self.cache.get(cache_key)
+        cached = self.cache.get(query)
         if cached:
             print("[INFO] ✅ Cache hit - returning stored response.")
-            # Add language context to cached response
-            cached['detected_language'] = detected_language
-            cached['language_confidence'] = confidence
             return cached
 
         try:
             # Use Advanced RAG Feedback Loop if available, otherwise fallback to traditional approach
             if self.feedback_loop is not None:
-                result = self._process_query_with_feedback_loop(query, category)
+                return self._process_query_with_feedback_loop(query, category)
             else:
-                result = self._process_query_traditional(query, category)
-            
-            # Add language detection information to result
-            result['detected_language'] = detected_language
-            result['language_confidence'] = confidence
-            
-            # Cache the result with language-aware key
-            self.cache.set(cache_key, result)
-            
-            return result
+                return self._process_query_traditional(query, category)
 
         except Exception as e:
             logger.error(f"Error processing query: {e}")
             print(f"[ERROR] {e}")
-            
-            # Return error message in detected language
-            error_message = self.language_detector.translate_system_messages(
-                f"Error: {e}", detected_language
-            )
-            
-            return {
-                "response": error_message, 
-                "sources": [], 
-                "contexts": [],
-                "detected_language": detected_language,
-                "language_confidence": confidence
-            }
+            return {"response": f"Error: {e}", "sources": [], "contexts": []}
     
     def _process_query_with_feedback_loop(self, query: str, category: str) -> Dict:
         """Process query using the Advanced RAG Feedback Loop"""
@@ -433,161 +349,119 @@ class FinancialAdvisorTelegramBot:
             else:
                 answer = "I'm not confident in my answer based on the available information. Please rephrase your question or ask about a different topic."
 
-        # Step 5: Prepare sources and contexts
-        sources = []
-        contexts = []
-        for doc in docs:
-            source_info = {
-                "file": doc.metadata.get("source", "Unknown"),
-                "page": doc.metadata.get("page", 0)
-            }
-            sources.append(source_info)
-            contexts.append(doc.page_content)
-
-        return {
+        response = {
             "response": answer,
-            "sources": sources,
-            "contexts": contexts,
-            "feedback_iterations": feedback_result['total_iterations'],
-            "final_query": feedback_result['query_used'],
-            "relevance_score": feedback_result['relevance_score'],
-            "validation_confidence": validation['confidence']
+            "sources": [{"file": d.metadata.get("source", "Unknown")} for d in docs],
+            "contexts": context_texts,
+            "feedback_loop_metadata": {
+                "iterations_used": feedback_result['total_iterations'],
+                "final_query": feedback_result['query_used'],
+                "original_query": feedback_result['original_query'],
+                "relevance_score": feedback_result['relevance_score'],
+                "refinement_history": feedback_result.get('refinement_history', [])
+            }
         }
-
+        self.cache.set(query, response)
+        return response
+    
     def _process_query_traditional(self, query: str, category: str) -> Dict:
-        """Traditional RAG processing without feedback loop"""
-        print("[INFO] 🔄 Using traditional RAG approach...")
+        """Traditional query processing (fallback when feedback loop is not available)"""
+        print("[INFO] 🔧 Using traditional RAG approach...")
         
-        # Step 1: Retrieve documents
-        result = self.qa_chain.invoke({"input": query})
-        answer = result.get("answer") or result.get("result") or result.get("output_text") or str(result)
+        # Refine the query for better retrieval
+        refined_query = self.rag_utils.refine_query(query)
+        print(f"[INFO] 🔧 Refined query: {refined_query}")
+
+        # Retrieve documents using refined query
+        retrieved = self.vectorstore.similarity_search(refined_query, k=MAX_DOCS_FOR_RETRIEVAL)
         
-        # Step 2: Get source documents
-        source_docs = result.get("context", [])
-        if not source_docs:
-            return {"response": answer, "sources": [], "contexts": []}
+        # Check relevance of retrieved documents
+        is_relevant, confidence = self.rag_utils.check_query_relevance(refined_query, retrieved)
+        print(f"[INFO] 🔍 Query relevance - Relevant: {is_relevant}, Confidence: {confidence:.2f}")
         
-        # Step 3: Apply filtering and ranking
-        filtered = self._rank_and_filter(source_docs, query)
+        if not is_relevant or confidence < 0.1:  # Low relevance threshold
+            print("[INFO] ❌ Retrieved documents not relevant to query.")
+            return {"response": "I could not find relevant information in my database for your query.", "sources": [], "contexts": []}
+
+        filtered = self._rank_and_filter(retrieved, refined_query)
+        if not filtered:
+            print("[INFO] ❌ No relevant documents found.")
+            return {"response": "I could not find relevant information in my database.", "sources": [], "contexts": []}
+
         docs = self._prepare_docs(filtered)
+
+        print("[INFO] ✅ Running LLM to generate answer...")
+        result = self.qa_chain.invoke({"input": refined_query})
+        answer = result.get("answer") or result.get("result") or result.get("output_text") or str(result)
+        print("[INFO] ✅ Answer generated successfully.")
+
+        # Validate the generated answer
+        context_texts = [d.page_content for d in docs]
+        validation = self.rag_utils.validate_answer(refined_query, answer, context_texts)
+        print(f"[INFO] ✅ Answer validation - Valid: {validation['valid']}, Confidence: {validation['confidence']:.2f}")
         
-        # Step 4: Prepare sources and contexts
-        sources = []
-        contexts = []
-        for doc in docs:
-            source_info = {
-                "file": doc.metadata.get("source", "Unknown"),
-                "page": doc.metadata.get("page", 0)
-            }
-            sources.append(source_info)
-            contexts.append(doc.page_content)
+        # If answer is not valid according to validation, provide a fallback response
+        # Lowered confidence threshold from 0.3 to 0.15 to be less conservative
+        if not validation['valid'] or validation['confidence'] < 0.15:
+            # Even with low confidence, try to provide a helpful answer with a disclaimer
+            if validation['confidence'] > 0.05 and answer and len(answer.strip()) > 20:
+                answer = f"{answer}\n\n⚠️ *Note: I have moderate confidence in this answer. Please verify the information with official sources or consult a financial advisor for specific advice.*"
+            else:
+                answer = "I'm not confident in my answer based on the available information. Please rephrase your question or ask about a different topic."
 
-        return {
+        response = {
             "response": answer,
-            "sources": sources,
-            "contexts": contexts
+            "sources": [{"file": d.metadata.get("source", "Unknown")} for d in docs],
+            "contexts": context_texts,
+            "feedback_loop_metadata": {
+                "iterations_used": 1,
+                "final_query": refined_query,
+                "original_query": query,
+                "relevance_score": confidence,
+                "refinement_history": []
+            }
         }
-
-# --- Global bot instance ---
-bot_instance = FinancialAdvisorTelegramBot()
+        self.cache.set(query, response)
+        return response
 
 # --- Telegram Handlers ---
-async def send_in_chunks(update: Update, text: str, chunk_size: int = 4000):
-    """Send long messages in chunks to avoid Telegram's message length limit"""
-    if len(text) <= chunk_size:
-        await update.message.reply_text(text, parse_mode='Markdown')
-        return
-    
-    chunks = [text[i:i+chunk_size] for i in range(0, len(text), chunk_size)]
-    for i, chunk in enumerate(chunks):
-        if i == 0:
-            await update.message.reply_text(f"{chunk}... (continued)", parse_mode='Markdown')
-        elif i == len(chunks) - 1:
-            await update.message.reply_text(f"...{chunk}", parse_mode='Markdown')
-        else:
-            await update.message.reply_text(f"...{chunk}... (continued)", parse_mode='Markdown')
+bot_instance = FinancialAdvisorTelegramBot()
+
+async def send_in_chunks(update: Update, text: str):
+    MAX_LEN = 4000
+    for i in range(0, len(text), MAX_LEN):
+        await update.message.reply_text(text[i:i+MAX_LEN])
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Enhanced start command with language detection"""
-    # Detect language preference from user's message if any
-    user_language = 'english'  # Default
-    
-    # Check if user sent any text with the start command
-    if context.args:
-        sample_text = ' '.join(context.args)
-        detected_lang, _ = bot_instance.language_detector.detect_language(sample_text)
-        user_language = detected_lang
-    
-    # Send welcome message in appropriate language
-    if user_language == 'bangla':
-        welcome_message = "হ্যালো! আমাকে যেকোনো আর্থিক প্রশ্ন করুন। আমি বাংলা এবং ইংরেজি দুই ভাষাতেই উত্তর দিতে পারি।"
-    else:
-        welcome_message = "Hi! Ask me any financial question. I can respond in both English and Bangla based on your question language."
-    
-    await update.message.reply_text(welcome_message)
+    await update.message.reply_text("Hi! Ask me any financial question.")
 
 async def handle_query(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Enhanced query handler with language detection and bilingual response"""
     user_query = update.message.text.strip()
     if not user_query:
-        # Detect language for error message
-        error_message = bot_instance.language_detector.translate_system_messages(
-            "Please enter a valid question.", 'english'
-        )
-        await update.message.reply_text(error_message)
+        await update.message.reply_text("Please enter a valid question.")
         return
 
     print(f"[INFO] 👤 User asked: {user_query}")
-    
-    # Detect language and show processing message in appropriate language
-    detected_language, confidence = bot_instance.language_detector.detect_language(user_query)
-    processing_message = bot_instance.language_detector.translate_system_messages(
-        "Processing your question...", detected_language
-    )
-    await update.message.reply_text(processing_message)
-    
-    # Process the query
+    await update.message.reply_text("Processing your question...")
     response = bot_instance.process_query(user_query)
 
     # ✅ Send the final answer
     answer = response.get("response") if isinstance(response, dict) else str(response)
-    
-    # Enhance answer with language-specific formatting if needed
-    if isinstance(response, dict):
-        detected_lang = response.get('detected_language', detected_language)
-        lang_confidence = response.get('language_confidence', confidence)
-        
-        # Add confidence disclaimer if needed and validation confidence is low
-        validation_confidence = response.get('validation_confidence', 1.0)
-        if validation_confidence < 0.3:
-            confidence_msg = bot_instance.language_detector.format_confidence_message(detected_lang)
-            if confidence_msg not in answer:
-                answer += confidence_msg
-    
     await send_in_chunks(update, answer)
 
-    # ✅ Organize chunks by source file with language-appropriate headers
+    # ✅ Organize chunks by source file
     if isinstance(response, dict) and response.get("sources") and response.get("contexts"):
-        detected_lang = response.get('detected_language', detected_language)
-        
         grouped = {}
         for i, src in enumerate(response["sources"]):
             filename = src["file"]
             grouped.setdefault(filename, []).append(response["contexts"][i])
 
-        # ✅ Build organized output with language-appropriate formatting
-        organized_output = bot_instance.response_formatter.format_sources_section(detected_lang)
-        
+        # ✅ Build organized output
+        organized_output = "📄 Retrieved Documents:\n"
         for doc_idx, (file, chunks) in enumerate(grouped.items(), 1):
-            organized_output += bot_instance.response_formatter.format_document_header(
-                doc_idx, file, detected_lang
-            )
-            
+            organized_output += f"\n📂 **Document {doc_idx}: {file}**\n"
             for idx, chunk in enumerate(chunks, 1):
-                organized_output += bot_instance.response_formatter.format_chunk_header(
-                    idx, detected_lang
-                )
-                organized_output += f"{chunk}\n"
+                organized_output += f"\n🔹 Chunk {idx}:\n{chunk}\n"
 
         await send_in_chunks(update, organized_output)
 
@@ -599,11 +473,10 @@ if __name__ == "__main__":
     if not token:
         raise ValueError("TELEGRAM_TOKEN environment variable is required. Please set it in your .env file.")
     
-    print("[INFO] 🚀 Starting Telegram Financial Advisor Bot with Language Detection...")
+    print("[INFO] 🚀 Starting Telegram Financial Advisor Bot...")
     app = ApplicationBuilder().token(token).build()
-    logger.info("Bot started successfully with bilingual support.")
+    logger.info("Bot started successfully.")
     print("[INFO] ✅ Telegram Bot is now polling for messages...")
-    print("[INFO] 🌐 Language detection enabled: English ⟷ Bangla")
     app.add_handler(CommandHandler("start", start))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_query))
     app.run_polling()

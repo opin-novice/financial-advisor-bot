@@ -50,7 +50,7 @@ CROSS_ENCODER_MODEL = config.CROSS_ENCODER_MODEL
 RELEVANCE_THRESHOLD = config.RELEVANCE_THRESHOLD
 
 # --- Enhanced Bilingual Prompt Template ---
-PROMPT_TEMPLATE = """
+BILINGUAL_PROMPT_TEMPLATE = """
 You are a helpful financial advisor specializing in Bangladesh's banking and financial services.
 You can understand and respond in both English and Bangla languages.
 Always respond in a natural, conversational tone as if speaking to a friend.
@@ -75,7 +75,8 @@ Context Information:
 Question: {input}
 
 Answer (provide a helpful response in the same language as the question):"""
-QA_PROMPT = PromptTemplate(input_variables=["context", "input"], template=PROMPT_TEMPLATE)
+
+QA_PROMPT = PromptTemplate(input_variables=["context", "input"], template=BILINGUAL_PROMPT_TEMPLATE)
 
 # --- Cache ---
 class ResponseCache:
