@@ -1,2 +1,3 @@
 .crush
 .env
+faiss_index_backup_*/
