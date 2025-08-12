@@ -72,11 +72,10 @@ def demo_language_detection():
         ]
         
         for query, expected in test_queries:
-            result = detector.detect_language(query)
-            confidence = detector.get_confidence_score(query)
+            language, confidence = detector.detect_language(query)
             
             print(f"\n📝 Query: '{query}'")
-            print(f"🎯 Detected: {result['language']} (confidence: {confidence:.2f})")
+            print(f"🎯 Detected: {language} (confidence: {confidence:.2f})")
             print(f"✅ Expected: {expected}")
             
     except ImportError as e:
@@ -109,8 +108,8 @@ def demo_rag_system():
             print(f"\n🔍 Query {i}: '{query}'")
             
             # Detect language
-            lang_result = detector.detect_language(query)
-            print(f"🌍 Language: {lang_result['language']}")
+            language, confidence = detector.detect_language(query)
+            print(f"🌍 Language: {language} (confidence: {confidence:.2f})")
             
             # Process query (simplified demo)
             print("⚙️ Processing with RAG system...")
@@ -175,10 +174,9 @@ def interactive_demo():
                 continue
             
             # Detect language
-            lang_result = detector.detect_language(query)
-            confidence = detector.get_confidence_score(query)
+            language, confidence = detector.detect_language(query)
             
-            print(f"🌍 Detected Language: {lang_result['language']}")
+            print(f"🌍 Detected Language: {language}")
             print(f"📊 Confidence: {confidence:.2f}")
             
             # Simulate processing
@@ -187,7 +185,7 @@ def interactive_demo():
             print("🧠 Generating response...")
             
             # Show what would happen
-            if lang_result['language'] == 'bangla':
+            if language == 'bengali':
                 print("🎯 Would respond in Bangla")
             else:
                 print("🎯 Would respond in English")
