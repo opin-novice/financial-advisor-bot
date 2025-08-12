@@ -240,17 +240,28 @@ class FinancialAdvisorTelegramBot:
             doc_scores = list(zip(valid_docs, scores))
             doc_scores.sort(key=lambda x: x[1], reverse=True)
             
+            # Detect language to adjust threshold for multilingual queries
+            detected_language, _ = self.language_detector.detect_language(query)
+            
+            # Use more lenient threshold for Bengali queries due to cross-encoder limitations
+            effective_threshold = RELEVANCE_THRESHOLD
+            if detected_language == 'bengali':
+                effective_threshold = max(0.1, RELEVANCE_THRESHOLD * 0.6)  # 40% more lenient
+                print(f"[INFO] 🌐 Using adjusted threshold for Bengali: {effective_threshold:.3f}")
+            
             # Filter by relevance threshold and limit
             filtered_docs = []
             for doc, score in doc_scores:
-                if score >= RELEVANCE_THRESHOLD and len(filtered_docs) < MAX_DOCS_FOR_CONTEXT:
+                if score >= effective_threshold and len(filtered_docs) < MAX_DOCS_FOR_CONTEXT:
                     filtered_docs.append(doc)
                     print(f"[INFO] ✅ Document relevance score: {score:.3f}")
             
             if not filtered_docs:
-                print(f"[INFO] ⚠️ No documents above relevance threshold ({RELEVANCE_THRESHOLD})")
-                # Return top documents even if below threshold, but limit to 2
-                filtered_docs = [doc for doc, _ in doc_scores[:2]]
+                print(f"[INFO] ⚠️ No documents above relevance threshold ({effective_threshold:.3f})")
+                # Ensure we return at least some documents for Bengali queries
+                min_docs = 3 if detected_language == 'bengali' else 2
+                filtered_docs = [doc for doc, _ in doc_scores[:min_docs]]
+                print(f"[INFO] 🔄 Returning top {len(filtered_docs)} documents as fallback")
             
             return filtered_docs
             
