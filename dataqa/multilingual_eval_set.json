@@ -1,0 +1,102 @@
+[
+  {
+    "query": "What are the requirements to open a savings account?",
+    "expected_language": "english",
+    "category": "banking"
+  },
+  {
+    "query": "সঞ্চয় হিসাব খুলতে কি কি প্রয়োজন?",
+    "expected_language": "bengali",
+    "category": "banking"
+  },
+  {
+    "query": "What is the minimum balance required for a current account?",
+    "expected_language": "english",
+    "category": "banking"
+  },
+  {
+    "query": "চলতি হিসাবের জন্য সর্বনিম্ন ব্যালেন্স কত?",
+    "expected_language": "bengali",
+    "category": "banking"
+  },
+  {
+    "query": "How can I apply for a personal loan?",
+    "expected_language": "english",
+    "category": "loans"
+  },
+  {
+    "query": "ব্যক্তিগত ঋণের জন্য কিভাবে আবেদন করব?",
+    "expected_language": "bengali",
+    "category": "loans"
+  },
+  {
+    "query": "What documents are needed for loan approval?",
+    "expected_language": "english",
+    "category": "loans"
+  },
+  {
+    "query": "ঋণ অনুমোদনের জন্য কি কি কাগজপত্র লাগে?",
+    "expected_language": "bengali",
+    "category": "loans"
+  },
+  {
+    "query": "What is the current interest rate for fixed deposits?",
+    "expected_language": "english",
+    "category": "investments"
+  },
+  {
+    "query": "স্থায়ী আমানতের বর্তমান সুদের হার কত?",
+    "expected_language": "bengali",
+    "category": "investments"
+  },
+  {
+    "query": "How to transfer money online?",
+    "expected_language": "english",
+    "category": "digital_banking"
+  },
+  {
+    "query": "অনলাইনে টাকা পাঠানোর নিয়ম কি?",
+    "expected_language": "bengali",
+    "category": "digital_banking"
+  },
+  {
+    "query": "What are the charges for ATM withdrawals?",
+    "expected_language": "english",
+    "category": "fees"
+  },
+  {
+    "query": "এটিএম থেকে টাকা তোলার চার্জ কত?",
+    "expected_language": "bengali",
+    "category": "fees"
+  },
+  {
+    "query": "How to close a bank account?",
+    "expected_language": "english",
+    "category": "banking"
+  },
+  {
+    "query": "ব্যাংক হিসাব বন্ধ করার নিয়ম কি?",
+    "expected_language": "bengali",
+    "category": "banking"
+  },
+  {
+    "query": "What is mobile banking and how does it work?",
+    "expected_language": "english",
+    "category": "digital_banking"
+  },
+  {
+    "query": "মোবাইল ব্যাংকিং কি এবং এটি কিভাবে কাজ করে?",
+    "expected_language": "bengali",
+    "category": "digital_banking"
+  },
+  {
+    "query": "What are the tax implications of fixed deposits?",
+    "expected_language": "english",
+    "category": "tax"
+  },
+  {
+    "query": "স্থায়ী আমানতের উপর কর কেমন?",
+    "expected_language": "bengali",
+    "category": "tax"
+  }
+]

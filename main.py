@@ -440,11 +440,9 @@ class FinancialAdvisorTelegramBot:
 
         docs = self._prepare_docs(filtered)
 
-        # Step 3: Generate answer using language-appropriate chain
-        print("[INFO] ✅ Running LLM to generate answer...")
-        qa_chain = self._create_language_specific_chain(detected_language)
-        result = qa_chain.invoke({"input": feedback_result["query_used"]})
-        answer = result.get("answer") or result.get("result") or result.get("output_text") or str(result)
+        # Step 3: Generate answer using language-appropriate chain or grounded response
+        print("[INFO] ✅ Generating grounded answer...")
+        answer = self.feedback_loop.generate_grounded_response(feedback_result["query_used"], docs)
         print("[INFO] ✅ Answer generated successfully.")
 
         # Step 4: Validate the generated answer

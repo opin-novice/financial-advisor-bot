@@ -1,0 +1,12 @@
+{
+  "analysis": {
+    "context_precision": {
+      "mean": null,
+      "valid_count": 0,
+      "nan_count": 5
+    },
+    "context_recall": {
+      "mean": 0.45,
+      "std": 0.5259911279353168,
+      "valid_count": 4,
+      "nan_count": 

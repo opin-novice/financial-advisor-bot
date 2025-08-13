@@ -6,6 +6,8 @@ RAG evaluation using Ragas + Groq's llama3-8b-8192 model.
 """
 import json
 import os
+# Silence HuggingFace tokenizers fork warnings in multiprocessing contexts
+os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 import time
 import pandas as pd
 from datasets import Dataset
@@ -27,16 +29,23 @@ from langchain_community.vectorstores import FAISS
 # CONSTANTS
 # ------------------------------------------------------------------
 FAISS_INDEX_PATH = "faiss_index"
-EMBEDDING_MODEL  = "BAAI/bge-m3"
+# IMPORTANT: Must match the model used to build the FAISS index
+# Default uses a 768-dim MPNet family model; override with EVAL_EMBEDDING_MODEL if needed
+EMBEDDING_MODEL  = os.getenv(
+    "EVAL_EMBEDDING_MODEL",
+    "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+)
 GROQ_MODEL       = "llama3-8b-8192"
-GROQ_API_KEY     = "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"
+# GROQ API Key
+GROQ_API_KEY =  os.getenv("GROQ_API_KEY")
 EVAL_FILE        = "dataqa/eval_set.json"
 LOG_FILE         = "logs/ragas_evaluation.json"
 
 # Rate limiting settings - Balanced for Groq free tier
 MAX_TOKENS       = 500  # Higher token limit for better RAGAS responses
-DELAY_SECONDS    = 40   # 40-second delay between requests
-NUM_SAMPLES      = 1    # Test with only 1 sample to start
+# Allow overriding delay and number of samples via environment variables
+DELAY_SECONDS    = int(os.getenv("EVAL_DELAY_SECONDS", "5"))   # Reduced delay for testing
+NUM_SAMPLES      = int(os.getenv("EVAL_NUM_SAMPLES", "3"))      # Reduced to 3 samples for testing
 
 # ------------------------------------------------------------------
 # RATE LIMITED GROQ WRAPPER CLASS
@@ -125,41 +134,58 @@ def run_eval():
     print("=" * 60)
     
     # ------------------------------------------------------------------
-    # 1. Load data & add retrieved contexts
+    # 1. Load data & prepare for RAGAS format
     # ------------------------------------------------------------------
     print("📖 Loading evaluation dataset...")
     ds = load_eval_dataset(EVAL_FILE)
     retriever = build_retriever()
 
-    def add_contexts(row):
+    def prepare_for_ragas(row):
+        # Retrieve contexts for the question
         docs = retriever.invoke(row["question"])
-        row["contexts"] = [d.page_content for d in docs]
-        return row
+        retrieved_contexts = [d.page_content for d in docs]
+        
+        # Map to RAGAS expected format
+        return {
+            "user_input": row["question"],  # RAGAS expects 'user_input'
+            "retrieved_contexts": retrieved_contexts,  # RAGAS expects 'retrieved_contexts'
+            "response": row["answer"],  # RAGAS expects 'response'
+            "reference": row["ground_truth"]  # RAGAS expects 'reference' for ground truth
+        }
 
-    print("🔍 Adding retrieved contexts...")
-    ds = ds.map(add_contexts)
+    print("🔍 Preparing data for RAGAS format...")
+    ds = ds.map(prepare_for_ragas)
     
     # Limit to small number of samples to avoid rate limits
     test_ds = ds.select(range(min(NUM_SAMPLES, len(ds))))
     print(f"✅ Prepared {len(test_ds)} samples for evaluation")
+    
+    # Debug: Print first sample to verify format
+    print("\n🔍 Sample data format:")
+    sample = test_ds[0]
+    for key, value in sample.items():
+        if key == "retrieved_contexts":
+            print(f"   {key}: [{len(value)} contexts]")
+        else:
+            print(f"   {key}: {str(value)[:100]}..." if len(str(value)) > 100 else f"   {key}: {value}")
 
     # ------------------------------------------------------------------
-    # 2. Initialize Rate-Limited Groq LLM for RAGAS
+    # 2. Initialize Simple Groq LLM for RAGAS
     # ------------------------------------------------------------------
-    print(f"🤖 Initializing Rate-Limited Groq LLM ({GROQ_MODEL})...")
-    print(f"⚙️ Settings: {MAX_TOKENS} max tokens, {DELAY_SECONDS}s delay")
+    print(f"🤖 Initializing Groq LLM ({GROQ_MODEL})...")
+    print(f"⚙️ Settings: {MAX_TOKENS} max tokens, temperature=0.0")
     
-    # Use rate-limited wrapper
-    rate_limited_llm = RateLimitedGroq(
+    # Use simple ChatGroq directly - let RAGAS handle rate limiting
+    simple_llm = ChatGroq(
         model=GROQ_MODEL,
-        api_key=GROQ_API_KEY,
+        groq_api_key=GROQ_API_KEY,
         temperature=0.0,
         max_tokens=MAX_TOKENS,
-        delay=DELAY_SECONDS
+        model_kwargs={"top_p": 0.9}
     )
     
     # Wrap for RAGAS
-    ragas_llm = LangchainLLMWrapper(rate_limited_llm)
+    ragas_llm = LangchainLLMWrapper(simple_llm)
     
     # Initialize embeddings for RAGAS
     ragas_embeddings = LangchainEmbeddingsWrapper(

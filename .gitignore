@@ -1,3 +1,4 @@
 .crush
 .env
 faiss_index_backup_*/
+m1_env.sh

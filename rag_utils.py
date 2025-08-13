@@ -183,7 +183,7 @@ class RAGUtils:
             "feedback": "brief explanation"
         }}
         """)
-        
+
         # Prepare context
         context_text = "\n\n".join([f"Context {i+1}:\n{ctx[:300]}..." 
                                    for i, ctx in enumerate(contexts[:2])])
@@ -219,3 +219,74 @@ class RAGUtils:
                 "confidence": 0.5,
                 "feedback": f"Validation failed: {str(e)}"
             }
+
+    def generate_strictly_grounded_answer(self, query: str, contexts: List[str]) -> str:
+        """
+        Generate answers that are strictly grounded in the provided context
+        """
+        if not contexts:
+            return "I don't have sufficient information to answer your question."
+        
+        strict_prompt = PromptTemplate.from_template("""
+        You are a financial advisor who must ONLY use information from the provided context.
+        
+        Rules:
+        1. ONLY use information explicitly stated in the context below
+        2. If information is not in context, say "I don't have information about that"
+        3. DO NOT make assumptions or inferences beyond what's stated
+        4. DO NOT use general knowledge not present in context
+        5. Cite specific parts of context when possible
+        
+        Query: {query}
+        
+        Context:
+        {context}
+        
+        Answer:
+        """)
+        
+        # Combine contexts into one
+        combined_context = "\n\n".join(contexts[:3])  # Use top 3 contexts
+        
+        try:
+            prompt = strict_prompt.format(query=query, context=combined_context)
+            response = self.llm.invoke(prompt)
+            return response.content.strip()
+        except Exception as e:
+            logger.warning(f"Strictly grounded answer generation failed: {e}")
+            return "I apologize, but I cannot generate a grounded answer at this time."
+
+    def enhance_answer_relevancy(self, query: str, answer: str, contexts: List[str]) -> str:
+        """
+        Enhance answer relevancy by refining the response to better match the query
+        """
+        if not answer or not contexts:
+            return answer
+            
+        enhancement_prompt = PromptTemplate.from_template("""
+        You are an answer refinement assistant. Your task is to make the following answer more relevant to the specific query.
+        
+        Guidelines:
+        1. Keep all factual information from the original answer
+        2. Make the response directly address the query
+        3. Remove any information that is not relevant to the query
+        4. Ensure the response is concise and focused
+        5. Maintain the same language as the original answer
+        
+        Query: {query}
+        Original Answer: {answer}
+        Context: {context}
+        
+        Refined Answer:
+        """)
+        
+        # Use the most relevant context
+        context = contexts[0] if contexts else ""
+        
+        try:
+            prompt = enhancement_prompt.format(query=query, answer=answer, context=context)
+            response = self.llm.invoke(prompt)
+            return response.content.strip()
+        except Exception as e:
+            logger.warning(f"Answer relevancy enhancement failed: {e}")
+            return answer

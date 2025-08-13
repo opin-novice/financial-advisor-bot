@@ -1,0 +1,155 @@
+sample_id,category,question,answer,expected_answer,ctx_relevance_fixed,ans_groundedness_fixed,expected_similarity,n_contexts,contexts_preview
+1,general,What is personal income tax in Bangladesh?,"In Bangladesh, personal income tax refers to the tax levied on an individual's income, wealth, and economic activities. It is a crucial source of government revenue, which is used to fund public services, infrastructure development, and social welfare programs.
+
+In Bangladesh, personal income tax is taxed on a progressive scale, meaning that higher-income individuals are taxed at a higher rate. The tax rates vary depending on the individual's income level, with a basic exemption of Tk 300,000 (for men under 65 years of age) and Tk 350,000 (for women and men above 65 years of age).
+
+Individuals are considered resident for tax purposes if they are present in Bangladesh for more than 182 days in the income year, or if they have been present in Bangladesh for at least 365 days in the preceding four years and are present in Bangladesh during the income year for at least 90 days.
+
+Residents are taxed on their worldwide income, while non-residents are taxed only on their Bangladesh-source income. There are various exemptions and deductions available for individuals, such as exemptions for income from export business, income from agricultural activities, and income from certain industries.
+
+To file personal income tax returns, individuals must submit a tax return form (IT-11E) to the National Board of Revenue (NBR) by the specified deadline. The NBR provides various resources and links to help individuals understand and comply with personal income tax laws and regulations.
+
+I hope this information helps! Let me know if you have any further questions.","Personal income tax in Bangladesh is a direct tax imposed on individuals' annual income by the National Board of Revenue (NBR). The tax follows a progressive structure with multiple income slabs. For the financial year 2023-24, the tax-free threshold is BDT 3,50,000 for regular taxpayers, BDT 4,00,000 for women and senior citizens (65+ years), and BDT 4,50,000 for persons with disabilities and freedom fighters. Tax rates range from 5% to 25% depending on income levels.",0.525,0.525,0.525,12,Personal Taxation in Bangladesh - Comprehensive Guide 1. Overview of Personal Taxation in Bangladesh Definition and Importance of Personal Taxation Pe...
+2,tax_brackets,What are the income tax brackets for individuals in Bangladesh?,"Based on the provided information, the income tax brackets for individuals in Bangladesh are as follows:
+
+* Up to Tk. 300,000 (BDT): 0% tax rate
+* Tk. 300,001 to Tk. 400,000 (BDT): 5% tax rate
+* Tk. 400,001 to Tk. 700,000 (BDT): 10% tax rate
+* Tk. 700,001 to Tk. 1,100,000 (BDT): 15% tax rate
+* Tk. 1,100,001 to Tk. 1,600,000 (BDT): 20% tax rate
+* Above Tk. 1,600,000 (BDT): 25% tax rate
+
+Please note that these tax brackets are subject to change, and it's always best to check with the National Board of Revenue (NBR) or a tax consultant for the most up-to-date information. Additionally, there may be other tax exemptions and deductions available that can affect an individual's tax liability.","Bangladesh income tax brackets for FY 2023-24: 
+- Up to BDT 3,50,000: 0% (tax-free for regular taxpayers)
+- BDT 3,50,001 to BDT 5,00,000: 5%
+- BDT 5,00,001 to BDT 6,50,000: 10%
+- BDT 6,50,001 to BDT 10,00,000: 15%
+- BDT 10,00,001 to BDT 15,00,000: 20%
+- Above BDT 15,00,000: 25%
+Women and senior citizens get higher tax-free thresholds of BDT 4,00,000.",0.525,0.525,0.525,12,Personal Taxation in Bangladesh - Comprehensive Guide 1. Overview of Personal Taxation in Bangladesh Definition and Importance of Personal Taxation Pe...
+3,salary_tax,How is income taxed for salaried people in Bangladesh?,"In Bangladesh, salaried individuals are taxed on their income based on the Income Tax Ordinance, 1984. The tax rates vary depending on the income level. Here's a breakdown of the tax rates for salaried individuals in Bangladesh:
+
+* Up to Tk 300,000 (approximately USD 3,500): 0% tax
+* Tk 300,001 to Tk 400,000: 5% tax
+* Tk 400,001 to Tk 700,000: 10% tax
+* Tk 700,001 to Tk 1,100,000: 15% tax
+* Tk 1,100,001 to Tk 1,600,000: 20% tax
+* Above Tk 1,600,000: 25% tax
+
+Additionally, salaried individuals are also eligible for certain exemptions and deductions, such as:
+
+* Basic exemption of Tk 300,000 (for men under 65 years of age) or Tk 350,000 (for women and men above 65 years of age)
+* Exemption on income from agricultural activities, export business, and certain other sources
+* Deduction on expenses related to living, such as rent, utilities, and food
+
+It's worth noting that the tax rates and exemptions may vary depending on the individual's circumstances and the specific tax laws in effect at the time of filing. It's always a good idea to consult with a tax professional or the relevant authorities to ensure compliance with tax laws and regulations.","Salaried employees in Bangladesh are subject to Tax Deducted at Source (TDS) by their employers. The employer calculates annual tax liability based on the progressive tax rates and deducts tax monthly. Employees must submit income tax returns by November 30th each year. They can claim various rebates including investment tax credit up to BDT 15,00,000 (25% rebate), life insurance premium rebate, and provident fund contributions. House rent allowance up to 50% of basic salary or actual rent (whichever is lower) is tax-exempt.",0.525,0.525,0.525,12,Basis: Residents are taxed on worldwide income; nonresidents are taxed only on Bangladesh-source income. Taxable income: Taxable income is divided int...
+4,tax_free_limits,Is there a tax-free limit for income in Bangladesh?,"Yes, there is a tax-free limit for income in Bangladesh. According to the tax laws, the basic exemption for men under 65 years of age is BDT 300,000, and for women and men above 65 years of age, the exemption is BDT 350,000. This means that individuals with income up to this limit are not required to pay income tax.","Yes, Bangladesh has tax-free income thresholds for FY 2023-24:
+- Regular taxpayers: BDT 3,50,000
+- Women taxpayers: BDT 4,00,000
+- Senior citizens (65+ years): BDT 4,00,000
+- Persons with disabilities: BDT 4,50,000
+- Freedom fighters: BDT 4,50,000
+- Gazetted war-wounded freedom fighters: BDT 5,00,000
+Income below these limits is completely tax-free.",0.525,0.525,0.525,12,Basis: Residents are taxed on worldwide income; nonresidents are taxed only on Bangladesh-source income. Taxable income: Taxable income is divided int...
+5,salary_calculation,How much tax should I pay on my salary in Bangladesh?,"Based on the provided information, it seems that you are asking about the tax implications of your salary in Bangladesh. As a resident of Bangladesh, your taxable income is divided into different heads, including income from employment, profession, property, agricultural income, interest on securities, capital gains, and other income.
+
+According to the tax rates mentioned in the context, your taxable income is subject to a progressive tax rate. For example, if your taxable income is up to Tk 300,000, you are exempt from tax. If your taxable income is between Tk 300,001 and Tk 400,000, you will pay 5% tax on the amount exceeding Tk 300,000. Similarly, if your taxable income is between Tk 400,001 and Tk 700,000, you will pay 10% tax on the amount exceeding Tk 400,000.
+
+To determine the exact amount of tax you need to pay, we would need more information about your salary, such as the total amount of your income and the different components of your income (e.g., basic salary, festival allowance, holiday allowance, etc.).
+
+However, based on the information provided, it appears that you may be eligible for some exemptions and allowances. For example, the basic exemption for men under 65 years of age is Tk 300,000, and for women and men above 65 years of age, the exemption is Tk 350,000. Additionally, there are some specific exemptions and allowances mentioned in the context, such as the exemption for income from export business and the exemption for income from agricultural educational activities.
+
+To get a more accurate calculation of your tax liability, I would recommend consulting a tax professional or the Bangladesh Tax Authority. They can help you determine the exact amount of tax you need to pay based on your specific situation and the tax laws and regulations in Bangladesh.","Salary tax in Bangladesh depends on your annual income and applicable tax rates. For example:
+- Salary BDT 5,00,000: Tax = 0 (below threshold)
+- Salary BDT 8,00,000: Tax = BDT 22,500 (5% on BDT 1,50,000 + 10% on BDT 1,50,000 + 15% on BDT 1,50,000)
+- Salary BDT 12,00,000: Tax = BDT 82,500
+Your employer will deduct TDS monthly. You can reduce tax through investment rebates (up to 25% on BDT 15,00,000 investment), life insurance, and provident fund contributions.",0.525,0.525,0.525,12,Bangladesh Highlights 2023 of 10 Other: The employer must provide information relating to tax returns filed by employees to the tax authorities by 30 ...
+6,deadlines,When is personal income tax due in Bangladesh?,"In Bangladesh, personal income tax is due on a specific date, which is known as the ""Tax Day"". According to the Income-tax Ordinance, 1984, the tax due on the taxable income is due on the day of the assessment, which is typically on or before the Tax Day. The Tax Day is usually around April 30th of each year, and it's the deadline for filing income tax returns and paying taxes.
+
+However, it's important to note that the tax authorities may extend the deadline for filing returns or paying taxes in certain cases, such as if the taxpayer is a government official on deputation or leave outside Bangladesh. In such cases, the taxpayer may have up to three months from the date of their return to Bangladesh to file their return and pay taxes.
+
+It's also worth noting that if a taxpayer leaves Bangladesh during the current financial year or shortly after its expiry, and has no intention of returning, an assessment may be made in that year on the basis of their total income, and the tax due may be payable on or before the Tax Day.","Personal income tax return filing deadlines in Bangladesh:
+- Individual taxpayers: November 30th of the following financial year
+- Companies: September 15th
+- Non-resident individuals: November 30th
+For FY 2022-23, the deadline was November 30, 2023. Late filing attracts penalties. Tax payments can be made online through the NBR e-filing system, mobile financial services (bKash, Nagad), or authorized banks. Advanced tax payments are due by June 15th for the current financial year.",0.525,0.525,0.525,12,Personal Taxation in Bangladesh - Comprehensive Guide 1. Overview of Personal Taxation in Bangladesh Definition and Importance of Personal Taxation Pe...
+7,penalties,What are the penalties for not paying personal tax in Bangladesh?,"As a helpful financial advisor, I'd be happy to provide you with information on the penalties for not paying personal tax in Bangladesh.
+
+According to the Income-tax Ordinance, 1984, if an individual fails to submit their tax return or pay their tax dues, they may be subject to penalties and fines.
+
+For instance, if an individual fails to submit their tax return, they may be liable to a penalty of Tk. 5,000 to Tk. 50,000, depending on the circumstances.
+
+Additionally, if an individual fails to pay their tax dues, they may be liable to a penalty of 2% to 10% of the unpaid tax amount, depending on the period of default.
+
+Furthermore, if an individual continues to default on their tax payments, they may be subject to a fine of Tk. 1,000 to Tk. 10,000 per day, up to a maximum of Tk. 50,000.
+
+It's also important to note that if an individual is found to have evaded tax or made a false declaration, they may be subject to a penalty of 100% to 200% of the evaded tax amount, as well as a fine of Tk. 1,000 to Tk. 10,000 per day, up to a maximum of Tk. 50,000.
+
+It's essential to comply with tax laws and regulations in Bangladesh to avoid these penalties and fines. If you're unsure about your tax obligations or need assistance with filing your tax return, I recommend consulting with a tax professional or the Bangladesh Tax Authority.
+
+I hope this information helps!","Penalties for non-compliance with personal income tax in Bangladesh:
+- Late filing: 50% of payable tax or minimum BDT 1,000
+- Non-filing: 100% of payable tax or minimum BDT 5,000
+- Concealment of income: 50% penalty on concealed amount
+- False statement: Fine up to BDT 10,000 plus 100% penalty
+- Interest: 2% per month on unpaid tax
+- Criminal prosecution possible for serious tax evasion
+The NBR may also freeze bank accounts and impose travel restrictions for defaulters.",0.525,0.525,0.525,12,Personal Taxation in Bangladesh - Comprehensive Guide 1. Overview of Personal Taxation in Bangladesh Definition and Importance of Personal Taxation Pe...
+8,donations,Can I get tax rebate on donations in Bangladesh?,"Yes, you can get tax rebate on donations in Bangladesh. According to Section 44(2) of the Income-tax Ordinance, 1984, a resident non-resident Bangladeshi can claim a tax rebate on donations made to certain institutions. The rate of rebate is 15% of the allowable investment, which is the lower of the actual investment, 30% of total income, or Tk. 1,50,00,000.
+
+You can claim tax rebate on donations made to:
+
+* Girls' schools or colleges approved by the Ministry of Education
+* Technical and Vocational Training Institutes approved by the Ministry of Education
+* National level institutions engaged in Research and Development (R&D) of agriculture, science, technology, and industrial development
+* Philanthropic or educational institutions approved by the Government
+* Socio-economic or cultural development institutions established in Bangladesh by the Aga Khan Development Network
+
+To claim the tax rebate, you need to make a donation through a crossed cheque or bank transfer to the eligible institution. You should also keep the receipt and bank statement as proof of the donation.
+
+It's always a good idea to consult with a tax professional or the National Board of Revenue to ensure you meet all the requirements and follow the correct procedures to claim the tax rebate.","Yes, donations qualify for tax rebates in Bangladesh:
+- Donations to approved charitable organizations: 10% of total income or actual donation (whichever is lower)
+- Donations for Liberation War Museum, Shaheed Minar: 100% rebate
+- Donations to Prime Minister's Relief Fund: 100% rebate
+- Zakat payments: Can be claimed as rebate
+- Educational institution donations (approved): Up to 20% rebate
+Maximum total rebate including all sources cannot exceed 30% of total income. Proper receipts and documentation required for claims.",0.525,0.525,0.525,12,(5) Tax Rebate for investment :[Section 44(2 ) only allowable for Resident Non - Resident Bangladeshi] (a) Rate of Rebate: Amount of allowable investm...
+9,filing_process,How to file personal income tax return in Bangladesh?,"Filing personal income tax return in Bangladesh can be a bit complex, but I'll break it down for you in simple steps.
+
+Firstly, you need to check if you're required to file a tax return. If your gross income exceeds BDT 400,000, you're required to file a return. Additionally, if you have a gross wealth exceeding BDT 4 million, own a car, or have invested in a house or apartment in a city corporation area, you need to submit a statement of assets, liabilities, and lifestyle with your tax return.
+
+To file your personal income tax return, you'll need to follow these steps:
+
+1. Gather all necessary documents, including:
+	* Income statement (IT-10B)
+	* Statement of assets, liabilities, and lifestyle (if required)
+	* Proof of income, such as salary slips, bank statements, and interest certificates
+	* Proof of expenses, such as rent agreements, receipts for municipal taxes, and insurance premiums
+2. Fill out the IT-10B form, which can be downloaded from the National Board of Revenue (NBR) website or obtained from a tax office.
+3. Sign and verify the return, either personally or through an authorized representative.
+4. Attach all supporting documents to the return.
+5. Submit the return to the NBR office or online, if available.
+
+It's essential to note that the deadline for filing personal income tax returns is usually around June 30th of each year. You can check the NBR website for the exact deadline and any changes to the filing process.
+
+Additionally, if you're a non-resident Bangladeshi, you'll need to file a return only if you have income from Bangladesh or have assets located in the country.
+
+Remember to keep a copy of your filed return and supporting documents for future reference.
+
+I hope this helps! If you have any further questions or concerns, feel free to ask.","Steps to file personal income tax return in Bangladesh:
+1. Obtain TIN (Tax Identification Number) from NBR
+2. Register on NBR's online tax portal (incometax.gov.bd)
+3. Download appropriate return form (IT-11GA for individuals)
+4. Fill in income details, tax calculations, rebates
+5. Submit online with required documents
+6. Pay any due tax through online banking/mobile banking
+7. Get acknowledgment receipt
+Required documents: Salary certificate, bank statements, investment certificates, TDS certificates. E-filing is mandatory for income above BDT 4,00,000.",0.525,0.525,0.525,12,A Bangladeshi resident individual with gross wealth exceeding BDT 4 million who owns a car or has invested in a house or an apartment in a city corpor...
+10,agricultural,Is agricultural income taxable in Bangladesh?,"I apologize, but I cannot generate an answer at this time.","Agricultural income taxation in Bangladesh:
+- Pure agricultural income: Generally tax-exempt
+- Income from sale of processed agricultural products: Taxable
+- Rent from agricultural land: Taxable as house property income
+- Agricultural business income: Taxable under business income
+- Dividend from agricultural companies: Taxable
+- If agricultural income exceeds BDT 5,00,000, it affects tax rates for non-agricultural income
+Land revenue/khajna paid to government is deductible from agricultural income.",0.525,0.525,0.525,12,"Definitions 2. In this Ordinance, unless there is anything repugnant in the subject or context,- (1) Iagricultural incomeI means- (a) any income deriv..."

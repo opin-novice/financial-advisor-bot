@@ -311,6 +311,24 @@ class AdvancedRAGFeedbackLoop:
             "refinement_history": [],
             "feedback_loop_used": False
         }
+
+    def generate_grounded_response(self, query: str, documents: List[Document]) -> str:
+        """
+        Generate a response that is strictly grounded in the provided documents
+        """
+        if not documents:
+            return "I don't have sufficient information to answer your question."
+            
+        # Extract contexts from documents
+        contexts = [doc.page_content for doc in documents[:3]]  # Use top 3 documents
+        
+        # Generate strictly grounded answer
+        answer = self.rag_utils.generate_strictly_grounded_answer(query, contexts)
+        
+        # Enhance answer relevancy
+        enhanced_answer = self.rag_utils.enhance_answer_relevancy(query, answer, contexts)
+        
+        return enhanced_answer
     
     def _create_empty_result(self, query: str, reason: str) -> Dict:
         """Create empty result structure"""
