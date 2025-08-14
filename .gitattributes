@@ -1,0 +1,2 @@
+faiss_index/index.faiss filter=lfs diff=lfs merge=lfs -text
+*.faiss filter=lfs diff=lfs merge=lfs -text

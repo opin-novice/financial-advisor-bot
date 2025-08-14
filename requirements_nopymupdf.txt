@@ -1,0 +1,38 @@
+# Core RAG Dependencies - Updated versions
+langchain==0.1.20
+langchain-community==0.0.38
+langchain-groq==0.1.5
+langchain-huggingface==0.0.3
+
+# Vector Database
+faiss-cpu==1.8.0
+
+# Embedding Models - Updated for better compatibility
+sentence-transformers==2.7.0
+transformers==4.40.2
+
+# PDF Processing
+
+# Text Processing
+nltk==3.8.1
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.25.0
+
+# Machine Learning - Updated versions to fix deprecation warnings
+torch==2.3.0
+numpy==1.26.4  # Updated to fix deprecation warnings
+scikit-learn==1.4.2
+
+# System & Utilities
+psutil==5.9.8
+python-telegram-bot==21.3
+python-dotenv==1.0.1
+
+# Evaluation (if using RAGAS)
+ragas==0.1.11
+datasets==2.19.1
+
+# Additional dependencies to fix warnings
+pydantic==2.7.0  # Updated from v1 to fix deprecation warnings
+pillow>=10.0.0  # For image processing
+requests>=2.31.0  # Updated for security
