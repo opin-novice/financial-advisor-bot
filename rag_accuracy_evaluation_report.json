@@ -1,0 +1,109 @@
+{
+  "total_tests": 7,
+  "successful_retrievals": 4,
+  "relevant_retrievals": 4,
+  "accuracy": 0.5714285714285714,
+  "avg_precision": 0.85,
+  "avg_recall": 0.65,
+  "f1_score": 0.7366666666666667,
+  "results": [
+    {
+      "test_case": {
+        "question": "What does rule 6. Purpose of Account Opening (put mark) wnmve Lyjvi D ik (wUK w b)\n\nChildren Education m&iv bi wkyv Household Expenses mvsmvwik LiP Major Personal Purchases e\nw°MZ eo As Ki vq specify in the personal_ac_opening_form document?",
+        "ground_truth": "Major Purchases eo As Ki yq Personal Expenses e w3MZ LiP Regular Mandated Credits (i",
+        "source_file": "personal_ac_opening_form.json",
+        "page_number": 2,
+        "question_type": "specific_rule"
+      },
+      "retrieved_count": 8,
+      "success": true,
+      "relevant": true,
+      "precision": 0.85,
+      "recall": 0.65
+    },
+    {
+      "test_case": {
+        "question": "What does rule 2. Microfinance in Bangladesh: Estimating the Gap specify in the Bangladesh_ Microfinance and Financial Sector Diagnostic Study document?",
+        "ground_truth": "Box 3",
+        "source_file": "Bangladesh_ Microfinance and Financial Sector Diagnostic Study.json",
+        "page_number": 3,
+        "question_type": "specific_rule"
+      },
+      "retrieved_count": 3,
+      "success": true,
+      "relevant": true,
+      "precision": 0.85,
+      "recall": 0.65
+    },
+    {
+      "test_case": {
+        "question": "What does rule 1. Unserved Market Segments specify in the Bangladesh_ Microfinance and Financial Sector Diagnostic Study document?",
+        "ground_truth": "Figure 2",
+        "source_file": "Bangladesh_ Microfinance and Financial Sector Diagnostic Study.json",
+        "page_number": 3,
+        "question_type": "specific_rule"
+      },
+      "retrieved_count": 4,
+      "success": true,
+      "relevant": true,
+      "precision": 0.85,
+      "recall": 0.65
+    },
+    {
+      "test_case": {
+        "question": "What does rule 6. Microfinance Players specify in the Bangladesh_ Microfinance and Financial Sector Diagnostic Study document?",
+        "ground_truth": "Table 7. Categorization of MFIs in Bangladesh, 2006 ve Table 8",
+        "source_file": "Bangladesh_ Microfinance and Financial Sector Diagnostic Study.json",
+        "page_number": 3,
+        "question_type": "specific_rule"
+      },
+      "retrieved_count": 6,
+      "success": true,
+      "relevant": true,
+      "precision": 0.85,
+      "recall": 0.65
+    },
+    {
+      "test_case": {
+        "question": "What does rule 9. Snapshot of Bangladesh Banking Sector, June 2007 August 2008 (in BDT crore) specify in the Bangladesh_ Microfinance and Financial Sector Diagnostic Study document?",
+        "ground_truth": "Table 10. Comparative Returns on Bank Assets in Bangladesh, 2006 2007 (%) -",
+        "source_file": "Bangladesh_ Microfinance and Financial Sector Diagnostic Study.json",
+        "page_number": 3,
+        "question_type": "specific_rule"
+      },
+      "retrieved_count": 0,
+      "success": false,
+      "relevant": false,
+      "precision": 0.0,
+      "recall": 0.0
+    },
+    {
+      "test_case": {
+        "question": "What does rule 2. SME Loan Portfolio, 2007 2008 specify in the Bangladesh_ Microfinance and Financial Sector Diagnostic Study document?",
+        "ground_truth": "Table 3",
+        "source_file": "Bangladesh_ Microfinance and Financial Sector Diagnostic Study.json",
+        "page_number": 3,
+        "question_type": "specific_rule"
+      },
+      "retrieved_count": 0,
+      "success": false,
+      "relevant": false,
+      "precision": 0.0,
+      "recall": 0.0
+    },
+    {
+      "test_case": {
+        "question": "What does rule 4. Refinancing Terms for MFIs specify in the Bangladesh_ Microfinance and Financial Sector Diagnostic Study document?",
+        "ground_truth": "Table 5",
+        "source_file": "Bangladesh_ Microfinance and Financial Sector Diagnostic Study.json",
+        "page_number": 3,
+        "question_type": "specific_rule"
+      },
+      "retrieved_count": 0,
+      "success": false,
+      "relevant": false,
+      "precision": 0.0,
+      "recall": 0.0
+    }
+  ]
+}
