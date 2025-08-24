@@ -1,0 +1,42 @@
+multilingual/
+
+├── 🟢 main.py                          # Main entry point
+├── 🟢 telegram_bot.py                  # Telegram bot
+├── 🟢 bot_core.py                      # Core RAG orchestrator
+├── 🟢 config.py                        # Configuration
+├── 🟢 language_utils.py                # Language detection
+├── �� document_retriever.py            # Document retrieval
+├── �� document_ranker.py               # Document ranking
+├── �� response_generator.py            # Response generation
+├── 🟢 rag_utils.py                     # RAG utilities
+├── 🟢 delta_indexing.py                # Delta indexing
+├── 🟢 docadd.py                        # Document processing
+├── 🟢 index_manager.py                 # Index management
+├── 🟢 pdf_preprocessor.py              # PDF preprocessing
+├── 🟢 extract_pdf_text.py              # Text extraction
+├── 🟢 setup_nltk.py                    # NLTK setup
+├── 🟢 setup_ollama.py                  # Ollama setup
+├── 🟢 requirements.txt                  # Dependencies
+├── 🟢 README.md                         # Documentation
+├── 🟢 .env                              # Environment variables
+├── 🟢 data/                             # Document storage
+├── 🟢 faiss_index/                     # Vector database
+└── 🟢 logs/                             # Log files
+
+1. Core Evaluation Files:
+
+bertscore_evaluation.py - Main BERTScore evaluation system
+
+comprehensive_evaluation.py - Multi-metric evaluation framework
+
+evaluation_test_cases.json - Test cases for evaluation
+
+rag_accuracy_evaluation_report.json - Evaluation results
+
+
+
+2. Evaluation Utilities:
+
+rag_file_analyzer.py - RAG pipeline analysis tools
+
+RAG_eval.py - Main evaluation script (if it has content)
