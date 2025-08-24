@@ -1,0 +1,57 @@
+# Core RAG Dependencies - Updated versions
+langchain==0.1.20
+langchain-community==0.0.38
+langchain-groq==0.1.5
+langchain-huggingface==0.0.3
+langchain-ollama==0.3.6
+
+# Vector Database
+faiss-cpu==1.8.0
+
+# Embedding Models - Updated for better compatibility
+sentence-transformers==2.7.0
+transformers==4.40.2
+
+# PDF Processing - CRITICAL for sant.py
+pytesseract==0.3.10
+pdf2image==1.17.0
+opencv-python==4.9.0.80
+PyMuPDF==1.24.0
+reportlab==4.1.0
+pypdf==4.1.0
+pdfminer.six==20231227
+
+# Text Processing
+nltk==3.8.1
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.25.0
+langdetect==1.0.9
+
+# Machine Learning - Updated versions to fix deprecation warnings
+torch==2.3.0
+numpy==1.26.4  # Updated to fix deprecation warnings
+scikit-learn==1.4.2
+
+# System & Utilities
+psutil==5.9.8
+python-telegram-bot==21.3
+python-dotenv==1.0.1
+
+# Evaluation (if using RAGAS)
+ragas==0.1.11
+datasets==2.19.1
+
+# Additional dependencies to fix warnings
+pydantic==2.7.0  # Updated from v1 to fix deprecation warnings
+pillow>=10.0.0  # For image processing
+requests>=2.31.0  # Updated for security
+
+# OCR & Image Processing - CRITICAL for sant.py OCR functionality
+pytesseract==0.3.10
+opencv-python==4.9.0.80
+pdf2image==1.17.0
+
+# Additional Utilities - Needed for full pipeline functionality
+huggingface_hub==0.22.2
+groq==0.4.2
+FlagEmbedding==1.2.12
