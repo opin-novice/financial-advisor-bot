@@ -1,0 +1,53 @@
+Core Files with Cosine Similarity:
+
+rag_utils.py ✅ - KEEP (Has advanced cosine similarity functions)
+
+docadd.py ✅ - KEEP (Uses cosine similarity for semantic chunking)
+
+bertscore_evaluation.py ✅ - KEEP (Uses cosine similarity for evaluation)
+
+comprehensive_evaluation.py ✅ - KEEP (Uses cosine similarity for evaluation)
+
+
+FINAL EVALUATION STRUCTURE (WITH COSINE SIMILARITY)
+
+multilingual/
+
+├── 🟢 bertscore_evaluation.py           # BERTScore + Cosine Similarity
+
+├── 🟢 comprehensive_evaluation.py       # Multi-metric + Cosine Similarity  
+
+├── 🟢 evaluation_test_cases.json        # Test cases
+
+├── 🟢 rag_accuracy_evaluation_report.json # Results
+
+├── 🟢 rag_file_analyzer.py              # Pipeline analysis
+
+├── 🟢 rag_utils.py                      # Advanced cosine similarity functions
+
+├── 🟢 docadd.py                         # Semantic chunking with cosine similarity
+
+└── 📁 logs/                             # Evaluation logs
+
+                                      
+COSINE SIMILARITY CAPABILITIES YOU'RE KEEPING
+
+
+
+Semantic Chunking: Intelligent document splitting based on sentence similarity
+
+
+
+Answer Quality Assessment: Compare predicted vs reference answers
+
+
+
+Context Relevance: Measure how well retrieved documents match queries
+
+
+
+FAISS Verification: Debug and verify vector similarity calculations
+
+
+
+Multi-dimensional Evaluation: BERTScore + ROUGE + BLEU + Cosine Similarity
