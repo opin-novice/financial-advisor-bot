@@ -1,0 +1,11 @@
+# Updated requirements with better embedding models
+# Install these with: pip install -r requirements_update.txt
+
+# Better embedding model
+BAAI/bge-m3
+
+# Better cross-encoder
+BAAI/bge-reranker-large
+
+# For hybrid search
+rank-bm25
