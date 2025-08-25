@@ -5,14 +5,18 @@
 #pip install "sentence-transformers>=2.6.0" "torch>=2.0.0" scikit-learn pandas tqdm
 #to run: python evaluate_cosine.py --data data/qa_pairs.jsonl --model BAAI/bge-m3 --device cpu --out-csv cosine_eval_results.csv
 
-
-
 import argparse
 import json
 import os
 from typing import List, Dict, Tuple
 import numpy as np
-from tqdm import tqdm
+
+try:
+    from tqdm import tqdm
+except ImportError:
+    # Fallback if tqdm is not installed
+    def tqdm(x, **kwargs):
+        return x
 
 try:
     from sentence_transformers import SentenceTransformer
@@ -119,9 +123,9 @@ def evaluate(rows: List[Dict],
         results.append({
             "query": q,
             "positive": p,
-            "pos_sim": round(pos_sim, 6),
-            "max_neg_sim": round(max_neg, 6),
-            "margin": round(margin, 6),
+            "pos_sim": float(round(pos_sim, 6)),
+            "max_neg_sim": float(round(max_neg, 6)),
+            "margin": float(round(margin, 6)),
             "is_correct": bool(is_correct)
         })
 
@@ -142,45 +146,4 @@ def evaluate(rows: List[Dict],
 def save_csv(path: str, rows: List[Dict]) -> None:
     import csv
     keys = ["query", "positive", "pos_sim", "max_neg_sim", "margin", "is_correct"]
-    with open(path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=keys)
-        writer.writeheader()
-        for r in rows:
-            writer.writerow(r)
-
-
-def main():
-    parser = argparse.ArgumentParser(description="Cosine-similarity eval for NextRAG using qa_paris.jsonl")
-    parser.add_argument("--data", default="data/qa_paris.jsonl", help="Path to JSONL")
-    parser.add_argument("--model", default="BAAI/bge-m3", help="SentenceTransformer model name")
-    parser.add_argument("--device", default="cpu", help="cpu | cuda | cuda:0 ...")
-    parser.add_argument("--batch-size", type=int, default=64)
-    parser.add_argument("--out-csv", default="cosine_eval_results.csv")
-    args = parser.parse_args()
-
-    if not os.path.exists(args.data):
-        raise SystemExit(f"Dataset not found: {args.data}")
-
-    rows = read_jsonl(args.data)
-    if not rows:
-        raise SystemExit("No rows found in dataset.")
-
-    results, summary = evaluate(
-        rows,
-        model_name=args.model,
-        device=args.device,
-        batch_size=args.batch_size
-    )
-
-    # Print summary
-    print("\n=== Summary ===")
-    for k, v in summary.items():
-        print(f"{k}: {v:.6f}" if isinstance(v, float) else f"{k}: {v}")
-
-    # Save per-item CSV
-    save_csv(args.out_csv, results)
-    print(f"\n[INFO] Saved per-item results to: {args.out_csv}")
-
-
-if __name__ == "__main__":
-    main()
+    wit
