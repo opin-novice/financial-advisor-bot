@@ -3,7 +3,7 @@
 # Cosine-similarity evaluation on data/qa_paris.jsonl for NextRAG
 # Uses SentenceTransformer (default: BAAI/bge-m3) with L2-normalized embeddings.
 #pip install "sentence-transformers>=2.6.0" "torch>=2.0.0" scikit-learn pandas tqdm
-#to run: python evaluate_cosine.py --data data/qa_pairs.jsonl --model BAAI/bge-m3 --device cpu --out-csv cosine_eval_results.csv
+#to run: python evaluation.cosine.py
 
 
 import argparse
