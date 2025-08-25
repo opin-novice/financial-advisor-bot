@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-cosine_eval.py
+evaluate_cosine.py
 
 Standalone cosine-similarity evaluator for NextRAG.
 
