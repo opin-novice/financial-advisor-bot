@@ -5,6 +5,7 @@
 #pip install "sentence-transformers>=2.6.0" "torch>=2.0.0" scikit-learn pandas tqdm
 #to run: python evaluate_cosine.py --data data/qa_pairs.jsonl --model BAAI/bge-m3 --device cpu --out-csv cosine_eval_results.csv
 
+
 import argparse
 import json
 import os
@@ -146,4 +147,118 @@ def evaluate(rows: List[Dict],
 def save_csv(path: str, rows: List[Dict]) -> None:
     import csv
     keys = ["query", "positive", "pos_sim", "max_neg_sim", "margin", "is_correct"]
-    wit
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=keys)
+        writer.writeheader()
+        for r in rows:
+            writer.writerow(r)
+
+
+def truncate(s: str, width: int) -> str:
+    if width <= 3 or len(s) <= width:
+        return s
+    return s[: width - 3] + "..."
+
+
+def print_section_header(title: str) -> None:
+    print("\n" + "=" * 80)
+    print(title)
+    print("=" * 80)
+
+
+def print_table(rows: List[Dict], max_rows: int, trunc_query: int, trunc_pos: int) -> None:
+    # Header
+    header = f"{'#':>3}  {'correct':>7}  {'pos_sim':>7}  {'neg_max':>7}  {'margin':>7}  {'query':<{trunc_query}}  |  {'positive':<{trunc_pos}}"
+    print(header)
+    print("-" * len(header))
+
+    count = 0
+    for i, r in enumerate(rows, 1):
+        if max_rows is not None and count >= max_rows:
+            break
+        line = (
+            f"{i:>3}  "
+            f"{str(r['is_correct']):>7}  "
+            f"{r['pos_sim']:>7.3f}  "
+            f"{r['max_neg_sim']:>7.3f}  "
+            f"{r['margin']:>7.3f}  "
+            f"{truncate(r['query'], trunc_query):<{trunc_query}}  |  "
+            f"{truncate(r['positive'], trunc_pos):<{trunc_pos}}"
+        )
+        print(line)
+        count += 1
+    if max_rows is not None and len(rows) > max_rows:
+        print(f"... ({len(rows) - max_rows} more rows omitted)")
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Cosine-similarity eval for NextRAG using qa_paris.jsonl")
+    parser.add_argument("--data", default="data/qa_paris.jsonl", help="Path to JSONL")
+    parser.add_argument("--model", default="BAAI/bge-m3", help="SentenceTransformer model name")
+    parser.add_argument("--device", default="cpu", help="cpu | cuda | cuda:0 ...")
+    parser.add_argument("--batch-size", type=int, default=64)
+    parser.add_argument("--out-csv", default="cosine_eval_results.csv")
+
+    # Terminal display controls
+    parser.add_argument("--show-incorrect", type=int, default=10,
+                        help="Print up to N incorrect cases (sorted by smallest margin). 0 to hide.")
+    parser.add_argument("--show-correct", type=int, default=10,
+                        help="Print up to N sample correct cases (sorted by largest margin). 0 to hide.")
+    parser.add_argument("--truncate-query", type=int, default=60, help="Column width for query text.")
+    parser.add_argument("--truncate-positive", type=int, default=60, help="Column width for positive text.")
+
+    args = parser.parse_args()
+
+    if not os.path.exists(args.data):
+        raise SystemExit(f"Dataset not found: {args.data}")
+
+    rows = read_jsonl(args.data)
+    if not rows:
+        raise SystemExit("No rows found in dataset.")
+
+    results, summary = evaluate(
+        rows,
+        model_name=args.model,
+        device=args.device,
+        batch_size=args.batch_size
+    )
+
+    # Save per-item CSV
+    save_csv(args.out_csv, results)
+    print(f"\n[INFO] Saved per-item results to: {args.out_csv}")
+
+    # ===== Terminal Report =====
+    # Summary
+    print_section_header("SUMMARY")
+    for k, v in summary.items():
+        if isinstance(v, float):
+            print(f"{k:30s}: {v:.6f}")
+        else:
+            print(f"{k:30s}: {v}")
+
+    # Incorrect cases (sorted by smallest margin first)
+    if args.show_incorrect and args.show_incorrect > 0:
+        incorrect = [r for r in results if not r["is_correct"]]
+        incorrect_sorted = sorted(incorrect, key=lambda r: r["margin"])
+        print_section_header(f"INCORRECT CASES (showing up to {args.show_incorrect}, {len(incorrect)} total)")
+        if incorrect_sorted:
+            print_table(incorrect_sorted, args.show_incorrect, args.truncate_query, args.truncate_positive)
+        else:
+            print("No incorrect cases. ✅")
+
+    # Correct cases (sorted by largest margin first) – sample
+    if args.show_correct and args.show_correct > 0:
+        correct = [r for r in results if r["is_correct"]]
+        correct_sorted = sorted(correct, key=lambda r: r["margin"], reverse=True)
+        print_section_header(f"SAMPLE CORRECT CASES (showing up to {args.show_correct}, {len(correct)} total)")
+        if correct_sorted:
+            print_table(correct_sorted, args.show_correct, args.truncate_query, args.truncate_positive)
+        else:
+            print("No correct cases found.")
+
+    print("\n[DONE] Cosine evaluation complete.")
+
+
+if __name__ == "__main__":
+    main()
+
