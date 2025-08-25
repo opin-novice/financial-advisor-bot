@@ -1,13 +1,9 @@
 # evaluate_cosine.py
-""
+
 # Cosine-similarity evaluation on data/qa_paris.jsonl for NextRAG
 # Uses SentenceTransformer (default: BAAI/bge-m3) with L2-normalized embeddings.
-#to run: python evaluate_cosine.py \
-  --data data/qa_paris.jsonl \
-  --model BAAI/bge-m3 \
-  --device cpu \
-  --out-csv cosine_eval_results.csv
-""
+#to run: python evaluate_cosine.py --data data/qa_paris.jsonl --model BAAI/bge-m3 --device cpu --out-csv cosine_eval_results.csv
+
 
 
 import argparse
