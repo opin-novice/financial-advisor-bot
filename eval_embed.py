@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 """
+this is eval_embed.py for model eval and fine tuning 
 eval_embed.py
--------------
 Step-2 improvements for the FinAuxi RAG pipeline:
   • Embedding quality diagnostics (cosine histograms, basic recall@k)
   • Light domain fine-tuning on (query, positive_chunk, hard_neg) triplets
   • Saves the fine-tuned model to ./ft_bge
 
 Usage
------
 python eval_embed.py --mode eval (only for model evaluation)
 python eval_embed.py --mode fit --epochs 3 --lr 2e-5 (only for fine tuning)
 """
@@ -31,12 +30,13 @@ from tqdm.auto import tqdm
 # ---------------------------------------------------------------------------
 # 1. COMMON CONSTANTS
 # ---------------------------------------------------------------------------
-BASE_MODEL_NAME = "BAAI/bge-base-en-v1.5"
+BASE_MODEL_NAME = "BAAI/bge-m3"
+#BASE_MODEL_NAME = "./ft_bge"
 FAISS_INDEX_PATH = "faiss_index"
 EMBEDDINGS_DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 # ---------------------------------------------------------------------------
-# 2. EMBEDDING QUALITY EVALUATION
+# 2. EMBEDDING QUALITY EVALUATION 
 # ---------------------------------------------------------------------------
 def load_qa_pairs(path: str) -> List[dict]:
     """Expects JSONL: {"query": "...", "positive": "...", "negatives": [...]}"""
@@ -192,7 +192,7 @@ def main():
     if not os.path.isfile(args.qa_pairs):
         print(f"[warn] QA pairs file not found at {args.qa_pairs}")
         return
-
+    
     qa_pairs = load_qa_pairs(args.qa_pairs)
 
     if args.mode == "eval":
@@ -201,7 +201,6 @@ def main():
         recall_at_k(model, qa_pairs, k=5)
     elif args.mode == "fit":
         finetune(args.qa_pairs, args.epochs, args.lr)
-
-
+        
 if __name__ == "__main__":
     main()
