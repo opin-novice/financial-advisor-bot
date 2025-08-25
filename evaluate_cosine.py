@@ -4,6 +4,8 @@
 # Uses SentenceTransformer (default: BAAI/bge-m3) with L2-normalized embeddings.
 #pip install "sentence-transformers>=2.6.0" "torch>=2.0.0" scikit-learn pandas tqdm
 #to run: python evaluation.cosine.py
+#python evaluate_cosine.py --data data/qa_pairs.jsonl
+
 
 
 import argparse
