@@ -16,7 +16,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer
 
 # Import your RAG systems
-from main import VanillaRAGSystem
+from main2 import CoreRAGSystem
 # from advanced_rag import AdvancedRAGSystem  # Uncomment if you have Advanced RAG
 
 # Configuration
@@ -80,7 +80,7 @@ class CosineSimilarityEvaluator:
         try:
             logger.info(f"Initializing {self.rag_type} RAG system...")
             if self.rag_type == "vanilla":
-                self.rag_system = VanillaRAGSystem()
+                self.rag_system = CoreRAGSystem()
             # elif self.rag_type == "advanced":
             #     self.rag_system = AdvancedRAGSystem()
             else:
