@@ -1,239 +1,160 @@
-#!/usr/bin/env python3
-"""
-Cosine Similarity Evaluation for Vanilla/Advanced RAG Systems
-Evaluates the quality of retrieved passages against ground truth answers
-"""
-
 import os
 import sys
-import json
 import logging
-import argparse
-import numpy as np
-from typing import Dict, List, Tuple
 from datetime import datetime
-from sklearn.metrics.pairwise import cosine_similarity
+from typing import Dict, List, Tuple
+
+import torch
+import numpy as np
+import pandas as pd
 from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
 
-# Import your RAG systems
-from main2 import CoreRAGSystem
-# from advanced_rag import AdvancedRAGSystem  # Uncomment if you have Advanced RAG
+# Local imports (adjust as needed)
+from main2 import RAGSystem  # <-- your Vanilla/Advanced RAG system
 
-# Configuration
-EMBEDDING_MODEL = "BAAI/bge-m3"
-DEFAULT_GROUND_TRUTH_FILE = "dataqa/ENGqapair.json"
-MAX_QUESTIONS = None  # Set to None for all questions, or a number to limit
-
-# Set up logging
+# -------------------------------------------------
+# Logging Setup
+# -------------------------------------------------
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('logs/cosev2_evaluation.log', encoding='utf-8'),
-        logging.StreamHandler(sys.stdout)
-    ]
+    format='%(asctime)s - %(levelname)s - %(message)s'
 )
-logger = logging.getLogger(__name__)
 
+# -------------------------------------------------
+# Data Classes
+# -------------------------------------------------
 class EvaluationMetrics:
-    """Container for evaluation metrics"""
     def __init__(self, question_id: int, question: str, ground_truth: str):
         self.question_id = question_id
         self.question = question
         self.ground_truth = ground_truth
-        self.retrieved_passages = []
-        self.max_similarity = 0.0
-        self.avg_similarity = 0.0
-        self.min_similarity = 0.0
-        self.best_match_idx = -1
-        self.similarity_scores = []
-        self.metadata = {}
-        self.processing_time = 0.0
-        self.error = None
+        self.retrieved_passages: List[str] = []
+        self.llm_response: str = ""
+        self.similarity_passages: Dict = {}
+        self.similarity_response: Dict = {}
+        self.processing_time: float = 0.0
+        self.metadata: Dict = {}
+        self.error: str = ""
 
+# -------------------------------------------------
+# Cosine Similarity Evaluator
+# -------------------------------------------------
 class CosineSimilarityEvaluator:
-    """Evaluates cosine similarity between retrieved passages and ground truth answers"""
-    
-    def __init__(self, ground_truth_file: str = DEFAULT_GROUND_TRUTH_FILE, rag_type: str = "vanilla"):
-        """Initialize the evaluator"""
-        logger.info("🚀 Initializing Cosine Similarity Evaluator...")
-        logger.info(f"📄 Ground truth file: {ground_truth_file}")
-        
-        self.ground_truth_file = ground_truth_file
-        self.rag_type = rag_type
-        self._init_embedding_model()
+    def __init__(self, ground_truth_file: str):
+        logging.info("🚀 Initializing Cosine Similarity Evaluator...")
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        logging.info(f"Using device: {self.device}")
+
+        # Load embedding model
+        model_name = "BAAI/bge-m3"
+        logging.info(f"Loading embedding model: {model_name}")
+        self.embedding_model = SentenceTransformer(model_name, device=self.device)
+        logging.info("✅ Embedding model loaded successfully")
+
+        # Load QA dataset (ground truth)
+        self.ground_truth_df = pd.read_csv(ground_truth_file)
+        logging.info(f"✅ Ground truth file loaded with {len(self.ground_truth_df)} questions")
+
+        # Initialize RAG system
         self._init_rag_system()
-        logger.info("✅ Cosine Similarity Evaluator initialized successfully")
-    
-    def _init_embedding_model(self):
-        """Initialize the embedding model"""
-        try:
-            logger.info(f"Loading embedding model: {EMBEDDING_MODEL}")
-            self.embedding_model = SentenceTransformer(EMBEDDING_MODEL, device='cpu')
-            logger.info("✅ Embedding model loaded successfully")
-        except Exception as e:
-            logger.error(f"Failed to load embedding model: {e}")
-            raise
 
     def _init_rag_system(self):
-        """Initialize the RAG system"""
-        try:
-            logger.info(f"Initializing {self.rag_type} RAG system...")
-            if self.rag_type == "vanilla":
-                self.rag_system = CoreRAGSystem()
-            # elif self.rag_type == "advanced":
-            #     self.rag_system = AdvancedRAGSystem()
-            else:
-                raise ValueError(f"Unknown RAG type: {self.rag_type}")
+        logging.info("Initializing RAG system...")
+        self.rag_system = RAGSystem()
+        if not self.rag_system.llm:
+            raise Exception("LLM not loaded in RAG system")
+        logging.info("✅ RAG system initialized successfully")
 
-            # Simple check: process_query must exist
-            if not hasattr(self.rag_system, 'process_query') or not callable(self.rag_system.process_query):
-                raise Exception("RAG system does not have process_query method")
+    def compute_embeddings(self, texts: List[str]) -> np.ndarray:
+        return self.embedding_model.encode(texts, convert_to_tensor=True, show_progress_bar=False)
 
-            logger.info("✅ RAG system initialized successfully")
-        except Exception as e:
-            logger.error(f"Failed to initialize RAG system: {e}")
-            raise
-
-    def load_ground_truth(self, file_path: str) -> List[Dict]:
-        """Load ground truth data from JSON file"""
-        if not os.path.exists(file_path):
-            raise FileNotFoundError(f"Ground truth file not found: {file_path}")
-        with open(file_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        logger.info(f"✅ Loaded {len(data)} questions from ground truth")
-        return data
-
-    def retrieve_passages(self, question: str) -> Tuple[List[str], Dict]:
-        """Retrieve passages for a question using the RAG system"""
-        try:
-            result = self.rag_system.process_query(question)
-            retrieved_passages = result.get('contexts', [])
-            if not retrieved_passages:
-                # fallback: get from retriever
-                try:
-                    docs = self.rag_system.retriever.get_relevant_documents(question)
-                    retrieved_passages = [doc.page_content for doc in docs[:6]]
-                except Exception:
-                    retrieved_passages = []
-            metadata = {
-                'num_docs': result.get('num_docs', 0),
-                'processing_time': result.get('processing_time', 0.0),
-                'sources': result.get('sources', []),
-                'response': result.get('response', '')[:200]
-            }
-            return retrieved_passages, metadata
-        except Exception as e:
-            logger.error(f"Failed to retrieve passages: {e}")
-            return [], {}
-
-    def compute_embeddings(self, passages: List[str]) -> np.ndarray:
-        if not passages:
-            return np.array([])
-        valid_passages = [p.strip() for p in passages if p.strip() and len(p.strip()) > 10]
-        if not valid_passages:
-            return np.array([])
-        return self.embedding_model.encode(valid_passages, normalize_embeddings=True, show_progress_bar=False)
-
-    def calculate_cosine_similarity(self, retrieved_embeddings: np.ndarray, 
-                                    ground_truth_embeddings: np.ndarray) -> Tuple[List[float], Dict]:
-        if retrieved_embeddings.size == 0 or ground_truth_embeddings.size == 0:
-            return [], {'max_similarity': 0.0, 'avg_similarity': 0.0, 'min_similarity': 0.0, 'best_match_idx': -1}
-        sim_matrix = cosine_similarity(retrieved_embeddings, ground_truth_embeddings)
-        max_sim = np.max(sim_matrix.flatten())
-        avg_sim = float(np.mean(sim_matrix))
-        min_sim = float(np.min(sim_matrix))
-        best_idx = int(np.argmax(sim_matrix.flatten()) % ground_truth_embeddings.shape[0])
-        max_per_retrieved = np.max(sim_matrix, axis=1).tolist()
-        best_match_indices = np.argmax(sim_matrix, axis=1).tolist()
-        stats = {
-            'max_similarity': float(max_sim),
-            'avg_similarity': avg_sim,
-            'min_similarity': float(min_sim),
-            'best_match_idx': best_idx,
-            'similarity_matrix': sim_matrix.tolist(),
-            'max_similarities_per_retrieved': max_per_retrieved,
-            'best_match_indices': best_match_indices
-        }
-        return max_per_retrieved, stats
+    def calculate_cosine_similarity(self, emb1: np.ndarray, emb2: np.ndarray) -> float:
+        return float(cosine_similarity(emb1.reshape(1, -1), emb2.reshape(1, -1))[0][0])
 
     def evaluate_single_question(self, question_data: Dict, question_id: int) -> EvaluationMetrics:
-        question = question_data['question']
-        ground_truth_answer = question_data.get('answer', question_data.get('predicted_answer', ''))
+        question = question_data["question"]
+        ground_truth_answer = question_data.get("answer", "")
         metrics = EvaluationMetrics(question_id, question, ground_truth_answer)
+
         try:
             start_time = datetime.now()
-            retrieved_passages, metadata = self.retrieve_passages(question)
-            metrics.retrieved_passages = retrieved_passages
-            metrics.metadata = metadata
+            result = self.rag_system.process_query(question)
+
+            # Save metadata
+            metrics.metadata = {
+                "sources": result.get("sources", []),
+                "num_docs": result.get("num_docs", 0),
+                "processing_time": result.get("processing_time", 0.0),
+            }
             metrics.processing_time = (datetime.now() - start_time).total_seconds()
-            if not retrieved_passages:
-                metrics.error = "No passages retrieved"
-                return metrics
-            retrieved_embeddings = self.compute_embeddings(retrieved_passages)
-            ground_truth_embeddings = self.compute_embeddings([ground_truth_answer])
-            similarity_scores, similarity_stats = self.calculate_cosine_similarity(
-                retrieved_embeddings, ground_truth_embeddings
-            )
-            metrics.similarity_scores = similarity_scores
-            metrics.max_similarity = similarity_stats['max_similarity']
-            metrics.avg_similarity = similarity_stats['avg_similarity']
-            metrics.min_similarity = similarity_stats['min_similarity']
-            metrics.best_match_idx = similarity_stats['best_match_idx']
+
+            # Retrieved passages
+            passages = result.get("passages", [])
+            metrics.retrieved_passages = passages
+
+            # Final LLM response
+            llm_response = result.get("response", "")
+            metrics.llm_response = llm_response
+
+            # ---- Passage-level similarity ----
+            if passages:
+                passage_embs = self.compute_embeddings(passages)
+                gt_emb = self.compute_embeddings([ground_truth_answer])
+                sims = [self.calculate_cosine_similarity(p_emb, gt_emb[0]) for p_emb in passage_embs]
+                metrics.similarity_passages = {
+                    "max": float(np.max(sims)),
+                    "min": float(np.min(sims)),
+                    "avg": float(np.mean(sims)),
+                }
+
+            # ---- Response-level similarity ----
+            if llm_response.strip():
+                resp_emb = self.compute_embeddings([llm_response])
+                gt_emb = self.compute_embeddings([ground_truth_answer])
+                sim = self.calculate_cosine_similarity(resp_emb[0], gt_emb[0])
+                metrics.similarity_response = {"cosine": sim}
+
             return metrics
+
         except Exception as e:
             metrics.error = str(e)
             return metrics
 
-    def run_evaluation(self) -> str:
-        ground_truth_data = self.load_ground_truth(self.ground_truth_file)
-        if MAX_QUESTIONS:
-            ground_truth_data = ground_truth_data[:MAX_QUESTIONS]
+    def evaluate(self, output_file: str = "cosine_results.csv") -> pd.DataFrame:
         results = []
-        for i, qdata in enumerate(ground_truth_data):
-            metrics = self.evaluate_single_question(qdata, i)
+
+        for idx, row in self.ground_truth_df.iterrows():
+            metrics = self.evaluate_single_question(row, idx)
             results.append({
-                'question_id': metrics.question_id,
-                'question': metrics.question,
-                'ground_truth': metrics.ground_truth,
-                'retrieved_passages': metrics.retrieved_passages,
-                'max_similarity': metrics.max_similarity,
-                'avg_similarity': metrics.avg_similarity,
-                'min_similarity': metrics.min_similarity,
-                'similarity_scores': metrics.similarity_scores,
-                'best_match_idx': metrics.best_match_idx,
-                'metadata': metrics.metadata,
-                'processing_time': metrics.processing_time,
-                'error': metrics.error
+                "question_id": metrics.question_id,
+                "question": metrics.question,
+                "ground_truth": metrics.ground_truth,
+                "llm_response": metrics.llm_response,
+                "retrieved_passages": metrics.retrieved_passages,
+                "similarity_passages": metrics.similarity_passages,
+                "similarity_response": metrics.similarity_response,
+                "processing_time": metrics.processing_time,
+                "error": metrics.error,
             })
-        # Save results
-        os.makedirs('logs', exist_ok=True)
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        output_file = f"logs/rag_cosine_similarity_{timestamp}.json"
-        with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump({'results': results}, f, indent=2, ensure_ascii=False)
-        logger.info(f"💾 Results saved to: {output_file}")
-        return output_file
 
+        df = pd.DataFrame(results)
+        df.to_csv(output_file, index=False)
+        logging.info(f"✅ Evaluation complete. Results saved to {output_file}")
+        return df
+
+# -------------------------------------------------
+# Main
+# -------------------------------------------------
 def main():
-    parser = argparse.ArgumentParser(description="Cosine Similarity Evaluator for RAG")
-    parser.add_argument('file', nargs='?', help='Ground truth JSON file')
-    parser.add_argument('--interactive', '-i', action='store_true')
-    parser.add_argument('--list', '-l', action='store_true')
-    parser.add_argument('--max-questions', '-m', type=int)
-    parser.add_argument('--rag-type', '-r', default='vanilla', choices=['vanilla', 'advanced'],
-                        help='Choose RAG system type')
-    args = parser.parse_args()
+    if len(sys.argv) < 2:
+        print("Usage: python cosev2.py <ground_truth_file.csv>")
+        sys.exit(1)
 
-    if args.max_questions:
-        global MAX_QUESTIONS
-        MAX_QUESTIONS = args.max_questions
-
-    ground_truth_file = args.file or DEFAULT_GROUND_TRUTH_FILE
-    evaluator = CosineSimilarityEvaluator(ground_truth_file, rag_type=args.rag_type)
-    output_file = evaluator.run_evaluation()
-    print(f"🎉 Evaluation completed. Results saved to: {output_file}")
-    return 0
+    ground_truth_file = sys.argv[1]
+    evaluator = CosineSimilarityEvaluator(ground_truth_file)
+    evaluator.evaluate()
 
 if __name__ == "__main__":
     sys.exit(main())
+
